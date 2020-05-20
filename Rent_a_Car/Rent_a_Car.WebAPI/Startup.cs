@@ -14,6 +14,11 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Rent_a_Car.WebAPI.Database;
+using Rent_a_Car.WebAPI.Filters;
+using Rent_a_Car.WebAPI.Interface;
+using Rent_a_Car.WebAPI.Service;
+using RentaCar.Data.Requests.Branch;
+using RentaCar.Data.Requests.City;
 
 namespace Rent_a_Car.WebAPI
 {
@@ -26,16 +31,13 @@ namespace Rent_a_Car.WebAPI
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc(x => x.Filters.Add<ErrorFilter>());         // Filter for errors
+
             services.AddControllers();
 
-            //services.AddDbContext<RentaCarContext>(c => c.UseSqlServer(Configuration.GetConnectionString("RentaCarCS")));
-            // Connection string 
-
-            var connection = @"Server =.; Database =RentaCar; Trusted_Connection = True; ";
-            services.AddDbContext<RentaCarContext>(options => options.UseSqlServer(connection));
+            services.AddDbContext<RentaCarContext>(c => c.UseSqlServer(Configuration.GetConnectionString("RentaCarCS")));       // Connection string
 
             services.AddSwaggerGen(c =>
             {
@@ -66,13 +68,17 @@ namespace Rent_a_Car.WebAPI
                 //});
             });
 
-            //Automapper
-            services.AddAutoMapper(typeof(Startup));
+            services.AddAutoMapper(typeof(Startup));                //Automapper
+
+            #region Dependency injection
+
+            services.AddScoped<IService<CityRequest, object>,BaseService<CityRequest,object,Database.City>>();
+            services.AddScoped<IService<BranchRequest, object>,BaseService<BranchRequest,object,Database.Branch>>();
 
 
+            #endregion
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -92,7 +98,6 @@ namespace Rent_a_Car.WebAPI
             //app.UseHttpsRedirection();
 
             app.UseRouting();
-
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
