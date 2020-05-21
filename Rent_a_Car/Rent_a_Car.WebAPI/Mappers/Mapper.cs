@@ -15,7 +15,11 @@ namespace Rent_a_Car.WebAPI.Mappers
         {
             CreateMap<City, CityRequest>().ReverseMap();
             CreateMap<Branch, BranchRequest>().ReverseMap();
+            CreateMap<BranchRequest, BranchSearchRequest>().ReverseMap();
+            CreateMap<Branch, BranchUpsert>().ReverseMap();
 
+            CreateMap<City, CityUpsert>().ReverseMap();
+            CreateMap<City, CitySearchRequest>().ReverseMap();
 
 
 

@@ -14,11 +14,13 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Rent_a_Car.WebAPI.Database;
-using Rent_a_Car.WebAPI.Filters;
+//using Rent_a_Car.WebAPI.Filters;
 using Rent_a_Car.WebAPI.Interface;
 using Rent_a_Car.WebAPI.Service;
 using RentaCar.Data.Requests.Branch;
 using RentaCar.Data.Requests.City;
+using RentACar.WebAPI.Interface;
+using RentACar.WebAPI.Service;
 
 namespace Rent_a_Car.WebAPI
 {
@@ -33,7 +35,7 @@ namespace Rent_a_Car.WebAPI
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc(x => x.Filters.Add<ErrorFilter>());         // Filter for errors
+            //services.AddMvc(x => x.Filters.Add<ErrorFilter>());         // Filter for errors
 
             services.AddControllers();
 
@@ -72,9 +74,9 @@ namespace Rent_a_Car.WebAPI
 
             #region Dependency injection
 
-            services.AddScoped<IService<CityRequest, object>,BaseService<CityRequest,object,Database.City>>();
-            services.AddScoped<IService<BranchRequest, object>,BaseService<BranchRequest,object,Database.Branch>>();
+            services.AddScoped<ICRUDService<CityRequest, CitySearchRequest,CityUpsert,CityUpsert>,CityService>();
 
+            services.AddScoped<ICRUDService<BranchRequest,BranchSearchRequest,BranchUpsert,BranchUpsert> , BranchService>();
 
             #endregion
         }
