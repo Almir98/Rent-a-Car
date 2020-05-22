@@ -14,7 +14,7 @@ namespace RentACar.WinUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAllCustomers());
+            Application.Run(new frmIndex());
         }
     }
 }

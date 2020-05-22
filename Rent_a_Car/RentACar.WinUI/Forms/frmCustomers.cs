@@ -24,8 +24,15 @@ namespace RentACar.WinUI
 
         private async void btnSearch_Click(object sender, EventArgs e)
         {
-            var result =await _apiService.Get<List<CustomerRequest>>();
+            var search = new CustomerSearchRequest()
+            {
+                FirstName=txtCustomer.Text,
+                LastName=txtCustomer.Text,
+            };
+
+            var result =await _apiService.Get<List<CustomerRequest>>(search);
             dgvAllCustomers.DataSource = result;
         }
+
     }
 }

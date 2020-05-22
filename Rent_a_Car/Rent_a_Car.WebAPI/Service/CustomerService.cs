@@ -22,14 +22,15 @@ namespace RentACar.WebAPI.Service
 
             if(!string.IsNullOrWhiteSpace(search.FirstName) || !string.IsNullOrWhiteSpace(search.LastName))
             {
-                query = query.Where(x => x.LastName == search.LastName || x.FirstName == search.FirstName);
+                query = query.Where(x => x.LastName.StartsWith(search.LastName) || x.FirstName.StartsWith(search.FirstName));
             }
 
-            if(!string.IsNullOrWhiteSpace(search.CityName))
-            {
-                query = query.Where(x => x.City.CityName == search.CityName);
-            }
-            query = query.OrderBy(x => x.City.CityName);
+            //if(!string.IsNullOrWhiteSpace(search.CityName))
+            //{
+            //    query = query.Where(x => x.City.CityName == search.CityName);
+            //}
+            //query = query.OrderBy(x => x.City.CityName);
+
             return _mapper.Map<List<CustomerRequest>>(query.ToList());
         }
     }
