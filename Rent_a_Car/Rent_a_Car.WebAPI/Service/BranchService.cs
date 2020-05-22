@@ -28,7 +28,5 @@ namespace RentACar.WebAPI.Service
             }
             return _mapper.Map<List<BranchRequest>>(query.ToList());
         } 
-
-
     }
 }

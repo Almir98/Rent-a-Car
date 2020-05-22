@@ -11,5 +11,6 @@ namespace RentACar.WebAPI.Interface
         TModel Insert(TInsert request);
 
         TModel Update(int id,TUpdate request);
+        void Delete(int id);
     }
 }

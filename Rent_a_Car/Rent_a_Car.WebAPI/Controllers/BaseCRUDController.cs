@@ -14,7 +14,7 @@ namespace RentACar.WebAPI.Controllers
     [ApiController]
     public class BaseCRUDController<TModel, Tsearch,TInsert,TUpdate> : BaseController<TModel, Tsearch>
     {
-        private readonly ICRUDService<TModel, Tsearch, TInsert, TUpdate> _service=null;
+        protected readonly ICRUDService<TModel, Tsearch, TInsert, TUpdate> _service=null;
 
         public BaseCRUDController(ICRUDService<TModel, Tsearch,TInsert,TUpdate> service) : base(service)
         {

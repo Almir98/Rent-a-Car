@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Rent_a_Car.WebAPI.Database;
+using Rent_a_Car.WebAPI.Exceptions;
 using Rent_a_Car.WebAPI.Service;
 using RentACar.WebAPI.Interface;
 using System;
@@ -33,6 +34,19 @@ namespace RentACar.WebAPI.Service
             _mapper.Map(request, entity);
             _context.SaveChanges();
             return _mapper.Map<TModel>(entity);
+        }
+
+        public void Delete(int id)
+        {
+            var entity = _context.Set<TDatabase>().Find(id);
+
+            if(entity==null)
+                throw new ArgumentNullException();
+            else
+            {
+                _context.Set<TDatabase>().Remove(entity);
+                _context.SaveChanges();
+            }
         }
     }
 }

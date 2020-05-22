@@ -1,9 +1,12 @@
 ﻿using AutoMapper;
 using Rent_a_Car.WebAPI.Database;
 using RentaCar.Data.Requests;
+using RentaCar.Data.Requests.Booking;
 using RentaCar.Data.Requests.Branch;
 using RentaCar.Data.Requests.City;
+using RentaCar.Data.Requests.Comments;
 using RentaCar.Data.Requests.Customer;
+using RentaCar.Data.Requests.Rating;
 using RentaCar.Data.Requests.Vehicle;
 using System;
 using System.Collections.Generic;
@@ -29,6 +32,16 @@ namespace Rent_a_Car.WebAPI.Mappers
 
             CreateMap<Vehicle, VehicleUpsert>().ReverseMap();
             CreateMap<VehicleRequest, Vehicle>().ReverseMap();
+
+            CreateMap<Booking, BookingUpsert>().ReverseMap();
+            CreateMap<BookingRequest, Booking>().ReverseMap();
+
+            CreateMap<Comment, CommentUpsert>().ReverseMap();
+            CreateMap<Comment, CommentRequest>().ReverseMap();
+
+            CreateMap<Rating, RatingUpsert>().ReverseMap();
+            CreateMap<Rating, RatingRequest>().ReverseMap();
+
 
         }
     }
