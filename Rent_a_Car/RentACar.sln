@@ -5,7 +5,11 @@ VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentACar.WebAPI", "Rent_a_Car.WebAPI\RentACar.WebAPI.csproj", "{CDE41DB3-322C-40A5-9C09-CE9966A403E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentaCar.Data", "RentaCar.Data\RentaCar.Data.csproj", "{2C5B3E7E-8457-4A4A-BD89-F79E934A7B2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentaCar.Data", "RentaCar.Data\RentaCar.Data.csproj", "{2C5B3E7E-8457-4A4A-BD89-F79E934A7B2C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{55485DA1-CACD-44FC-8AD8-FDE070FC9418}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentACar.WinUI", "RentACar.WinUI\RentACar.WinUI.csproj", "{43C76097-F4F1-4FB2-802F-BD363595FA81}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +25,16 @@ Global
 		{2C5B3E7E-8457-4A4A-BD89-F79E934A7B2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C5B3E7E-8457-4A4A-BD89-F79E934A7B2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C5B3E7E-8457-4A4A-BD89-F79E934A7B2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43C76097-F4F1-4FB2-802F-BD363595FA81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43C76097-F4F1-4FB2-802F-BD363595FA81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43C76097-F4F1-4FB2-802F-BD363595FA81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43C76097-F4F1-4FB2-802F-BD363595FA81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{43C76097-F4F1-4FB2-802F-BD363595FA81} = {55485DA1-CACD-44FC-8AD8-FDE070FC9418}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A5463707-97EE-4F98-B03C-5AD15A02EF4B}
