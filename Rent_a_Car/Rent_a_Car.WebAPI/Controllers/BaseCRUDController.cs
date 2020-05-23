@@ -33,5 +33,11 @@ namespace RentACar.WebAPI.Controllers
         {
             return _service.Update(id, request);
         }
+
+        [HttpDelete]
+        void Delete(int id)
+        {
+            _service.Delete(id);
+        }
     }
 }

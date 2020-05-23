@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Flurl.Http;
 using Flurl;
 using RentaCar.Data.Requests.Customer;
+using RentACar.WinUI.Forms;
 
 namespace RentACar.WinUI
 {
@@ -27,12 +28,23 @@ namespace RentACar.WinUI
             var search = new CustomerSearchRequest()
             {
                 FirstName=txtCustomer.Text,
-                LastName=txtCustomer.Text,
             };
 
             var result =await _apiService.Get<List<CustomerRequest>>(search);
             dgvAllCustomers.DataSource = result;
         }
 
+        private void dgvAllCustomers_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            var id = dgvAllCustomers.SelectedRows[0].Cells[0].Value;
+            frmCustomerDetails frm = new frmCustomerDetails(int.Parse(id.ToString()));
+            frm.Show();
+
+        }
+
+        private void dgvAllCustomers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

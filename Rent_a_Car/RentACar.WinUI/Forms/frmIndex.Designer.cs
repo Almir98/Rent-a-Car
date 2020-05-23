@@ -31,14 +31,15 @@
             this.components = new System.ComponentModel.Container();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.korisniciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pregledKorisnikaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vozilaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rezervacijeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dojmoviToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.dojmoviToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pregledKorisnikaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pregledVozilaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -66,8 +67,17 @@
             this.korisniciToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
             this.korisniciToolStripMenuItem.Text = "Korisnici";
             // 
+            // pregledKorisnikaToolStripMenuItem
+            // 
+            this.pregledKorisnikaToolStripMenuItem.Name = "pregledKorisnikaToolStripMenuItem";
+            this.pregledKorisnikaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.pregledKorisnikaToolStripMenuItem.Text = "Pregled korisnika";
+            this.pregledKorisnikaToolStripMenuItem.Click += new System.EventHandler(this.pregledKorisnikaToolStripMenuItem_Click);
+            // 
             // vozilaToolStripMenuItem
             // 
+            this.vozilaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pregledVozilaToolStripMenuItem});
             this.vozilaToolStripMenuItem.Name = "vozilaToolStripMenuItem";
             this.vozilaToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
             this.vozilaToolStripMenuItem.Text = "Vozila";
@@ -77,6 +87,18 @@
             this.rezervacijeToolStripMenuItem.Name = "rezervacijeToolStripMenuItem";
             this.rezervacijeToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
             this.rezervacijeToolStripMenuItem.Text = "Rezervacije";
+            // 
+            // dojmoviToolStripMenuItem
+            // 
+            this.dojmoviToolStripMenuItem.Name = "dojmoviToolStripMenuItem";
+            this.dojmoviToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
+            this.dojmoviToolStripMenuItem.Text = "Dojmovi";
+            // 
+            // logOutToolStripMenuItem
+            // 
+            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
+            this.logOutToolStripMenuItem.Text = "Log out";
             // 
             // statusStrip
             // 
@@ -96,24 +118,12 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(49, 20);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // dojmoviToolStripMenuItem
+            // pregledVozilaToolStripMenuItem
             // 
-            this.dojmoviToolStripMenuItem.Name = "dojmoviToolStripMenuItem";
-            this.dojmoviToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
-            this.dojmoviToolStripMenuItem.Text = "Dojmovi";
-            // 
-            // logOutToolStripMenuItem
-            // 
-            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
-            this.logOutToolStripMenuItem.Text = "Log out";
-            // 
-            // pregledKorisnikaToolStripMenuItem
-            // 
-            this.pregledKorisnikaToolStripMenuItem.Name = "pregledKorisnikaToolStripMenuItem";
-            this.pregledKorisnikaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.pregledKorisnikaToolStripMenuItem.Text = "Pregled korisnika";
-            this.pregledKorisnikaToolStripMenuItem.Click += new System.EventHandler(this.pregledKorisnikaToolStripMenuItem_Click);
+            this.pregledVozilaToolStripMenuItem.Name = "pregledVozilaToolStripMenuItem";
+            this.pregledVozilaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.pregledVozilaToolStripMenuItem.Text = "Pregled vozila";
+            this.pregledVozilaToolStripMenuItem.Click += new System.EventHandler(this.pregledVozilaToolStripMenuItem_Click);
             // 
             // frmIndex
             // 
@@ -149,6 +159,7 @@
         private System.Windows.Forms.ToolStripMenuItem pregledKorisnikaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dojmoviToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pregledVozilaToolStripMenuItem;
     }
 }
 

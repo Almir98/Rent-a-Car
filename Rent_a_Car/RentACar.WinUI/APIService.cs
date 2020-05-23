@@ -31,8 +31,12 @@ namespace RentACar.WinUI
             return result;
         }
 
+        public async Task<T> GetById<T>(object id)
+        {
+            var url = $"{Properties.Settings.Default.APIUrl}/{_route}/{id}";
 
-
+            return await url.GetJsonAsync<T>();
+        }
 
 
     }

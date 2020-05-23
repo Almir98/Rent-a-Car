@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RentACar.WinUI.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -98,6 +99,13 @@ namespace RentACar.WinUI
         private void pregledKorisnikaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmAllCustomers frm = new frmAllCustomers();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void pregledVozilaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmViewAllVehicles frm = new frmViewAllVehicles();
             frm.MdiParent = this;
             frm.Show();
         }
