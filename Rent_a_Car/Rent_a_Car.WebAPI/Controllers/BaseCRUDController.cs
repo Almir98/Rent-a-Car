@@ -11,7 +11,6 @@ using RentACar.WebAPI.Interface;
 
 namespace RentACar.WebAPI.Controllers
 {
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class BaseCRUDController<TModel, Tsearch,TInsert,TUpdate> : BaseController<TModel, Tsearch>
@@ -22,7 +21,6 @@ namespace RentACar.WebAPI.Controllers
         {
             _service = service;
         }
-
 
         [HttpPost]
         public TModel Insert(TInsert request)

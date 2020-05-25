@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RentACar.WinUI.Forms;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -14,7 +15,7 @@ namespace RentACar.WinUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmIndex());
+            Application.Run(new frmLogin());
         }
     }
 }

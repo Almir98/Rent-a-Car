@@ -9,6 +9,7 @@ using Rent_a_Car.WebAPI.Interface;
 
 namespace Rent_a_Car.WebAPI.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class BaseController<TModel, Tsearch> : Controller

@@ -63,7 +63,10 @@ namespace RentACar.WebAPI.Security
                 new Claim(ClaimTypes.Name, user.FirstName),
             };
 
-            //claims.Add(new Claim(ClaimTypes.Role, user.UserType.Type));
+            foreach (var role in user.CustomerRoles)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, role.Role.RoleName));
+            }
 
             var identity = new ClaimsIdentity(claims, Scheme.Name);
             var principal = new ClaimsPrincipal(identity);

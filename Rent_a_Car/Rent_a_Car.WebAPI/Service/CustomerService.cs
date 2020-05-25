@@ -76,6 +76,16 @@ namespace RentACar.WebAPI.Service
             _context.Add(entity);
             _context.SaveChanges();
 
+            foreach (var item in request.Role)
+            {
+                CustomerRoles customerRoles = new CustomerRoles();
+
+                customerRoles.CustomerId = entity.CustomerId;
+                customerRoles.RoleId = item;
+                _context.CustomerRoles.Add(customerRoles);
+            }
+            _context.SaveChanges();
+
             return _mapper.Map<CustomerRequest>(entity);
         }
 
@@ -94,7 +104,7 @@ namespace RentACar.WebAPI.Service
 
         public Customer Authenticate(CustomerLoginRequest request)
         {
-            var customer = _context.Customer.Include(x=>x.CustomerRoles).FirstOrDefault(x => x.Username == request.Username);
+            var customer = _context.Customer.Include("CustomerRoles.Role").FirstOrDefault(x => x.Username == request.Username);
 
             if(customer != null)
             {
@@ -106,6 +116,11 @@ namespace RentACar.WebAPI.Service
                 }
             }
             return null;
+        }
+
+        public CustomerRequest GetById(int id)
+        {
+            return _mapper.Map<CustomerRequest>(_context.Customer.Find(id));
         }
     }
 }

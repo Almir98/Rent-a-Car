@@ -22,12 +22,14 @@ namespace RentACar.WebAPI.Controllers
             _service = service;
         }
 
+        [Authorize(Roles ="Administrator")]
         [HttpGet]
         public ActionResult<List<CustomerRequest>> Get([FromQuery]CustomerSearchRequest request)
         {
             return _service.Get(request);
         }
 
+        //[Authorize(Roles = "Administrator")]      // ispravit !!!!
         [HttpPost]
         public ActionResult<CustomerRequest> Insert(CustomerUpsert request)
         {

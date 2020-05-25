@@ -12,6 +12,10 @@ namespace RentACar.WinUI
     public class APIService
     {
         private string _route = null;
+
+        public static string Username { get; set; }
+        public static string Password { get; set; }
+
         public APIService(string route)
         {
             _route = route;
@@ -26,7 +30,7 @@ namespace RentACar.WinUI
                 url += "?";
                 url += await search.ToQueryString();
             }
-            var result = await url.GetJsonAsync<T>();
+            var result = await url.WithBasicAuth(Username,Password).GetJsonAsync<T>();
 
             return result;
         }
@@ -35,7 +39,7 @@ namespace RentACar.WinUI
         {
             var url = $"{Properties.Settings.Default.APIUrl}/{_route}/{id}";
 
-            return await url.GetJsonAsync<T>();
+            return await url.WithBasicAuth(Username, Password).GetJsonAsync<T>();
         }
 
 
