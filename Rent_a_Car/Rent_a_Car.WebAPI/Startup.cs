@@ -82,13 +82,13 @@ namespace Rent_a_Car.WebAPI
 
             services.AddScoped<ICRUDService<CityRequest, CitySearchRequest,CityUpsert,CityUpsert>,CityService>();
             services.AddScoped<ICRUDService<BranchRequest,BranchSearchRequest,BranchUpsert,BranchUpsert> , BranchService>();
-            services.AddScoped<ICRUDService<CustomerRequest, CustomerSearchRequest, CustomerUpsert, CustomerUpsert>, CustomerService>();
             services.AddScoped<ICRUDService<VehicleRequest, VehicleSearchRequest, VehicleUpsert, VehicleUpsert>, VehicleService>();
             services.AddScoped<ICRUDService<BookingRequest, BookingSearchRequest, BookingUpsert, BookingUpsert>,BookingService>();
             services.AddScoped<ICRUDService<CommentRequest,CommentSearchRequest,CommentUpsert,CommentUpsert>,CommentService>();
-
             services.AddScoped<ICRUDService<RatingRequest,RatingSearchRequest,RatingUpsert,RatingUpsert >, RatingService > ();
 
+            services.AddScoped<ICustomerService,CustomerService>();
+            
             #endregion
         }
 

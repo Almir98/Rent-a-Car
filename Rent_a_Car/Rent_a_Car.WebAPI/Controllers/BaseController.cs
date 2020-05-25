@@ -19,7 +19,6 @@ namespace Rent_a_Car.WebAPI.Controllers
             _service = service;
         }
 
-
         [HttpGet]
         public List<TModel> Get([FromQuery]Tsearch search)
         {
