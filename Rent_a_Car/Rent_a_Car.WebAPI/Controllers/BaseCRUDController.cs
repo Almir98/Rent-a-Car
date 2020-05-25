@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Rent_a_Car.WebAPI.Controllers;
@@ -10,6 +11,7 @@ using RentACar.WebAPI.Interface;
 
 namespace RentACar.WebAPI.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class BaseCRUDController<TModel, Tsearch,TInsert,TUpdate> : BaseController<TModel, Tsearch>

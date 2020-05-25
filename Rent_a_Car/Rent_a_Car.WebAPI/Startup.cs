@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +27,7 @@ using RentaCar.Data.Requests.Customer;
 using RentaCar.Data.Requests.Rating;
 using RentaCar.Data.Requests.Vehicle;
 using RentACar.WebAPI.Interface;
+using RentACar.WebAPI.Security;
 using RentACar.WebAPI.Service;
 
 namespace Rent_a_Car.WebAPI
@@ -47,36 +49,41 @@ namespace Rent_a_Car.WebAPI
 
             services.AddDbContext<RentaCarContext>(c => c.UseSqlServer(Configuration.GetConnectionString("RentaCarCS")));       // Connection string
 
+
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "eProdaja API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "RentACar API", Version = "v1" });
 
-                //c.AddSecurityDefinition("basic", new OpenApiSecurityScheme
-                //{
-                //    Name = "Authorization",
-                //    Type = SecuritySchemeType.Http,
-                //    Scheme = "basic",
-                //    In = ParameterLocation.Header,
-                //    Description = "Basic Authorization header using the Bearer scheme."
-                //});
+                c.AddSecurityDefinition("basic", new OpenApiSecurityScheme
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.Http,
+                    Scheme = "basic",
+                    In = ParameterLocation.Header,
+                    Description = "Basic Authorization header using the Bearer scheme."
+                });
 
-                //c.AddSecurityRequirement(new OpenApiSecurityRequirement
-                //{
-                //    {
-                //        new OpenApiSecurityScheme
-                //        {
-                //            Reference = new OpenApiReference
-                //            {
-                //                Type = ReferenceType.SecurityScheme,
-                //                Id = "basic"
-                //            }
-                //        },
-                //        new string[] {}
-                //    }
-                //});
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "basic"
+                            }
+                        },
+                        new string[] {}
+                    }
+                });
             });
 
-            services.AddAutoMapper(typeof(Startup));                //Automapper
+            services.AddAuthentication("BasicAuthentication")
+               .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
+
+
+            services.AddAutoMapper(typeof(Startup));                //Automapper configuration
 
             #region Dependency injection
 

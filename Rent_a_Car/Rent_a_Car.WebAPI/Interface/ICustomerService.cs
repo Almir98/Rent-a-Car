@@ -1,4 +1,5 @@
-﻿using RentaCar.Data.Requests.Customer;
+﻿using Rent_a_Car.WebAPI.Database;
+using RentaCar.Data.Requests.Customer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,7 @@ namespace RentACar.WebAPI.Interface
         List<CustomerRequest> Get(CustomerSearchRequest request);
         CustomerRequest Insert(CustomerUpsert request);
         CustomerRequest Update(int id,CustomerUpsert request);
+        
+        Customer Authenticate(CustomerLoginRequest request);
     }
 }

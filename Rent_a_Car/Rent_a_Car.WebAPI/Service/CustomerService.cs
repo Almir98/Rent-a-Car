@@ -48,7 +48,6 @@ namespace RentACar.WebAPI.Service
             (new RNGCryptoServiceProvider()).GetBytes(buffer);
             return Convert.ToBase64String(buffer);
         }
-
         private static string GenerateHash(string salt, string password)      
         {
             byte[] src = Convert.FromBase64String(salt);
@@ -91,6 +90,22 @@ namespace RentACar.WebAPI.Service
             _context.SaveChanges();
 
             return _mapper.Map<CustomerRequest>(entity);
+        }
+
+        public Customer Authenticate(CustomerLoginRequest request)
+        {
+            var customer = _context.Customer.Include(x=>x.CustomerRoles).FirstOrDefault(x => x.Username == request.Username);
+
+            if(customer != null)
+            {
+                var newHash = GenerateHash(customer.PasswordSalt, request.Password);
+
+                if(customer.PasswordHash==newHash)
+                {
+                    return _mapper.Map<Customer>(customer);
+                }
+            }
+            return null;
         }
     }
 }
