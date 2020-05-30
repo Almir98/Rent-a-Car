@@ -29,6 +29,7 @@ namespace RentACar.WinUI.Forms
             cmbFuelType.DisplayMember = "Type";
 
             cmbFuelType.DataSource = list;
+
         }
 
         private void frmAddVehicle_Load(object sender, EventArgs e)
