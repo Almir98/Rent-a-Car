@@ -109,5 +109,12 @@ namespace RentACar.WinUI
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void novoVoziloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddVehicle form = new frmAddVehicle();
+            form.MdiParent = this;
+            form.Show();
+        }
     }
 }

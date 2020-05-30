@@ -33,13 +33,14 @@
             this.korisniciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pregledKorisnikaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vozilaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pregledVozilaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rezervacijeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dojmoviToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.pregledVozilaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.novoVoziloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -70,17 +71,25 @@
             // pregledKorisnikaToolStripMenuItem
             // 
             this.pregledKorisnikaToolStripMenuItem.Name = "pregledKorisnikaToolStripMenuItem";
-            this.pregledKorisnikaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.pregledKorisnikaToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
             this.pregledKorisnikaToolStripMenuItem.Text = "Pregled korisnika";
             this.pregledKorisnikaToolStripMenuItem.Click += new System.EventHandler(this.pregledKorisnikaToolStripMenuItem_Click);
             // 
             // vozilaToolStripMenuItem
             // 
             this.vozilaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pregledVozilaToolStripMenuItem});
+            this.pregledVozilaToolStripMenuItem,
+            this.novoVoziloToolStripMenuItem});
             this.vozilaToolStripMenuItem.Name = "vozilaToolStripMenuItem";
             this.vozilaToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
             this.vozilaToolStripMenuItem.Text = "Vozila";
+            // 
+            // pregledVozilaToolStripMenuItem
+            // 
+            this.pregledVozilaToolStripMenuItem.Name = "pregledVozilaToolStripMenuItem";
+            this.pregledVozilaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.pregledVozilaToolStripMenuItem.Text = "Pregled vozila";
+            this.pregledVozilaToolStripMenuItem.Click += new System.EventHandler(this.pregledVozilaToolStripMenuItem_Click);
             // 
             // rezervacijeToolStripMenuItem
             // 
@@ -118,12 +127,12 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(49, 20);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // pregledVozilaToolStripMenuItem
+            // novoVoziloToolStripMenuItem
             // 
-            this.pregledVozilaToolStripMenuItem.Name = "pregledVozilaToolStripMenuItem";
-            this.pregledVozilaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.pregledVozilaToolStripMenuItem.Text = "Pregled vozila";
-            this.pregledVozilaToolStripMenuItem.Click += new System.EventHandler(this.pregledVozilaToolStripMenuItem_Click);
+            this.novoVoziloToolStripMenuItem.Name = "novoVoziloToolStripMenuItem";
+            this.novoVoziloToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.novoVoziloToolStripMenuItem.Text = "Novo vozilo";
+            this.novoVoziloToolStripMenuItem.Click += new System.EventHandler(this.novoVoziloToolStripMenuItem_Click);
             // 
             // frmIndex
             // 
@@ -160,6 +169,7 @@
         private System.Windows.Forms.ToolStripMenuItem dojmoviToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pregledVozilaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem novoVoziloToolStripMenuItem;
     }
 }
 

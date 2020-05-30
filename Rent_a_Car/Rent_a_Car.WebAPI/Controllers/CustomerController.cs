@@ -29,6 +29,12 @@ namespace RentACar.WebAPI.Controllers
             return _service.Get(request);
         }
 
+        [HttpGet("{id}")]
+        public ActionResult<CustomerRequest> GetById(int id)
+        {
+            return _service.GetById(id);
+        }
+
         //[Authorize(Roles = "Administrator")]      // ispravit !!!!
         [HttpPost]
         public ActionResult<CustomerRequest> Insert(CustomerUpsert request)

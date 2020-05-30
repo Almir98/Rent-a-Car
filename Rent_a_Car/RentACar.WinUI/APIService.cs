@@ -21,7 +21,7 @@ namespace RentACar.WinUI
             _route = route;
         }
 
-        public async Task<T> Get<T>(object search)
+        public async Task<T> Get<T>(object search=null)
         {
             var url = $"{Properties.Settings.Default.APIUrl}/{_route}";
 
@@ -42,6 +42,20 @@ namespace RentACar.WinUI
             return await url.WithBasicAuth(Username, Password).GetJsonAsync<T>();
         }
 
+        //Insert and update
 
+        public async Task<T> Insert<T>(object request)
+        {
+            var url = $"{Properties.Settings.Default.APIUrl}/{_route}";
+
+            return await url.PostJsonAsync(request).ReceiveJson<T>();
+        }
+
+        public async Task<T> Update<T>(object id,object request)
+        {
+            var url = $"{Properties.Settings.Default.APIUrl}/{_route}/{id}";
+
+            return await url.PutJsonAsync(request).ReceiveJson<T>();
+        }
     }
 }

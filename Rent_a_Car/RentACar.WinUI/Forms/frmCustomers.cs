@@ -31,6 +31,7 @@ namespace RentACar.WinUI
             };
 
             var result =await _apiService.Get<List<CustomerRequest>>(search);
+            dgvAllCustomers.AutoGenerateColumns = false;
             dgvAllCustomers.DataSource = result;
         }
 
@@ -39,7 +40,6 @@ namespace RentACar.WinUI
             var id = dgvAllCustomers.SelectedRows[0].Cells[0].Value;
             frmCustomerDetails frm = new frmCustomerDetails(int.Parse(id.ToString()));
             frm.Show();
-
         }
 
         private void dgvAllCustomers_CellContentClick(object sender, DataGridViewCellEventArgs e)

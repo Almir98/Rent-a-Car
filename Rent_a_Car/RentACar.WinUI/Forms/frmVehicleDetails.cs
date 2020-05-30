@@ -28,11 +28,17 @@ namespace RentACar.WinUI.Forms
             {
                 var vehicle = await _apiservice.GetById<VehicleRequest>(_id);
 
-                //txt polja
-
-
+                txtRegistracija.Text = vehicle.RegistrationNumber;
+                txtVehicleNumber.Text = vehicle.VehicleNumber.ToString();
+                txtDailyPrice.Text = vehicle.DailyPrice.ToString();
+                txtDescription.Text = vehicle.Description;
+                txtDate.Text = vehicle.ManufacturerDate.ToString();
+                txtTransmission.Text = vehicle.Transmission;
+                txtNumberOfSeats.Text = vehicle.NumberOfSeats.ToString();
+                chkStatus.Checked = vehicle.Status.Value;
             }
 
         }
+
     }
 }

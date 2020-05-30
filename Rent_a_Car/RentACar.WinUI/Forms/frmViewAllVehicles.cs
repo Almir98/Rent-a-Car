@@ -31,6 +31,7 @@ namespace RentACar.WinUI.Forms
             };
 
             var result = await _service.Get<List<VehicleRequest>>(search);
+            dgvVehicles.AutoGenerateColumns = false;
             dgvVehicles.DataSource = result;
         }
 

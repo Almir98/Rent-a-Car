@@ -29,16 +29,14 @@
         private void InitializeComponent()
         {
             this.dgvAllCustomers = new System.Windows.Forms.DataGridView();
-            this.txtCustomer = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.CustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CityID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtCustomer = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllCustomers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,45 +48,16 @@
             this.FirstName,
             this.LastName,
             this.Phone,
-            this.Email,
-            this.Username,
-            this.CityID});
-            this.dgvAllCustomers.Location = new System.Drawing.Point(25, 145);
+            this.Email});
+            this.dgvAllCustomers.Location = new System.Drawing.Point(114, 146);
             this.dgvAllCustomers.Name = "dgvAllCustomers";
             this.dgvAllCustomers.RowHeadersWidth = 51;
             this.dgvAllCustomers.RowTemplate.Height = 24;
             this.dgvAllCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAllCustomers.Size = new System.Drawing.Size(892, 390);
+            this.dgvAllCustomers.Size = new System.Drawing.Size(556, 392);
             this.dgvAllCustomers.TabIndex = 0;
             this.dgvAllCustomers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAllCustomers_CellContentClick);
             this.dgvAllCustomers.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvAllCustomers_MouseDoubleClick);
-            // 
-            // txtCustomer
-            // 
-            this.txtCustomer.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtCustomer.Location = new System.Drawing.Point(252, 80);
-            this.txtCustomer.Name = "txtCustomer";
-            this.txtCustomer.Size = new System.Drawing.Size(286, 22);
-            this.txtCustomer.TabIndex = 1;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(613, 72);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(113, 41);
-            this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "Pretraži";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(256, 46);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(282, 17);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Unesite ime ili prezime za pretragu klijenata";
             // 
             // CustomerID
             // 
@@ -132,21 +101,32 @@
             this.Email.Name = "Email";
             this.Email.Width = 125;
             // 
-            // Username
+            // txtCustomer
             // 
-            this.Username.DataPropertyName = "Username";
-            this.Username.HeaderText = "Korisničko ime";
-            this.Username.MinimumWidth = 6;
-            this.Username.Name = "Username";
-            this.Username.Width = 125;
+            this.txtCustomer.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.txtCustomer.Location = new System.Drawing.Point(252, 80);
+            this.txtCustomer.Name = "txtCustomer";
+            this.txtCustomer.Size = new System.Drawing.Size(286, 22);
+            this.txtCustomer.TabIndex = 1;
             // 
-            // CityID
+            // btnSearch
             // 
-            this.CityID.DataPropertyName = "CityId";
-            this.CityID.HeaderText = "Grad";
-            this.CityID.MinimumWidth = 6;
-            this.CityID.Name = "CityID";
-            this.CityID.Width = 125;
+            this.btnSearch.Location = new System.Drawing.Point(613, 72);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(113, 41);
+            this.btnSearch.TabIndex = 2;
+            this.btnSearch.Text = "Pretraži";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(256, 46);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(282, 17);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Unesite ime ili prezime za pretragu klijenata";
             // 
             // frmAllCustomers
             // 
@@ -177,7 +157,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Username;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CityID;
     }
 }

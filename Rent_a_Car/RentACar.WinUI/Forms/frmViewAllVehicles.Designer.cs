@@ -35,12 +35,7 @@
             this.VehicleId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VehicleNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RegistrationNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DailyPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ManufacturerDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mileage = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Transmission = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumberOfSeats = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehicles)).BeginInit();
             this.SuspendLayout();
@@ -78,12 +73,7 @@
             this.VehicleId,
             this.VehicleNumber,
             this.RegistrationNumber,
-            this.DailyPrice,
-            this.Description,
-            this.ManufacturerDate,
             this.Mileage,
-            this.Transmission,
-            this.NumberOfSeats,
             this.Status});
             this.dgvVehicles.Location = new System.Drawing.Point(35, 156);
             this.dgvVehicles.Margin = new System.Windows.Forms.Padding(10, 10, 3, 3);
@@ -91,7 +81,7 @@
             this.dgvVehicles.RowHeadersWidth = 51;
             this.dgvVehicles.RowTemplate.Height = 24;
             this.dgvVehicles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVehicles.Size = new System.Drawing.Size(1162, 539);
+            this.dgvVehicles.Size = new System.Drawing.Size(565, 539);
             this.dgvVehicles.TabIndex = 3;
             this.dgvVehicles.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvVehicles_MouseDoubleClick);
             // 
@@ -122,33 +112,6 @@
             this.RegistrationNumber.ReadOnly = true;
             this.RegistrationNumber.Width = 125;
             // 
-            // DailyPrice
-            // 
-            this.DailyPrice.DataPropertyName = "DailyPrice";
-            this.DailyPrice.HeaderText = "Cijena po danu";
-            this.DailyPrice.MinimumWidth = 6;
-            this.DailyPrice.Name = "DailyPrice";
-            this.DailyPrice.ReadOnly = true;
-            this.DailyPrice.Width = 125;
-            // 
-            // Description
-            // 
-            this.Description.DataPropertyName = "Description";
-            this.Description.HeaderText = "Opis";
-            this.Description.MinimumWidth = 6;
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
-            this.Description.Width = 125;
-            // 
-            // ManufacturerDate
-            // 
-            this.ManufacturerDate.DataPropertyName = "ManufacturerDate";
-            this.ManufacturerDate.HeaderText = "Datum proizvodnje";
-            this.ManufacturerDate.MinimumWidth = 6;
-            this.ManufacturerDate.Name = "ManufacturerDate";
-            this.ManufacturerDate.ReadOnly = true;
-            this.ManufacturerDate.Width = 125;
-            // 
             // Mileage
             // 
             this.Mileage.DataPropertyName = "Mileage";
@@ -157,24 +120,6 @@
             this.Mileage.Name = "Mileage";
             this.Mileage.ReadOnly = true;
             this.Mileage.Width = 125;
-            // 
-            // Transmission
-            // 
-            this.Transmission.DataPropertyName = "Transmission";
-            this.Transmission.HeaderText = "Transmisija";
-            this.Transmission.MinimumWidth = 6;
-            this.Transmission.Name = "Transmission";
-            this.Transmission.ReadOnly = true;
-            this.Transmission.Width = 125;
-            // 
-            // NumberOfSeats
-            // 
-            this.NumberOfSeats.DataPropertyName = "NumberOfSeats";
-            this.NumberOfSeats.HeaderText = "Broj sjedećih mjesta";
-            this.NumberOfSeats.MinimumWidth = 6;
-            this.NumberOfSeats.Name = "NumberOfSeats";
-            this.NumberOfSeats.ReadOnly = true;
-            this.NumberOfSeats.Width = 125;
             // 
             // Status
             // 
@@ -212,12 +157,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn VehicleId;
         private System.Windows.Forms.DataGridViewTextBoxColumn VehicleNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn RegistrationNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DailyPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ManufacturerDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Mileage;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Transmission;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumberOfSeats;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Status;
     }
 }

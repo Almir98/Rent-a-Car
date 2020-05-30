@@ -30,6 +30,7 @@ namespace RentACar.WinUI.Forms
 
                 frmIndex frm = new frmIndex();
                 frm.Show();
+                this.Hide();
 
             }
             catch(Exception err)
