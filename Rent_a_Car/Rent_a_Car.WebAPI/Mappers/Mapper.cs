@@ -6,8 +6,12 @@ using RentaCar.Data.Requests.Branch;
 using RentaCar.Data.Requests.City;
 using RentaCar.Data.Requests.Comments;
 using RentaCar.Data.Requests.Customer;
+using RentaCar.Data.Requests.Fuel_type;
+using RentaCar.Data.Requests.Manufacturer;
 using RentaCar.Data.Requests.Rating;
 using RentaCar.Data.Requests.Vehicle;
+using RentaCar.Data.Requests.VehicleModel;
+using RentaCar.Data.Requests.VehicleType;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,6 +45,14 @@ namespace Rent_a_Car.WebAPI.Mappers
 
             CreateMap<Rating, RatingUpsert>().ReverseMap();
             CreateMap<Rating, RatingRequest>().ReverseMap();
+
+            CreateMap<FuelTypeRequest, FuelType>().ReverseMap();
+
+            CreateMap<VehicleTypeRequest, VehicleType>().ReverseMap();
+
+            CreateMap<ManufacturerRequest, Manufacturer>().ReverseMap();
+
+            CreateMap<VehicleModelRequest, VehicleModel>().ReverseMap();
 
 
         }

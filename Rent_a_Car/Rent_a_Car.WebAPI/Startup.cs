@@ -24,8 +24,12 @@ using RentaCar.Data.Requests.Branch;
 using RentaCar.Data.Requests.City;
 using RentaCar.Data.Requests.Comments;
 using RentaCar.Data.Requests.Customer;
+using RentaCar.Data.Requests.Fuel_type;
+using RentaCar.Data.Requests.Manufacturer;
 using RentaCar.Data.Requests.Rating;
 using RentaCar.Data.Requests.Vehicle;
+using RentaCar.Data.Requests.VehicleModel;
+using RentaCar.Data.Requests.VehicleType;
 using RentACar.WebAPI.Interface;
 using RentACar.WebAPI.Security;
 using RentACar.WebAPI.Service;
@@ -86,6 +90,12 @@ namespace Rent_a_Car.WebAPI
             services.AddAutoMapper(typeof(Startup));                //Automapper configuration
 
             #region Dependency injection
+
+            services.AddScoped<IService<FuelTypeRequest,object>,BaseService<FuelTypeRequest, object, FuelType>>();
+            services.AddScoped<IService<VehicleTypeRequest, object>, BaseService<VehicleTypeRequest, object, VehicleType>>();
+            services.AddScoped<IService<ManufacturerRequest, object>, BaseService<ManufacturerRequest, object, Manufacturer>>();
+            services.AddScoped<IService<VehicleModelRequest, VehicleModelSearch>, VehicleModelService>();
+
 
             services.AddScoped<ICRUDService<CityRequest, CitySearchRequest,CityUpsert,CityUpsert>,CityService>();
             services.AddScoped<ICRUDService<BranchRequest,BranchSearchRequest,BranchUpsert,BranchUpsert> , BranchService>();

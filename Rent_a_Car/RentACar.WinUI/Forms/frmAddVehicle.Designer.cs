@@ -29,27 +29,33 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtRegistrationNumber = new System.Windows.Forms.TextBox();
+            this.txtVehicleNumber = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtDailyPrice = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtDate = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtMileage = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtTransmission = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtNumberOfSeats = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.cmbFuelType = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.checkStatus = new System.Windows.Forms.CheckBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.chkStatus = new System.Windows.Forms.CheckBox();
+            this.btnSacuvaj = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cmbVehicleModel = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cmbVehicleType = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cmbBranch = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cmbManufacturer = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -61,19 +67,19 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Registracijski broj";
             // 
-            // textBox1
+            // txtRegistrationNumber
             // 
-            this.textBox1.Location = new System.Drawing.Point(56, 107);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(259, 22);
-            this.textBox1.TabIndex = 1;
+            this.txtRegistrationNumber.Location = new System.Drawing.Point(56, 107);
+            this.txtRegistrationNumber.Name = "txtRegistrationNumber";
+            this.txtRegistrationNumber.Size = new System.Drawing.Size(259, 22);
+            this.txtRegistrationNumber.TabIndex = 1;
             // 
-            // textBox2
+            // txtVehicleNumber
             // 
-            this.textBox2.Location = new System.Drawing.Point(56, 172);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(259, 22);
-            this.textBox2.TabIndex = 3;
+            this.txtVehicleNumber.Location = new System.Drawing.Point(56, 172);
+            this.txtVehicleNumber.Name = "txtVehicleNumber";
+            this.txtVehicleNumber.Size = new System.Drawing.Size(259, 22);
+            this.txtVehicleNumber.TabIndex = 3;
             // 
             // label2
             // 
@@ -84,12 +90,12 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Broj vozila";
             // 
-            // textBox3
+            // txtDailyPrice
             // 
-            this.textBox3.Location = new System.Drawing.Point(56, 239);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(259, 22);
-            this.textBox3.TabIndex = 5;
+            this.txtDailyPrice.Location = new System.Drawing.Point(56, 239);
+            this.txtDailyPrice.Name = "txtDailyPrice";
+            this.txtDailyPrice.Size = new System.Drawing.Size(259, 22);
+            this.txtDailyPrice.TabIndex = 5;
             // 
             // label3
             // 
@@ -109,12 +115,12 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Opis";
             // 
-            // textBox5
+            // txtDate
             // 
-            this.textBox5.Location = new System.Drawing.Point(56, 366);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(259, 22);
-            this.textBox5.TabIndex = 9;
+            this.txtDate.Location = new System.Drawing.Point(56, 366);
+            this.txtDate.Name = "txtDate";
+            this.txtDate.Size = new System.Drawing.Size(259, 22);
+            this.txtDate.TabIndex = 9;
             // 
             // label5
             // 
@@ -125,12 +131,12 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Datum proizvodnje";
             // 
-            // textBox6
+            // txtMileage
             // 
-            this.textBox6.Location = new System.Drawing.Point(528, 122);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(259, 22);
-            this.textBox6.TabIndex = 11;
+            this.txtMileage.Location = new System.Drawing.Point(528, 122);
+            this.txtMileage.Name = "txtMileage";
+            this.txtMileage.Size = new System.Drawing.Size(259, 22);
+            this.txtMileage.TabIndex = 11;
             // 
             // label6
             // 
@@ -141,12 +147,12 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Kilometraža";
             // 
-            // textBox7
+            // txtTransmission
             // 
-            this.textBox7.Location = new System.Drawing.Point(528, 186);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(259, 22);
-            this.textBox7.TabIndex = 13;
+            this.txtTransmission.Location = new System.Drawing.Point(528, 186);
+            this.txtTransmission.Name = "txtTransmission";
+            this.txtTransmission.Size = new System.Drawing.Size(259, 22);
+            this.txtTransmission.TabIndex = 13;
             // 
             // label7
             // 
@@ -157,12 +163,12 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Transmisija";
             // 
-            // textBox8
+            // txtNumberOfSeats
             // 
-            this.textBox8.Location = new System.Drawing.Point(528, 252);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(259, 22);
-            this.textBox8.TabIndex = 15;
+            this.txtNumberOfSeats.Location = new System.Drawing.Point(528, 252);
+            this.txtNumberOfSeats.Name = "txtNumberOfSeats";
+            this.txtNumberOfSeats.Size = new System.Drawing.Size(259, 22);
+            this.txtNumberOfSeats.TabIndex = 15;
             // 
             // label8
             // 
@@ -176,87 +182,148 @@
             // cmbFuelType
             // 
             this.cmbFuelType.FormattingEnabled = true;
-            this.cmbFuelType.Location = new System.Drawing.Point(528, 346);
+            this.cmbFuelType.Location = new System.Drawing.Point(528, 364);
             this.cmbFuelType.Name = "cmbFuelType";
             this.cmbFuelType.Size = new System.Drawing.Size(259, 24);
             this.cmbFuelType.TabIndex = 16;
             // 
-            // textBox4
+            // txtDescription
             // 
-            this.textBox4.Location = new System.Drawing.Point(56, 305);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(259, 22);
-            this.textBox4.TabIndex = 7;
+            this.txtDescription.Location = new System.Drawing.Point(56, 305);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(259, 22);
+            this.txtDescription.TabIndex = 7;
             // 
-            // checkStatus
+            // chkStatus
             // 
-            this.checkStatus.AutoSize = true;
-            this.checkStatus.Location = new System.Drawing.Point(528, 295);
-            this.checkStatus.Name = "checkStatus";
-            this.checkStatus.Size = new System.Drawing.Size(70, 21);
-            this.checkStatus.TabIndex = 17;
-            this.checkStatus.Text = "Status";
-            this.checkStatus.UseVisualStyleBackColor = true;
+            this.chkStatus.AutoSize = true;
+            this.chkStatus.Location = new System.Drawing.Point(528, 295);
+            this.chkStatus.Name = "chkStatus";
+            this.chkStatus.Size = new System.Drawing.Size(70, 21);
+            this.chkStatus.TabIndex = 17;
+            this.chkStatus.Text = "Status";
+            this.chkStatus.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // btnSacuvaj
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(817, 496);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
-            this.comboBox2.TabIndex = 18;
+            this.btnSacuvaj.Location = new System.Drawing.Point(908, 401);
+            this.btnSacuvaj.Name = "btnSacuvaj";
+            this.btnSacuvaj.Size = new System.Drawing.Size(114, 38);
+            this.btnSacuvaj.TabIndex = 21;
+            this.btnSacuvaj.Text = "Sačuvaj";
+            this.btnSacuvaj.UseVisualStyleBackColor = true;
+            this.btnSacuvaj.Click += new System.EventHandler(this.btnSacuvaj_Click);
             // 
-            // comboBox3
+            // label9
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(817, 575);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 24);
-            this.comboBox3.TabIndex = 19;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(525, 336);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(71, 17);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "Tip goriva";
             // 
-            // comboBox4
+            // label10
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(817, 532);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 24);
-            this.comboBox4.TabIndex = 20;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(525, 422);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(92, 17);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "VehicleModel";
             // 
-            // button1
+            // cmbVehicleModel
             // 
-            this.button1.Location = new System.Drawing.Point(604, 549);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.cmbVehicleModel.FormattingEnabled = true;
+            this.cmbVehicleModel.Location = new System.Drawing.Point(528, 450);
+            this.cmbVehicleModel.Name = "cmbVehicleModel";
+            this.cmbVehicleModel.Size = new System.Drawing.Size(259, 24);
+            this.cmbVehicleModel.TabIndex = 23;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(822, 131);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(68, 17);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "Tip vozila";
+            // 
+            // cmbVehicleType
+            // 
+            this.cmbVehicleType.FormattingEnabled = true;
+            this.cmbVehicleType.Location = new System.Drawing.Point(825, 159);
+            this.cmbVehicleType.Name = "cmbVehicleType";
+            this.cmbVehicleType.Size = new System.Drawing.Size(259, 24);
+            this.cmbVehicleType.TabIndex = 25;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(525, 509);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(76, 17);
+            this.label12.TabIndex = 28;
+            this.label12.Text = "Poslovnica";
+            // 
+            // cmbBranch
+            // 
+            this.cmbBranch.FormattingEnabled = true;
+            this.cmbBranch.Location = new System.Drawing.Point(528, 537);
+            this.cmbBranch.Name = "cmbBranch";
+            this.cmbBranch.Size = new System.Drawing.Size(259, 24);
+            this.cmbBranch.TabIndex = 27;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(822, 222);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(78, 17);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "Proizvođač";
+            // 
+            // cmbManufacturer
+            // 
+            this.cmbManufacturer.FormattingEnabled = true;
+            this.cmbManufacturer.Location = new System.Drawing.Point(825, 250);
+            this.cmbManufacturer.Name = "cmbManufacturer";
+            this.cmbManufacturer.Size = new System.Drawing.Size(259, 24);
+            this.cmbManufacturer.TabIndex = 29;
+            this.cmbManufacturer.SelectedIndexChanged += new System.EventHandler(this.cmbManufacturer_SelectedIndexChanged);
             // 
             // frmAddVehicle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(950, 621);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.checkStatus);
+            this.ClientSize = new System.Drawing.Size(1120, 751);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.cmbManufacturer);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.cmbBranch);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.cmbVehicleType);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.cmbVehicleModel);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.btnSacuvaj);
+            this.Controls.Add(this.chkStatus);
             this.Controls.Add(this.cmbFuelType);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.txtNumberOfSeats);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.txtTransmission);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtMileage);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtDate);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtDailyPrice);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtVehicleNumber);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtRegistrationNumber);
             this.Controls.Add(this.label1);
             this.Name = "frmAddVehicle";
             this.Text = "frmAddVehicle";
@@ -269,26 +336,32 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtRegistrationNumber;
+        private System.Windows.Forms.TextBox txtVehicleNumber;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtDailyPrice;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtDate;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtMileage;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtTransmission;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtNumberOfSeats;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cmbFuelType;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.CheckBox checkStatus;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.CheckBox chkStatus;
+        private System.Windows.Forms.Button btnSacuvaj;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cmbVehicleModel;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox cmbVehicleType;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox cmbBranch;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox cmbManufacturer;
     }
 }

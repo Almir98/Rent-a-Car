@@ -48,14 +48,14 @@ namespace RentACar.WinUI
         {
             var url = $"{Properties.Settings.Default.APIUrl}/{_route}";
 
-            return await url.PostJsonAsync(request).ReceiveJson<T>();
+            return await url.WithBasicAuth(Username,Password).PostJsonAsync(request).ReceiveJson<T>();
         }
 
         public async Task<T> Update<T>(object id,object request)
         {
             var url = $"{Properties.Settings.Default.APIUrl}/{_route}/{id}";
 
-            return await url.PutJsonAsync(request).ReceiveJson<T>();
+            return await url.WithBasicAuth(Username,Password).PutJsonAsync(request).ReceiveJson<T>();
         }
     }
 }
