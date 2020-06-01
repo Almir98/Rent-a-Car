@@ -35,7 +35,6 @@
             this.txtDailyPrice = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtDate = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtMileage = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -56,6 +55,7 @@
             this.cmbBranch = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.cmbManufacturer = new System.Windows.Forms.ComboBox();
+            this.dtDte = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -114,13 +114,6 @@
             this.label4.Size = new System.Drawing.Size(37, 17);
             this.label4.TabIndex = 6;
             this.label4.Text = "Opis";
-            // 
-            // txtDate
-            // 
-            this.txtDate.Location = new System.Drawing.Point(56, 366);
-            this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(259, 22);
-            this.txtDate.TabIndex = 9;
             // 
             // label5
             // 
@@ -292,11 +285,19 @@
             this.cmbManufacturer.TabIndex = 29;
             this.cmbManufacturer.SelectedIndexChanged += new System.EventHandler(this.cmbManufacturer_SelectedIndexChanged);
             // 
+            // dtDte
+            // 
+            this.dtDte.Location = new System.Drawing.Point(56, 390);
+            this.dtDte.Name = "dtDte";
+            this.dtDte.Size = new System.Drawing.Size(259, 22);
+            this.dtDte.TabIndex = 32;
+            // 
             // frmAddVehicle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1120, 751);
+            this.Controls.Add(this.dtDte);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.cmbManufacturer);
             this.Controls.Add(this.label12);
@@ -315,7 +316,6 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtMileage);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtDate);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.label4);
@@ -342,7 +342,6 @@
         private System.Windows.Forms.TextBox txtDailyPrice;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtDate;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtMileage;
         private System.Windows.Forms.Label label6;
@@ -363,5 +362,6 @@
         private System.Windows.Forms.ComboBox cmbBranch;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cmbManufacturer;
+        private System.Windows.Forms.DateTimePicker dtDte;
     }
 }

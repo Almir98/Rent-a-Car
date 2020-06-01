@@ -114,7 +114,7 @@ namespace RentACar.WinUI.Forms
                 VehicleNumber=int.Parse(txtVehicleNumber.Text),
                 DailyPrice=double.Parse(txtDailyPrice.Text),
                 Description=txtDescription.Text,
-                ManufacturerDate=DateTime.Parse(txtDate.Text),
+                ManufacturerDate=dtDte.Value,
                 Mileage=txtMileage.Text,
                 Transmission=txtTransmission.Text,
                 NumberOfSeats=int.Parse(txtNumberOfSeats.Text),
@@ -123,7 +123,7 @@ namespace RentACar.WinUI.Forms
 
             // ove foreign moraju se posebno parsat
             //branch
-            var idBranch = cmbBranch.SelectedItem;
+            var idBranch = cmbBranch.SelectedValue;
 
             if(int.TryParse(idBranch.ToString(),out int branchID))
             {
@@ -131,7 +131,7 @@ namespace RentACar.WinUI.Forms
             }
 
             //fueltype
-            var idFuel = cmbFuelType.SelectedItem;
+            var idFuel = cmbFuelType.SelectedValue;
 
             if(int.TryParse(idFuel.ToString(),out int fuelid))
             {
@@ -139,7 +139,7 @@ namespace RentACar.WinUI.Forms
             }
 
             // vehicletype
-            var idVehicleType = cmbVehicleType.SelectedItem;
+            var idVehicleType = cmbVehicleType.SelectedValue;
 
             if(int.TryParse(idVehicleType.ToString(),out int vehicletypeID))
             {
@@ -147,13 +147,13 @@ namespace RentACar.WinUI.Forms
             }
 
             //vehiclemodel
-            var idVehiclemodel = cmbVehicleType.SelectedItem;
+            var idVehiclemodel = cmbVehicleType.SelectedValue;
 
             if (int.TryParse(idVehiclemodel.ToString(), out int vehiclemodelID))
             {
                 vehicle.VehicleModelId = vehiclemodelID;
             }
-
+            
             await _serviceVehicle.Insert<VehicleRequest>(vehicle);
         }
     }
