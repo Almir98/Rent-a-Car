@@ -13,9 +13,9 @@ using RentACar.WebAPI.Interface;
 
 namespace Rent_a_Car.WebAPI.Controllers
 {
-    public class CityController : BaseCRUDController<CityRequest, CitySearchRequest, CityUpsert, CityUpsert>
+    public class CityController : BaseController<CityRequest, CitySearchRequest>
     {
-        public CityController(ICRUDService<CityRequest, CitySearchRequest, CityUpsert, CityUpsert> service) : base(service)
+        public CityController(IService<CityRequest, CitySearchRequest> service) : base(service)
         {
         }
     }

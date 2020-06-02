@@ -54,11 +54,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="APIService.cs" />
+    <Compile Include="Forms\frmAddBranch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddBranch.Designer.cs">
+      <DependentUpon>frmAddBranch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmAddVehicle.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmAddVehicle.Designer.cs">
       <DependentUpon>frmAddVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAllBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAllBooking.Designer.cs">
+      <DependentUpon>frmAllBooking.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmCustomerDetails.cs">
       <SubType>Form</SubType>
@@ -90,6 +102,12 @@
     <Compile Include="Forms\frmVehicleDetails.Designer.cs">
       <DependentUpon>frmVehicleDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmViewAllBranches.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmViewAllBranches.Designer.cs">
+      <DependentUpon>frmViewAllBranches.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmViewAllVehicles.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,8 +116,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\frmAddBranch.resx">
+      <DependentUpon>frmAddBranch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmAddVehicle.resx">
       <DependentUpon>frmAddVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAllBooking.resx">
+      <DependentUpon>frmAllBooking.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmCustomerDetails.resx">
       <DependentUpon>frmCustomerDetails.cs</DependentUpon>
@@ -115,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmVehicleDetails.resx">
       <DependentUpon>frmVehicleDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmViewAllBranches.resx">
+      <DependentUpon>frmViewAllBranches.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmViewAllVehicles.resx">
       <DependentUpon>frmViewAllVehicles.cs</DependentUpon>

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Rent_a_Car.WebAPI.Database;
+using Rent_a_Car.WebAPI.Service;
 using RentaCar.Data.Requests.City;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RentACar.WebAPI.Service
 {
-    public class CityService : BaseCRUDService<CityRequest, CitySearchRequest, City, CityUpsert, CityUpsert>
+    public class CityService : BaseService<CityRequest, CitySearchRequest, City>
     {
         public CityService(RentaCarContext context, IMapper mapper) : base(context, mapper)
         {
@@ -18,9 +19,9 @@ namespace RentACar.WebAPI.Service
         {
             var query = _context.Set<City>().AsQueryable();
 
-            if (!string.IsNullOrWhiteSpace(search.CityName) || !string.IsNullOrWhiteSpace(search.PostCode))
+            if (!string.IsNullOrWhiteSpace(search.CityName))
             {
-                query = query.Where(x => x.CityName.StartsWith(search.CityName) || x.PostCode.StartsWith(search.PostCode));
+                query = query.Where(x => x.CityName.StartsWith(search.CityName));
             }
             query = query.OrderBy(x => x.CityName);
 

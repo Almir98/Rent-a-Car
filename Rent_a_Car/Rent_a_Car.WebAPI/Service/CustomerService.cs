@@ -104,7 +104,7 @@ namespace RentACar.WebAPI.Service
 
         public Customer Authenticate(CustomerLoginRequest request)
         {
-            var customer = _context.Customer.Include("CustomerRoles.Role").FirstOrDefault(x => x.Username == request.Username);
+            var customer = _context.Customer.FirstOrDefault(x => x.Username == request.Username);
 
             if(customer != null)
             {

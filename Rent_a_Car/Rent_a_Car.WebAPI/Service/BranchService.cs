@@ -22,10 +22,11 @@ namespace RentACar.WebAPI.Service
                 query = query.Where(x => x.BranchName.StartsWith(search.BranchName));
             }
 
-            if(search?.CityId.HasValue==true)                       // search for id
+            if (search?.CityId.HasValue == true)
             {
-                query = query.Where(x => x.CityId == search.CityId);
+                query = query.Where(e => e.CityId == search.CityId);
             }
+
             return _mapper.Map<List<BranchRequest>>(query.ToList());
         } 
     }

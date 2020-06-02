@@ -116,5 +116,26 @@ namespace RentACar.WinUI
             form.MdiParent = this;
             form.Show();
         }
+
+        private void pregledToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmViewAllBranches form = new frmViewAllBranches();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void novaPoslovnicaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddBranch form = new frmAddBranch();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void sveRezervacijeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAllBooking form = new frmAllBooking();
+            form.MdiParent = this;
+            form.Show();
+        }
     }
 }

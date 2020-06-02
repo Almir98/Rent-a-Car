@@ -95,9 +95,9 @@ namespace Rent_a_Car.WebAPI
             services.AddScoped<IService<VehicleTypeRequest, object>, BaseService<VehicleTypeRequest, object, VehicleType>>();
             services.AddScoped<IService<ManufacturerRequest, object>, BaseService<ManufacturerRequest, object, Manufacturer>>();
             services.AddScoped<IService<VehicleModelRequest, VehicleModelSearch>, VehicleModelService>();
+            services.AddScoped<IService<CityRequest,CitySearchRequest>,CityService>();
 
 
-            services.AddScoped<ICRUDService<CityRequest, CitySearchRequest,CityUpsert,CityUpsert>,CityService>();
             services.AddScoped<ICRUDService<BranchRequest,BranchSearchRequest,BranchUpsert,BranchUpsert> , BranchService>();
             services.AddScoped<ICRUDService<VehicleRequest, VehicleSearchRequest, VehicleUpsert, VehicleUpsert>, VehicleService>();
             services.AddScoped<ICRUDService<BookingRequest, BookingSearchRequest, BookingUpsert, BookingUpsert>,BookingService>();

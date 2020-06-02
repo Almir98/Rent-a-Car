@@ -19,10 +19,10 @@ namespace RentACar.WebAPI.Service
         {
             var query = _context.Set<Booking>().Include(x=>x.Customer).AsQueryable();
 
-            if(search?.BookingId != null && search?.BookingId !=0)
-            {
-                query = query.Where(x => x.BookingId == search.BookingId);
-            }
+            //if(search?.BookingId != null && search?.BookingId !=0)
+            //{
+            //    query = query.Where(x => x.BookingId == search.BookingId);
+            //}
 
             if(!string.IsNullOrEmpty(search.CustomerFirstName))
             {
