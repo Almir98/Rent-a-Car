@@ -36,8 +36,9 @@
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtCustomer = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllCustomers)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvAllCustomers
@@ -49,12 +50,12 @@
             this.LastName,
             this.Phone,
             this.Email});
-            this.dgvAllCustomers.Location = new System.Drawing.Point(114, 146);
+            this.dgvAllCustomers.Location = new System.Drawing.Point(140, 207);
             this.dgvAllCustomers.Name = "dgvAllCustomers";
             this.dgvAllCustomers.RowHeadersWidth = 51;
             this.dgvAllCustomers.RowTemplate.Height = 24;
             this.dgvAllCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAllCustomers.Size = new System.Drawing.Size(556, 392);
+            this.dgvAllCustomers.Size = new System.Drawing.Size(672, 348);
             this.dgvAllCustomers.TabIndex = 0;
             this.dgvAllCustomers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAllCustomers_CellContentClick);
             this.dgvAllCustomers.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvAllCustomers_MouseDoubleClick);
@@ -103,46 +104,49 @@
             // 
             // txtCustomer
             // 
+            this.txtCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtCustomer.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtCustomer.Location = new System.Drawing.Point(252, 80);
+            this.txtCustomer.Location = new System.Drawing.Point(27, 62);
             this.txtCustomer.Name = "txtCustomer";
-            this.txtCustomer.Size = new System.Drawing.Size(286, 22);
+            this.txtCustomer.Size = new System.Drawing.Size(286, 26);
             this.txtCustomer.TabIndex = 1;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(613, 72);
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnSearch.Location = new System.Drawing.Point(374, 57);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(113, 41);
+            this.btnSearch.Size = new System.Drawing.Size(113, 36);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Pretraži";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // label1
+            // groupBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(256, 46);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(282, 17);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Unesite ime ili prezime za pretragu klijenata";
+            this.groupBox1.Controls.Add(this.txtCustomer);
+            this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Location = new System.Drawing.Point(207, 23);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(549, 140);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Unesite ime ili prezime za pretragu klijenata";
             // 
             // frmAllCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(939, 567);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.txtCustomer);
+            this.ClientSize = new System.Drawing.Size(1014, 686);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvAllCustomers);
             this.Name = "frmAllCustomers";
             this.Text = "frmCustomers";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllCustomers)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -151,11 +155,11 @@
         private System.Windows.Forms.DataGridView dgvAllCustomers;
         private System.Windows.Forms.TextBox txtCustomer;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn CustomerID;
         private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

@@ -18,7 +18,11 @@ namespace RentACar.WebAPI.Service
 
         public override List<MComment> Get(CommentSearchRequest search)
         {
-            var query = _context.Comment.Include(x=>x.Customer).Include(x=>x.Vehicle.VehicleModel.Manufacturer).AsQueryable();
+            var query = _context.Comment.Include(x=>x.Customer)
+                .Include(x=>x.Vehicle)
+                .Include(x=>x.Vehicle.VehicleModel)
+                .Include(x=>x.Vehicle.VehicleModel.Manufacturer)
+                .AsQueryable();
 
             if(!string.IsNullOrEmpty(search.CustomerFirstName))
             {
@@ -29,7 +33,11 @@ namespace RentACar.WebAPI.Service
             {
                 query = query.Where(x => x.Vehicle.VehicleModel.Manufacturer.ManufacturerName == search.ManufacturerName);
             }
-            return _mapper.Map<List<MComment>>(query.ToList());
+
+            var lista = query.ToList();
+
+            return _mapper.Map<List<MComment>>(lista);
+        }
 
         //    var listComments = _context.Comment.ToList();
         //    var listCustomer = _context.Customer.ToList();
@@ -84,7 +92,6 @@ namespace RentACar.WebAPI.Service
         //    }
 
 
-        }
 
 
 

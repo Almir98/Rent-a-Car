@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.korisniciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pregledKorisnikaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vozilaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,11 +41,12 @@
             this.novaPoslovnicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rezervacijeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sveRezervacijeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.recenzijeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pregledKomentaraKlijenataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.recenzijeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pregledKomentaraKlijenataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informacijeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -53,16 +55,25 @@
             // 
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.homeToolStripMenuItem,
             this.korisniciToolStripMenuItem,
             this.vozilaToolStripMenuItem,
             this.poslovniceToolStripMenuItem,
             this.rezervacijeToolStripMenuItem,
-            this.recenzijeToolStripMenuItem});
+            this.recenzijeToolStripMenuItem,
+            this.informacijeToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(843, 28);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
+            // 
+            // homeToolStripMenuItem
+            // 
+            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
+            this.homeToolStripMenuItem.Text = "Home";
+            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
             // 
             // korisniciToolStripMenuItem
             // 
@@ -136,9 +147,24 @@
             // sveRezervacijeToolStripMenuItem
             // 
             this.sveRezervacijeToolStripMenuItem.Name = "sveRezervacijeToolStripMenuItem";
-            this.sveRezervacijeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.sveRezervacijeToolStripMenuItem.Size = new System.Drawing.Size(218, 26);
             this.sveRezervacijeToolStripMenuItem.Text = "Pregled rezervacija";
             this.sveRezervacijeToolStripMenuItem.Click += new System.EventHandler(this.sveRezervacijeToolStripMenuItem_Click);
+            // 
+            // recenzijeToolStripMenuItem
+            // 
+            this.recenzijeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pregledKomentaraKlijenataToolStripMenuItem});
+            this.recenzijeToolStripMenuItem.Name = "recenzijeToolStripMenuItem";
+            this.recenzijeToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
+            this.recenzijeToolStripMenuItem.Text = "Recenzije";
+            // 
+            // pregledKomentaraKlijenataToolStripMenuItem
+            // 
+            this.pregledKomentaraKlijenataToolStripMenuItem.Name = "pregledKomentaraKlijenataToolStripMenuItem";
+            this.pregledKomentaraKlijenataToolStripMenuItem.Size = new System.Drawing.Size(278, 26);
+            this.pregledKomentaraKlijenataToolStripMenuItem.Text = "Pregled komentara klijenata";
+            this.pregledKomentaraKlijenataToolStripMenuItem.Click += new System.EventHandler(this.pregledKomentaraKlijenataToolStripMenuItem_Click);
             // 
             // statusStrip
             // 
@@ -158,20 +184,12 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(49, 20);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // recenzijeToolStripMenuItem
+            // informacijeToolStripMenuItem
             // 
-            this.recenzijeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pregledKomentaraKlijenataToolStripMenuItem});
-            this.recenzijeToolStripMenuItem.Name = "recenzijeToolStripMenuItem";
-            this.recenzijeToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
-            this.recenzijeToolStripMenuItem.Text = "Recenzije";
-            // 
-            // pregledKomentaraKlijenataToolStripMenuItem
-            // 
-            this.pregledKomentaraKlijenataToolStripMenuItem.Name = "pregledKomentaraKlijenataToolStripMenuItem";
-            this.pregledKomentaraKlijenataToolStripMenuItem.Size = new System.Drawing.Size(278, 26);
-            this.pregledKomentaraKlijenataToolStripMenuItem.Text = "Pregled komentara klijenata";
-            this.pregledKomentaraKlijenataToolStripMenuItem.Click += new System.EventHandler(this.pregledKomentaraKlijenataToolStripMenuItem_Click);
+            this.informacijeToolStripMenuItem.Name = "informacijeToolStripMenuItem";
+            this.informacijeToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
+            this.informacijeToolStripMenuItem.Text = "Informacije";
+            this.informacijeToolStripMenuItem.Click += new System.EventHandler(this.informacijeToolStripMenuItem_Click);
             // 
             // frmIndex
             // 
@@ -186,6 +204,7 @@
             this.Name = "frmIndex";
             this.Text = "frmIndex";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmIndex_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
@@ -213,6 +232,8 @@
         private System.Windows.Forms.ToolStripMenuItem sveRezervacijeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem recenzijeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pregledKomentaraKlijenataToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem informacijeToolStripMenuItem;
     }
 }
 

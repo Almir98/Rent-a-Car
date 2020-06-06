@@ -113,7 +113,7 @@ namespace RentACar.WinUI.Forms
                 RegistrationNumber=txtRegistrationNumber.Text,
                 VehicleNumber=int.Parse(txtVehicleNumber.Text),
                 DailyPrice=double.Parse(txtDailyPrice.Text),
-                Description=txtDescription.Text,
+                Description=rtxDescription.Text,
                 ManufacturerDate=dtDte.Value,
                 Mileage=txtMileage.Text,
                 Transmission=txtTransmission.Text,
@@ -156,5 +156,6 @@ namespace RentACar.WinUI.Forms
             
             await _serviceVehicle.Insert<VehicleRequest>(vehicle);
         }
+
     }
 }

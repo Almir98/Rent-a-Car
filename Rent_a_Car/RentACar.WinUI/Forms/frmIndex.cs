@@ -20,6 +20,7 @@ namespace RentACar.WinUI
             InitializeComponent();
         }
 
+
         private void ShowNewForm(object sender, EventArgs e)
         {
             Form childForm = new Form();
@@ -27,6 +28,7 @@ namespace RentACar.WinUI
             childForm.Text = "Window " + childFormNumber++;
             childForm.Show();
         }
+
 
         private void OpenFile(object sender, EventArgs e)
         {
@@ -141,6 +143,27 @@ namespace RentACar.WinUI
         private void pregledKomentaraKlijenataToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmAllComments form = new frmAllComments();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void homeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHome form = new frmHome();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void frmIndex_Load(object sender, EventArgs e)
+        {
+            frmHome form = new frmHome();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void informacijeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAbout form = new frmAbout();
             form.MdiParent = this;
             form.Show();
         }

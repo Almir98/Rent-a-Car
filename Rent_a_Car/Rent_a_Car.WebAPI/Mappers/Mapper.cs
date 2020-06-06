@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Rent_a_Car.WebAPI.Database;
+using Rent_a_Car.WebAPI.Models;
 using RentaCar.Data.Requests;
 using RentaCar.Data.Requests.Booking;
 using RentaCar.Data.Requests.Branch;
@@ -23,36 +24,38 @@ namespace Rent_a_Car.WebAPI.Mappers
     {
         public Mapper()
         {
-            CreateMap<City, CityRequest>().ReverseMap();
-            CreateMap<Branch, BranchRequest>().ReverseMap();
+            CreateMap<Database.City, CityRequest>().ReverseMap();
+            CreateMap<Database.Branch, BranchRequest>().ReverseMap();
             CreateMap<BranchRequest, BranchSearchRequest>().ReverseMap();
-            CreateMap<Branch, BranchUpsert>().ReverseMap();
+            CreateMap<Database.Branch, BranchUpsert>().ReverseMap();
 
-            CreateMap<City, CityUpsert>().ReverseMap();
-            CreateMap<City, CitySearchRequest>().ReverseMap();
+            CreateMap<Database.City, CityUpsert>().ReverseMap();
+            CreateMap<Database.City, CitySearchRequest>().ReverseMap();
 
-            CreateMap<Customer, CustomerUpsert>().ReverseMap();
-            CreateMap<CustomerRequest, Customer>().ReverseMap();
+            CreateMap<Database.Customer, CustomerUpsert>().ReverseMap();
+            CreateMap<CustomerRequest,Database.Customer>().ReverseMap();
 
-            CreateMap<Vehicle, VehicleUpsert>().ReverseMap();
-            CreateMap<VehicleRequest, Vehicle>().ReverseMap();
+            CreateMap<Database.Vehicle, VehicleUpsert>().ReverseMap();
+            CreateMap<VehicleRequest, Database.Vehicle>().ReverseMap();
 
-            CreateMap<Booking, BookingUpsert>().ReverseMap();
-            CreateMap<BookingRequest, Booking>().ReverseMap();
+            CreateMap<Database.Booking, BookingUpsert>().ReverseMap();
+            CreateMap<BookingRequest, Database.Booking>().ReverseMap();
+
 
             CreateMap<Comment, CommentUpsert>().ReverseMap();
-            CreateMap<Comment, Comment>().ReverseMap();
+            CreateMap<Database.Comment, MComment>();
 
-            CreateMap<Rating, RatingUpsert>().ReverseMap();
-            CreateMap<Rating, RatingRequest>().ReverseMap();
 
-            CreateMap<FuelTypeRequest, FuelType>().ReverseMap();
+            CreateMap<Database.Rating, RatingUpsert>().ReverseMap();
+            CreateMap<Database.Rating, RatingRequest>().ReverseMap();
 
-            CreateMap<VehicleTypeRequest, VehicleType>().ReverseMap();
+            CreateMap<FuelTypeRequest, Database.FuelType>().ReverseMap();
 
-            CreateMap<ManufacturerRequest, Manufacturer>().ReverseMap();
+            CreateMap<VehicleTypeRequest, Database.VehicleType>().ReverseMap();
 
-            CreateMap<VehicleModelRequest, VehicleModel>().ReverseMap();
+            CreateMap<ManufacturerRequest, Database.Manufacturer>().ReverseMap();
+
+            CreateMap<VehicleModelRequest, Database.VehicleModel>().ReverseMap();
 
 
         }

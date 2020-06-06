@@ -59,7 +59,5 @@ namespace RentACar.WinUI.Forms
             dgvBranch.DataSource = result;
         }
 
-
-
     }
 }

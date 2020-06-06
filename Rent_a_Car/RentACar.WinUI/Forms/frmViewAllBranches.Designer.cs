@@ -28,64 +28,68 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.dgvBranch = new System.Windows.Forms.DataGridView();
             this.cmbCity = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBranch)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(454, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(179, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Odaberite naziv poslovnice";
             // 
             // dgvBranch
             // 
             this.dgvBranch.AllowUserToAddRows = false;
             this.dgvBranch.AllowUserToDeleteRows = false;
             this.dgvBranch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBranch.Location = new System.Drawing.Point(114, 160);
+            this.dgvBranch.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvBranch.Location = new System.Drawing.Point(114, 212);
             this.dgvBranch.Name = "dgvBranch";
             this.dgvBranch.ReadOnly = true;
             this.dgvBranch.RowHeadersWidth = 51;
             this.dgvBranch.RowTemplate.Height = 24;
-            this.dgvBranch.Size = new System.Drawing.Size(971, 382);
+            this.dgvBranch.Size = new System.Drawing.Size(959, 330);
             this.dgvBranch.TabIndex = 3;
             // 
             // cmbCity
             // 
+            this.cmbCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cmbCity.FormattingEnabled = true;
-            this.cmbCity.Location = new System.Drawing.Point(404, 79);
+            this.cmbCity.Location = new System.Drawing.Point(77, 55);
             this.cmbCity.Name = "cmbCity";
-            this.cmbCity.Size = new System.Drawing.Size(282, 24);
+            this.cmbCity.Size = new System.Drawing.Size(282, 28);
             this.cmbCity.TabIndex = 4;
             this.cmbCity.Text = "Izaberite";
             this.cmbCity.SelectedIndexChanged += new System.EventHandler(this.cmbCity_SelectedIndexChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cmbCity);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F);
+            this.groupBox1.Location = new System.Drawing.Point(348, 34);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(443, 119);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Odaberite naziv poslovnice";
             // 
             // frmViewAllBranches
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1231, 648);
-            this.Controls.Add(this.cmbCity);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvBranch);
-            this.Controls.Add(this.label1);
             this.Name = "frmViewAllBranches";
             this.Text = "frmViewAllBranches";
             this.Load += new System.EventHandler(this.frmViewAllBranches_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBranch)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvBranch;
         private System.Windows.Forms.ComboBox cmbCity;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
