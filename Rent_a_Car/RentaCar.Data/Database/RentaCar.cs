@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Rent_a_Car.WebAPI.Database;
 
 namespace RentACar.WebAPI.Database
 {

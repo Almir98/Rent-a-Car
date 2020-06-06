@@ -41,7 +41,7 @@ namespace Rent_a_Car.WebAPI.Mappers
             CreateMap<BookingRequest, Booking>().ReverseMap();
 
             CreateMap<Comment, CommentUpsert>().ReverseMap();
-            CreateMap<Comment, CommentRequest>().ReverseMap();
+            CreateMap<Comment, Comment>().ReverseMap();
 
             CreateMap<Rating, RatingUpsert>().ReverseMap();
             CreateMap<Rating, RatingRequest>().ReverseMap();

@@ -17,6 +17,7 @@ using Microsoft.OpenApi.Models;
 using Rent_a_Car.WebAPI.Database;
 //using Rent_a_Car.WebAPI.Filters;
 using Rent_a_Car.WebAPI.Interface;
+using Rent_a_Car.WebAPI.Models;
 using Rent_a_Car.WebAPI.Service;
 using RentaCar.Data.Requests;
 using RentaCar.Data.Requests.Booking;
@@ -91,9 +92,9 @@ namespace Rent_a_Car.WebAPI
 
             #region Dependency injection
 
-            services.AddScoped<IService<FuelTypeRequest,object>,BaseService<FuelTypeRequest, object, FuelType>>();
-            services.AddScoped<IService<VehicleTypeRequest, object>, BaseService<VehicleTypeRequest, object, VehicleType>>();
-            services.AddScoped<IService<ManufacturerRequest, object>, BaseService<ManufacturerRequest, object, Manufacturer>>();
+            services.AddScoped<IService<FuelTypeRequest,object>,BaseService<FuelTypeRequest, object,Database.FuelType>>();
+            services.AddScoped<IService<VehicleTypeRequest, object>, BaseService<VehicleTypeRequest, object, Database.VehicleType>>();
+            services.AddScoped<IService<ManufacturerRequest, object>, BaseService<ManufacturerRequest, object,Database.Manufacturer>>();
             services.AddScoped<IService<VehicleModelRequest, VehicleModelSearch>, VehicleModelService>();
             services.AddScoped<IService<CityRequest,CitySearchRequest>,CityService>();
 
@@ -101,7 +102,7 @@ namespace Rent_a_Car.WebAPI
             services.AddScoped<ICRUDService<BranchRequest,BranchSearchRequest,BranchUpsert,BranchUpsert> , BranchService>();
             services.AddScoped<ICRUDService<VehicleRequest, VehicleSearchRequest, VehicleUpsert, VehicleUpsert>, VehicleService>();
             services.AddScoped<ICRUDService<BookingRequest, BookingSearchRequest, BookingUpsert, BookingUpsert>,BookingService>();
-            services.AddScoped<ICRUDService<CommentRequest,CommentSearchRequest,CommentUpsert,CommentUpsert>,CommentService>();
+            services.AddScoped<ICRUDService<MComment,CommentSearchRequest,CommentUpsert,CommentUpsert>,CommentService>();
             services.AddScoped<ICRUDService<RatingRequest,RatingSearchRequest,RatingUpsert,RatingUpsert >, RatingService > ();
 
             services.AddScoped<ICustomerService,CustomerService>();

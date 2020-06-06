@@ -1,17 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace RentACar.WebAPI.Database
+namespace Rent_a_Car.WebAPI.Models
 {
-    public partial class Vehicle
+    public  class Vehicle
     {
-        public Vehicle()
-        {
-            Booking = new HashSet<Booking>();
-            Comment = new HashSet<Comment>();
-            Rating = new HashSet<Rating>();
-        }
-
         public int VehicleId { get; set; }
         public string RegistrationNumber { get; set; }
         public byte[] Image { get; set; }
@@ -28,12 +21,12 @@ namespace RentACar.WebAPI.Database
         public int VehicleTypeId { get; set; }
         public int VehicleModelId { get; set; }
 
-        public virtual Branch Branch { get; set; }
-        public virtual FuelType FuelType { get; set; }
-        public virtual VehicleModel VehicleModel { get; set; }
-        public virtual VehicleType VehicleType { get; set; }
-        public virtual ICollection<Booking> Booking { get; set; }
-        public virtual ICollection<Comment> Comment { get; set; }
-        public virtual ICollection<Rating> Rating { get; set; }
+        public Branch Branch { get; set; }
+        public FuelType FuelType { get; set; }
+        public VehicleModel VehicleModel { get; set; }
+        public VehicleType VehicleType { get; set; }
+        public ICollection<Booking> Booking { get; set; }
+        public ICollection<MComment> Comment { get; set; }
+        public ICollection<Rating> Rating { get; set; }
     }
 }

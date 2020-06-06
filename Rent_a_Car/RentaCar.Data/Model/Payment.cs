@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace RentACar.WebAPI.Database
+namespace Rent_a_Car.WebAPI.Models
 {
-    public partial class Payment
+    public class Payment
     {
         public int PaymentId { get; set; }
         public decimal? Price { get; set; }
@@ -12,8 +12,8 @@ namespace RentACar.WebAPI.Database
         public int PaymentTypeId { get; set; }
         public int BookingId { get; set; }
 
-        public virtual Booking Booking { get; set; }
-        public virtual Customer Customer { get; set; }
-        public virtual PaymentType PaymentType { get; set; }
+        public  Booking Booking { get; set; }
+        public  Customer Customer { get; set; }
+        public  PaymentType PaymentType { get; set; }
     }
 }

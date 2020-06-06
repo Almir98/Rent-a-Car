@@ -1,15 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace RentACar.WebAPI.Database
+namespace Rent_a_Car.WebAPI.Models
 {
-    public partial class Booking
+    public class Booking
     {
-        public Booking()
-        {
-            Payment = new HashSet<Payment>();
-        }
-
         public int BookingId { get; set; }
         public int NumberOfDays { get; set; }
         public double? TotalPrice { get; set; }
@@ -21,8 +16,8 @@ namespace RentACar.WebAPI.Database
         public int CustomerId { get; set; }
         public int VehicleId { get; set; }
 
-        public virtual Customer Customer { get; set; }
-        public virtual Vehicle Vehicle { get; set; }
-        public virtual ICollection<Payment> Payment { get; set; }
+        public  Customer Customer { get; set; }
+        public  Vehicle Vehicle { get; set; }
+        public  ICollection<Payment> Payment { get; set; }
     }
 }
