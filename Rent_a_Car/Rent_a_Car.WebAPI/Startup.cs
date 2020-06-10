@@ -17,8 +17,8 @@ using Microsoft.OpenApi.Models;
 using Rent_a_Car.WebAPI.Database;
 //using Rent_a_Car.WebAPI.Filters;
 using Rent_a_Car.WebAPI.Interface;
-using Rent_a_Car.WebAPI.Models;
 using Rent_a_Car.WebAPI.Service;
+using RentaCar.Data.Models;
 using RentaCar.Data.Requests;
 using RentaCar.Data.Requests.Booking;
 using RentaCar.Data.Requests.Branch;
@@ -54,7 +54,10 @@ namespace Rent_a_Car.WebAPI
 
             services.AddDbContext<RentaCarContext>(c => c.UseSqlServer(Configuration.GetConnectionString("RentaCarCS")));       // Connection string
 
-
+            services.AddControllers().AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
+            
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "RentACar API", Version = "v1" });
@@ -102,8 +105,10 @@ namespace Rent_a_Car.WebAPI
             services.AddScoped<ICRUDService<BranchRequest,BranchSearchRequest,BranchUpsert,BranchUpsert> , BranchService>();
             services.AddScoped<ICRUDService<VehicleRequest, VehicleSearchRequest, VehicleUpsert, VehicleUpsert>, VehicleService>();
             services.AddScoped<ICRUDService<BookingRequest, BookingSearchRequest, BookingUpsert, BookingUpsert>,BookingService>();
-            services.AddScoped<ICRUDService<MComment,CommentSearchRequest,CommentUpsert,CommentUpsert>,CommentService>();
             services.AddScoped<ICRUDService<RatingRequest,RatingSearchRequest,RatingUpsert,RatingUpsert >, RatingService > ();
+            
+
+            services.AddScoped<ICRUDService<MComment, CommentSearchRequest, CommentUpsert, CommentUpsert>,CommentService>();
 
             services.AddScoped<ICustomerService,CustomerService>();
             

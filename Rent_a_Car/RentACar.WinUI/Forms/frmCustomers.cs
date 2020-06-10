@@ -27,7 +27,7 @@ namespace RentACar.WinUI
         {
             var search = new CustomerSearchRequest()
             {
-                FirstName=txtCustomer.Text,
+                FirstName=txtCustomer.Text
             };
 
             var result =await _apiService.Get<List<CustomerRequest>>(search);

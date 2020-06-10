@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Rent_a_Car.WebAPI.Models
+namespace RentaCar.Data.Models
 {
     public  class City
     {

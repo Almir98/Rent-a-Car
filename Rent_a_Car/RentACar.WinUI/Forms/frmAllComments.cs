@@ -1,12 +1,9 @@
-﻿using Rent_a_Car.WebAPI.Models;
+﻿using RentaCar.Data.Models;
+using RentaCar.Data.Requests.Comments;
 using RentaCar.Data.ViewModel;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -30,23 +27,36 @@ namespace RentACar.WinUI.Forms
         {
             var list = await _serviceComments.Get<List<MComment>>(null);
 
-            List<frmAllCommentsVM> vm = new List<frmAllCommentsVM>();
+            List<frmAllCommentsVM> newList = new List<frmAllCommentsVM>();
 
             foreach (var item in list)
             {
                 frmAllCommentsVM form = new frmAllCommentsVM
                 {
-                    CommentId=item.CommentId,
-                    Description=item.Description,
-                    DateOfComment=item.DateOfComment,
-                    FirstName=item.Customer.FirstName,
-                    LastName=item.Customer.LastName,
-                    ManufacturerName=item.Vehicle.VehicleModel.Manufacturer.ManufacturerName
+                    CommentId = item.CommentId,
+                    Description = item.Description,
+                    DateOfComment = item.DateOfComment,
+                    FirstName = item.Customer.FirstName,
+                    LastName = item.Customer.LastName,
+                    ManufacturerName = item.Vehicle.VehicleModel.Manufacturer.ManufacturerName
                 };
-                vm.Add(form);
+                newList.Add(form);
             }
-            vm = vm.OrderBy(x => x.DateOfComment).ToList();
-            dgvComments.DataSource = list;
+            newList = newList.OrderBy(x => x.DateOfComment).ToList();
+            dgvComments.DataSource = newList;
+
+        }
+
+        private async void btnSearch_Click(object sender, EventArgs e)          // ne radi dobro
+        {
+            var search = new CommentSearchRequest()
+            {
+                ManufacturerName = txtSearch.Text,
+            };
+
+            var result = await _serviceComments.Get<List<MComment>>(search);
+            dgvComments.AutoGenerateColumns = false;
+            dgvComments.DataSource = result;
         }
     }
 }
