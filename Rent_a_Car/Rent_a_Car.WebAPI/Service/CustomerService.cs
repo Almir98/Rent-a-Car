@@ -120,7 +120,8 @@ namespace RentACar.WebAPI.Service
 
         public CustomerRequest GetById(int id)
         {
-            return _mapper.Map<CustomerRequest>(_context.Customer.Find(id));
+            var customer = _context.Customer.Include(a => a.City).FirstOrDefault(x => x.CustomerId == id);
+            return _mapper.Map<CustomerRequest>(customer);
         }
     }
 }

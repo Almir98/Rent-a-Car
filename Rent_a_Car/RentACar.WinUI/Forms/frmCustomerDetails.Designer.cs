@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtCityID = new System.Windows.Forms.TextBox();
+            this.txtCityName = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -66,12 +66,12 @@
             this.txtEmail.Size = new System.Drawing.Size(405, 22);
             this.txtEmail.TabIndex = 2;
             // 
-            // txtCityID
+            // txtCityName
             // 
-            this.txtCityID.Location = new System.Drawing.Point(75, 346);
-            this.txtCityID.Name = "txtCityID";
-            this.txtCityID.Size = new System.Drawing.Size(405, 22);
-            this.txtCityID.TabIndex = 3;
+            this.txtCityName.Location = new System.Drawing.Point(75, 346);
+            this.txtCityName.Name = "txtCityName";
+            this.txtCityName.Size = new System.Drawing.Size(405, 22);
+            this.txtCityName.TabIndex = 3;
             // 
             // txtPhone
             // 
@@ -94,9 +94,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(72, 312);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 17);
+            this.label5.Size = new System.Drawing.Size(84, 17);
             this.label5.TabIndex = 11;
-            this.label5.Text = "CityID";
+            this.label5.Text = "Naziv grada";
             // 
             // label6
             // 
@@ -146,7 +146,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.txtPhone);
-            this.Controls.Add(this.txtCityID);
+            this.Controls.Add(this.txtCityName);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.label1);
@@ -163,7 +163,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtCityID;
+        private System.Windows.Forms.TextBox txtCityName;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label label5;

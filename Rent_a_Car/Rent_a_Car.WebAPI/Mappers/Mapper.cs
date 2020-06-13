@@ -24,6 +24,8 @@ namespace Rent_a_Car.WebAPI.Mappers
             CreateMap<Database.City, CitySearchRequest>().ReverseMap();
 
             CreateMap<CustomerRequest, Database.Customer>().ReverseMap();           //vicemo
+            CreateMap<CustomerRequest, Database.City>().ReverseMap();           
+
             CreateMap<Database.Customer, CustomerUpsert>().ReverseMap();
             CreateMap<RentaCar.Data.Models.Customer,Database.Customer>().ReverseMap();
 
