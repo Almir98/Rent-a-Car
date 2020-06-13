@@ -42,10 +42,11 @@ namespace RentACar.WinUI
             frm.Show();
         }
 
-        private void dgvAllCustomers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private async void frmAllCustomers_Load(object sender, EventArgs e)
         {
-
+            var result = await _apiService.Get<List<CustomerRequest>>(null);
+            dgvAllCustomers.AutoGenerateColumns = false;
+            dgvAllCustomers.DataSource = result;
         }
-
     }
 }

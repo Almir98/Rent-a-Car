@@ -1,4 +1,5 @@
 ﻿using RentaCar.Data.Requests.Booking;
+using RentaCar.Data.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,5 +32,35 @@ namespace RentACar.WinUI.Forms
             var result = await _serviceBooking.Get<List<BookingRequest>>(search);
             dgvBooking.DataSource = result;
         }
+
+        private async void frmAllBooking_Load(object sender, EventArgs e)
+        {
+            var list = await _serviceBooking.Get<List<BookingRequest>>(null);
+
+            List<frmAllBookingVM> newList = new List<frmAllBookingVM>();
+
+            foreach (var item in list)
+            {
+                frmAllBookingVM form = new frmAllBookingVM
+                {
+                    BookingId=item.BookingId,
+                    NumberOfDays=item.NumberOfDays,
+                    TotalPrice=item.TotalPrice,
+                    StartDate=item.StartDate,
+                    EndDate=item.EndDate,
+                    Canceled=item.Canceled,
+                    Discount=item.Discount,
+                    Description=item.Description,
+                    FirstName=item.Customer.FirstName,
+                    LastName=item.Customer.LastName,
+                    RegistrationNumber=item.Vehicle.RegistrationNumber
+                };
+                newList.Add(form);
+            }
+            dgvBooking.DataSource = newList;
+
+
+        }
+
     }
 }

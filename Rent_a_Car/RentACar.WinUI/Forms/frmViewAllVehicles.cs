@@ -38,8 +38,16 @@ namespace RentACar.WinUI.Forms
         private void dgvVehicles_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             var id = dgvVehicles.SelectedRows[0].Cells[0].Value;
-            frmVehicleDetails frm = new frmVehicleDetails(int.Parse(1.ToString()));
+            frmVehicleDetails frm = new frmVehicleDetails(int.Parse(id.ToString()));
             frm.Show();
+        }
+
+        private async void frmViewAllVehicles_Load(object sender, EventArgs e)
+        {
+            var result = await _service.Get<List<VehicleRequest>>(null);
+            dgvVehicles.AutoGenerateColumns = false;
+            dgvVehicles.DataSource = result;
+
         }
     }
 }

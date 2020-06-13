@@ -32,8 +32,14 @@ namespace RentACar.WinUI.Forms
                 txtLastName.Text = customer.LastName;
                 txtPhone.Text = customer.Phone;
                 txtEmail.Text = customer.Email;
-                txtCityName.Text = customer.CityName;
+                txtCityName.Text = customer.City.CityName;
             }
+        }
+
+        private void btnAllCustomersBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
         }
     }
 }

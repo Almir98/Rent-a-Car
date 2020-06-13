@@ -31,12 +31,12 @@
             this.txtSearchVehicle = new System.Windows.Forms.TextBox();
             this.btnShowVehicles = new System.Windows.Forms.Button();
             this.dgvVehicles = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.VehicleId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VehicleNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RegistrationNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mileage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehicles)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -71,27 +71,15 @@
             this.Mileage,
             this.Status});
             this.dgvVehicles.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvVehicles.Location = new System.Drawing.Point(151, 253);
+            this.dgvVehicles.Location = new System.Drawing.Point(73, 253);
             this.dgvVehicles.Margin = new System.Windows.Forms.Padding(10, 10, 3, 3);
             this.dgvVehicles.Name = "dgvVehicles";
             this.dgvVehicles.RowHeadersWidth = 51;
             this.dgvVehicles.RowTemplate.Height = 24;
             this.dgvVehicles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVehicles.Size = new System.Drawing.Size(653, 398);
+            this.dgvVehicles.Size = new System.Drawing.Size(794, 398);
             this.dgvVehicles.TabIndex = 3;
             this.dgvVehicles.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvVehicles_MouseDoubleClick);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.txtSearchVehicle);
-            this.groupBox1.Controls.Add(this.btnShowVehicles);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F);
-            this.groupBox1.Location = new System.Drawing.Point(151, 28);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(653, 161);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Unesite marku vozila, proizvođača ili naziv poslovnice";
             // 
             // VehicleId
             // 
@@ -138,6 +126,18 @@
             this.Status.ReadOnly = true;
             this.Status.Width = 150;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtSearchVehicle);
+            this.groupBox1.Controls.Add(this.btnShowVehicles);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F);
+            this.groupBox1.Location = new System.Drawing.Point(151, 28);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(653, 161);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Pretraga po broju registracije";
+            // 
             // frmViewAllVehicles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -148,6 +148,7 @@
             this.Name = "frmViewAllVehicles";
             this.Text = "frmViewAllVehicles";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmViewAllVehicles_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehicles)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

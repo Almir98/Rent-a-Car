@@ -56,9 +56,9 @@
             this.cmbManufacturer = new System.Windows.Forms.ComboBox();
             this.dtDte = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rtxDescription = new System.Windows.Forms.RichTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.rtxDescription = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -67,7 +67,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(48, 295);
+            this.label1.Location = new System.Drawing.Point(48, 292);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(143, 20);
             this.label1.TabIndex = 0;
@@ -93,7 +93,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(48, 360);
+            this.label2.Location = new System.Drawing.Point(52, 357);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 20);
             this.label2.TabIndex = 2;
@@ -131,7 +131,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(48, 527);
+            this.label5.Location = new System.Drawing.Point(52, 536);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(149, 20);
             this.label5.TabIndex = 8;
@@ -353,15 +353,16 @@
             this.groupBox1.Size = new System.Drawing.Size(1057, 723);
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Novo vozilo";
             // 
-            // rtxDescription
+            // button1
             // 
-            this.rtxDescription.Location = new System.Drawing.Point(402, 553);
-            this.rtxDescription.Name = "rtxDescription";
-            this.rtxDescription.Size = new System.Drawing.Size(258, 161);
-            this.rtxDescription.TabIndex = 33;
-            this.rtxDescription.Text = "";
+            this.button1.Location = new System.Drawing.Point(809, 375);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(160, 37);
+            this.button1.TabIndex = 35;
+            this.button1.Text = "Dodaj fotografiju";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -373,14 +374,13 @@
             this.pictureBox1.TabIndex = 34;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // rtxDescription
             // 
-            this.button1.Location = new System.Drawing.Point(809, 375);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 37);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "Dodaj fotografiju";
-            this.button1.UseVisualStyleBackColor = true;
+            this.rtxDescription.Location = new System.Drawing.Point(402, 553);
+            this.rtxDescription.Name = "rtxDescription";
+            this.rtxDescription.Size = new System.Drawing.Size(258, 161);
+            this.rtxDescription.TabIndex = 33;
+            this.rtxDescription.Text = "";
             // 
             // frmAddVehicle
             // 

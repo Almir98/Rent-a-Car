@@ -28,16 +28,21 @@ namespace RentACar.WebAPI.Service
         {
             var query = _context.Set<Customer>().Include(x=>x.City).AsQueryable();
 
-            if(!string.IsNullOrWhiteSpace(request.FirstName) || !string.IsNullOrWhiteSpace(request.LastName))
-            {
-                query = query.Where(x => x.LastName.StartsWith(request.LastName) || x.FirstName.StartsWith(request.FirstName));
+            if(!string.IsNullOrWhiteSpace(request.FirstName) || !string.IsNullOrWhiteSpace(request.LastName)){
+                query = query.Where(x=>x.FirstName.StartsWith(request.FirstName));
             }
 
-            //if(!string.IsNullOrWhiteSpace(search.CityName))
-            //{
-            //    query = query.Where(x => x.City.CityName == search.CityName);
-            //}
-            //query = query.OrderBy(x => x.City.CityName);
+            if (!string.IsNullOrWhiteSpace(request.LastName))
+            {
+                query = query.Where(x => x.LastName.StartsWith(request.LastName));
+            }
+
+            if (!string.IsNullOrWhiteSpace(request.CityName))
+            {
+                query = query.Where(x => x.City.CityName == request.CityName);
+            }
+
+            query = query.OrderBy(x => x.City.CityName);
 
             return _mapper.Map<List<CustomerRequest>>(query.ToList());
         }

@@ -189,6 +189,7 @@
             this.button1.TabIndex = 20;
             this.button1.Text = "Nazad";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmVehicleDetails
             // 
@@ -214,6 +215,7 @@
             this.Controls.Add(this.test);
             this.Name = "frmVehicleDetails";
             this.Text = "frmVehicleDetails";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmVehicleDetails_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

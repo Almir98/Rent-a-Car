@@ -39,6 +39,7 @@
             // 
             this.dgvBranch.AllowUserToAddRows = false;
             this.dgvBranch.AllowUserToDeleteRows = false;
+            this.dgvBranch.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvBranch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBranch.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dgvBranch.Location = new System.Drawing.Point(114, 212);

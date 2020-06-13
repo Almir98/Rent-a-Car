@@ -57,7 +57,6 @@
             this.dgvAllCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAllCustomers.Size = new System.Drawing.Size(672, 348);
             this.dgvAllCustomers.TabIndex = 0;
-            this.dgvAllCustomers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAllCustomers_CellContentClick);
             this.dgvAllCustomers.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvAllCustomers_MouseDoubleClick);
             // 
             // CustomerID
@@ -131,7 +130,7 @@
             this.groupBox1.Size = new System.Drawing.Size(549, 140);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Unesite ime ili prezime za pretragu klijenata";
+            this.groupBox1.Text = "Unesite ime  za pretragu klijenata";
             // 
             // frmAllCustomers
             // 
@@ -143,6 +142,7 @@
             this.Name = "frmAllCustomers";
             this.Text = "frmCustomers";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmAllCustomers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllCustomers)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -37,6 +37,10 @@ namespace RentACar.WinUI.Forms
         private async void frmViewAllBranches_Load(object sender, EventArgs e)
         {
             await LoadCity();
+
+            var result = await _apiService.Get<List<BranchRequest>>(null);
+            dgvBranch.AutoGenerateColumns = false;
+            dgvBranch.DataSource = result;
         }
 
         private async void cmbCity_SelectedIndexChanged(object sender, EventArgs e)

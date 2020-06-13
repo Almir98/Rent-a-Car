@@ -1,12 +1,10 @@
-﻿using RentaCar.Data.Requests.Customer;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-
-namespace RentaCar.Data.Requests.Booking
+namespace RentaCar.Data.ViewModel
 {
-    public class BookingRequest
+    public class frmAllBookingVM
     {
         public int BookingId { get; set; }
         public int NumberOfDays { get; set; }
@@ -17,10 +15,9 @@ namespace RentaCar.Data.Requests.Booking
         public int? Discount { get; set; }
         public string Description { get; set; }
 
-        public CustomerRequest Customer { get; set; }
-        public VehicleRequest Vehicle { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
 
-        //public int CustomerId { get; set; }
-        //public int VehicleId { get; set; }
+        public string RegistrationNumber { get; set; }
     }
 }

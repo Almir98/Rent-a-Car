@@ -127,12 +127,13 @@
             // 
             // btnAllCustomersBack
             // 
-            this.btnAllCustomersBack.Location = new System.Drawing.Point(400, 406);
+            this.btnAllCustomersBack.Location = new System.Drawing.Point(380, 411);
             this.btnAllCustomersBack.Name = "btnAllCustomersBack";
-            this.btnAllCustomersBack.Size = new System.Drawing.Size(80, 32);
+            this.btnAllCustomersBack.Size = new System.Drawing.Size(100, 32);
             this.btnAllCustomersBack.TabIndex = 15;
             this.btnAllCustomersBack.Text = "Nazad";
             this.btnAllCustomersBack.UseVisualStyleBackColor = true;
+            this.btnAllCustomersBack.Click += new System.EventHandler(this.btnAllCustomersBack_Click);
             // 
             // frmCustomerDetails
             // 
@@ -152,6 +153,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmCustomerDetails";
             this.Text = "frmCustomerDetails";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmCustomerDetails_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
