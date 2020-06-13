@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RentaCar.Data.Requests.VehicleModel;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -17,5 +18,7 @@ namespace RentaCar.Data.Requests
         public string Transmission { get; set; }
         public int NumberOfSeats { get; set; }
         public bool? Status { get; set; }
+
+        public VehicleModelRequest VehicleModel { get; set; }
     }
 }

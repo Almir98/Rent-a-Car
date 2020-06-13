@@ -25,7 +25,7 @@ namespace RentACar.WinUI.Forms
 
         private async void frmAllComments_Load(object sender, EventArgs e)
         {
-            var list = await _serviceComments.Get<List<MComment>>(null);
+            var list = await _serviceComments.Get<List<CommentRequest>>(null);
 
             List<frmAllCommentsVM> newList = new List<frmAllCommentsVM>();
 
@@ -44,17 +44,16 @@ namespace RentACar.WinUI.Forms
             }
             newList = newList.OrderBy(x => x.DateOfComment).ToList();
             dgvComments.DataSource = newList;
-
         }
 
-        private async void btnSearch_Click(object sender, EventArgs e)          // ne radi dobro
+        private async void btnSearch_Click(object sender, EventArgs e)          
         {
             var search = new CommentSearchRequest()
             {
                 ManufacturerName = txtSearch.Text,
             };
 
-            var result = await _serviceComments.Get<List<MComment>>(search);
+            var result = await _serviceComments.Get<List<CommentRequest>>(search);
             dgvComments.AutoGenerateColumns = false;
             dgvComments.DataSource = result;
         }

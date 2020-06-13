@@ -108,7 +108,7 @@ namespace Rent_a_Car.WebAPI
             services.AddScoped<ICRUDService<RatingRequest,RatingSearchRequest,RatingUpsert,RatingUpsert >, RatingService > ();
             
 
-            services.AddScoped<ICRUDService<MComment, CommentSearchRequest, CommentUpsert, CommentUpsert>,CommentService>();
+            services.AddScoped<ICRUDService<CommentRequest, CommentSearchRequest, CommentUpsert, CommentUpsert>,CommentService>();
 
             services.AddScoped<ICustomerService,CustomerService>();
             

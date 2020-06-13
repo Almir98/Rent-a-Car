@@ -43,10 +43,11 @@
             this.sveRezervacijeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recenzijeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pregledKomentaraKlijenataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.informacijeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.informacijeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pregledOcjenaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -154,7 +155,8 @@
             // recenzijeToolStripMenuItem
             // 
             this.recenzijeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pregledKomentaraKlijenataToolStripMenuItem});
+            this.pregledKomentaraKlijenataToolStripMenuItem,
+            this.pregledOcjenaToolStripMenuItem});
             this.recenzijeToolStripMenuItem.Name = "recenzijeToolStripMenuItem";
             this.recenzijeToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
             this.recenzijeToolStripMenuItem.Text = "Recenzije";
@@ -162,9 +164,16 @@
             // pregledKomentaraKlijenataToolStripMenuItem
             // 
             this.pregledKomentaraKlijenataToolStripMenuItem.Name = "pregledKomentaraKlijenataToolStripMenuItem";
-            this.pregledKomentaraKlijenataToolStripMenuItem.Size = new System.Drawing.Size(278, 26);
-            this.pregledKomentaraKlijenataToolStripMenuItem.Text = "Pregled komentara klijenata";
+            this.pregledKomentaraKlijenataToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.pregledKomentaraKlijenataToolStripMenuItem.Text = "Pregled komentara ";
             this.pregledKomentaraKlijenataToolStripMenuItem.Click += new System.EventHandler(this.pregledKomentaraKlijenataToolStripMenuItem_Click);
+            // 
+            // informacijeToolStripMenuItem
+            // 
+            this.informacijeToolStripMenuItem.Name = "informacijeToolStripMenuItem";
+            this.informacijeToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
+            this.informacijeToolStripMenuItem.Text = "Informacije";
+            this.informacijeToolStripMenuItem.Click += new System.EventHandler(this.informacijeToolStripMenuItem_Click);
             // 
             // statusStrip
             // 
@@ -184,12 +193,12 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(49, 20);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // informacijeToolStripMenuItem
+            // pregledOcjenaToolStripMenuItem
             // 
-            this.informacijeToolStripMenuItem.Name = "informacijeToolStripMenuItem";
-            this.informacijeToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
-            this.informacijeToolStripMenuItem.Text = "Informacije";
-            this.informacijeToolStripMenuItem.Click += new System.EventHandler(this.informacijeToolStripMenuItem_Click);
+            this.pregledOcjenaToolStripMenuItem.Name = "pregledOcjenaToolStripMenuItem";
+            this.pregledOcjenaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.pregledOcjenaToolStripMenuItem.Text = "Pregled ocjena";
+            this.pregledOcjenaToolStripMenuItem.Click += new System.EventHandler(this.pregledOcjenaToolStripMenuItem_Click);
             // 
             // frmIndex
             // 
@@ -234,6 +243,7 @@
         private System.Windows.Forms.ToolStripMenuItem pregledKomentaraKlijenataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informacijeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pregledOcjenaToolStripMenuItem;
     }
 }
 

@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 
 namespace RentACar.WebAPI.Service
 {
-    public class CommentService : BaseCRUDService<RentaCar.Data.Models.MComment, CommentSearchRequest, Comment, CommentUpsert, CommentUpsert>
+    public class CommentService : BaseCRUDService<CommentRequest, CommentSearchRequest, Comment, CommentUpsert, CommentUpsert>
     {
         public CommentService(RentaCarContext context, IMapper mapper) : base(context, mapper)
         {
         }
 
-        public override List<MComment> Get(CommentSearchRequest search)
+        public override List<CommentRequest> Get(CommentSearchRequest search)
         {
             var query = _context.Comment.Include(x=>x.Customer)
                 .Include(x=>x.Vehicle)
@@ -24,20 +24,13 @@ namespace RentACar.WebAPI.Service
                 .Include(x=>x.Vehicle.VehicleModel.Manufacturer)
                 .AsQueryable();
 
-            if(!string.IsNullOrEmpty(search.CustomerFirstName))
-            {
-                query = query.Where(x => x.Customer.FirstName == search.CustomerFirstName);
-            }
-            
             if(!string.IsNullOrEmpty(search.ManufacturerName))
             {
-                query = query.Where(x => x.Vehicle.VehicleModel.Manufacturer.ManufacturerName == search.ManufacturerName);
+                query = query.Where(x => x.Vehicle.VehicleModel.Manufacturer.ManufacturerName.StartsWith(search.ManufacturerName));
             }
+            query = query.OrderBy(x => x.DateOfComment);
 
-            var lista = query.ToList();
-
-            return _mapper.Map<List<MComment>>(lista);
+            return _mapper.Map<List<CommentRequest>>(query.ToList());
         }
-
     }
 }

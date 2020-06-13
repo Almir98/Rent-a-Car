@@ -6,7 +6,6 @@ namespace RentaCar.Data.Requests.Rating
 {
     public class RatingSearchRequest
     {
-        public string CustomerName { get; set; }
-        public string VehicleName { get; set; }
+        public string ManufacturerName { get; set; }
     }
 }

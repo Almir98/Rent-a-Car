@@ -17,16 +17,16 @@ namespace RentACar.WebAPI.Service
 
         public override List<RatingRequest> Get(RatingSearchRequest search)
         {
-            var query = _context.Set<Rating>().Include(x => x.Customer).Include(e => e.Vehicle.VehicleModel.Manufacturer).AsQueryable();
+            var query = _context.Set<Rating>()
+                .Include(x => x.Customer)
+                .Include(e => e.Vehicle)
+                .Include(e => e.Vehicle.VehicleModel)
+                .Include(e => e.Vehicle.VehicleModel.Manufacturer)
+                .AsQueryable();
 
-            if(!string.IsNullOrWhiteSpace(search.VehicleName))
+            if(!string.IsNullOrWhiteSpace(search.ManufacturerName))
             {
-                query = query.Where(x => x.Vehicle.VehicleModel.Manufacturer.ManufacturerName == search.VehicleName);
-            }
-
-            if (!string.IsNullOrWhiteSpace(search.CustomerName))
-            {
-                query = query.Where(x => x.Customer.FirstName == search.CustomerName);
+                query = query.Where(x => x.Vehicle.VehicleModel.Manufacturer.ManufacturerName.StartsWith(search.ManufacturerName));
             }
             query = query.OrderBy(x => x.RatingValue);
 

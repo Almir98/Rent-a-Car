@@ -167,5 +167,13 @@ namespace RentACar.WinUI
             form.MdiParent = this;
             form.Show();
         }
+
+        private void pregledOcjenaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRating form = new frmRating();
+            form.MdiParent = this;
+            form.Show();
+                
+        }
     }
 }

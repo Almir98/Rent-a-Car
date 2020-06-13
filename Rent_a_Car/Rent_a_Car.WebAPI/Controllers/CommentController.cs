@@ -11,9 +11,9 @@ namespace RentACar.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CommentController : BaseCRUDController<RentaCar.Data.Models.MComment, CommentSearchRequest, CommentUpsert, CommentUpsert>
+    public class CommentController : BaseCRUDController<CommentRequest, CommentSearchRequest, CommentUpsert, CommentUpsert>
     {
-        public CommentController(ICRUDService<RentaCar.Data.Models.MComment, CommentSearchRequest, CommentUpsert, CommentUpsert> service) : base(service)
+        public CommentController(ICRUDService<CommentRequest, CommentSearchRequest, CommentUpsert, CommentUpsert> service) : base(service)
         {
         }
     }

@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgvBranch = new System.Windows.Forms.DataGridView();
-            this.cmbCity = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.cmbCity = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBranch)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvBranch
@@ -50,17 +53,6 @@
             this.dgvBranch.Size = new System.Drawing.Size(959, 330);
             this.dgvBranch.TabIndex = 3;
             // 
-            // cmbCity
-            // 
-            this.cmbCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cmbCity.FormattingEnabled = true;
-            this.cmbCity.Location = new System.Drawing.Point(77, 55);
-            this.cmbCity.Name = "cmbCity";
-            this.cmbCity.Size = new System.Drawing.Size(282, 28);
-            this.cmbCity.TabIndex = 4;
-            this.cmbCity.Text = "Izaberite";
-            this.cmbCity.SelectedIndexChanged += new System.EventHandler(this.cmbCity_SelectedIndexChanged);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cmbCity);
@@ -71,6 +63,17 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Odaberite naziv poslovnice";
+            // 
+            // cmbCity
+            // 
+            this.cmbCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cmbCity.FormattingEnabled = true;
+            this.cmbCity.Location = new System.Drawing.Point(77, 55);
+            this.cmbCity.Name = "cmbCity";
+            this.cmbCity.Size = new System.Drawing.Size(282, 28);
+            this.cmbCity.TabIndex = 4;
+            this.cmbCity.Text = "Izaberite";
+            this.cmbCity.SelectedIndexChanged += new System.EventHandler(this.cmbCity_SelectedIndexChanged);
             // 
             // frmViewAllBranches
             // 
@@ -84,13 +87,15 @@
             this.Load += new System.EventHandler(this.frmViewAllBranches_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBranch)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.DataGridView dgvBranch;
-        private System.Windows.Forms.ComboBox cmbCity;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.ComboBox cmbCity;
     }
 }

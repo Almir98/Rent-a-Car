@@ -65,8 +65,8 @@ namespace RentACar.WinUI.Forms
 
         private async Task LoadManufacturer()
         {
-            var list = await _serviceManufacturer.Get<List<Manufacturer>>();
-            list.Insert(0, new Manufacturer());
+            var list = await _serviceManufacturer.Get<List<ManufacturerModel>>();
+            list.Insert(0, new ManufacturerModel());
 
             cmbManufacturer.DisplayMember = "ManufacturerName";
             cmbManufacturer.ValueMember = "ManufacturerId";
