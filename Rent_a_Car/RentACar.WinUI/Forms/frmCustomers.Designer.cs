@@ -43,6 +43,7 @@
             // 
             // dgvAllCustomers
             // 
+            this.dgvAllCustomers.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvAllCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAllCustomers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CustomerID,

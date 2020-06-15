@@ -17,6 +17,7 @@ namespace RentACar.WinUI.Forms
         protected APIService _serviceCustomer = new APIService("Customer");
         protected APIService _serviceBooking = new APIService("Booking");
 
+
         public frmAllBooking()
         {
             InitializeComponent();
@@ -53,14 +54,18 @@ namespace RentACar.WinUI.Forms
                     Description=item.Description,
                     FirstName=item.Customer.FirstName,
                     LastName=item.Customer.LastName,
-                    RegistrationNumber=item.Vehicle.RegistrationNumber
                 };
                 newList.Add(form);
             }
             dgvBooking.DataSource = newList;
 
-
         }
 
+        private void dgvBooking_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            var id = dgvBooking.SelectedRows[0].Cells[0].Value;
+            frmBookingDetails frm = new frmBookingDetails(int.Parse(id.ToString()));
+            frm.Show();
+        }
     }
 }

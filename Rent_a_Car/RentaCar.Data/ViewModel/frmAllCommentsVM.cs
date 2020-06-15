@@ -13,5 +13,6 @@ namespace RentaCar.Data.ViewModel
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string ManufacturerName { get; set; }
+        public string ModelName { get; set; }
     }
 }

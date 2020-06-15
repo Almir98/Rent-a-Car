@@ -31,18 +31,25 @@
             this.dgvComments = new System.Windows.Forms.DataGridView();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.CommentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComments)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvComments
             // 
+            this.dgvComments.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvComments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvComments.Location = new System.Drawing.Point(86, 191);
+            this.dgvComments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CommentId});
+            this.dgvComments.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.dgvComments.Location = new System.Drawing.Point(68, 168);
             this.dgvComments.Name = "dgvComments";
             this.dgvComments.RowHeadersWidth = 51;
             this.dgvComments.RowTemplate.Height = 24;
+            this.dgvComments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvComments.Size = new System.Drawing.Size(862, 362);
             this.dgvComments.TabIndex = 0;
+            this.dgvComments.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvComments_MouseDoubleClick);
             // 
             // txtSearch
             // 
@@ -60,6 +67,14 @@
             this.btnSearch.Text = "Pretraži";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // CommentId
+            // 
+            this.CommentId.DataPropertyName = "CommentId";
+            this.CommentId.HeaderText = "CommentId";
+            this.CommentId.MinimumWidth = 6;
+            this.CommentId.Name = "CommentId";
+            this.CommentId.Width = 125;
             // 
             // frmAllComments
             // 
@@ -83,5 +98,6 @@
         private System.Windows.Forms.DataGridView dgvComments;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CommentId;
     }
 }

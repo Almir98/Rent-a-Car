@@ -18,10 +18,10 @@ namespace RentACar.WebAPI.Service
 
         public override List<CommentRequest> Get(CommentSearchRequest search)
         {
-            var query = _context.Comment.Include(x=>x.Customer)
-                .Include(x=>x.Vehicle)
-                .Include(x=>x.Vehicle.VehicleModel)
-                .Include(x=>x.Vehicle.VehicleModel.Manufacturer)
+            var query = _context.Comment.Include("Customer")
+                .Include("Vehicle")
+                .Include("Vehicle.VehicleModel")
+                .Include("Vehicle.VehicleModel.Manufacturer")
                 .AsQueryable();
 
             if(!string.IsNullOrEmpty(search.ManufacturerName))

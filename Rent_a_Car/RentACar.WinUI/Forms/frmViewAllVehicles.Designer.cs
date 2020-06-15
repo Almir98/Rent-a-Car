@@ -142,7 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(917, 738);
+            this.ClientSize = new System.Drawing.Size(1101, 738);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvVehicles);
             this.Name = "frmViewAllVehicles";

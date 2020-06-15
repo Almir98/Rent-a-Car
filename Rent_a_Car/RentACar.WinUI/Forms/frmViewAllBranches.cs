@@ -39,7 +39,6 @@ namespace RentACar.WinUI.Forms
             await LoadCity();
 
             var result = await _apiService.Get<List<BranchRequest>>(null);
-            dgvBranch.AutoGenerateColumns = false;
             dgvBranch.DataSource = result;
         }
 

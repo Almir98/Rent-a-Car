@@ -48,5 +48,6 @@ namespace RentACar.WinUI
             dgvAllCustomers.AutoGenerateColumns = false;
             dgvAllCustomers.DataSource = result;
         }
+
     }
 }

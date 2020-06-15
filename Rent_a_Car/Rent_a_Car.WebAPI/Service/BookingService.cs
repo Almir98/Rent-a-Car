@@ -17,12 +17,8 @@ namespace RentACar.WebAPI.Service
 
         public override List<BookingRequest> Get(BookingSearchRequest search)
         {
-            var query = _context.Set<Booking>().Include(x=>x.Customer).Include(e=>e.Vehicle).AsQueryable();
-
-            //if(search?.BookingId != null && search?.BookingId !=0)
-            //{
-            //    query = query.Where(x => x.BookingId == search.BookingId);
-            //}
+            var query = _context.Set<Booking>().Include(x=>x.Customer)
+                .AsQueryable();
 
             if(!string.IsNullOrEmpty(search.CustomerFirstName))
             {

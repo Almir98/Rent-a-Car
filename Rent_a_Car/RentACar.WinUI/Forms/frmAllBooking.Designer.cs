@@ -28,25 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvBooking = new System.Windows.Forms.DataGridView();
             this.txtBookingSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBooking = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBooking)).BeginInit();
+            this.dgvBooking = new System.Windows.Forms.DataGridView();
+            this.BookingId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBooking)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvBooking
-            // 
-            this.dgvBooking.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.dgvBooking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBooking.Location = new System.Drawing.Point(34, 176);
-            this.dgvBooking.Name = "dgvBooking";
-            this.dgvBooking.RowHeadersWidth = 51;
-            this.dgvBooking.RowTemplate.Height = 24;
-            this.dgvBooking.Size = new System.Drawing.Size(1190, 310);
-            this.dgvBooking.TabIndex = 0;
             // 
             // txtBookingSearch
             // 
@@ -85,29 +75,52 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Unesite ime klijenta";
             // 
+            // dgvBooking
+            // 
+            this.dgvBooking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBooking.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.BookingId});
+            this.dgvBooking.Location = new System.Drawing.Point(51, 176);
+            this.dgvBooking.Name = "dgvBooking";
+            this.dgvBooking.RowHeadersWidth = 51;
+            this.dgvBooking.RowTemplate.Height = 24;
+            this.dgvBooking.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBooking.Size = new System.Drawing.Size(1214, 329);
+            this.dgvBooking.TabIndex = 5;
+            this.dgvBooking.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBooking_CellMouseDoubleClick);
+            // 
+            // BookingId
+            // 
+            this.BookingId.DataPropertyName = "BookingId";
+            this.BookingId.HeaderText = "BookingId";
+            this.BookingId.MinimumWidth = 6;
+            this.BookingId.Name = "BookingId";
+            this.BookingId.Visible = false;
+            this.BookingId.Width = 125;
+            // 
             // frmAllBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1236, 529);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(1331, 529);
             this.Controls.Add(this.dgvBooking);
+            this.Controls.Add(this.groupBox1);
             this.Name = "frmAllBooking";
             this.Text = "frmAllBooking";
             this.Load += new System.EventHandler(this.frmAllBooking_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBooking)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBooking)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvBooking;
         private System.Windows.Forms.TextBox txtBookingSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBooking;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dgvBooking;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BookingId;
     }
 }

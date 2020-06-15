@@ -38,7 +38,8 @@ namespace RentACar.WinUI.Forms
                     DateOfComment = item.DateOfComment,
                     FirstName = item.Customer.FirstName,
                     LastName = item.Customer.LastName,
-                    ManufacturerName = item.Vehicle.VehicleModel.Manufacturer.ManufacturerName
+                    ManufacturerName = item.Vehicle.VehicleModel.Manufacturer.ManufacturerName,
+                    ModelName=item.Vehicle.VehicleModel.ModelName
                 };
                 newList.Add(form);
             }
@@ -56,6 +57,13 @@ namespace RentACar.WinUI.Forms
             var result = await _serviceComments.Get<List<CommentRequest>>(search);
             dgvComments.AutoGenerateColumns = false;
             dgvComments.DataSource = result;
+        }
+
+        private void dgvComments_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            var id = dgvComments.SelectedRows[0].Cells[0].Value;
+            frmCommentDetails frm = new frmCommentDetails(int.Parse(id.ToString()));
+            frm.Show();
         }
     }
 }

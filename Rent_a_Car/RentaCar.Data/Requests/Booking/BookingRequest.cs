@@ -18,9 +18,5 @@ namespace RentaCar.Data.Requests.Booking
         public string Description { get; set; }
 
         public CustomerRequest Customer { get; set; }
-        public VehicleRequest Vehicle { get; set; }
-
-        //public int CustomerId { get; set; }
-        //public int VehicleId { get; set; }
     }
 }
