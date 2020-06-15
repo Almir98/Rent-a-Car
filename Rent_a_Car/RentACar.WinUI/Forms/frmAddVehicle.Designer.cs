@@ -51,14 +51,16 @@
             this.label11 = new System.Windows.Forms.Label();
             this.cmbVehicleType = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.cmbBranch = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.cmbManufacturer = new System.Windows.Forms.ComboBox();
             this.dtDte = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtImage = new System.Windows.Forms.TextBox();
+            this.btnAddImage = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rtxDescription = new System.Windows.Forms.RichTextBox();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.cmbBranch = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -278,15 +280,6 @@
             this.label12.TabIndex = 28;
             this.label12.Text = "Poslovnica";
             // 
-            // cmbBranch
-            // 
-            this.cmbBranch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cmbBranch.FormattingEnabled = true;
-            this.cmbBranch.Location = new System.Drawing.Point(399, 79);
-            this.cmbBranch.Name = "cmbBranch";
-            this.cmbBranch.Size = new System.Drawing.Size(261, 28);
-            this.cmbBranch.TabIndex = 27;
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -317,7 +310,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.cmbBranch);
+            this.groupBox1.Controls.Add(this.txtImage);
+            this.groupBox1.Controls.Add(this.btnAddImage);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.rtxDescription);
             this.groupBox1.Controls.Add(this.cmbVehicleModel);
@@ -327,7 +322,6 @@
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.cmbBranch);
             this.groupBox1.Controls.Add(this.cmbManufacturer);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.txtDailyPrice);
@@ -355,14 +349,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Novo vozilo";
             // 
-            // button1
+            // txtImage
             // 
-            this.button1.Location = new System.Drawing.Point(809, 375);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 37);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "Dodaj fotografiju";
-            this.button1.UseVisualStyleBackColor = true;
+            this.txtImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtImage.Location = new System.Drawing.Point(770, 315);
+            this.txtImage.Name = "txtImage";
+            this.txtImage.Size = new System.Drawing.Size(261, 26);
+            this.txtImage.TabIndex = 36;
+            // 
+            // btnAddImage
+            // 
+            this.btnAddImage.Location = new System.Drawing.Point(813, 375);
+            this.btnAddImage.Name = "btnAddImage";
+            this.btnAddImage.Size = new System.Drawing.Size(160, 37);
+            this.btnAddImage.TabIndex = 35;
+            this.btnAddImage.Text = "Dodaj fotografiju";
+            this.btnAddImage.UseVisualStyleBackColor = true;
+            this.btnAddImage.Click += new System.EventHandler(this.btnAddImage_Click);
             // 
             // pictureBox1
             // 
@@ -381,6 +384,19 @@
             this.rtxDescription.Size = new System.Drawing.Size(258, 161);
             this.rtxDescription.TabIndex = 33;
             this.rtxDescription.Text = "";
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog";
+            // 
+            // cmbBranch
+            // 
+            this.cmbBranch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cmbBranch.FormattingEnabled = true;
+            this.cmbBranch.Location = new System.Drawing.Point(401, 79);
+            this.cmbBranch.Name = "cmbBranch";
+            this.cmbBranch.Size = new System.Drawing.Size(260, 28);
+            this.cmbBranch.TabIndex = 37;
             // 
             // frmAddVehicle
             // 
@@ -423,13 +439,15 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cmbVehicleType;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox cmbBranch;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cmbManufacturer;
         private System.Windows.Forms.DateTimePicker dtDte;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RichTextBox rtxDescription;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddImage;
+        private System.Windows.Forms.TextBox txtImage;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.ComboBox cmbBranch;
     }
 }

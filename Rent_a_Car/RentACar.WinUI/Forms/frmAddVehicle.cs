@@ -7,12 +7,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-
 
 namespace RentACar.WinUI.Forms
 {
@@ -51,6 +50,7 @@ namespace RentACar.WinUI.Forms
 
             cmbBranch.DataSource = list;
         }
+
 
         private async Task LoadVehicleType()
         {
@@ -108,28 +108,28 @@ namespace RentACar.WinUI.Forms
             }
         }
 
+        VehicleUpsert request = new VehicleUpsert();
+
         private async void btnSacuvaj_Click(object sender, EventArgs e)
         {
-            var vehicle = new VehicleUpsert()
-            {
-                RegistrationNumber=txtRegistrationNumber.Text,
-                VehicleNumber=int.Parse(txtVehicleNumber.Text),
-                DailyPrice=double.Parse(txtDailyPrice.Text),
-                Description=rtxDescription.Text,
-                ManufacturerDate=dtDte.Value,
-                Mileage=txtMileage.Text,
-                Transmission=txtTransmission.Text,
-                NumberOfSeats=int.Parse(txtNumberOfSeats.Text),
-                Status=chkStatus.Checked
-            };
+            request.RegistrationNumber = txtRegistrationNumber.Text;
+            request.VehicleNumber = int.Parse(txtVehicleNumber.Text);
+            request.DailyPrice = double.Parse(txtDailyPrice.Text);
+            request.Description = rtxDescription.Text;
+            request.ManufacturerDate = dtDte.Value;
+            request.Mileage = txtMileage.Text;
+            request.Transmission = txtTransmission.Text;
+            request.NumberOfSeats = int.Parse(txtNumberOfSeats.Text);
+            request.Status = chkStatus.Checked;
 
             // ove foreign moraju se posebno parsat
             //branch
+
             var idBranch = cmbBranch.SelectedValue;
 
-            if(int.TryParse(idBranch.ToString(),out int branchID))
+            if (int.TryParse(idBranch.ToString(), out int branchID))
             {
-                vehicle.BranchId = branchID;
+                request.BranchId = branchID;
             }
 
             //fueltype
@@ -137,7 +137,7 @@ namespace RentACar.WinUI.Forms
 
             if(int.TryParse(idFuel.ToString(),out int fuelid))
             {
-                vehicle.FuelTypeId = fuelid;
+                request.FuelTypeId = fuelid;
             }
 
             // vehicletype
@@ -145,7 +145,7 @@ namespace RentACar.WinUI.Forms
 
             if(int.TryParse(idVehicleType.ToString(),out int vehicletypeID))
             {
-                vehicle.VehicleTypeId = vehicletypeID;
+                request.VehicleTypeId = vehicletypeID;
             }
 
             //vehiclemodel
@@ -153,11 +153,28 @@ namespace RentACar.WinUI.Forms
 
             if (int.TryParse(idVehiclemodel.ToString(), out int vehiclemodelID))
             {
-                vehicle.VehicleModelId = vehiclemodelID;
+                request.VehicleModelId = vehiclemodelID;
             }
             
-            await _serviceVehicle.Insert<VehicleRequest>(vehicle);
+            await _serviceVehicle.Insert<VehicleRequest>(request);
+            this.Close();
         }
 
+        private void btnAddImage_Click(object sender, EventArgs e)
+        {
+            var result = openFileDialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                var fileName = openFileDialog.FileName;
+                var file = File.ReadAllBytes(fileName);
+                request.Image = file;
+                txtImage.Text = fileName;
+
+                Image img = Image.FromFile(fileName);
+                pictureBox1.Image = img;
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+        }
     }
 }

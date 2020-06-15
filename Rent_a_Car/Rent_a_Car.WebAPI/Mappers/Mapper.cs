@@ -33,9 +33,10 @@ namespace Rent_a_Car.WebAPI.Mappers
             CreateMap<Database.Customer, CustomerUpsert>().ReverseMap();
             //CreateMap<RentaCar.Data.Models.Customer,Database.Customer>().ReverseMap();
 
-
             CreateMap<VehicleRequest, Database.Vehicle>().ReverseMap();              // Vehicle
             CreateMap<VehicleRequest, VehicleUpsert>().ReverseMap();
+            CreateMap<Database.Vehicle, VehicleUpsert>().ReverseMap();
+
             CreateMap<VehicleRequest, Database.Vehicle>().ReverseMap();
 
             CreateMap<Database.Booking, BookingUpsert>().ReverseMap();               // Booking
@@ -45,6 +46,8 @@ namespace Rent_a_Car.WebAPI.Mappers
 
             CreateMap<ManufacturerRequest, Manufacturer>().ReverseMap();
             CreateMap<VehicleModelRequest, Database.VehicleModel>().ReverseMap();
+            CreateMap<VehicleModelRequest, VehicleRequest>().ReverseMap();
+
             CreateMap<VehicleRequest, Database.Vehicle>().ReverseMap();
 
             CreateMap<CommentRequest, VehicleRequest>().ReverseMap();

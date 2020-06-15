@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,14 @@ namespace RentACar.WinUI.Forms
             _id = id;
         }
 
+        private static Image GetImage(byte[] data)
+        {
+            using (MemoryStream ms = new MemoryStream(data))
+            {
+                return (Image.FromStream(ms));
+            }
+        }
+
         private async void frmVehicleDetails_Load(object sender, EventArgs e)
         {
             if(_id.HasValue)
@@ -36,8 +45,10 @@ namespace RentACar.WinUI.Forms
                 txtTransmission.Text = vehicle.Transmission;
                 txtNumberOfSeats.Text = vehicle.NumberOfSeats.ToString();
                 chkStatus.Checked = vehicle.Status.Value;
-            }
 
+                pictureBox1.Image = GetImage(vehicle.Image);
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
