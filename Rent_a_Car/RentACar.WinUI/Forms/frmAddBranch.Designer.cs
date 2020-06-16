@@ -49,130 +49,153 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label1.Location = new System.Drawing.Point(93, 66);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 17);
+            this.label1.Size = new System.Drawing.Size(135, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Naziv poslovnice";
             // 
             // txtBranchName
             // 
+            this.txtBranchName.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtBranchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtBranchName.Location = new System.Drawing.Point(96, 98);
             this.txtBranchName.Name = "txtBranchName";
-            this.txtBranchName.Size = new System.Drawing.Size(265, 22);
+            this.txtBranchName.Size = new System.Drawing.Size(265, 26);
             this.txtBranchName.TabIndex = 1;
             // 
             // txtPhoneNumber
             // 
+            this.txtPhoneNumber.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtPhoneNumber.Location = new System.Drawing.Point(96, 193);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(265, 22);
+            this.txtPhoneNumber.Size = new System.Drawing.Size(265, 26);
             this.txtPhoneNumber.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label2.Location = new System.Drawing.Point(93, 161);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 17);
+            this.label2.Size = new System.Drawing.Size(104, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Broj telefona";
             // 
             // txtAdress
             // 
+            this.txtAdress.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtAdress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtAdress.Location = new System.Drawing.Point(96, 284);
             this.txtAdress.Name = "txtAdress";
-            this.txtAdress.Size = new System.Drawing.Size(265, 22);
+            this.txtAdress.Size = new System.Drawing.Size(265, 26);
             this.txtAdress.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label3.Location = new System.Drawing.Point(93, 252);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 17);
+            this.label3.Size = new System.Drawing.Size(62, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Adresa";
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(96, 383);
+            this.txtDescription.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtDescription.Location = new System.Drawing.Point(97, 385);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(265, 22);
+            this.txtDescription.Size = new System.Drawing.Size(264, 26);
             this.txtDescription.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label4.Location = new System.Drawing.Point(93, 351);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 17);
+            this.label4.Size = new System.Drawing.Size(44, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "Opis";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label5.Location = new System.Drawing.Point(548, 86);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 17);
+            this.label5.Size = new System.Drawing.Size(46, 20);
             this.label5.TabIndex = 8;
             this.label5.Text = "Grad";
             // 
             // cmbCity
             // 
+            this.cmbCity.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cmbCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cmbCity.FormattingEnabled = true;
             this.cmbCity.Location = new System.Drawing.Point(551, 118);
             this.cmbCity.Name = "cmbCity";
-            this.cmbCity.Size = new System.Drawing.Size(238, 24);
+            this.cmbCity.Size = new System.Drawing.Size(238, 28);
             this.cmbCity.TabIndex = 9;
             // 
             // txtOpenTime
             // 
-            this.txtOpenTime.Location = new System.Drawing.Point(551, 269);
+            this.txtOpenTime.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtOpenTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtOpenTime.Location = new System.Drawing.Point(538, 252);
             this.txtOpenTime.Name = "txtOpenTime";
-            this.txtOpenTime.Size = new System.Drawing.Size(100, 22);
+            this.txtOpenTime.Size = new System.Drawing.Size(100, 26);
             this.txtOpenTime.TabIndex = 10;
             // 
             // txtClosedTime
             // 
-            this.txtClosedTime.Location = new System.Drawing.Point(702, 269);
+            this.txtClosedTime.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtClosedTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtClosedTime.Location = new System.Drawing.Point(689, 252);
             this.txtClosedTime.Name = "txtClosedTime";
-            this.txtClosedTime.Size = new System.Drawing.Size(100, 22);
+            this.txtClosedTime.Size = new System.Drawing.Size(100, 26);
             this.txtClosedTime.TabIndex = 11;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(620, 196);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label6.Location = new System.Drawing.Point(607, 179);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(103, 17);
+            this.label6.Size = new System.Drawing.Size(121, 20);
             this.label6.TabIndex = 12;
             this.label6.Text = "Radno vrijeme ";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(727, 233);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label7.Location = new System.Drawing.Point(714, 216);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(26, 17);
+            this.label7.Size = new System.Drawing.Size(31, 20);
             this.label7.TabIndex = 13;
             this.label7.Text = "Do";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(580, 233);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label8.Location = new System.Drawing.Point(567, 216);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(27, 17);
+            this.label8.Size = new System.Drawing.Size(31, 20);
             this.label8.TabIndex = 14;
             this.label8.Text = "Od";
             // 
             // btnSaveBranch
             // 
-            this.btnSaveBranch.Location = new System.Drawing.Point(615, 378);
+            this.btnSaveBranch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnSaveBranch.Location = new System.Drawing.Point(602, 368);
             this.btnSaveBranch.Name = "btnSaveBranch";
-            this.btnSaveBranch.Size = new System.Drawing.Size(138, 33);
+            this.btnSaveBranch.Size = new System.Drawing.Size(143, 43);
             this.btnSaveBranch.TabIndex = 15;
             this.btnSaveBranch.Text = "Sačuvaj";
             this.btnSaveBranch.UseVisualStyleBackColor = true;
@@ -182,7 +205,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(955, 524);
+            this.ClientSize = new System.Drawing.Size(976, 550);
             this.Controls.Add(this.btnSaveBranch);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);

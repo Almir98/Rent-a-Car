@@ -44,6 +44,7 @@ namespace RentACar.WinUI.Forms
                 newList.Add(form);
             }
             newList = newList.OrderBy(x => x.DateOfComment).ToList();
+            dgvComments.AutoGenerateColumns = false;
             dgvComments.DataSource = newList;
         }
 

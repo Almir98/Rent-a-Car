@@ -28,5 +28,15 @@ namespace RentACar.WebAPI.Service
 
             return _mapper.Map<List<BookingRequest>>(query.ToList());
         }
+
+        public override BookingRequest GetByID(int id)
+        {
+            var booking = _context.Booking.Where(e => e.BookingId == id)
+                .Include(e => e.Customer)
+                .FirstOrDefault();
+
+            return _mapper.Map<BookingRequest>(booking);
+        }
+
     }
 }

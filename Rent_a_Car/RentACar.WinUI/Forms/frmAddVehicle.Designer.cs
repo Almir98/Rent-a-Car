@@ -55,12 +55,12 @@
             this.cmbManufacturer = new System.Windows.Forms.ComboBox();
             this.dtDte = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbBranch = new System.Windows.Forms.ComboBox();
             this.txtImage = new System.Windows.Forms.TextBox();
             this.btnAddImage = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rtxDescription = new System.Windows.Forms.RichTextBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.cmbBranch = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -207,9 +207,9 @@
             this.chkStatus.AutoSize = true;
             this.chkStatus.Location = new System.Drawing.Point(399, 382);
             this.chkStatus.Name = "chkStatus";
-            this.chkStatus.Size = new System.Drawing.Size(79, 24);
+            this.chkStatus.Size = new System.Drawing.Size(103, 24);
             this.chkStatus.TabIndex = 17;
-            this.chkStatus.Text = "Status";
+            this.chkStatus.Text = "Dostupan";
             this.chkStatus.UseVisualStyleBackColor = true;
             // 
             // btnSacuvaj
@@ -349,6 +349,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Novo vozilo";
             // 
+            // cmbBranch
+            // 
+            this.cmbBranch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cmbBranch.FormattingEnabled = true;
+            this.cmbBranch.Location = new System.Drawing.Point(401, 79);
+            this.cmbBranch.Name = "cmbBranch";
+            this.cmbBranch.Size = new System.Drawing.Size(260, 28);
+            this.cmbBranch.TabIndex = 37;
+            // 
             // txtImage
             // 
             this.txtImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
@@ -388,15 +397,6 @@
             // openFileDialog
             // 
             this.openFileDialog.FileName = "openFileDialog";
-            // 
-            // cmbBranch
-            // 
-            this.cmbBranch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cmbBranch.FormattingEnabled = true;
-            this.cmbBranch.Location = new System.Drawing.Point(401, 79);
-            this.cmbBranch.Name = "cmbBranch";
-            this.cmbBranch.Size = new System.Drawing.Size(260, 28);
-            this.cmbBranch.TabIndex = 37;
             // 
             // frmAddVehicle
             // 

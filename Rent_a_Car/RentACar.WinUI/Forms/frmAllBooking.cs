@@ -57,6 +57,8 @@ namespace RentACar.WinUI.Forms
                 };
                 newList.Add(form);
             }
+
+            dgvBooking.AutoGenerateColumns = false;
             dgvBooking.DataSource = newList;
 
         }

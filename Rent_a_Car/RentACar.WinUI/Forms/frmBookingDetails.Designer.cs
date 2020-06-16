@@ -68,6 +68,7 @@
             this.txtReservationID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtReservationID.Location = new System.Drawing.Point(31, 58);
             this.txtReservationID.Name = "txtReservationID";
+            this.txtReservationID.ReadOnly = true;
             this.txtReservationID.Size = new System.Drawing.Size(222, 26);
             this.txtReservationID.TabIndex = 1;
             // 
@@ -76,6 +77,7 @@
             this.txtNumberOfDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtNumberOfDays.Location = new System.Drawing.Point(30, 281);
             this.txtNumberOfDays.Name = "txtNumberOfDays";
+            this.txtNumberOfDays.ReadOnly = true;
             this.txtNumberOfDays.Size = new System.Drawing.Size(223, 26);
             this.txtNumberOfDays.TabIndex = 3;
             // 
@@ -94,6 +96,7 @@
             this.txtTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtTotalPrice.Location = new System.Drawing.Point(30, 363);
             this.txtTotalPrice.Name = "txtTotalPrice";
+            this.txtTotalPrice.ReadOnly = true;
             this.txtTotalPrice.Size = new System.Drawing.Size(223, 26);
             this.txtTotalPrice.TabIndex = 5;
             // 
@@ -187,6 +190,7 @@
             this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtDescription.Location = new System.Drawing.Point(371, 295);
             this.txtDescription.Name = "txtDescription";
+            this.txtDescription.ReadOnly = true;
             this.txtDescription.Size = new System.Drawing.Size(234, 166);
             this.txtDescription.TabIndex = 18;
             this.txtDescription.Text = "";
@@ -195,7 +199,7 @@
             // 
             this.Prezime.AutoSize = true;
             this.Prezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Prezime.Location = new System.Drawing.Point(27, 186);
+            this.Prezime.Location = new System.Drawing.Point(27, 183);
             this.Prezime.Name = "Prezime";
             this.Prezime.Size = new System.Drawing.Size(71, 20);
             this.Prezime.TabIndex = 22;
@@ -206,6 +210,7 @@
             this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtLastName.Location = new System.Drawing.Point(30, 206);
             this.txtLastName.Name = "txtLastName";
+            this.txtLastName.ReadOnly = true;
             this.txtLastName.Size = new System.Drawing.Size(222, 26);
             this.txtLastName.TabIndex = 21;
             // 
@@ -224,6 +229,7 @@
             this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtFirstName.Location = new System.Drawing.Point(30, 128);
             this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.ReadOnly = true;
             this.txtFirstName.Size = new System.Drawing.Size(222, 26);
             this.txtFirstName.TabIndex = 23;
             // 

@@ -104,12 +104,13 @@
             this.groupBox2.Controls.Add(this.txtPassword);
             this.groupBox2.Controls.Add(this.btnClick);
             this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.groupBox2.Location = new System.Drawing.Point(185, 209);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(377, 326);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Sign in";
+            this.groupBox2.Text = "Prijava";
             // 
             // frmLogin
             // 

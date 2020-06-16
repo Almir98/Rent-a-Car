@@ -52,112 +52,140 @@
             // test
             // 
             this.test.AutoSize = true;
+            this.test.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.test.Location = new System.Drawing.Point(486, 61);
             this.test.Name = "test";
-            this.test.Size = new System.Drawing.Size(119, 17);
+            this.test.Size = new System.Drawing.Size(143, 20);
             this.test.TabIndex = 0;
             this.test.Text = "Registracijski broj";
             // 
             // txtRegistracija
             // 
+            this.txtRegistracija.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtRegistracija.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtRegistracija.Location = new System.Drawing.Point(489, 90);
             this.txtRegistracija.Name = "txtRegistracija";
-            this.txtRegistracija.Size = new System.Drawing.Size(344, 22);
+            this.txtRegistracija.ReadOnly = true;
+            this.txtRegistracija.Size = new System.Drawing.Size(344, 26);
             this.txtRegistracija.TabIndex = 1;
             // 
             // txtVehicleNumber
             // 
-            this.txtVehicleNumber.Location = new System.Drawing.Point(489, 165);
+            this.txtVehicleNumber.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtVehicleNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtVehicleNumber.Location = new System.Drawing.Point(489, 158);
             this.txtVehicleNumber.Name = "txtVehicleNumber";
-            this.txtVehicleNumber.Size = new System.Drawing.Size(344, 22);
+            this.txtVehicleNumber.ReadOnly = true;
+            this.txtVehicleNumber.Size = new System.Drawing.Size(344, 26);
             this.txtVehicleNumber.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label2.Location = new System.Drawing.Point(486, 135);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 17);
+            this.label2.Size = new System.Drawing.Size(88, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Broj vozila";
             // 
             // txtDescription
             // 
+            this.txtDescription.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtDescription.Location = new System.Drawing.Point(489, 298);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(344, 22);
+            this.txtDescription.ReadOnly = true;
+            this.txtDescription.Size = new System.Drawing.Size(344, 26);
             this.txtDescription.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label4.Location = new System.Drawing.Point(486, 413);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 17);
+            this.label4.Size = new System.Drawing.Size(96, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "Transmisija";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label5.Location = new System.Drawing.Point(486, 278);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 17);
+            this.label5.Size = new System.Drawing.Size(110, 20);
             this.label5.TabIndex = 8;
             this.label5.Text = "Detaljniji opis";
             // 
             // txtDate
             // 
+            this.txtDate.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtDate.Location = new System.Drawing.Point(489, 366);
             this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(344, 22);
+            this.txtDate.ReadOnly = true;
+            this.txtDate.Size = new System.Drawing.Size(344, 26);
             this.txtDate.TabIndex = 11;
             // 
             // txtNumberOfSeats
             // 
-            this.txtNumberOfSeats.Location = new System.Drawing.Point(489, 495);
+            this.txtNumberOfSeats.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtNumberOfSeats.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtNumberOfSeats.Location = new System.Drawing.Point(490, 495);
             this.txtNumberOfSeats.Name = "txtNumberOfSeats";
-            this.txtNumberOfSeats.Size = new System.Drawing.Size(344, 22);
+            this.txtNumberOfSeats.ReadOnly = true;
+            this.txtNumberOfSeats.Size = new System.Drawing.Size(343, 26);
             this.txtNumberOfSeats.TabIndex = 13;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label7.Location = new System.Drawing.Point(486, 346);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(126, 17);
+            this.label7.Size = new System.Drawing.Size(149, 20);
             this.label7.TabIndex = 12;
             this.label7.Text = "Datum proizvodnje";
             // 
             // txtDailyPrice
             // 
+            this.txtDailyPrice.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtDailyPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtDailyPrice.Location = new System.Drawing.Point(489, 227);
             this.txtDailyPrice.Name = "txtDailyPrice";
-            this.txtDailyPrice.Size = new System.Drawing.Size(344, 22);
+            this.txtDailyPrice.ReadOnly = true;
+            this.txtDailyPrice.Size = new System.Drawing.Size(344, 26);
             this.txtDailyPrice.TabIndex = 15;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label8.Location = new System.Drawing.Point(486, 207);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(103, 17);
+            this.label8.Size = new System.Drawing.Size(120, 20);
             this.label8.TabIndex = 14;
             this.label8.Text = "Cijena po danu";
             // 
             // txtTransmission
             // 
+            this.txtTransmission.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtTransmission.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtTransmission.Location = new System.Drawing.Point(489, 433);
             this.txtTransmission.Name = "txtTransmission";
-            this.txtTransmission.Size = new System.Drawing.Size(344, 22);
+            this.txtTransmission.ReadOnly = true;
+            this.txtTransmission.Size = new System.Drawing.Size(344, 26);
             this.txtTransmission.TabIndex = 17;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label9.Location = new System.Drawing.Point(486, 475);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(134, 17);
+            this.label9.Size = new System.Drawing.Size(162, 20);
             this.label9.TabIndex = 16;
             this.label9.Text = "Broj sjedećih mjesta";
             // 
@@ -174,15 +202,17 @@
             this.chkStatus.AutoSize = true;
             this.chkStatus.Checked = true;
             this.chkStatus.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.chkStatus.Location = new System.Drawing.Point(489, 547);
             this.chkStatus.Name = "chkStatus";
-            this.chkStatus.Size = new System.Drawing.Size(91, 21);
+            this.chkStatus.Size = new System.Drawing.Size(103, 24);
             this.chkStatus.TabIndex = 19;
             this.chkStatus.Text = "Dostupan";
             this.chkStatus.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.button1.Location = new System.Drawing.Point(679, 614);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(139, 37);

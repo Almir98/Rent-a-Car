@@ -39,6 +39,7 @@ namespace RentACar.WinUI.Forms
             await LoadCity();
 
             var result = await _apiService.Get<List<BranchRequest>>(null);
+            dgvBranch.AutoGenerateColumns = false;
             dgvBranch.DataSource = result;
         }
 
@@ -59,8 +60,15 @@ namespace RentACar.WinUI.Forms
                 CityId = cityID
             });
 
+            dgvBranch.AutoGenerateColumns = false;
             dgvBranch.DataSource = result;
         }
 
+        private void dgvBranch_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            var id = dgvBranch.SelectedRows[0].Cells[0].Value;
+            frmBranchDetails frm = new frmBranchDetails(int.Parse(id.ToString()));
+            frm.Show();
+        }
     }
 }

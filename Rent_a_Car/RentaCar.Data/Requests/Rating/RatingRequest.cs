@@ -16,8 +16,5 @@ namespace RentaCar.Data.Requests.Rating
         public VehicleRequest Vehicle { get; set; }
         public VehicleModelRequest VehicleModel { get; set; }
         public ManufacturerRequest Manufacturer { get; set; }
-        
-        //public int CustomerId { get; set; }
-        //public int VehicleId { get; set; }
     }
 }

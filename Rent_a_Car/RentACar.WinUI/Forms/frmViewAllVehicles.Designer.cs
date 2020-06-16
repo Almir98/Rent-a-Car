@@ -43,6 +43,7 @@
             // 
             // txtSearchVehicle
             // 
+            this.txtSearchVehicle.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtSearchVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtSearchVehicle.Location = new System.Drawing.Point(38, 72);
             this.txtSearchVehicle.Name = "txtSearchVehicle";
@@ -130,7 +131,7 @@
             // 
             this.groupBox1.Controls.Add(this.txtSearchVehicle);
             this.groupBox1.Controls.Add(this.btnShowVehicles);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.groupBox1.Location = new System.Drawing.Point(151, 28);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(653, 161);

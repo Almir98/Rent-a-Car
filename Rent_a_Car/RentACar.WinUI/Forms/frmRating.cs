@@ -44,6 +44,7 @@ namespace RentACar.WinUI.Forms
                 newList.Add(form);
             }
             newList = newList.OrderBy(x => x.RatingValue).ToList();
+            dgvRating.AutoGenerateColumns = false;
             dgvRating.DataSource = newList;
         }
 
@@ -54,6 +55,13 @@ namespace RentACar.WinUI.Forms
                 ManufacturerName = txtVehicle.Text,
             };
             var list = await _serviceRating.Get<List<RatingRequest>>(search);
+        }
+
+        private void dgvRating_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            var id = dgvRating.SelectedRows[0].Cells[0].Value;
+            frmRatingDetails frm = new frmRatingDetails(int.Parse(id.ToString()));
+            frm.Show();
         }
     }
 }

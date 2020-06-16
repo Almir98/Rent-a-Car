@@ -32,5 +32,13 @@ namespace RentACar.WebAPI.Service
 
             return _mapper.Map<List<RatingRequest>>(query.ToList());
         }
+
+        public override RatingRequest GetByID(int id)
+        {
+            var rating = _context.Rating.Where(e => e.RatingId == id).Include(e => e.Customer).Include(e => e.Vehicle).FirstOrDefault();
+
+            return _mapper.Map<RatingRequest>(rating);
+        }
+
     }
 }

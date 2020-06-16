@@ -32,5 +32,18 @@ namespace RentACar.WebAPI.Service
 
             return _mapper.Map<List<CommentRequest>>(query.ToList());
         }
+
+        public override CommentRequest GetByID(int id)
+        {
+            var comment = _context.Comment.Where(e => e.CommentId == id)
+                .Include(e=>e.Customer)
+                .Include(e => e.Vehicle)
+                .Include(e => e.Vehicle.VehicleModel)
+                .Include(e => e.Vehicle.VehicleModel.Manufacturer)
+                .FirstOrDefault();
+
+            return _mapper.Map<CommentRequest>(comment);
+        }
+
     }
 }
