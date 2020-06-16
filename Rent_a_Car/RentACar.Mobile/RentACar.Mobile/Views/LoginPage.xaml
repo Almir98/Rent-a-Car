@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="clr-namespace:RentACar.Mobile.ViewModels"
+			 mc:Ignorable="d"
+             x:Class="RentACar.Mobile.Views.LoginPage">
+
+	<ContentPage.BindingContext>
+		<vm:LoginVM />
+	</ContentPage.BindingContext>
+	<ContentPage.Content>
+        <StackLayout Padding="20" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+			<Label Text="Please sign in"
+			HorizontalOptions="CenterAndExpand" />
+
+			<Label Text="Username"
+                HorizontalOptions="CenterAndExpand" />
+			<Entry Text="{Binding Username}"></Entry>
+
+			<Label Text="Password"
+                HorizontalOptions="CenterAndExpand" />
+			<Entry Text="{Binding Password}"></Entry>
+
+			<Button Command="{Binding LoginCommand}" Text="Login"></Button>
+			
+		</StackLayout>
+    </ContentPage.Content>
+</ContentPage>
