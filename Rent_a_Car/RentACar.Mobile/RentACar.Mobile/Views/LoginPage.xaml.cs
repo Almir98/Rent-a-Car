@@ -16,5 +16,11 @@ namespace RentACar.Mobile.Views
         {
             InitializeComponent();
         }
+
+        private void Entry_OnTextChanged(object sender,TextChangedEventArgs e)
+        {
+
+        }
+
     }
 }

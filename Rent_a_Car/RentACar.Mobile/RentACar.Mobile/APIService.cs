@@ -38,8 +38,7 @@ namespace RentACar.Mobile
                     url += "?";
                     url += await search.ToQueryString();
                 }
-
-                return await url.WithBasicAuth(Username, Password).GetJsonAsync<T>();
+                 return await url.WithBasicAuth(Username, Password).GetJsonAsync<T>();
             }
             catch (FlurlHttpException ex)
             {
@@ -76,7 +75,7 @@ namespace RentACar.Mobile
                     stringBuilder.AppendLine($"{error.Key}, ${string.Join(",", error.Value)}");
                 }
 
-                await Application.Current.MainPage.DisplayAlert("Greška", stringBuilder.ToString(), "OK");
+                await Application.Current.MainPage.DisplayAlert("Error", stringBuilder.ToString(), "OK");
                 return default(T);
             }
         }
@@ -99,7 +98,7 @@ namespace RentACar.Mobile
                     stringBuilder.AppendLine($"{error.Key}, ${string.Join(",", error.Value)}");
                 }
 
-                await Application.Current.MainPage.DisplayAlert("Greška", stringBuilder.ToString(), "OK");
+                await Application.Current.MainPage.DisplayAlert("Error", stringBuilder.ToString(), "OK");
                 return default(T);
             }
 
