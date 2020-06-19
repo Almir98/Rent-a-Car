@@ -4,32 +4,50 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:vm="clr-namespace:RentACar.Mobile.ViewModels"
+			 xmlns:converters="clr-namespace:RentACar.Mobile.Converters"
 			 mc:Ignorable="d"
              x:Class="RentACar.Mobile.Views.VehiclePage">
 	<ContentPage.BindingContext>
 		<vm:VehicleViewModel />
 	</ContentPage.BindingContext>
-	
+
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
 	<ContentPage.Content>
         <StackLayout>
             <Label Text="Vehicles"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-			<ListView ItemsSource="{Binding VehicleList}">
+			
+			<Picker ItemsSource="{Binding VehicleList}" SelectedItem="{Binding }" ItemDisplayBinding="{Binding}"></Picker>
+
+			<ListView ItemsSource="{Binding VehicleList}" ItemTapped="ListView_ItemTapped">
 				<ListView.ItemTemplate>
 					<DataTemplate>
 						<ViewCell>
-							<StackLayout Padding="10">
-								<Label Text="{Binding RegistrationNumber}" 
-                                d:Text="{Binding .}"
-                                LineBreakMode="NoWrap" 
-                                Style="{DynamicResource ListItemTextStyle}" 
-                                FontSize="16" />
-								<Label Text="{Binding DailyPrice}" 
-                                d:Text="Item descripton"
-                                LineBreakMode="NoWrap"
-                                Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="13" />
+							<StackLayout Padding="10" Orientation="Horizontal">
+								<StackLayout>
+								<Image WidthRequest="250" HeightRequest="250" Source="{Binding Image,Converter={StaticResource imgConv}}"></Image>
+								</StackLayout>
+
+								<StackLayout Orientation="Vertical">
+									
+									<Label Text="{Binding RegistrationNumber}" 
+									d:Text="{Binding .}"
+									LineBreakMode="NoWrap" 
+									Style="{DynamicResource ListItemTextStyle}" 
+									FontSize="16" />
+									<Label Text="{Binding DailyPrice}" 
+									d:Text="Item descripton"
+									LineBreakMode="NoWrap"
+									Style="{DynamicResource ListItemDetailTextStyle}"
+									FontSize="13" />
+								</StackLayout>
+								
 							</StackLayout>
 						</ViewCell>
 					</DataTemplate>

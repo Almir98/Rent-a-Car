@@ -19,7 +19,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentACar.Mobile.Android", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentACar.Mobile.iOS", "RentACar.Mobile\RentACar.Mobile.iOS\RentACar.Mobile.iOS.csproj", "{E87D737D-1C71-4FCC-93E8-5A0231B806A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentACar.Mobile", "RentACar.Mobile\RentACar.Mobile\RentACar.Mobile.csproj", "{89E2EE57-DD94-4DEC-A2CE-2A45F19E3859}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentACar.Mobile", "RentACar.Mobile\RentACar.Mobile\RentACar.Mobile.csproj", "{89E2EE57-DD94-4DEC-A2CE-2A45F19E3859}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
