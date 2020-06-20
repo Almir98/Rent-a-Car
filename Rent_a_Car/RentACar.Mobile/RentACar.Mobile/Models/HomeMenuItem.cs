@@ -8,7 +8,8 @@ namespace RentACar.Mobile.Models
     {
         Browse,
         About,
-        Vehicle
+        Vehicle,
+        Contact
 
     }
     public class HomeMenuItem

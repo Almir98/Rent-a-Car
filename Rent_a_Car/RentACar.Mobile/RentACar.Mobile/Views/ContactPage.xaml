@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="RentACar.Mobile.Views.ContactPage">
+	
+        <StackLayout>
+		<Label HorizontalOptions="Center" Margin="0,60,0,0" FontSize="Large">
+			Rent a car
+		</Label>
+
+		<Label  FontSize="Large"  Text="About project"
+                HorizontalOptions="CenterAndExpand" 
+				VerticalOptions="Center"
+                 Margin="0,60,0,30">
+		</Label>
+			
+		<Label Margin="10,0,0,40">
+			Project implementation from subject Software development II
+		</Label>
+
+		<Label Margin="50,0,0,0">
+			1. REST API ASP .NET Core application</Label>
+		<Label Margin="50,0,0,0">
+			2. Windows forms application</Label>
+		<Label Margin="50,0,0,0">
+			3. Xamarin forms application</Label>
+
+		<Label Text="Link for source code :"
+                 Margin="10,30,0,0" />
+		<Label Margin="10,0,0,0">
+				<Label.FormattedText>
+					<FormattedString>
+						<Span Text="https://github.com/Almir98"
+                  TextColor="Blue"
+                  TextDecorations="Underline">
+							<Span.GestureRecognizers>
+								<TapGestureRecognizer Command="{Binding TapCommand}"
+                                          CommandParameter="https://github.com/Almir98" />
+							</Span.GestureRecognizers>
+						</Span>
+					</FormattedString>
+				</Label.FormattedText>
+		</Label>
+
+		<Label VerticalOptions="End" Text="© Almir Tihak, Faculty of Information technology, University Džemal Bijedić of Mostar 2020"
+                 Margin="10,50,0,0" />
+	</StackLayout>
+</ContentPage>

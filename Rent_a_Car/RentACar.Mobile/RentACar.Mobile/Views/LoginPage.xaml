@@ -12,7 +12,7 @@
 	</ContentPage.BindingContext>
 	<ContentPage.Content>
         <StackLayout Padding="20" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
-			<Label Text="Please sign in"
+			<Label FontSize="Large" Text="Please sign in"
 			HorizontalOptions="CenterAndExpand" />
 
 			<Label Text="Username"
@@ -21,7 +21,7 @@
 
 			<Label Text="Password"
                 HorizontalOptions="CenterAndExpand" />
-			<Entry Text="{Binding Password}"></Entry>
+			<Entry IsPassword="True" Text="{Binding Password}"></Entry>
 
 			<Button Command="{Binding LoginCommand}" Text="Login"></Button>
 

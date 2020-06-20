@@ -1,4 +1,6 @@
-﻿using System;
+﻿using RentaCar.Data.Requests.Vehicle;
+using RentACar.Mobile.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +14,16 @@ namespace RentACar.Mobile.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class VehicleDetailPage : ContentPage
     {
-        public VehicleDetailPage()
+        VehicleDetailsViewModel model = null;
+
+        public VehicleDetailPage(VehicleRequest item)
         {
             InitializeComponent();
+
+            BindingContext = model = new VehicleDetailsViewModel {
+
+                vehicle = item
+            };
         }
     }
 }

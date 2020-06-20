@@ -13,7 +13,7 @@ namespace RentACar.Mobile.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class VehiclePage : ContentPage
     {   
-        private VehicleViewModel model = null;
+        private VehicleViewModel model = null;      
 
         public VehiclePage()
         {
@@ -24,13 +24,14 @@ namespace RentACar.Mobile.Views
         protected async override void OnAppearing()
          {
             base.OnAppearing();
-
             await model.Init();
         } 
 
-        private async void ListView_ItemTapped(object sender, SelectedItemChangedEventArgs e)
+        private async void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            await Navigation.PushAsync(new VehicleDetailPage());
+            var clicked_item = e.Item as RentaCar.Data.Requests.Vehicle.VehicleRequest;
+
+            await Navigation.PushAsync(new VehicleDetailPage(clicked_item));
         }
 
     }

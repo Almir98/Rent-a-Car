@@ -20,9 +20,11 @@ namespace RentACar.Mobile.Views
 
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
-                new HomeMenuItem {Id = MenuItemType.About, Title="About" },
-                new HomeMenuItem {Id = MenuItemType.Vehicle, Title="Vehicle" }
+                new HomeMenuItem {Id = MenuItemType.Browse, Title="Home" },
+                new HomeMenuItem {Id = MenuItemType.About, Title="About profile" },
+                new HomeMenuItem {Id = MenuItemType.Vehicle, Title="Vehicle" },
+                new HomeMenuItem {Id = MenuItemType.Contact, Title="Contact us" },
+
             };
 
             ListViewMenu.ItemsSource = menuItems;

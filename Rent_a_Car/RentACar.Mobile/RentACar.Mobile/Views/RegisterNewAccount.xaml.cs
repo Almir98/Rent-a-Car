@@ -21,9 +21,5 @@ namespace RentACar.Mobile.Views
         {
             await Navigation.PushModalAsync(new LoginPage());
         }
-
-
-
-
     }
 }

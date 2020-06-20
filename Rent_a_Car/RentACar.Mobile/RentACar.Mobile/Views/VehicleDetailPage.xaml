@@ -3,13 +3,65 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
+			 xmlns:vm1="clr-namespace:RentACar.Mobile.ViewModels"
+			 xmlns:converters="clr-namespace:RentACar.Mobile.Converters"
+			 mc:Ignorable="d"
              x:Class="RentACar.Mobile.Views.VehicleDetailPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+	
+	<ContentPage.BindingContext>
+		<vm1:VehicleDetailsViewModel></vm1:VehicleDetailsViewModel>
+	</ContentPage.BindingContext>
+
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
+	<ContentPage.Content>
+		<StackLayout Padding="10">
+			<StackLayout>
+				<Image WidthRequest="250" HeightRequest="250" Source="{Binding vehicle.Image,Converter={StaticResource imgConv}}"></Image>
+			</StackLayout>
+			<StackLayout>
+
+				<Label >Manufacturer:</Label>
+				<Entry IsReadOnly="True" Text="{Binding vehicle.VehicleModel.Manufacturer.ManufacturerName}"></Entry>
+
+				<Label >Vehicle model:</Label>
+				<Entry IsReadOnly="True" Text="{Binding vehicle.VehicleModel.ModelName}"></Entry>
+				
+
+				
+				<Label >Registration number:</Label>
+				<Entry IsReadOnly="True" Text="{Binding vehicle.RegistrationNumber}"></Entry>
+
+				<Label >Vehicle number:</Label>
+				<Entry IsReadOnly="True" Text="{Binding vehicle.VehicleNumber}"></Entry>
+
+				<Label >Daily price:</Label>
+				<Entry IsReadOnly="True" Text="{Binding vehicle.DailyPrice}"></Entry>
+
+				<Label >Number of seats:</Label>
+				<Entry IsReadOnly="True" Text="{Binding vehicle.NumberOfSeats}"></Entry>
+
+				<Label >Manufacturer date:</Label>
+				<Entry IsReadOnly="True" Text="{Binding vehicle.ManufacturerDate}"></Entry>
+
+				<Label >Mileage:</Label>
+				<Entry IsReadOnly="True" Text="{Binding vehicle.Mileage}"></Entry>
+
+				<Label >Transmission:</Label>
+				<Entry IsReadOnly="True" Text="{Binding vehicle.Transmission}"></Entry>
+
+				<Label >Status:</Label>
+				<CheckBox IsChecked="{Binding vehicle.Status}"></CheckBox>
+
+				<Label >Description:</Label>
+				<Entry IsReadOnly="True" Text="{Binding vehicle.Description}"></Entry>
+
+			</StackLayout>
+			
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace RentaCar.Data.Requests
+namespace RentaCar.Data.Requests.Vehicle
 {
     public class VehicleRequest
     {
