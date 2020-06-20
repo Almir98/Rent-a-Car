@@ -25,13 +25,11 @@
 
 			<Button Command="{Binding LoginCommand}" Text="Login"></Button>
 
-			<!--<Button  
-                BackgroundColor="Transparent"
+			<Button  
                 BorderColor="Transparent"
-                Text="You don't have account, Register now" HorizontalOptions="End" Clicked="Button_Clicked">
-			</Button>-->
-			
-			
+                Text="You don't have account, Create a free account" HorizontalOptions="End" Clicked="Register_Clicked">
+			</Button>
+
 		</StackLayout>
     </ContentPage.Content>
 </ContentPage>

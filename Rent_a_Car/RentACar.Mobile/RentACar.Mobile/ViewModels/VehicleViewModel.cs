@@ -41,8 +41,6 @@ namespace RentACar.Mobile.ViewModels
                 }
             }
 
-
-
             VehicleList.Clear();
             foreach (var vehicle in list)
             {

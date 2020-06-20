@@ -10,17 +10,20 @@ using Xamarin.Forms.Xaml;
 namespace RentACar.Mobile.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LoginPage : ContentPage
+    public partial class RegisterNewAccount : ContentPage
     {
-        public LoginPage()
+        public RegisterNewAccount()
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false);            // for -async await
         }
 
-        private async void Register_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked_Canceled(object sender,EventArgs e)
         {
-             await Navigation.PushModalAsync(new RegisterNewAccount());
+            await Navigation.PushModalAsync(new LoginPage());
         }
+
+
+
+
     }
 }

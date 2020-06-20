@@ -81,14 +81,14 @@ namespace RentACar.WebAPI.Service
             _context.Add(entity);
             _context.SaveChanges();
 
-            foreach (var item in request.Role)
-            {
-                CustomerRoles customerRoles = new CustomerRoles();
+            //foreach (var item in request.Role)
+            //{
+            //    CustomerRoles customerRoles = new CustomerRoles();
 
-                customerRoles.CustomerId = entity.CustomerId;
-                customerRoles.RoleId = item;
-                _context.CustomerRoles.Add(customerRoles);
-            }
+            //    customerRoles.CustomerId = entity.CustomerId;
+            //    customerRoles.RoleId = item;
+            //    _context.CustomerRoles.Add(customerRoles);
+            //}
             _context.SaveChanges();
 
             return _mapper.Map<CustomerRequest>(entity);

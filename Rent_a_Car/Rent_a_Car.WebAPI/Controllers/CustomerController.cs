@@ -10,7 +10,7 @@ using RentACar.WebAPI.Interface;
 
 namespace RentACar.WebAPI.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CustomerController : ControllerBase

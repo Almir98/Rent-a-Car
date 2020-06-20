@@ -75,7 +75,7 @@ namespace RentACar.Mobile
                     stringBuilder.AppendLine($"{error.Key}, ${string.Join(",", error.Value)}");
                 }
 
-                await Application.Current.MainPage.DisplayAlert("Error", stringBuilder.ToString(), "OK");
+                await Application.Current.MainPage.DisplayAlert("Greška", stringBuilder.ToString(), "OK");
                 return default(T);
             }
         }

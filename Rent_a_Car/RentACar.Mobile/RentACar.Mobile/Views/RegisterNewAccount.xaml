@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="clr-namespace:RentACar.Mobile.ViewModels"
+			 mc:Ignorable="d"
+             x:Class="RentACar.Mobile.Views.RegisterNewAccount">
+
+	<ContentPage.BindingContext>
+		<vm:RegisterNewAccountViewModel/>
+	</ContentPage.BindingContext>
+
+	<ContentPage.Content>
+		<StackLayout Padding="20">
+			<Label  FontSize="Medium"  Text="Register to Rent a car"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" Margin="0,0,0,30" />
+
+			<Label Text="FirstName"></Label>
+			<Entry Text="{Binding FirstName}"></Entry>
+
+			<Label Text="Last name"></Label>
+			<Entry Text="{Binding LastName}"></Entry>
+
+			<Label Text="Phone"></Label>
+			<Entry Text="{Binding Phone}"></Entry>
+
+			<Label Text="Email"></Label>
+			<Entry Text="{Binding Email}"></Entry>
+
+			<Label Text="Username"></Label>
+			<Entry Text="{Binding Username}"></Entry>
+
+			<Label Text="Password"></Label>
+			<Entry Text="{Binding Password}" IsPassword="True"></Entry>
+
+			<Label Text="PasswordConfirm"></Label>
+			<Entry Text="{Binding PasswordConfirm}" IsPassword="True"></Entry>
+
+			<Button Command="{Binding RegisterCommand}" HorizontalOptions="FillAndExpand" Text="Submit"></Button>
+			<Button Clicked="Button_Clicked_Canceled" HorizontalOptions="FillAndExpand" Text="Cancel"></Button>
+
+		</StackLayout>
+    </ContentPage.Content>
+</ContentPage>

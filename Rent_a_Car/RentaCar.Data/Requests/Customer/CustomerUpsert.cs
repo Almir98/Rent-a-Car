@@ -15,6 +15,6 @@ namespace RentaCar.Data.Requests.Customer
         public string PasswordConfirm { get; set; }
         public int CityId { get; set; }
 
-        public List<int> Role { get; set; } = new List<int>();
+        //public List<int> Role { get; set; } = new List<int>();
     }
 }
