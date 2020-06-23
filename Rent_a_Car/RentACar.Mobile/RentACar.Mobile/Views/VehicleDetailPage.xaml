@@ -31,8 +31,6 @@
 				<Label >Vehicle model:</Label>
 				<Entry IsReadOnly="True" Text="{Binding vehicle.VehicleModel.ModelName}"></Entry>
 				
-
-				
 				<Label >Registration number:</Label>
 				<Entry IsReadOnly="True" Text="{Binding vehicle.RegistrationNumber}"></Entry>
 

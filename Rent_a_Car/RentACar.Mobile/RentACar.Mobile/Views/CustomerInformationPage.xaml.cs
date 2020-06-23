@@ -28,8 +28,12 @@ namespace RentACar.Mobile.Views
             await model.Init();
         }
 
-
-
+        private async void Logout_Clicked(object sender,EventArgs e)
+        {
+            var login_page = new LoginPage();
+            Navigation.InsertPageBefore(login_page, this);
+            await Navigation.PopAsync();
+        }
 
     }
 }

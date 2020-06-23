@@ -11,12 +11,21 @@
 		<viewModels:CustomerInformationViewModel/>
 	</ContentPage.BindingContext>
 
+	<NavigationPage.TitleView >
+		<StackLayout Orientation="Horizontal">
+			<Label Text="Rent Site"
+                   HorizontalOptions="StartAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   FontSize="20" TextColor="White" />
+			<Button Text="Logout"  Clicked="Logout_Clicked" TextColor="White"  Command="{Binding Logout}"></Button>
+		</StackLayout>
+	</NavigationPage.TitleView>
+	
 
 	<ContentPage.Content>
 		<StackLayout Padding="20">
 
 			<Label  FontSize="Medium"  Text="Profile information"
-                VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" Margin="0,0,0,30" />
 
 			<Label Text="First name"></Label>

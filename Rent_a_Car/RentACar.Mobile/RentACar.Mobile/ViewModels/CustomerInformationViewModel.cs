@@ -19,8 +19,22 @@ namespace RentACar.Mobile.ViewModels
             InitCommand = new Command(async () => await Init());
         }
 
+        //LOG OUT
+
+        public ICommand Logout
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    APIService.Username = "";
+                    APIService.Password = "";
+                    APIService.CustomerId = 0;
+                });
+            }
+        }
+
         public ICommand InitCommand { get; set; }
-        
 
         //FIRST NAME
         string _firstName = string.Empty;
@@ -88,9 +102,6 @@ namespace RentACar.Mobile.ViewModels
 
             // fali za usere type !!!
         }
-
-
-
 
 
     }

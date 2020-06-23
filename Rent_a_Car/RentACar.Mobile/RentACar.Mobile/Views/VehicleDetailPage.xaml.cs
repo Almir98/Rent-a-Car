@@ -26,7 +26,7 @@ namespace RentACar.Mobile.Views
             };
         }
 
-        private async void Booking_Clicked(object sender, EventArgs e)
+        private async void Booking_Clicked(object sender,  EventArgs e)
         {
             //var item = e.SelectedItem as RentaCar.Data.Models.Vehicle;
 

@@ -1,4 +1,5 @@
-﻿using RentACar.Mobile.ViewModels;
+﻿using RentaCar.Data.Requests.Vehicle;
+using RentACar.Mobile.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace RentACar.Mobile.Views
     {
         BookingVehicleViewModel model = null;
 
-        public BookingVehicle(RentaCar.Data.Models.Vehicle car=null)
+        public BookingVehicle(VehicleRequest car=null)
         {
             InitializeComponent();
 
@@ -23,8 +24,17 @@ namespace RentACar.Mobile.Views
             {
                 vehicle = car
             };
-
-
         }
+
+        protected  override void OnAppearing()
+        {
+            base.OnAppearing();
+            //await model.InitCommand();
+        }
+
+
+
+
+
     }
 }

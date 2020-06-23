@@ -22,6 +22,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\BookingVehicle.xaml.cs">
+      <DependentUpon>BookingVehicle.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="Views\BookingVehicle.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

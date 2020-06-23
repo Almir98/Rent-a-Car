@@ -21,19 +21,27 @@
 			<Label Text="FirstName"></Label>
 			<Entry Text="{Binding FirstName}"></Entry>
 
-			<Label Text="FirstName"></Label>
-			<Entry Text="{Binding FirstName}"></Entry>
+			<Label Text="Last Name"></Label>
+			<Entry Text="{Binding LastName}"></Entry>
 
-			<Label Text="FirstName"></Label>
-			<Entry Text="{Binding FirstName}"></Entry>
+			<Label Text="Phone "></Label>
+			<Entry Text="{Binding Phone}"></Entry>
 
-			<Label Text="FirstName"></Label>
-			<Entry Text="{Binding FirstName}"></Entry>
+			<Label Text="Email"></Label>
+			<Entry Text="{Binding Email}"></Entry>
 
-			<Label Text="FirstName"></Label>
-			<Entry Text="{Binding FirstName}"></Entry>
+			<Label Text="Manufacturer"></Label>
+			<Entry Text="{Binding Manufacturer}"></Entry>
+
+			<Label Text="Start date"></Label>
+			<Entry Text="{Binding }"></Entry>
+
+			<Label Text="End date"></Label>
+			<Entry Text="{Binding }"></Entry>
 
 
+
+			<Button Text="rezervisi" ></Button>
 		</StackLayout>
     </ContentPage.Content>
 </ContentPage>
