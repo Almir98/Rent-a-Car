@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:viewModels="clr-namespace:RentACar.Mobile.ViewModels"
+			 mc:Ignorable="d"
+             x:Class="RentACar.Mobile.Views.CustomerInformationPage">
+
+	<ContentPage.BindingContext>
+		<viewModels:CustomerInformationViewModel/>
+	</ContentPage.BindingContext>
+
+
+	<ContentPage.Content>
+		<StackLayout Padding="20">
+
+			<Label  FontSize="Medium"  Text="Profile information"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" Margin="0,0,0,30" />
+
+			<Label Text="First name"></Label>
+			<Entry Text="{Binding FirstName}"></Entry>
+
+			<Label Text="Last name"></Label>
+			<Entry Text="{Binding LastName}"></Entry>
+
+			<Label Text="Phone"></Label>
+			<Entry Text="{Binding Phone}"></Entry>
+
+			<Label Text="Email"></Label>
+			<Entry Text="{Binding Email}"></Entry>
+
+			<Label Text="Username"></Label>
+			<Entry Text="{Binding Username}"></Entry>
+
+
+			<Label Text="City name"></Label>
+			<Entry Text="{Binding City}"></Entry>
+
+		</StackLayout>
+    </ContentPage.Content>
+</ContentPage>

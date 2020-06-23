@@ -48,7 +48,7 @@
 				<Label >Manufacturer date:</Label>
 				<Entry IsReadOnly="True" Text="{Binding vehicle.ManufacturerDate}"></Entry>
 
-				<Label >Mileage:</Label>
+				<!--<Label >Mileage:</Label>
 				<Entry IsReadOnly="True" Text="{Binding vehicle.Mileage}"></Entry>
 
 				<Label >Transmission:</Label>
@@ -58,7 +58,10 @@
 				<CheckBox IsChecked="{Binding vehicle.Status}"></CheckBox>
 
 				<Label >Description:</Label>
-				<Entry IsReadOnly="True" Text="{Binding vehicle.Description}"></Entry>
+				<Entry IsReadOnly="True" Text="{Binding vehicle.Description}"></Entry>-->
+
+				
+				<Button Clicked="Booking_Clicked" Text="Booking"></Button>
 
 			</StackLayout>
 			

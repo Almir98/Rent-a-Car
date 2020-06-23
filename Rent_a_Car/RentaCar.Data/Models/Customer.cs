@@ -15,11 +15,11 @@ namespace RentaCar.Data.Models
         public string PasswordHash { get; set; }
         public int CityId { get; set; }
 
-        public  City City { get; set; }
-        public  ICollection<Booking> Booking { get; set; }
-        public  ICollection<MComment> Comment { get; set; }
-        public  ICollection<CustomerRoles> CustomerRoles { get; set; }
-        public  ICollection<Payment> Payment { get; set; }
-        public  ICollection<Rating> Rating { get; set; }
+        public City City { get; set; }
+        public ICollection<Booking> Booking { get; set; }
+        public ICollection<MComment> Comment { get; set; }
+        public ICollection<CustomerRoles> CustomerRoles { get; set; }
+        public ICollection<Payment> Payment { get; set; }
+        public ICollection<Rating> Rating { get; set; }
     }
 }

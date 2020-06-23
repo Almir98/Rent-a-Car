@@ -45,7 +45,10 @@ namespace RentACar.Mobile.ViewModels
             VehicleList.Clear();
             foreach (var vehicle in list)
             {
-                VehicleList.Add(vehicle);
+                //if(vehicle.Status==false)
+                //{
+                    VehicleList.Add(vehicle);
+                //}
             }
         } 
     }

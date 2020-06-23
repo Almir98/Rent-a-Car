@@ -7,7 +7,7 @@ namespace RentACar.Mobile.Models
     public enum MenuItemType
     {
         Browse,
-        About,
+        Customer,
         Vehicle,
         Contact
 

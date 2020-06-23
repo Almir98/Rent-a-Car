@@ -41,6 +41,16 @@ namespace RentACar.Mobile.ViewModels
 
             try
             {
+                List<RentaCar.Data.Models.Customer> list = await _service.Get<List<RentaCar.Data.Models.Customer>>(null);
+
+                foreach (var item in list)
+                {
+                    if(item.Username==Username)
+                    {
+                        APIService.CustomerId = item.CustomerId;
+                    }
+                }
+
                 await _service.Get<dynamic>(null);
                 Application.Current.MainPage = new MainPage();
             }
