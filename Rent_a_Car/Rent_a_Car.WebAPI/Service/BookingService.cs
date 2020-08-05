@@ -9,33 +9,33 @@ using System.Threading.Tasks;
 
 namespace RentACar.WebAPI.Service
 {
-    public class BookingService : BaseCRUDService<BookingRequest, BookingSearchRequest, RentACar.WebAPI.Database.Booking, BookingUpsert, BookingUpsert>
+    public class BookingService : BaseCRUDService<Data.Model.Booking, BookingSearchRequest, RentACar.WebAPI.Database.Booking, BookingUpsert, BookingUpsert>
     {
         public BookingService(RentaCarContext context, IMapper mapper) : base(context, mapper)
         {
         }
 
-        public override List<BookingRequest> Get(BookingSearchRequest search)
+        public override List<Data.Model.Booking> Get(BookingSearchRequest search)
         {
             var query = _context.Set<Booking>().Include(x=>x.Customer)
                 .AsQueryable();
 
-            if(!string.IsNullOrEmpty(search.CustomerFirstName))
+            if(!string.IsNullOrEmpty(search.FirstName))
             {
-                query = query.Where(x => x.Customer.FirstName == search.CustomerFirstName);
+                query = query.Where(x => x.Customer.FirstName.StartsWith(search.FirstName));
             }
             query = query.OrderBy(x => x.BookingId);
 
-            return _mapper.Map<List<BookingRequest>>(query.ToList());
+            return _mapper.Map<List<Data.Model.Booking>>(query.ToList());
         }
 
-        public override BookingRequest GetByID(int id)
+        public override Data.Model.Booking GetByID(int id)
         {
             var booking = _context.Booking.Where(e => e.BookingId == id)
                 .Include(e => e.Customer)
                 .FirstOrDefault();
 
-            return _mapper.Map<BookingRequest>(booking);
+            return _mapper.Map<Data.Model.Booking>(booking);
         }
 
     }

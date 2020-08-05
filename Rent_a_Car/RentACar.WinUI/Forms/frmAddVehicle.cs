@@ -60,8 +60,8 @@ namespace RentACar.WinUI.Forms
 
         private async Task LoadManufacturer()
         {
-            var list = await _serviceManufacturer.Get<List<VehicleModel>>();
-            list.Insert(0, new VehicleModel());
+            var list = await _serviceManufacturer.Get<List<Manufacturer>>();
+            list.Insert(0, new Manufacturer());
 
             cmbManufacturer.DisplayMember = "ManufacturerName";
             cmbManufacturer.ValueMember = "ManufacturerId";
@@ -152,6 +152,7 @@ namespace RentACar.WinUI.Forms
             }
             
             await _serviceVehicle.Insert<VehicleRequest>(request);
+            //MessageBox.Show("Operation successfully completed!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
 

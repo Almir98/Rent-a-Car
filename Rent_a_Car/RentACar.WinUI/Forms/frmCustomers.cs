@@ -30,7 +30,7 @@ namespace RentACar.WinUI
                 FirstName=txtCustomer.Text
             };
 
-            var result =await _apiService.Get<List<CustomerRequest>>(search);
+            var result =await _apiService.Get<List<Data.Model.Customer>>(search);
             dgvAllCustomers.AutoGenerateColumns = false;
             dgvAllCustomers.DataSource = result;
         }

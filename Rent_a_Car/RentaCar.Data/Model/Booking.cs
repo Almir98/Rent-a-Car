@@ -17,7 +17,7 @@ namespace Data.Model
         public int CustomerId { get; set; }
         public int VehicleId { get; set; }
 
-        public Customer Customer { get; set; }
+        public virtual Customer Customer { get; set; }
         public Vehicle Vehicle { get; set; }
     }
 }

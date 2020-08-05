@@ -17,7 +17,6 @@
                    HorizontalOptions="StartAndExpand"
                    VerticalOptions="CenterAndExpand"
                    FontSize="20" TextColor="White" />
-			<Button Text="Logout"  Clicked="Logout_Clicked" TextColor="White"  Command="{Binding Logout}"></Button>
 		</StackLayout>
 	</NavigationPage.TitleView>
 	
@@ -47,6 +46,11 @@
 			<Label Text="City name"></Label>
 			<Entry Text="{Binding City}"></Entry>
 
+			<Button Clicked="Button_Clicked" Text="Edit informations" BackgroundColor="LightGray" Margin="0,20,0,0"></Button>
+			<Button Clicked="Button_Clicked" Text="Edit informations" BackgroundColor="LightGray" Margin="0,20,0,0"></Button>
+
+			<Button Text="Logout"  Clicked="Logout_Clicked" TextColor="White"  Command="{Binding Logout}"></Button>
+			
 		</StackLayout>
     </ContentPage.Content>
 </ContentPage>

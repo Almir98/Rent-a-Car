@@ -42,7 +42,7 @@ namespace RentACar.Mobile.ViewModels
 
             try
             {
-                List<RentaCar.Data.Models.Customer> list = await _service.Get<List<RentaCar.Data.Models.Customer>>(null);
+                List<Data.Model.Customer> list = await _service.Get<List<Data.Model.Customer>>(null);
 
                 foreach (var item in list)
                 {

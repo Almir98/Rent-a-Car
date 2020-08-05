@@ -27,16 +27,16 @@ namespace RentACar.WinUI.Forms
         {
             var search = new BookingSearchRequest()
             {
-                CustomerFirstName = txtBookingSearch.Text
+                FirstName = txtBookingSearch.Text
             };
 
-            var result = await _serviceBooking.Get<List<BookingRequest>>(search);
+            var result = await _serviceBooking.Get<List<Data.Model.Booking>>(search);
             dgvBooking.DataSource = result;
         }
 
         private async void frmAllBooking_Load(object sender, EventArgs e)
         {
-            var list = await _serviceBooking.Get<List<BookingRequest>>(null);
+            var list = await _serviceBooking.Get<List<Data.Model.Booking>>(null);
 
             List<frmAllBookingVM> newList = new List<frmAllBookingVM>();
 
