@@ -1,4 +1,5 @@
 ﻿using RentaCar.Data.Requests;
+using RentaCar.Data.Requests.Vehicle;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

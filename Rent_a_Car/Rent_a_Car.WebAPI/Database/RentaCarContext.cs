@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace Rent_a_Car.WebAPI.Database
+namespace RentACar.WebAPI.Database
 {
     public partial class RentaCarContext : DbContext
     {
@@ -20,13 +20,10 @@ namespace Rent_a_Car.WebAPI.Database
         public virtual DbSet<City> City { get; set; }
         public virtual DbSet<Comment> Comment { get; set; }
         public virtual DbSet<Customer> Customer { get; set; }
-        public virtual DbSet<CustomerRoles> CustomerRoles { get; set; }
+        public virtual DbSet<CustomerType> CustomerType { get; set; }
         public virtual DbSet<FuelType> FuelType { get; set; }
         public virtual DbSet<Manufacturer> Manufacturer { get; set; }
-        public virtual DbSet<Payment> Payment { get; set; }
-        public virtual DbSet<PaymentType> PaymentType { get; set; }
         public virtual DbSet<Rating> Rating { get; set; }
-        public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<Vehicle> Vehicle { get; set; }
         public virtual DbSet<VehicleModel> VehicleModel { get; set; }
         public virtual DbSet<VehicleType> VehicleType { get; set; }
@@ -147,6 +144,8 @@ namespace Rent_a_Car.WebAPI.Database
 
                 entity.Property(e => e.CityId).HasColumnName("CityID");
 
+                entity.Property(e => e.CustomerTypeId).HasColumnName("CustomerTypeID");
+
                 entity.Property(e => e.Email)
                     .IsRequired()
                     .HasMaxLength(50);
@@ -180,29 +179,18 @@ namespace Rent_a_Car.WebAPI.Database
                     .HasForeignKey(d => d.CityId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Customer_CityID");
+
+                entity.HasOne(d => d.CustomerType)
+                    .WithMany(p => p.Customer)
+                    .HasForeignKey(d => d.CustomerTypeId)
+                    .HasConstraintName("FK_Customer_CustomerTypeID");
             });
 
-            modelBuilder.Entity<CustomerRoles>(entity =>
+            modelBuilder.Entity<CustomerType>(entity =>
             {
-                entity.Property(e => e.CustomerRolesId)
-                    .HasColumnName("CustomerRolesID")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.CustomerTypeId).HasColumnName("CustomerTypeID");
 
-                entity.Property(e => e.CustomerId).HasColumnName("CustomerID");
-
-                entity.Property(e => e.RoleId).HasColumnName("RoleID");
-
-                entity.HasOne(d => d.Customer)
-                    .WithMany(p => p.CustomerRoles)
-                    .HasForeignKey(d => d.CustomerId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_CustomerRoles_CustomerID");
-
-                entity.HasOne(d => d.Role)
-                    .WithMany(p => p.CustomerRoles)
-                    .HasForeignKey(d => d.RoleId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_CustomerRoles_RoleID");
+                entity.Property(e => e.Type).HasMaxLength(50);
             });
 
             modelBuilder.Entity<FuelType>(entity =>
@@ -221,46 +209,6 @@ namespace Rent_a_Car.WebAPI.Database
                 entity.Property(e => e.ManufacturerName)
                     .IsRequired()
                     .HasMaxLength(50);
-            });
-
-            modelBuilder.Entity<Payment>(entity =>
-            {
-                entity.Property(e => e.PaymentId).HasColumnName("PaymentID");
-
-                entity.Property(e => e.BookingId).HasColumnName("BookingID");
-
-                entity.Property(e => e.CustomerId).HasColumnName("CustomerID");
-
-                entity.Property(e => e.PaymentDate).HasColumnType("datetime");
-
-                entity.Property(e => e.PaymentTypeId).HasColumnName("PaymentTypeID");
-
-                entity.Property(e => e.Price).HasColumnType("decimal(5, 2)");
-
-                entity.HasOne(d => d.Booking)
-                    .WithMany(p => p.Payment)
-                    .HasForeignKey(d => d.BookingId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Payment_BookingID");
-
-                entity.HasOne(d => d.Customer)
-                    .WithMany(p => p.Payment)
-                    .HasForeignKey(d => d.CustomerId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Payment_CustomerID");
-
-                entity.HasOne(d => d.PaymentType)
-                    .WithMany(p => p.Payment)
-                    .HasForeignKey(d => d.PaymentTypeId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Payment_PaymentTypeID");
-            });
-
-            modelBuilder.Entity<PaymentType>(entity =>
-            {
-                entity.Property(e => e.PaymentTypeId).HasColumnName("PaymentTypeID");
-
-                entity.Property(e => e.TypeName).HasMaxLength(50);
             });
 
             modelBuilder.Entity<Rating>(entity =>
@@ -282,15 +230,6 @@ namespace Rent_a_Car.WebAPI.Database
                     .HasForeignKey(d => d.VehicleId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Rating_VehicleID");
-            });
-
-            modelBuilder.Entity<Role>(entity =>
-            {
-                entity.Property(e => e.RoleId).HasColumnName("RoleID");
-
-                entity.Property(e => e.RoleName)
-                    .IsRequired()
-                    .HasMaxLength(50);
             });
 
             modelBuilder.Entity<Vehicle>(entity =>

@@ -23,7 +23,7 @@
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
 			
-			<Picker ItemsSource="{Binding VehicleList}" SelectedItem="{Binding }" ItemDisplayBinding="{Binding}"></Picker>
+			<Picker ItemsSource="{Binding VehicleList}" SelectedItem="{Binding }" Title="Odaberite automobil" ItemDisplayBinding="{Binding}"></Picker>
 
 			<ListView ItemsSource="{Binding VehicleList}" ItemTapped="ListView_ItemTapped">
 				<ListView.ItemTemplate>

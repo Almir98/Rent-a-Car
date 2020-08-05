@@ -1,4 +1,4 @@
-﻿using RentaCar.Data.Models;
+﻿using Data.Model;
 using RentaCar.Data.Requests.Comments;
 using RentaCar.Data.ViewModel;
 using System;

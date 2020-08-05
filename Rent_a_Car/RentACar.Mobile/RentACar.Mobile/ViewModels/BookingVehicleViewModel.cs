@@ -1,5 +1,4 @@
-﻿using RentaCar.Data.Models;
-using RentaCar.Data.Requests.Customer;
+﻿using RentaCar.Data.Requests.Customer;
 using RentaCar.Data.Requests.Vehicle;
 using System;
 using System.Collections.Generic;
@@ -16,15 +15,12 @@ namespace RentACar.Mobile.ViewModels
         private readonly APIService _serviceVehicle = new APIService("Vehicle");
         private readonly APIService _serviceCustomer = new APIService("Customer");
 
-
-
         public BookingVehicleViewModel()
         {
             BookingInit = new Command(async () => await InitCommand());
         }
 
         public ICommand BookingInit { get; set; }
-
 
 
         //FirstName

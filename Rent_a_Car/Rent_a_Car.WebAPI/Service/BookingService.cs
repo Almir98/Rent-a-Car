@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using Rent_a_Car.WebAPI.Database;
 using RentaCar.Data.Requests.Booking;
+using RentACar.WebAPI.Database;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RentACar.WebAPI.Service
 {
-    public class BookingService : BaseCRUDService<BookingRequest, BookingSearchRequest, Booking, BookingUpsert, BookingUpsert>
+    public class BookingService : BaseCRUDService<BookingRequest, BookingSearchRequest, RentACar.WebAPI.Database.Booking, BookingUpsert, BookingUpsert>
     {
         public BookingService(RentaCarContext context, IMapper mapper) : base(context, mapper)
         {

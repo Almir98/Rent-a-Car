@@ -7,7 +7,7 @@
 			 xmlns:converters="clr-namespace:RentACar.Mobile.Converters"
 			 mc:Ignorable="d"
              x:Class="RentACar.Mobile.Views.VehicleDetailPage">
-	
+
 	<ContentPage.BindingContext>
 		<vm1:VehicleDetailsViewModel></vm1:VehicleDetailsViewModel>
 	</ContentPage.BindingContext>
@@ -19,50 +19,52 @@
 	</ContentPage.Resources>
 
 	<ContentPage.Content>
-		<StackLayout Padding="10">
-			<StackLayout>
-				<Image WidthRequest="250" HeightRequest="250" Source="{Binding vehicle.Image,Converter={StaticResource imgConv}}"></Image>
+		<ScrollView>
+			<StackLayout Padding="10">
+				<StackLayout>
+					<Image WidthRequest="250" HeightRequest="250" Source="{Binding vehicle.Image,Converter={StaticResource imgConv}}"></Image>
+				</StackLayout>
+				<StackLayout>
+
+					<Label >Manufacturer:</Label>
+					<Entry IsReadOnly="True" Text="{Binding vehicle.VehicleModel.Manufacturer.ManufacturerName}"></Entry>
+
+					<Label >Vehicle model:</Label>
+					<Entry IsReadOnly="True" Text="{Binding vehicle.VehicleModel.ModelName}"></Entry>
+
+					<Label >Registration number:</Label>
+					<Entry IsReadOnly="True" Text="{Binding vehicle.RegistrationNumber}"></Entry>
+
+					<Label >Vehicle number:</Label>
+					<Entry IsReadOnly="True" Text="{Binding vehicle.VehicleNumber}"></Entry>
+
+					<Label >Daily price:</Label>
+					<Entry IsReadOnly="True" Text="{Binding vehicle.DailyPrice}"></Entry>
+
+					<Label >Number of seats:</Label>
+					<Entry IsReadOnly="True" Text="{Binding vehicle.NumberOfSeats}"></Entry>
+
+					<Label >Manufacturer date:</Label>
+					<Entry IsReadOnly="True" Text="{Binding vehicle.ManufacturerDate}"></Entry>
+
+					<Label >Mileage:</Label>
+					<Entry IsReadOnly="True" Text="{Binding vehicle.Mileage}"></Entry>
+
+					<Label >Transmission:</Label>
+					<Entry IsReadOnly="True" Text="{Binding vehicle.Transmission}"></Entry>
+
+					<Label >Status:</Label>
+					<CheckBox IsChecked="{Binding vehicle.Status}"></CheckBox>
+
+					<Label >Description:</Label>
+					<Entry IsReadOnly="True" Text="{Binding vehicle.Description}"></Entry>
+
+
+					<Button Clicked="Booking_Clicked" Text="Booking"></Button>
+
+				</StackLayout>
+
 			</StackLayout>
-			<StackLayout>
-
-				<Label >Manufacturer:</Label>
-				<Entry IsReadOnly="True" Text="{Binding vehicle.VehicleModel.Manufacturer.ManufacturerName}"></Entry>
-
-				<Label >Vehicle model:</Label>
-				<Entry IsReadOnly="True" Text="{Binding vehicle.VehicleModel.ModelName}"></Entry>
-				
-				<Label >Registration number:</Label>
-				<Entry IsReadOnly="True" Text="{Binding vehicle.RegistrationNumber}"></Entry>
-
-				<Label >Vehicle number:</Label>
-				<Entry IsReadOnly="True" Text="{Binding vehicle.VehicleNumber}"></Entry>
-
-				<Label >Daily price:</Label>
-				<Entry IsReadOnly="True" Text="{Binding vehicle.DailyPrice}"></Entry>
-
-				<Label >Number of seats:</Label>
-				<Entry IsReadOnly="True" Text="{Binding vehicle.NumberOfSeats}"></Entry>
-
-				<Label >Manufacturer date:</Label>
-				<Entry IsReadOnly="True" Text="{Binding vehicle.ManufacturerDate}"></Entry>
-
-				<!--<Label >Mileage:</Label>
-				<Entry IsReadOnly="True" Text="{Binding vehicle.Mileage}"></Entry>
-
-				<Label >Transmission:</Label>
-				<Entry IsReadOnly="True" Text="{Binding vehicle.Transmission}"></Entry>
-
-				<Label >Status:</Label>
-				<CheckBox IsChecked="{Binding vehicle.Status}"></CheckBox>
-
-				<Label >Description:</Label>
-				<Entry IsReadOnly="True" Text="{Binding vehicle.Description}"></Entry>-->
-
-				
-				<Button Clicked="Booking_Clicked" Text="Booking"></Button>
-
-			</StackLayout>
-			
-        </StackLayout>
-    </ContentPage.Content>
+		</ScrollView>
+	</ContentPage.Content>
 </ContentPage>

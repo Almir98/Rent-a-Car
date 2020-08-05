@@ -41,7 +41,7 @@
 
 
 
-			<Button Text="rezervisi" ></Button>
+			<Button  Text="Rezervisi" ></Button>
 		</StackLayout>
     </ContentPage.Content>
 </ContentPage>

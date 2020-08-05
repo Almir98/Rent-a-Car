@@ -1,15 +1,10 @@
-﻿using RentaCar.Data.Models;
-using RentaCar.Data.Requests;
+﻿using Data.Model;
 using RentaCar.Data.Requests.Vehicle;
 using RentaCar.Data.Requests.VehicleModel;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -65,8 +60,8 @@ namespace RentACar.WinUI.Forms
 
         private async Task LoadManufacturer()
         {
-            var list = await _serviceManufacturer.Get<List<ManufacturerModel>>();
-            list.Insert(0, new ManufacturerModel());
+            var list = await _serviceManufacturer.Get<List<VehicleModel>>();
+            list.Insert(0, new VehicleModel());
 
             cmbManufacturer.DisplayMember = "ManufacturerName";
             cmbManufacturer.ValueMember = "ManufacturerId";

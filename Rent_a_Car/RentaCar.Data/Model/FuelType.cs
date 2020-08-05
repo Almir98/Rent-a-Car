@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
-namespace RentaCar.Data.Models
+namespace Data.Model
 {
     public class FuelType
     {

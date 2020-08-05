@@ -1,5 +1,5 @@
-﻿using Rent_a_Car.WebAPI.Database;
-using RentaCar.Data.Requests.Customer;
+﻿using RentaCar.Data.Requests.Customer;
+using RentACar.WebAPI.Database;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +15,6 @@ namespace RentACar.WebAPI.Interface
         CustomerRequest Update(int id,CustomerUpsert request);
         
 
-        Customer Authenticate(CustomerLoginRequest request);
+        Data.Model.Customer Authenticate(CustomerLoginRequest request);
     }
 }

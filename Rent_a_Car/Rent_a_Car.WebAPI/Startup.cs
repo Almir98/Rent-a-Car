@@ -15,11 +15,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using Rent_a_Car.WebAPI.Database;
 //using Rent_a_Car.WebAPI.Filters;
 using Rent_a_Car.WebAPI.Interface;
 using Rent_a_Car.WebAPI.Service;
-using RentaCar.Data.Models;
 using RentaCar.Data.Requests;
 using RentaCar.Data.Requests.Booking;
 using RentaCar.Data.Requests.Branch;
@@ -32,6 +30,7 @@ using RentaCar.Data.Requests.Rating;
 using RentaCar.Data.Requests.Vehicle;
 using RentaCar.Data.Requests.VehicleModel;
 using RentaCar.Data.Requests.VehicleType;
+using RentACar.WebAPI.Database;
 using RentACar.WebAPI.Interface;
 using RentACar.WebAPI.Security;
 using RentACar.WebAPI.Service;
@@ -96,11 +95,11 @@ namespace Rent_a_Car.WebAPI
 
             #region Dependency injection
 
-            services.AddScoped<IService<FuelTypeRequest,object>,BaseService<FuelTypeRequest, object,Database.FuelType>>();
-            services.AddScoped<IService<VehicleTypeRequest, object>, BaseService<VehicleTypeRequest, object, Database.VehicleType>>();
+            services.AddScoped<IService<FuelTypeRequest,object>,BaseService<FuelTypeRequest, object, RentACar.WebAPI.Database.FuelType>>();
+            services.AddScoped<IService<VehicleTypeRequest, object>, BaseService<VehicleTypeRequest, object, RentACar.WebAPI.Database.VehicleType>>();
             services.AddScoped<IService<VehicleModelRequest, VehicleModelSearch>, VehicleModelService>();
             services.AddScoped<IService<CityRequest,CitySearchRequest>,CityService>();
-            services.AddScoped<IService<ManufacturerRequest, object>, BaseService<ManufacturerRequest, object,Database.Manufacturer>>();
+            services.AddScoped<IService<ManufacturerRequest, object>, BaseService<ManufacturerRequest, object, RentACar.WebAPI.Database.Manufacturer>>();
 
 
             services.AddScoped<ICRUDService<BranchRequest,BranchSearchRequest,BranchUpsert,BranchUpsert> , BranchService>();
@@ -129,8 +128,6 @@ namespace Rent_a_Car.WebAPI
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
-
-           
 
             app.UseAuthentication();
 

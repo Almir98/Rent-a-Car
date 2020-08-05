@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
-namespace RentaCar.Data.Models
+namespace Data.Model
 {
     public class Customer
     {
@@ -14,12 +15,12 @@ namespace RentaCar.Data.Models
         public string PasswordSalt { get; set; }
         public string PasswordHash { get; set; }
         public int CityId { get; set; }
+        public int? CustomerTypeId { get; set; }
 
         public City City { get; set; }
+        public CustomerType CustomerType { get; set; }
         public ICollection<Booking> Booking { get; set; }
-        public ICollection<MComment> Comment { get; set; }
-        public ICollection<CustomerRoles> CustomerRoles { get; set; }
-        public ICollection<Payment> Payment { get; set; }
+        public ICollection<Comment> Comment { get; set; }
         public ICollection<Rating> Rating { get; set; }
     }
 }

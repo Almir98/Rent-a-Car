@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Rent_a_Car.WebAPI.Database
+namespace RentACar.WebAPI.Database
 {
     public partial class Customer
     {
@@ -9,8 +9,6 @@ namespace Rent_a_Car.WebAPI.Database
         {
             Booking = new HashSet<Booking>();
             Comment = new HashSet<Comment>();
-            CustomerRoles = new HashSet<CustomerRoles>();
-            Payment = new HashSet<Payment>();
             Rating = new HashSet<Rating>();
         }
 
@@ -23,12 +21,12 @@ namespace Rent_a_Car.WebAPI.Database
         public string PasswordSalt { get; set; }
         public string PasswordHash { get; set; }
         public int CityId { get; set; }
+        public int? CustomerTypeId { get; set; }
 
         public virtual City City { get; set; }
+        public virtual CustomerType CustomerType { get; set; }
         public virtual ICollection<Booking> Booking { get; set; }
         public virtual ICollection<Comment> Comment { get; set; }
-        public virtual ICollection<CustomerRoles> CustomerRoles { get; set; }
-        public virtual ICollection<Payment> Payment { get; set; }
         public virtual ICollection<Rating> Rating { get; set; }
     }
 }

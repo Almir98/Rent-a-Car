@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
-namespace RentaCar.Data.Models
+namespace Data.Model
 {
     public class Booking
     {
@@ -16,8 +17,7 @@ namespace RentaCar.Data.Models
         public int CustomerId { get; set; }
         public int VehicleId { get; set; }
 
-        public  Customer Customer { get; set; }
-        public  Vehicle Vehicle { get; set; }
-        public  ICollection<Payment> Payment { get; set; }
+        public Customer Customer { get; set; }
+        public Vehicle Vehicle { get; set; }
     }
 }

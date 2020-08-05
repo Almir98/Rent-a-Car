@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
-namespace RentaCar.Data.Models
+namespace Data.Model
 {
-    public class ManufacturerModel
+    public class Manufacturer
     {
         public int ManufacturerId { get; set; }
         public string ManufacturerName { get; set; }
 
-        //public ICollection<VehicleModel> VehicleModel { get; set; }
+        public ICollection<VehicleModel> VehicleModel { get; set; }
     }
 }

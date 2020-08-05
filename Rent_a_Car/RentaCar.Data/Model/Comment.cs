@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
-namespace RentaCar.Data.Models
+namespace Data.Model
 {
-    public class MComment
+    public class Comment
     {
         public int CommentId { get; set; }
         public string Description { get; set; }
         public DateTime DateOfComment { get; set; }
-        
         public int CustomerId { get; set; }
-        public  Customer Customer { get; set; }
-        
         public int VehicleId { get; set; }
-        public  Vehicle Vehicle { get; set; }
+
+        public Customer Customer { get; set; }
+        public Vehicle Vehicle { get; set; }
     }
 }

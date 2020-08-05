@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using Rent_a_Car.WebAPI.Database;
 using Rent_a_Car.WebAPI.Service;
 using RentaCar.Data.Requests.City;
+using RentACar.WebAPI.Database;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace RentACar.WebAPI.Service
 {
-    public class CityService : BaseService<CityRequest, CitySearchRequest, City>
+    public class CityService : BaseService<CityRequest, CitySearchRequest, RentACar.WebAPI.Database.City>
     {
         public CityService(RentaCarContext context, IMapper mapper) : base(context, mapper)
         {

@@ -1,8 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using Rent_a_Car.WebAPI.Database;
-using RentaCar.Data.Models;
 using RentaCar.Data.Requests.Comments;
+using RentACar.WebAPI.Database;
 using System;
 using System.Collections.Generic;
 using System.Linq;

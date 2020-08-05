@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Flurl.Http;
 using Flurl;
 using RentaCar.Data;
+using System.Windows.Forms;
 
 namespace RentACar.WinUI
 {
@@ -23,16 +24,42 @@ namespace RentACar.WinUI
 
         public async Task<T> Get<T>(object search=null)
         {
-            var url = $"{Properties.Settings.Default.APIUrl}/{_route}";
+            //var url = $"{Properties.Settings.Default.APIUrl}/{_route}";
 
-            if (search != null)
+            //if (search != null)
+            //{
+            //    url += "?";
+            //    url += await search.ToQueryString();
+            //}
+            //var result = await url.WithBasicAuth(Username,Password).GetJsonAsync<T>();
+
+            //return result;
+
+            try
             {
-                url += "?";
-                url += await search.ToQueryString();
-            }
-            var result = await url.WithBasicAuth(Username,Password).GetJsonAsync<T>();
+                var query = "";
+                if (search != null)
+                {
+                    query = await search?.ToQueryString();
+                }
 
-            return result;
+                var list = await $"{Properties.Settings.Default.APIUrl}/{_route}"
+                    .WithBasicAuth(Username, Password)
+                    .GetJsonAsync<T>();
+                return list;
+            }
+            catch (FlurlHttpException ex)
+            {
+                if (ex.Call.HttpStatus == System.Net.HttpStatusCode.Unauthorized)
+                {
+                    MessageBox.Show("Wrong username or password.", "Warining", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                if (ex.Call.HttpStatus == System.Net.HttpStatusCode.Forbidden)
+                {
+                    MessageBox.Show("Forbidden.", "Warining", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                throw;
+            }
         }
 
         public async Task<T> GetById<T>(object id)

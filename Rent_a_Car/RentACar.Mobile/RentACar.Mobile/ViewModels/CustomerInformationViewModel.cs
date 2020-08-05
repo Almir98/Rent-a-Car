@@ -1,5 +1,4 @@
-﻿using RentaCar.Data.Models;
-using RentaCar.Data.Requests.City;
+﻿using RentaCar.Data.Requests.City;
 using RentaCar.Data.Requests.Customer;
 using System;
 using System.Collections.Generic;

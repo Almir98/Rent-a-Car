@@ -31,6 +31,7 @@ namespace RentACar.Mobile.ViewModels
             set { SetProperty(ref _password, value); }
         }
 
+
         public ICommand LoginCommand { get; set; }
 
         async Task Login()

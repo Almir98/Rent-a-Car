@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Rent_a_Car.WebAPI.Database;
 using RentaCar.Data.Requests.Customer;
+using RentACar.WebAPI.Database;
 using RentACar.WebAPI.Interface;
 using System;
 using System.Collections.Generic;
@@ -35,7 +35,8 @@ namespace RentACar.WebAPI.Security
             if (!Request.Headers.ContainsKey("Authorization"))
                 return AuthenticateResult.Fail("Missing Authorization Header");
 
-            Customer user = null;
+            Data.Model.Customer user = null;
+
             try
             {
                 var authHeader = AuthenticationHeaderValue.Parse(Request.Headers["Authorization"]);
@@ -49,6 +50,7 @@ namespace RentACar.WebAPI.Security
                     Username = username,
                     Password = password
                 });
+                
             }
             catch
             {
@@ -63,16 +65,16 @@ namespace RentACar.WebAPI.Security
                 new Claim(ClaimTypes.Name, user.FirstName),
             };
 
-            foreach (var role in user.CustomerRoles)
-            {
-                claims.Add(new Claim(ClaimTypes.Role, role.Role.RoleName));
-            }
+
+            claims.Add(new Claim(ClaimTypes.Role, user.CustomerType.Type));
+
 
             var identity = new ClaimsIdentity(claims, Scheme.Name);
             var principal = new ClaimsPrincipal(identity);
             var ticket = new AuthenticationTicket(principal, Scheme.Name);
 
             return AuthenticateResult.Success(ticket);
+
         }
     }
 }

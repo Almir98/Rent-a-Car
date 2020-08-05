@@ -10,6 +10,7 @@
 	<ContentPage.BindingContext>
 		<vm:LoginViewModel />
 	</ContentPage.BindingContext>
+	
 	<ContentPage.Content>
         <StackLayout Padding="20" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
 			<Label FontSize="Large" Text="Please sign in"

@@ -1,4 +1,4 @@
-﻿using RentaCar.Data.Models;
+﻿using Data.Model;
 using RentaCar.Data.Requests.Branch;
 using System;
 using System.Collections.Generic;

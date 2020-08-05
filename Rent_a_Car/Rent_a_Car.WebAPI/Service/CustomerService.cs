@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using Rent_a_Car.WebAPI.Database;
 using Rent_a_Car.WebAPI.Service;
 using RentaCar.Data.Requests.Customer;
+using RentACar.WebAPI.Database;
 using RentACar.WebAPI.Interface;
 using System;
 using System.Collections.Generic;
@@ -107,9 +107,9 @@ namespace RentACar.WebAPI.Service
             return _mapper.Map<CustomerRequest>(entity);
         }
 
-        public Customer Authenticate(CustomerLoginRequest request)
+        public Data.Model.Customer Authenticate(CustomerLoginRequest request)
         {
-            var customer = _context.Customer.FirstOrDefault(x => x.Username == request.Username);
+            var customer = _context.Customer.Include("CustomerType").FirstOrDefault(x => x.Username == request.Username);
 
             if(customer != null)
             {
@@ -117,7 +117,7 @@ namespace RentACar.WebAPI.Service
 
                 if(customer.PasswordHash==newHash)
                 {
-                    return _mapper.Map<Customer>(customer);
+                    return _mapper.Map<Data.Model.Customer>(customer);
                 }
             }
             return null;

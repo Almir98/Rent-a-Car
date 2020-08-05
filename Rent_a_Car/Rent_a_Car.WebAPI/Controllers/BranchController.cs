@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Rent_a_Car.WebAPI.Controllers;
-using Rent_a_Car.WebAPI.Database;
 using Rent_a_Car.WebAPI.Interface;
 using RentaCar.Data.Requests.Branch;
 using RentACar.WebAPI.Interface;
