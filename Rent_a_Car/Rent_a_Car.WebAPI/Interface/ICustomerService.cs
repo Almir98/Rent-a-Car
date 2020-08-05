@@ -9,10 +9,10 @@ namespace RentACar.WebAPI.Interface
 {
     public interface ICustomerService
     {
-        List<CustomerRequest> Get(CustomerSearchRequest request);
-        CustomerRequest GetById(int id);
-        CustomerRequest Insert(CustomerUpsert request);
-        CustomerRequest Update(int id,CustomerUpsert request);
+        List<Data.Model.Customer> Get(CustomerSearchRequest request);
+        Data.Model.Customer GetById(int id);
+        Data.Model.Customer Insert(CustomerUpsert request);
+        Data.Model.Customer Update(int id,CustomerUpsert request);
         
 
         Data.Model.Customer Authenticate(CustomerLoginRequest request);

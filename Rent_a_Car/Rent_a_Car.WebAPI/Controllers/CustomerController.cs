@@ -24,26 +24,26 @@ namespace RentACar.WebAPI.Controllers
 
         //[Authorize(Roles ="Administrator")]
         [HttpGet]
-        public ActionResult<List<CustomerRequest>> Get([FromQuery]CustomerSearchRequest request)
+        public ActionResult<List<Data.Model.Customer>> Get([FromQuery]CustomerSearchRequest request)
         {
             return _service.Get(request);
         }
 
         [HttpGet("{id}")]
-        public ActionResult<CustomerRequest> GetById(int id)
+        public ActionResult<Data.Model.Customer> GetById(int id)
         {
             return _service.GetById(id);
         }
 
         //[Authorize(Roles = "Administrator")]      // ispravit !!!!
         [HttpPost]
-        public ActionResult<CustomerRequest> Insert(CustomerUpsert request)
+        public ActionResult<Data.Model.Customer> Insert(CustomerUpsert request)
         {
             return _service.Insert(request);
         }
 
         [HttpPut("{id}")]
-        public ActionResult<CustomerRequest> Update(int id,[FromBody]CustomerUpsert request)
+        public ActionResult<Data.Model.Customer> Update(int id,[FromBody]CustomerUpsert request)
         {
             return _service.Update(id, request);
         }

@@ -24,7 +24,7 @@ namespace RentACar.WebAPI.Service
             _mapper = mapper;
         }
 
-        public List<CustomerRequest> Get(CustomerSearchRequest request)
+        public List<Data.Model.Customer> Get(CustomerSearchRequest request)
         {
             var query = _context.Set<Customer>().Include(x=>x.City).AsQueryable();
 
@@ -44,7 +44,7 @@ namespace RentACar.WebAPI.Service
 
             query = query.OrderBy(x => x.City.CityName);
 
-            return _mapper.Map<List<CustomerRequest>>(query.ToList());
+            return _mapper.Map<List<Data.Model.Customer>>(query.ToList());
         }
 
         private static string GenerateSalt()        
@@ -67,7 +67,7 @@ namespace RentACar.WebAPI.Service
             return Convert.ToBase64String(inArray);
         }
 
-        public CustomerRequest Insert(CustomerUpsert request)
+        public Data.Model.Customer Insert(CustomerUpsert request)
         {
             var entity = _mapper.Map<Customer>(request);
 
@@ -77,24 +77,15 @@ namespace RentACar.WebAPI.Service
             }
             entity.PasswordSalt = GenerateSalt();
             entity.PasswordHash = GenerateHash(entity.PasswordSalt, request.Password);
+            //entity.CustomerTypeId = 2;
 
             _context.Add(entity);
             _context.SaveChanges();
 
-            //foreach (var item in request.Role)
-            //{
-            //    CustomerRoles customerRoles = new CustomerRoles();
-
-            //    customerRoles.CustomerId = entity.CustomerId;
-            //    customerRoles.RoleId = item;
-            //    _context.CustomerRoles.Add(customerRoles);
-            //}
-            _context.SaveChanges();
-
-            return _mapper.Map<CustomerRequest>(entity);
+            return _mapper.Map<Data.Model.Customer>(entity);
         }
 
-        public CustomerRequest Update(int id, CustomerUpsert request)
+        public Data.Model.Customer Update(int id, CustomerUpsert request)
         {
             var entity = _context.Customer.Find(id);
 
@@ -104,7 +95,7 @@ namespace RentACar.WebAPI.Service
             _mapper.Map(request, entity);
             _context.SaveChanges();
 
-            return _mapper.Map<CustomerRequest>(entity);
+            return _mapper.Map<Data.Model.Customer>(entity);
         }
 
         public Data.Model.Customer Authenticate(CustomerLoginRequest request)
@@ -123,10 +114,10 @@ namespace RentACar.WebAPI.Service
             return null;
         }
 
-        public CustomerRequest GetById(int id)
+        public Data.Model.Customer GetById(int id)
         {
             var customer = _context.Customer.Include(a => a.City).FirstOrDefault(x => x.CustomerId == id);
-            return _mapper.Map<CustomerRequest>(customer);
+            return _mapper.Map<Data.Model.Customer>(customer);
         }
     }
 }
