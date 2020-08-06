@@ -62,8 +62,7 @@ namespace RentACar.Mobile.ViewModels
                     Username = Username,
                     Password = Password,
                     PasswordConfirm = PasswordConfirm,
-                    CityId =1,                                             // hardcore  za sad
-                    // fali tip
+                    UserTypeId=2
                 });
                 
                 await Application.Current.MainPage.DisplayAlert("Registred succesfully.", "Now just log in.", "OK");

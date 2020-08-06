@@ -14,27 +14,36 @@ namespace RentACar.Mobile.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BookingVehicle : ContentPage
     {
+        private readonly APIService _serviceCustomer = new APIService("Customer");
+
         BookingVehicleViewModel model = null;
 
-        public BookingVehicle(VehicleRequest car=null)
+        public BookingVehicle(Data.Model.Vehicle vehicle=null)
         {
             InitializeComponent();
 
             BindingContext = model = new BookingVehicleViewModel
             {
-                vehicle = car
+                Vehicle=vehicle
             };
+
+            NavigationPage.SetHasNavigationBar(this, true);
+            NavigationPage.SetHasBackButton(this, true);
         }
 
-        protected  override void OnAppearing()
+        protected async  override void OnAppearing()
         {
             base.OnAppearing();
-            //await model.InitCommand();
+            await model.Init();
+            await model.RentCar();
+
         }
 
+        // For renting car 
 
-
-
-
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            DisplayAlert("Message", "Successfully! You rented car!", "OK");
+        }
     }
 }

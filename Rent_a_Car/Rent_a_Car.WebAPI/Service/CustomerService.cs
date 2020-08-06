@@ -26,10 +26,11 @@ namespace RentACar.WebAPI.Service
 
         public List<Data.Model.Customer> Get(CustomerSearchRequest request)
         {
-            var query = _context.Set<Customer>().Include(x=>x.City).AsQueryable();
+            var query = _context.Set<Customer>().Include(x => x.City).AsQueryable();
 
-            if(!string.IsNullOrWhiteSpace(request.FirstName) || !string.IsNullOrWhiteSpace(request.LastName)){
-                query = query.Where(x=>x.FirstName.StartsWith(request.FirstName));
+            if (!string.IsNullOrWhiteSpace(request.FirstName) || !string.IsNullOrWhiteSpace(request.LastName))
+            {
+                query = query.Where(x => x.FirstName.StartsWith(request.FirstName));
             }
 
             if (!string.IsNullOrWhiteSpace(request.LastName))
@@ -44,7 +45,7 @@ namespace RentACar.WebAPI.Service
 
             query = query.OrderBy(x => x.City.CityName);
 
-            return _mapper.Map<List<Data.Model.Customer>>(query.ToList());
+            return _mapper.Map<List<Data.Model.Customer>>(query);
         }
 
         private static string GenerateSalt()        
@@ -77,7 +78,7 @@ namespace RentACar.WebAPI.Service
             }
             entity.PasswordSalt = GenerateSalt();
             entity.PasswordHash = GenerateHash(entity.PasswordSalt, request.Password);
-            //entity.CustomerTypeId = 2;
+            entity.CustomerTypeId = 2;
 
             _context.Add(entity);
             _context.SaveChanges();

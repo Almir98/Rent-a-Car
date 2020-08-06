@@ -9,15 +9,15 @@ using System.Threading.Tasks;
 
 namespace RentACar.WebAPI.Service
 {
-    public class RatingService : BaseCRUDService<RatingRequest, RatingSearchRequest, Rating, RatingUpsert, RatingUpsert>
+    public class RatingService : BaseCRUDService<Data.Model.Rating, RatingSearchRequest, Rating, RatingUpsert, RatingUpsert>
     {
         public RatingService(RentaCarContext context, IMapper mapper) : base(context, mapper)
         {
         }
 
-        public override List<RatingRequest> Get(RatingSearchRequest search)
+        public override List<Data.Model.Rating> Get(RatingSearchRequest search)
         {
-            var query = _context.Set<Rating>()
+            var query = _context.Set<WebAPI.Database.Rating>()
                 .Include(x => x.Customer)
                 .Include(e => e.Vehicle)
                 .Include(e => e.Vehicle.VehicleModel)
@@ -30,14 +30,14 @@ namespace RentACar.WebAPI.Service
             }
             query = query.OrderBy(x => x.RatingValue);
 
-            return _mapper.Map<List<RatingRequest>>(query.ToList());
+            return _mapper.Map<List<Data.Model.Rating>>(query.ToList());
         }
 
-        public override RatingRequest GetByID(int id)
+        public override Data.Model.Rating GetByID(int id)
         {
             var rating = _context.Rating.Where(e => e.RatingId == id).Include(e => e.Customer).Include(e => e.Vehicle).FirstOrDefault();
 
-            return _mapper.Map<RatingRequest>(rating);
+            return _mapper.Map<Data.Model.Rating>(rating);
         }
 
     }

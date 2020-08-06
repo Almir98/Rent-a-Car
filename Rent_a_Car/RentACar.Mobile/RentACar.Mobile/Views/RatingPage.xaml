@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="clr-namespace:RentACar.Mobile.ViewModels"
+			 mc:Ignorable="d"
+             x:Class="RentACar.Mobile.Views.RatingPage">
+
+	<ContentPage.BindingContext>
+		<vm:RatingViewModel />
+	</ContentPage.BindingContext>
+
+
+	<ContentPage.Content>
+        <StackLayout Padding="20">
+
+			<Label FontSize="Large" HorizontalOptions="Center" Text="Please leave a rate for car!"></Label>
+
+			<Label Text="First name"></Label>
+			<Entry Text="{Binding FirstName}"></Entry>
+
+			<Label Text="Last name"></Label>
+			<Entry Text="{Binding LastName}"></Entry>
+			
+			<Label Text="Manufacturer name"></Label>
+			<Entry Text="{Binding }"></Entry>
+
+			<Label Text="Rating value (1-10)"></Label>
+			<Entry MaxLength="10" Text="{Binding Mark}"></Entry>
+
+			<Button Clicked="Button_Clicked" Text="Save rating"></Button>
+
+		</StackLayout>
+    </ContentPage.Content>
+</ContentPage>

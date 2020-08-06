@@ -83,12 +83,21 @@ namespace RentACar.Mobile.ViewModels
             set { SetProperty(ref _city, value); }
         }
 
+        //Customer type
+        string _customerType = string.Empty;
+        public string CustomerType
+        {
+            get { return _city; }
+            set { SetProperty(ref _customerType, value); }
+        }
 
-        public CustomerRequest customer { get; set; }
+
+
+        public Data.Model.Customer customer { get; set; }
 
         public async Task Init()
         {
-            var list = await _serviceCustomer.GetById<CustomerRequest>(APIService.CustomerId);
+            var list = await _serviceCustomer.GetById<Data.Model.Customer>(APIService.CustomerId);
 
             customer = list;
 
@@ -98,8 +107,8 @@ namespace RentACar.Mobile.ViewModels
             Email = list.Email;
             Username = list.Username;
             City = list.City.CityName;
-
-            // fali za usere type !!!
+            CustomerType = list.CustomerType.Type;
+        
         }
 
 

@@ -42,6 +42,16 @@ namespace RentACar.Mobile.Views
                     case (int)MenuItemType.Contact:
                         MenuPages.Add(id, new NavigationPage(new ContactPage()));
                         break;
+                    case (int)MenuItemType.Rating:
+                        MenuPages.Add(id, new NavigationPage(new RatingPage()));
+                        break;
+                    case (int)MenuItemType.Comment:
+                        MenuPages.Add(id, new NavigationPage(new ContactPage()));
+                        break;
+                    case (int)MenuItemType.Logout:
+                        MenuPages.Add(id, new NavigationPage(new LoginPage()));
+                        break;
+
 
                 }
             }

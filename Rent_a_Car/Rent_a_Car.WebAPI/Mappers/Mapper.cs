@@ -85,13 +85,19 @@ namespace Rent_a_Car.WebAPI.Mappers
             // novi
 
             CreateMap<RentACar.WebAPI.Database.Customer, Data.Model.Customer>().ReverseMap();
+
             CreateMap<RentACar.WebAPI.Database.CustomerType, Data.Model.CustomerType>().ReverseMap();
             CreateMap<RentACar.WebAPI.Database.City, Data.Model.City>().ReverseMap();
             CreateMap<RentACar.WebAPI.Database.Booking, Data.Model.Booking>().ReverseMap();
+            CreateMap<RentACar.WebAPI.Database.Rating, Data.Model.Rating>().ReverseMap();
 
-
-
-
+            CreateMap<RentACar.WebAPI.Database.Branch, Data.Model.Branch>().ReverseMap();
+            CreateMap<RentACar.WebAPI.Database.Comment, Data.Model.Comment>().ReverseMap();
+            CreateMap<RentACar.WebAPI.Database.FuelType, Data.Model.FuelType>().ReverseMap();
+            CreateMap<RentACar.WebAPI.Database.Manufacturer, Data.Model.Manufacturer>().ReverseMap();
+            CreateMap<RentACar.WebAPI.Database.Vehicle, Data.Model.Vehicle>().ReverseMap();
+            CreateMap<RentACar.WebAPI.Database.VehicleModel, Data.Model.VehicleModel>().ReverseMap();
+            CreateMap<RentACar.WebAPI.Database.VehicleType, Data.Model.VehicleType>().ReverseMap();
 
         }
     }

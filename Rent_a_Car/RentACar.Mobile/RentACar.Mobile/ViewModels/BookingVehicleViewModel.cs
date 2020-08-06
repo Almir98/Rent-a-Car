@@ -1,7 +1,9 @@
-﻿using RentaCar.Data.Requests.Customer;
+﻿using RentaCar.Data.Requests.Booking;
+using RentaCar.Data.Requests.Customer;
 using RentaCar.Data.Requests.Vehicle;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -12,15 +14,16 @@ namespace RentACar.Mobile.ViewModels
     public class BookingVehicleViewModel: BaseViewModel
     {
         private readonly APIService _serviceBooking=new APIService("Booking");
-        private readonly APIService _serviceVehicle = new APIService("Vehicle");
         private readonly APIService _serviceCustomer = new APIService("Customer");
 
         public BookingVehicleViewModel()
         {
-            BookingInit = new Command(async () => await InitCommand());
+            InitCommand = new Command(async () => await Init());
+            RentCommand = new Command(async () => await RentCar());
         }
 
-        public ICommand BookingInit { get; set; }
+        public ICommand InitCommand { get; set; }
+        public ICommand RentCommand { get; set; }
 
 
         //FirstName
@@ -55,32 +58,38 @@ namespace RentACar.Mobile.ViewModels
             set { SetProperty(ref _email, value); }
         }
 
-        // Manufacturer
-        string _manufacturer = string.Empty;
-        public string Manufacturer
-        {
-            get { return _manufacturer; }
-            set { SetProperty(ref _email, value); }
-        }
-
-
-        public CustomerRequest customer { get; set; }
-        public VehicleRequest vehicle { get; set; }
         
-        public async Task InitCommand()
+        public Data.Model.Customer customer { get; set; }
+
+        // Initialization
+        public async Task Init()
         {
-            var vehicleID = await _serviceVehicle.GetById<VehicleRequest>(vehicle.VehicleId);
-
-            var customerID = await _serviceCustomer.GetById<CustomerRequest>(APIService.CustomerId);
-
-            vehicle = vehicleID;
+            var customerID = await _serviceCustomer.GetById<Data.Model.Customer>(APIService.CustomerId);
             customer = customerID;
 
             FirstName = customer.FirstName;
             LastName = customer.LastName;
             Phone = customer.Phone;
             Email = customer.Email;
-            Manufacturer = vehicle.VehicleModel.Manufacturer.ManufacturerName;
+        }
+
+
+        // renting
+        public Data.Model.Vehicle Vehicle { get; set; }
+
+        public async Task RentCar()
+        {
+            GregorianCalendar persianCalendar = new GregorianCalendar();
+
+            var request = new BookingUpsert
+            {
+                CustomerId=APIService.CustomerId,
+                StartDate=DateTime.Now,
+                EndDate=DateTime.Now,
+                //VehicleId=Vehicle.VehicleId,
+                VehicleId=1
+            };
+            await _serviceBooking.Insert<Data.Model.Booking>(request);
         }
 
     }

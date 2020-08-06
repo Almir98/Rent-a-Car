@@ -12,12 +12,8 @@
 	</ContentPage.BindingContext>
 
 	<ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="15">
     
-			<Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-
 			<Label Text="FirstName"></Label>
 			<Entry Text="{Binding FirstName}"></Entry>
 
@@ -30,18 +26,22 @@
 			<Label Text="Email"></Label>
 			<Entry Text="{Binding Email}"></Entry>
 
-			<Label Text="Manufacturer"></Label>
-			<Entry Text="{Binding Manufacturer}"></Entry>
-
 			<Label Text="Start date"></Label>
-			<Entry Text="{Binding }"></Entry>
+			<!--<DatePicker x:Name=""
+                    Format="D"
+                    Margin="30, 0, 0, 30"
+				/>-->
+                    <!--DateSelected="OnDateSelected-->
 
 			<Label Text="End date"></Label>
-			<Entry Text="{Binding }"></Entry>
+			<!--<DatePicker x:Name="startDatePicker"
+                    Format="D"
+                    Margin="30, 0, 0, 30"
+				/>-->
+                    <!--DateSelected="OnDateSelected"-->
 
-
-
-			<Button  Text="Rezervisi" ></Button>
+			<Button Text="Rent" Clicked="Button_Clicked"></Button>
+			
 		</StackLayout>
     </ContentPage.Content>
 </ContentPage>

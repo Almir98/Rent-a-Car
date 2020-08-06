@@ -11,10 +11,11 @@ namespace RentACar.Mobile
 {
     public class APIService
     {
+        public static Data.Model.Customer Customer { get; set; }
+
         public static string Username { get; set; }
         public static string Password { get; set; }
         public static int CustomerId { get; set; }
-
 
         private readonly string _route;
 

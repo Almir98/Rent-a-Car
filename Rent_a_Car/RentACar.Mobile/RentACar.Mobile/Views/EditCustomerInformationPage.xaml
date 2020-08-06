@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="RentACar.Mobile.Views.EditCustomerInformationPage">
+    <ContentPage.Content>
+        <StackLayout>
+
+			<Label Text="Edit information" Margin="0,30,0,0" FontAttributes="Bold" FontSize="20"></Label>
+
+			<Label Text="First name"></Label>
+			<Entry x:Name="FirstName"></Entry>
+
+			<Label Text="Last name"></Label>
+			<Entry x:Name="LastName"></Entry>
+
+			<Label Text="Email"></Label>
+			<Entry x:Name="Email"></Entry>
+
+			<Label Text="Phone"></Label>
+			<Entry x:Name="Phone"></Entry>
+
+			<Label Text="Username"></Label>
+			<Entry x:Name="Username"></Entry>
+
+			<Label Text="Old password"></Label>
+			<Entry x:Name="OldPassword" IsPassword="True"></Entry>
+
+			<Label Text="New password"></Label>
+			<Entry x:Name="NewPassword" IsPassword="True"></Entry>
+
+			<Label Text="Confirm password"></Label>
+			<Entry x:Name="ConfirmPassword" IsPassword="True"></Entry>
+
+			<Button Clicked="Button_Clicked" HorizontalOptions="FillAndExpand" Text="Save"></Button>
+
+		</StackLayout>
+    </ContentPage.Content>
+</ContentPage>
