@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace RentACar.WebAPI.Database
+﻿namespace RentACar.WebAPI.Database
 {
     public partial class Rating
     {

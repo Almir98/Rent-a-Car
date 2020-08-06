@@ -1,23 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Rent_a_Car.WebAPI.Controllers;
-using Rent_a_Car.WebAPI.Interface;
 using RentACar.WebAPI.Interface;
 
 namespace RentACar.WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BaseCRUDController<TModel, Tsearch,TInsert,TUpdate> : BaseController<TModel, Tsearch>
+    public class BaseCRUDController<TModel, Tsearch, TInsert, TUpdate> : BaseController<TModel, Tsearch>
     {
-        protected readonly ICRUDService<TModel, Tsearch, TInsert, TUpdate> _service=null;
+        protected readonly ICRUDService<TModel, Tsearch, TInsert, TUpdate> _service = null;
 
-        public BaseCRUDController(ICRUDService<TModel, Tsearch,TInsert,TUpdate> service) : base(service)
+        public BaseCRUDController(ICRUDService<TModel, Tsearch, TInsert, TUpdate> service) : base(service)
         {
             _service = service;
         }
@@ -29,7 +22,7 @@ namespace RentACar.WebAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        public TModel Update(int id,TUpdate request)
+        public TModel Update(int id, TUpdate request)
         {
             return _service.Update(id, request);
         }

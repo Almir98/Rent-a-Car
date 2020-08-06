@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using Rent_a_Car.WebAPI.Service;
 using RentaCar.Data.Requests.Customer;
 using RentACar.WebAPI.Database;
 using RentACar.WebAPI.Interface;
@@ -9,7 +8,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace RentACar.WebAPI.Service
 {
@@ -18,7 +16,7 @@ namespace RentACar.WebAPI.Service
         protected readonly RentaCarContext _context;
         protected readonly IMapper _mapper;
 
-        public CustomerService(RentaCarContext context,IMapper mapper)
+        public CustomerService(RentaCarContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
@@ -48,13 +46,13 @@ namespace RentACar.WebAPI.Service
             return _mapper.Map<List<Data.Model.Customer>>(query);
         }
 
-        private static string GenerateSalt()        
+        private static string GenerateSalt()
         {
             var buffer = new byte[16];
             (new RNGCryptoServiceProvider()).GetBytes(buffer);
             return Convert.ToBase64String(buffer);
         }
-        private static string GenerateHash(string salt, string password)      
+        private static string GenerateHash(string salt, string password)
         {
             byte[] src = Convert.FromBase64String(salt);
             byte[] bytes = Encoding.Unicode.GetBytes(password);
@@ -72,7 +70,7 @@ namespace RentACar.WebAPI.Service
         {
             var entity = _mapper.Map<Customer>(request);
 
-            if(request.Password != request.PasswordConfirm)
+            if (request.Password != request.PasswordConfirm)
             {
                 throw new Exception("Password and password confirm not matched !");
             }
@@ -103,11 +101,11 @@ namespace RentACar.WebAPI.Service
         {
             var customer = _context.Customer.Include("CustomerType").FirstOrDefault(x => x.Username == request.Username);
 
-            if(customer != null)
+            if (customer != null)
             {
                 var newHash = GenerateHash(customer.PasswordSalt, request.Password);
 
-                if(customer.PasswordHash==newHash)
+                if (customer.PasswordHash == newHash)
                 {
                     return _mapper.Map<Data.Model.Customer>(customer);
                 }

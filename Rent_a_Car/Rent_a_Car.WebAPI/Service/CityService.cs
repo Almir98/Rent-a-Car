@@ -2,10 +2,8 @@
 using Rent_a_Car.WebAPI.Service;
 using RentaCar.Data.Requests.City;
 using RentACar.WebAPI.Database;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace RentACar.WebAPI.Service
 {

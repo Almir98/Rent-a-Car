@@ -1,12 +1,10 @@
-﻿using System;
+﻿using RentACar.Mobile.Models;
+using RentACar.Mobile.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-
 using Xamarin.Forms;
-
-using RentACar.Mobile.Models;
-using RentACar.Mobile.Services;
 
 namespace RentACar.Mobile.ViewModels
 {

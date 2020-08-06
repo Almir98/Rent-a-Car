@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace RentaCar.Data.Requests.Branch
+﻿namespace RentaCar.Data.Requests.Branch
 {
     public class BranchSearchRequest
     {

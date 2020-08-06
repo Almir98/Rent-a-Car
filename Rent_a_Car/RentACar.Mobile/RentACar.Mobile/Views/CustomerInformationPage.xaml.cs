@@ -1,9 +1,5 @@
 ﻿using RentACar.Mobile.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -13,7 +9,7 @@ namespace RentACar.Mobile.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CustomerInformationPage : ContentPage
     {
-        CustomerInformationViewModel model=null;
+        CustomerInformationViewModel model = null;
 
         public CustomerInformationPage()
         {
@@ -28,16 +24,16 @@ namespace RentACar.Mobile.Views
             await model.Init();
         }
 
-        private async void Logout_Clicked(object sender,EventArgs e)
-        {
-            var login_page = new LoginPage();
-            Navigation.InsertPageBefore(login_page, this);
-            await Navigation.PopAsync();
-        }
+        //private async void Logout_Clicked(object sender,EventArgs e)
+        //{
+        //    var login_page = new LoginPage();
+        //    Navigation.InsertPageBefore(login_page, this);
+        //    await Navigation.PopAsync();
+        //}
 
         // EDIT INFORMATIONS
 
-        private async void Button_Clicked_Edit(object sender,EventArgs e)
+        private async void Button_Clicked_Edit(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new EditCustomerInformationPage());
         }

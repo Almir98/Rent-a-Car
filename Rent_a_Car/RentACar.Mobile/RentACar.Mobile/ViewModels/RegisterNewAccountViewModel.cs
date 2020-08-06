@@ -1,10 +1,6 @@
-﻿using RentaCar.Data.Requests.City;
-using RentaCar.Data.Requests.Customer;
+﻿using RentaCar.Data.Requests.Customer;
 using RentACar.Mobile.Views;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -62,9 +58,9 @@ namespace RentACar.Mobile.ViewModels
                     Username = Username,
                     Password = Password,
                     PasswordConfirm = PasswordConfirm,
-                    UserTypeId=2
+                    UserTypeId = 2
                 });
-                
+
                 await Application.Current.MainPage.DisplayAlert("Registred succesfully.", "Now just log in.", "OK");
                 await Application.Current.MainPage.Navigation.PushModalAsync(new LoginPage());
             }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace RentaCar.Data.Requests.Rating
+﻿namespace RentaCar.Data.Requests.Rating
 {
     public class RatingUpsert
     {

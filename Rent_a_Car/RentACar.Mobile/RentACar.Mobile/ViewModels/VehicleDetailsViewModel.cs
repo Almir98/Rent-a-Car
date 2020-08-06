@@ -1,8 +1,4 @@
-﻿using RentaCar.Data.Requests;
-using RentaCar.Data.Requests.Vehicle;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using RentaCar.Data.Requests.Vehicle;
 
 namespace RentACar.Mobile.ViewModels
 {

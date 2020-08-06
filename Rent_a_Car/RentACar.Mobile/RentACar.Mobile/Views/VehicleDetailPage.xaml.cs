@@ -1,10 +1,6 @@
 ﻿using RentaCar.Data.Requests.Vehicle;
 using RentACar.Mobile.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -20,18 +16,15 @@ namespace RentACar.Mobile.Views
         {
             InitializeComponent();
 
-            BindingContext = model = new VehicleDetailsViewModel {
-
+            BindingContext = model = new VehicleDetailsViewModel
+            {
                 vehicle = item
             };
         }
 
-        private async void Booking_Clicked(object sender,  EventArgs e)
+        private async void Booking_Clicked(object sender, EventArgs e)
         {
-
             await Navigation.PushAsync(new BookingVehicle());
         }
-
-
     }
 }

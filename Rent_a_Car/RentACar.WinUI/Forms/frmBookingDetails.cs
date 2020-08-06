@@ -1,12 +1,5 @@
 ﻿using RentaCar.Data.Requests.Booking;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RentACar.WinUI.Forms
@@ -16,7 +9,7 @@ namespace RentACar.WinUI.Forms
         protected readonly APIService _serviceBooking = new APIService("Booking");
         private int? _id = null;
 
-        public frmBookingDetails(int?id)
+        public frmBookingDetails(int? id)
         {
             _id = id;
             InitializeComponent();
@@ -24,7 +17,7 @@ namespace RentACar.WinUI.Forms
 
         private async void frmBookingDetails_Load(object sender, EventArgs e)
         {
-            if(_id.HasValue)
+            if (_id.HasValue)
             {
                 var booking = await _serviceBooking.GetById<BookingRequest>(_id);
 

@@ -1,12 +1,5 @@
 ﻿using RentaCar.Data.Requests.Branch;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RentACar.WinUI.Forms
@@ -14,7 +7,7 @@ namespace RentACar.WinUI.Forms
     public partial class frmBranchDetails : Form
     {
         protected readonly APIService _serviceBranch = new APIService("Branch");
-        private int? _id=null;
+        private int? _id = null;
 
         public frmBranchDetails(int? id)
         {
@@ -24,7 +17,7 @@ namespace RentACar.WinUI.Forms
 
         private async void frmBranchDetails_Load(object sender, EventArgs e)
         {
-            if(_id.HasValue)
+            if (_id.HasValue)
             {
                 var branch = await _serviceBranch.GetById<BranchRequest>(_id);
 

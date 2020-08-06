@@ -1,5 +1,4 @@
-﻿    using AutoMapper;
-using Rent_a_Car.WebAPI.Service;
+﻿using AutoMapper;
 using RentaCar.Data.Requests.Branch;
 using RentACar.WebAPI.Database;
 using System.Collections.Generic;
@@ -7,7 +6,7 @@ using System.Linq;
 
 namespace RentACar.WebAPI.Service
 {
-    public class BranchService : BaseCRUDService< BranchRequest, BranchSearchRequest,Branch,BranchUpsert,BranchUpsert>
+    public class BranchService : BaseCRUDService<BranchRequest, BranchSearchRequest, Branch, BranchUpsert, BranchUpsert>
     {
         public BranchService(RentaCarContext context, IMapper mapper) : base(context, mapper)
         {
@@ -17,7 +16,7 @@ namespace RentACar.WebAPI.Service
         {
             var query = _context.Set<Branch>().AsQueryable();
 
-            if(!string.IsNullOrWhiteSpace(search.BranchName))                   // search for string
+            if (!string.IsNullOrWhiteSpace(search.BranchName))                   // search for string
             {
                 query = query.Where(x => x.BranchName.StartsWith(search.BranchName));
             }
@@ -28,6 +27,6 @@ namespace RentACar.WebAPI.Service
             }
 
             return _mapper.Map<List<BranchRequest>>(query.ToList());
-        } 
+        }
     }
 }

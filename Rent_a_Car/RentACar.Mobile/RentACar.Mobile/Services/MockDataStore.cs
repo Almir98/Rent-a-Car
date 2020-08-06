@@ -1,8 +1,8 @@
-﻿using System;
+﻿using RentACar.Mobile.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using RentACar.Mobile.Models;
 
 namespace RentACar.Mobile.Services
 {

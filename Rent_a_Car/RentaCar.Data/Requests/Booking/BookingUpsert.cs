@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace RentaCar.Data.Requests.Booking
 {
@@ -8,7 +6,7 @@ namespace RentaCar.Data.Requests.Booking
     {
         public int CustomerId { get; set; }
         public int VehicleId { get; set; }
-        
+
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
     }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Data.Model;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Data.Model;
 using RentaCar.Data.Requests.Booking;
 using RentACar.WebAPI.Controllers;
 using RentACar.WebAPI.Interface;

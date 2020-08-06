@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace RentACar.Mobile.Models
+﻿namespace RentACar.Mobile.Models
 {
     public enum MenuItemType
     {
         Browse,
         Customer,
         Vehicle,
-        Contact,
         Rating,
         Comment,
+        Contact,
         Logout
 
     }

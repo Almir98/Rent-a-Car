@@ -1,10 +1,7 @@
-﻿using RentaCar.Data.Requests;
-using RentaCar.Data.Requests.Manufacturer;
+﻿using RentaCar.Data.Requests.Manufacturer;
 using RentaCar.Data.Requests.Vehicle;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -13,7 +10,7 @@ namespace RentACar.Mobile.ViewModels
 {
     public class VehicleViewModel
     {
-        private readonly APIService _vehicleService=new APIService("Vehicle");          // connection to controller
+        private readonly APIService _vehicleService = new APIService("Vehicle");          // connection to controller
         private readonly APIService _manufacturerService = new APIService("Manufacturer");
 
         public VehicleViewModel()
@@ -22,7 +19,7 @@ namespace RentACar.Mobile.ViewModels
         }
 
         public ObservableCollection<ManufacturerRequest> ManufacturerList { get; set; } = new ObservableCollection<ManufacturerRequest>();
-        
+
         public ObservableCollection<VehicleRequest> VehicleList { get; set; } = new ObservableCollection<VehicleRequest>();
 
 
@@ -31,7 +28,7 @@ namespace RentACar.Mobile.ViewModels
         public async Task Init()
         {
             var list = await _vehicleService.Get<IEnumerable<VehicleRequest>>(null);
-            
+
             var manufacturerList = await _manufacturerService.Get<IEnumerable<ManufacturerRequest>>(null);
 
             if (ManufacturerList.Count == 0)
@@ -47,9 +44,9 @@ namespace RentACar.Mobile.ViewModels
             {
                 //if(vehicle.Status==false)
                 //{
-                    VehicleList.Add(vehicle);
+                VehicleList.Add(vehicle);
                 //}
             }
-        } 
+        }
     }
 }

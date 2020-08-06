@@ -26,6 +26,9 @@
 			<Label Text="Email"></Label>
 			<Entry Text="{Binding Email}"></Entry>
 
+			<Label Text="Registration"></Label>
+			<Entry Text="{Binding RegistrationNumber}"></Entry>
+
 			<Label Text="Start date"></Label>
 			<!--<DatePicker x:Name=""
                     Format="D"

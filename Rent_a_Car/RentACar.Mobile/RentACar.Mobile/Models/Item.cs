@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace RentACar.Mobile.Models
+﻿namespace RentACar.Mobile.Models
 {
     public class Item
     {

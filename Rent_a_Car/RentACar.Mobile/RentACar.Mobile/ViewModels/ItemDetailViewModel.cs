@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 using RentACar.Mobile.Models;
 
 namespace RentACar.Mobile.ViewModels

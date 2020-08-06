@@ -1,13 +1,6 @@
-﻿using RentaCar.Data.Requests;
-using RentaCar.Data.Requests.Vehicle;
+﻿using RentaCar.Data.Requests.Vehicle;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RentACar.WinUI.Forms
@@ -25,7 +18,7 @@ namespace RentACar.WinUI.Forms
         {
             var search = new VehicleSearchRequest()
             {
-                RegistrationNumber=txtSearchVehicle.Text
+                RegistrationNumber = txtSearchVehicle.Text
                 //ManufacturerName=txtSearchVehicle.Text,
                 //BranchName=txtSearchVehicle.Text
             };

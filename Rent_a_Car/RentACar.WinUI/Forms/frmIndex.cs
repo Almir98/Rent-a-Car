@@ -1,12 +1,5 @@
 ﻿using RentACar.WinUI.Forms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RentACar.WinUI
@@ -69,7 +62,7 @@ namespace RentACar.WinUI
         {
         }
 
-        
+
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.Cascade);
@@ -173,7 +166,7 @@ namespace RentACar.WinUI
             frmRating form = new frmRating();
             form.MdiParent = this;
             form.Show();
-                
+
         }
     }
 }

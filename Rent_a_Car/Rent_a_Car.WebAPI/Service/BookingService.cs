@@ -2,10 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using RentaCar.Data.Requests.Booking;
 using RentACar.WebAPI.Database;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace RentACar.WebAPI.Service
 {
@@ -17,10 +15,10 @@ namespace RentACar.WebAPI.Service
 
         public override List<Data.Model.Booking> Get(BookingSearchRequest search)
         {
-            var query = _context.Set<Booking>().Include(x=>x.Customer)
+            var query = _context.Set<Booking>().Include(x => x.Customer)
                 .AsQueryable();
 
-            if(!string.IsNullOrEmpty(search.FirstName))
+            if (!string.IsNullOrEmpty(search.FirstName))
             {
                 query = query.Where(x => x.Customer.FirstName.StartsWith(search.FirstName));
             }

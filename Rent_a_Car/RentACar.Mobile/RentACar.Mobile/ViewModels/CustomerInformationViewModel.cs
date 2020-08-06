@@ -1,15 +1,10 @@
-﻿using RentaCar.Data.Requests.City;
-using RentaCar.Data.Requests.Customer;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace RentACar.Mobile.ViewModels
 {
-    public class CustomerInformationViewModel: BaseViewModel
+    public class CustomerInformationViewModel : BaseViewModel
     {
         private readonly APIService _serviceCustomer = new APIService("Customer");
 
@@ -108,7 +103,7 @@ namespace RentACar.Mobile.ViewModels
             Username = list.Username;
             City = list.City.CityName;
             CustomerType = list.CustomerType.Type;
-        
+
         }
 
 

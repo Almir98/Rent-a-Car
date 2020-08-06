@@ -2,10 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using RentaCar.Data.Requests.Rating;
 using RentACar.WebAPI.Database;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace RentACar.WebAPI.Service
 {
@@ -24,7 +22,7 @@ namespace RentACar.WebAPI.Service
                 .Include(e => e.Vehicle.VehicleModel.Manufacturer)
                 .AsQueryable();
 
-            if(!string.IsNullOrWhiteSpace(search.ManufacturerName))
+            if (!string.IsNullOrWhiteSpace(search.ManufacturerName))
             {
                 query = query.Where(x => x.Vehicle.VehicleModel.Manufacturer.ManufacturerName.StartsWith(search.ManufacturerName));
             }

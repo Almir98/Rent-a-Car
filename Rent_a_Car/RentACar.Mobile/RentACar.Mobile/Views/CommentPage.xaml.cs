@@ -7,26 +7,27 @@ using Xamarin.Forms.Xaml;
 namespace RentACar.Mobile.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class RatingPage : ContentPage
+    public partial class CommentPage : ContentPage
     {
-        RatingViewModel model = null;
+        CommentViewModel model = new CommentViewModel();
 
-        public RatingPage()
+        public CommentPage()
         {
             InitializeComponent();
+            BindingContext = model = new CommentViewModel();
 
-            BindingContext = model = new RatingViewModel();
+            NavigationPage.SetHasBackButton(this, true);
         }
 
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            await model.SetNewRating();
+            await model.SetComment();
         }
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            DisplayAlert("Message", "Successfully! Thank you for rating car!", "OK");
+            DisplayAlert("Message", "Successfully! Thank you for comment!", "OK");
         }
     }
 }

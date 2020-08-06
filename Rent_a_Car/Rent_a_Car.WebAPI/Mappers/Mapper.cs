@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using RentaCar.Data.Requests;
 using RentaCar.Data.Requests.Booking;
 using RentaCar.Data.Requests.Branch;
 using RentaCar.Data.Requests.City;
@@ -15,7 +14,7 @@ using RentACar.WebAPI.Database;
 
 namespace Rent_a_Car.WebAPI.Mappers
 {
-    public class Mapper :Profile
+    public class Mapper : Profile
     {
         public Mapper()
         {
@@ -28,7 +27,7 @@ namespace Rent_a_Car.WebAPI.Mappers
             CreateMap<RentACar.WebAPI.Database.Branch, BranchUpsert>().ReverseMap();
 
             CreateMap<CustomerRequest, RentACar.WebAPI.Database.Customer>().ReverseMap();            //Customer
-            CreateMap<CustomerRequest, CityRequest>().ReverseMap();   
+            CreateMap<CustomerRequest, CityRequest>().ReverseMap();
             CreateMap<RentACar.WebAPI.Database.Customer, CustomerUpsert>().ReverseMap();
 
 
@@ -62,7 +61,7 @@ namespace Rent_a_Car.WebAPI.Mappers
             CreateMap<Comment, CommentUpsert>().ReverseMap();
             CreateMap<CommentRequest, RentACar.WebAPI.Database.Comment>().ReverseMap();
 
-            
+
             CreateMap<FuelTypeRequest, RentACar.WebAPI.Database.FuelType>().ReverseMap();
             CreateMap<VehicleTypeRequest, RentACar.WebAPI.Database.VehicleType>().ReverseMap();
             CreateMap<VehicleModelRequest, RentACar.WebAPI.Database.VehicleModel>().ReverseMap();

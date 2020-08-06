@@ -1,11 +1,8 @@
-﻿using System;
+﻿using RentACar.Mobile.Models;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-using RentACar.Mobile.Models;
 
 namespace RentACar.Mobile.Views
 {
@@ -39,19 +36,18 @@ namespace RentACar.Mobile.Views
                     case (int)MenuItemType.Vehicle:
                         MenuPages.Add(id, new NavigationPage(new VehiclePage()));
                         break;
-                    case (int)MenuItemType.Contact:
-                        MenuPages.Add(id, new NavigationPage(new ContactPage()));
-                        break;
                     case (int)MenuItemType.Rating:
                         MenuPages.Add(id, new NavigationPage(new RatingPage()));
                         break;
                     case (int)MenuItemType.Comment:
+                        MenuPages.Add(id, new NavigationPage(new CommentPage()));
+                        break;
+                    case (int)MenuItemType.Contact:
                         MenuPages.Add(id, new NavigationPage(new ContactPage()));
                         break;
                     case (int)MenuItemType.Logout:
                         MenuPages.Add(id, new NavigationPage(new LoginPage()));
                         break;
-
 
                 }
             }

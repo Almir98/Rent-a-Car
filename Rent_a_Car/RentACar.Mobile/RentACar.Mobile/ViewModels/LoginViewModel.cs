@@ -1,7 +1,6 @@
 ﻿using RentACar.Mobile.Views;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -46,7 +45,7 @@ namespace RentACar.Mobile.ViewModels
 
                 foreach (var item in list)
                 {
-                    if(item.Username==Username)
+                    if (item.Username == Username)
                     {
                         APIService.CustomerId = item.CustomerId;
                     }

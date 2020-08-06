@@ -1,14 +1,7 @@
-﻿using RentaCar.Data.Requests;
-using RentaCar.Data.Requests.Vehicle;
+﻿using RentaCar.Data.Requests.Vehicle;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RentACar.WinUI.Forms
@@ -34,7 +27,7 @@ namespace RentACar.WinUI.Forms
 
         private async void frmVehicleDetails_Load(object sender, EventArgs e)
         {
-            if(_id.HasValue)
+            if (_id.HasValue)
             {
                 var vehicle = await _apiservice.GetById<VehicleRequest>(_id);
 

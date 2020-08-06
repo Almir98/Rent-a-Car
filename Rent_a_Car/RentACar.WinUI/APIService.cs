@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Flurl.Http;
-using Flurl;
+﻿using Flurl.Http;
 using RentaCar.Data;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RentACar.WinUI
@@ -22,7 +17,7 @@ namespace RentACar.WinUI
             _route = route;
         }
 
-        public async Task<T> Get<T>(object search=null)
+        public async Task<T> Get<T>(object search = null)
         {
             try
             {
@@ -65,14 +60,14 @@ namespace RentACar.WinUI
         {
             var url = $"{Properties.Settings.Default.APIUrl}/{_route}";
 
-            return await url.WithBasicAuth(Username,Password).PostJsonAsync(request).ReceiveJson<T>();
+            return await url.WithBasicAuth(Username, Password).PostJsonAsync(request).ReceiveJson<T>();
         }
 
-        public async Task<T> Update<T>(object id,object request)
+        public async Task<T> Update<T>(object id, object request)
         {
             var url = $"{Properties.Settings.Default.APIUrl}/{_route}/{id}";
 
-            return await url.WithBasicAuth(Username,Password).PutJsonAsync(request).ReceiveJson<T>();
+            return await url.WithBasicAuth(Username, Password).PutJsonAsync(request).ReceiveJson<T>();
         }
     }
 }

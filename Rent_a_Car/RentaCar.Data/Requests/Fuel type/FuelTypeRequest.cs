@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace RentaCar.Data.Requests.Fuel_type
+﻿namespace RentaCar.Data.Requests.Fuel_type
 {
     public class FuelTypeRequest
     {

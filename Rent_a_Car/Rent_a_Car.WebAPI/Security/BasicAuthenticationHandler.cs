@@ -2,11 +2,9 @@
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using RentaCar.Data.Requests.Customer;
-using RentACar.WebAPI.Database;
 using RentACar.WebAPI.Interface;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http.Headers;
 using System.Security.Claims;
 using System.Text;
@@ -50,7 +48,7 @@ namespace RentACar.WebAPI.Security
                     Username = username,
                     Password = password
                 });
-                
+
             }
             catch
             {

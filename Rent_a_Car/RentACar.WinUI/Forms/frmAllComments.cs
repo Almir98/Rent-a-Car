@@ -4,7 +4,6 @@ using RentaCar.Data.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -17,7 +16,7 @@ namespace RentACar.WinUI.Forms
 
         private Customer _customer;
 
-        public frmAllComments(Customer customer=null)
+        public frmAllComments(Customer customer = null)
         {
             _customer = customer;
             InitializeComponent();
@@ -39,7 +38,7 @@ namespace RentACar.WinUI.Forms
                     FirstName = item.Customer.FirstName,
                     LastName = item.Customer.LastName,
                     ManufacturerName = item.Vehicle.VehicleModel.Manufacturer.ManufacturerName,
-                    ModelName=item.Vehicle.VehicleModel.ModelName
+                    ModelName = item.Vehicle.VehicleModel.ModelName
                 };
                 newList.Add(form);
             }
@@ -48,7 +47,7 @@ namespace RentACar.WinUI.Forms
             dgvComments.DataSource = newList;
         }
 
-        private async void btnSearch_Click(object sender, EventArgs e)          
+        private async void btnSearch_Click(object sender, EventArgs e)
         {
             var search = new CommentSearchRequest()
             {

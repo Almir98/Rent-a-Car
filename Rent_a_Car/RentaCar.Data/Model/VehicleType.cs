@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Data.Model
 {
@@ -9,6 +7,6 @@ namespace Data.Model
         public int VehcileTypeId { get; set; }
         public string TypeName { get; set; }
 
-        public  ICollection<Vehicle> Vehicle { get; set; }
+        public ICollection<Vehicle> Vehicle { get; set; }
     }
 }

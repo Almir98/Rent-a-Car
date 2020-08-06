@@ -3,8 +3,6 @@ using RentaCar.Data.Requests.Manufacturer;
 using RentaCar.Data.Requests.Vehicle;
 using RentaCar.Data.Requests.VehicleModel;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace RentaCar.Data.Requests.Comments
 {

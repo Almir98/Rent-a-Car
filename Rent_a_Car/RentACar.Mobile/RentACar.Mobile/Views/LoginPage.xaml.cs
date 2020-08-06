@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -15,12 +11,12 @@ namespace RentACar.Mobile.Views
         public LoginPage()
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false);            
+            NavigationPage.SetHasNavigationBar(this, false);
         }
 
         private async void Register_Clicked(object sender, EventArgs e)
         {
-             await Navigation.PushModalAsync(new RegisterNewAccount());
+            await Navigation.PushModalAsync(new RegisterNewAccount());
         }
     }
 }

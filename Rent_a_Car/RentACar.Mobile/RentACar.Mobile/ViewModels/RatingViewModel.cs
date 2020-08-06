@@ -1,7 +1,4 @@
 ﻿using RentaCar.Data.Requests.Rating;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -10,7 +7,7 @@ namespace RentACar.Mobile.ViewModels
 {
     public class RatingViewModel : BaseViewModel
     {
-        private readonly APIService _serviceRating=new APIService("Rating");
+        private readonly APIService _serviceRating = new APIService("Rating");
         private readonly APIService _serviceBooking = new APIService("Booking");
         private readonly APIService _serviceCustomer = new APIService("Customer");
 
@@ -22,7 +19,7 @@ namespace RentACar.Mobile.ViewModels
         }
 
         // propertiji
-        
+
         private string _firstName = string.Empty;
         public string FirstName
         {
@@ -38,8 +35,8 @@ namespace RentACar.Mobile.ViewModels
         }
 
         //Rating value
-        
-        public int _ratingValue=5;
+
+        public int _ratingValue = 5;
         public int Mark
         {
             get { return _ratingValue; }
@@ -57,7 +54,7 @@ namespace RentACar.Mobile.ViewModels
 
             FirstName = customer.FirstName;
             LastName = customer.LastName;
-            
+
             bool answer = await Application.Current.MainPage.DisplayAlert("Alert", "Would you like to add rating?", "Yes", "No");
             if (answer)
             {
@@ -69,7 +66,7 @@ namespace RentACar.Mobile.ViewModels
                     RatingValue = Mark
                 };
 
-                if (Mark <=0 || Mark > 10)
+                if (Mark <= 0 || Mark > 10)
                 {
                     await Application.Current.MainPage.DisplayAlert("Error", "You have to add mark in range 1 - 10!", "OK");
                 }

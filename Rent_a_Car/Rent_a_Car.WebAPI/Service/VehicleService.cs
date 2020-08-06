@@ -1,12 +1,9 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using RentaCar.Data.Requests;
 using RentaCar.Data.Requests.Vehicle;
 using RentACar.WebAPI.Database;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace RentACar.WebAPI.Service
 {
@@ -18,9 +15,9 @@ namespace RentACar.WebAPI.Service
 
         public override List<VehicleRequest> Get(VehicleSearchRequest search)
         {
-            var query = _context.Set<Vehicle>().Include(x=>x.VehicleModel.Manufacturer).Include(x=>x.Branch).AsQueryable();
+            var query = _context.Set<Vehicle>().Include(x => x.VehicleModel.Manufacturer).Include(x => x.Branch).AsQueryable();
 
-            if(!string.IsNullOrEmpty(search.BranchName))
+            if (!string.IsNullOrEmpty(search.BranchName))
             {
                 query = query.Where(x => x.Branch.BranchName == search.BranchName);
             }

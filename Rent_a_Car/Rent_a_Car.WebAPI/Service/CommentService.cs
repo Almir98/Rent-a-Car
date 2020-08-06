@@ -2,20 +2,18 @@
 using Microsoft.EntityFrameworkCore;
 using RentaCar.Data.Requests.Comments;
 using RentACar.WebAPI.Database;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace RentACar.WebAPI.Service
 {
-    public class CommentService : BaseCRUDService<CommentRequest, CommentSearchRequest, Comment, CommentUpsert, CommentUpsert>
+    public class CommentService : BaseCRUDService<Data.Model.Comment, CommentSearchRequest, Comment, CommentUpsert, CommentUpsert>
     {
         public CommentService(RentaCarContext context, IMapper mapper) : base(context, mapper)
         {
         }
 
-        public override List<CommentRequest> Get(CommentSearchRequest search)
+        public override List<Data.Model.Comment> Get(CommentSearchRequest search)
         {
             var query = _context.Comment.Include("Customer")
                 .Include("Vehicle")
@@ -23,25 +21,25 @@ namespace RentACar.WebAPI.Service
                 .Include("Vehicle.VehicleModel.Manufacturer")
                 .AsQueryable();
 
-            if(!string.IsNullOrEmpty(search.ManufacturerName))
+            if (!string.IsNullOrEmpty(search.ManufacturerName))
             {
                 query = query.Where(x => x.Vehicle.VehicleModel.Manufacturer.ManufacturerName.StartsWith(search.ManufacturerName));
             }
             query = query.OrderBy(x => x.DateOfComment);
 
-            return _mapper.Map<List<CommentRequest>>(query.ToList());
+            return _mapper.Map<List<Data.Model.Comment>>(query.ToList());
         }
 
-        public override CommentRequest GetByID(int id)
+        public override Data.Model.Comment GetByID(int id)
         {
             var comment = _context.Comment.Where(e => e.CommentId == id)
-                .Include(e=>e.Customer)
+                .Include(e => e.Customer)
                 .Include(e => e.Vehicle)
                 .Include(e => e.Vehicle.VehicleModel)
                 .Include(e => e.Vehicle.VehicleModel.Manufacturer)
                 .FirstOrDefault();
 
-            return _mapper.Map<CommentRequest>(comment);
+            return _mapper.Map<Data.Model.Comment>(comment);
         }
 
     }

@@ -46,12 +46,8 @@
 			<Entry Text="{Binding City}"></Entry>
 
 
-			
-			
 			<Button Clicked="Button_Clicked_Edit" Text="Edit informations" BackgroundColor="LightGray" Margin="0,20,0,0"></Button>
 
-			<Button Text="Logout"  Clicked="Logout_Clicked" TextColor="White"  Command="{Binding Logout}"></Button>
-			
 		</StackLayout>
     </ContentPage.Content>
 </ContentPage>

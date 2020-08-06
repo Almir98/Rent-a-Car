@@ -1,7 +1,5 @@
 ﻿using RentaCar.Data.Requests.Customer;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 
 namespace RentaCar.Data.Requests.Booking

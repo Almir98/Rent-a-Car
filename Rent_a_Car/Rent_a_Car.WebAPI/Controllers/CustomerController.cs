@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using RentaCar.Data.Requests.Customer;
 using RentACar.WebAPI.Interface;
+using System.Collections.Generic;
 
 namespace RentACar.WebAPI.Controllers
 {
@@ -43,7 +38,7 @@ namespace RentACar.WebAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        public ActionResult<Data.Model.Customer> Update(int id,[FromBody]CustomerUpsert request)
+        public ActionResult<Data.Model.Customer> Update(int id, [FromBody]CustomerUpsert request)
         {
             return _service.Update(id, request);
         }

@@ -24,7 +24,7 @@ namespace RentACar.WinUI.Forms
             InitializeComponent();
         }
 
-        private async Task LoadFuelType()       
+        private async Task LoadFuelType()
         {
             var list = await _serviceFuelType.Get<List<FuelType>>();
             list.Insert(0, new FuelType());
@@ -95,9 +95,9 @@ namespace RentACar.WinUI.Forms
 
         private async void cmbManufacturer_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var idObj=cmbManufacturer.SelectedValue;
+            var idObj = cmbManufacturer.SelectedValue;
 
-            if(int.TryParse(idObj.ToString(), out int id))
+            if (int.TryParse(idObj.ToString(), out int id))
             {
                 await LoadVehicleModel(id);
             }
@@ -130,7 +130,7 @@ namespace RentACar.WinUI.Forms
             //fueltype
             var idFuel = cmbFuelType.SelectedValue;
 
-            if(int.TryParse(idFuel.ToString(),out int fuelid))
+            if (int.TryParse(idFuel.ToString(), out int fuelid))
             {
                 request.FuelTypeId = fuelid;
             }
@@ -138,7 +138,7 @@ namespace RentACar.WinUI.Forms
             // vehicletype
             var idVehicleType = cmbVehicleType.SelectedValue;
 
-            if(int.TryParse(idVehicleType.ToString(),out int vehicletypeID))
+            if (int.TryParse(idVehicleType.ToString(), out int vehicletypeID))
             {
                 request.VehicleTypeId = vehicletypeID;
             }
@@ -150,7 +150,7 @@ namespace RentACar.WinUI.Forms
             {
                 request.VehicleModelId = vehiclemodelID;
             }
-            
+
             await _serviceVehicle.Insert<VehicleRequest>(request);
             //MessageBox.Show("Operation successfully completed!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();

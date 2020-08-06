@@ -2,10 +2,8 @@
 using Rent_a_Car.WebAPI.Service;
 using RentaCar.Data.Requests.VehicleModel;
 using RentACar.WebAPI.Database;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace RentACar.WebAPI.Service
 {
@@ -19,7 +17,7 @@ namespace RentACar.WebAPI.Service
         {
             var query = _context.VehicleModel.AsQueryable();
 
-            if(search?.ManufacturerId.HasValue==true)
+            if (search?.ManufacturerId.HasValue == true)
             {
                 query = query.Where(e => e.ManufacturerId == search.ManufacturerId);
             }

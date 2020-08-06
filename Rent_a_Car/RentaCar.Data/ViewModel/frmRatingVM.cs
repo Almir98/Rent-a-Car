@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace RentaCar.Data.ViewModel
+﻿namespace RentaCar.Data.ViewModel
 {
     public class frmRatingVM
     {

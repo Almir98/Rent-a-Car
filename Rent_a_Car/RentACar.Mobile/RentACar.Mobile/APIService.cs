@@ -1,7 +1,5 @@
 ﻿using Flurl.Http;
-using Flurl;
 using RentaCar.Data;
-using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,7 +40,7 @@ namespace RentACar.Mobile
                     url += "?";
                     url += await search.ToQueryString();
                 }
-                 return await url.WithBasicAuth(Username, Password).GetJsonAsync<T>();
+                return await url.WithBasicAuth(Username, Password).GetJsonAsync<T>();
             }
             catch (FlurlHttpException ex)
             {

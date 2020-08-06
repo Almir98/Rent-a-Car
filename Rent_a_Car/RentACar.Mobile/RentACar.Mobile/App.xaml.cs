@@ -1,8 +1,6 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using RentACar.Mobile.Services;
+﻿using RentACar.Mobile.Services;
 using RentACar.Mobile.Views;
+using Xamarin.Forms;
 
 namespace RentACar.Mobile
 {

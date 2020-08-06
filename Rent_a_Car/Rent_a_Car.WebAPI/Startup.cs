@@ -1,29 +1,19 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 //using Rent_a_Car.WebAPI.Filters;
 using Rent_a_Car.WebAPI.Interface;
 using Rent_a_Car.WebAPI.Service;
-using RentaCar.Data.Requests;
 using RentaCar.Data.Requests.Booking;
 using RentaCar.Data.Requests.Branch;
 using RentaCar.Data.Requests.City;
 using RentaCar.Data.Requests.Comments;
-using RentaCar.Data.Requests.Customer;
 using RentaCar.Data.Requests.Fuel_type;
 using RentaCar.Data.Requests.Manufacturer;
 using RentaCar.Data.Requests.Rating;
@@ -57,7 +47,7 @@ namespace Rent_a_Car.WebAPI
             services.AddControllers().AddNewtonsoftJson(options =>
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
             );
-            
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "RentACar API", Version = "v1" });
@@ -95,25 +85,25 @@ namespace Rent_a_Car.WebAPI
 
             #region Dependency injection
 
-            services.AddScoped<IService<FuelTypeRequest,object>,BaseService<FuelTypeRequest, object, RentACar.WebAPI.Database.FuelType>>();
+            services.AddScoped<IService<FuelTypeRequest, object>, BaseService<FuelTypeRequest, object, RentACar.WebAPI.Database.FuelType>>();
             services.AddScoped<IService<VehicleTypeRequest, object>, BaseService<VehicleTypeRequest, object, RentACar.WebAPI.Database.VehicleType>>();
             services.AddScoped<IService<VehicleModelRequest, VehicleModelSearch>, VehicleModelService>();
-            services.AddScoped<IService<CityRequest,CitySearchRequest>,CityService>();
+            services.AddScoped<IService<CityRequest, CitySearchRequest>, CityService>();
             services.AddScoped<IService<ManufacturerRequest, object>, BaseService<ManufacturerRequest, object, RentACar.WebAPI.Database.Manufacturer>>();
 
 
-            services.AddScoped<ICRUDService<BranchRequest,BranchSearchRequest,BranchUpsert,BranchUpsert> , BranchService>();
+            services.AddScoped<ICRUDService<BranchRequest, BranchSearchRequest, BranchUpsert, BranchUpsert>, BranchService>();
             services.AddScoped<ICRUDService<VehicleRequest, VehicleSearchRequest, VehicleUpsert, VehicleUpsert>, VehicleService>();
-            
-            services.AddScoped<ICRUDService<Data.Model.Booking, BookingSearchRequest, BookingUpsert, BookingUpsert>,BookingService>();
-            
-            services.AddScoped<ICRUDService<Data.Model.Rating,RatingSearchRequest,RatingUpsert,RatingUpsert >, RatingService > ();
-            
 
-            services.AddScoped<ICRUDService<CommentRequest, CommentSearchRequest, CommentUpsert, CommentUpsert>,CommentService>();
+            services.AddScoped<ICRUDService<Data.Model.Booking, BookingSearchRequest, BookingUpsert, BookingUpsert>, BookingService>();
 
-            services.AddScoped<ICustomerService,CustomerService>();
-            
+            services.AddScoped<ICRUDService<Data.Model.Rating, RatingSearchRequest, RatingUpsert, RatingUpsert>, RatingService>();
+
+
+            services.AddScoped<ICRUDService<Data.Model.Comment, CommentSearchRequest, CommentUpsert, CommentUpsert>, CommentService>();
+
+            services.AddScoped<ICustomerService, CustomerService>();
+
             #endregion
         }
 
