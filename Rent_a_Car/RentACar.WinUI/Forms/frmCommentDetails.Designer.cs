@@ -49,42 +49,46 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label1.Location = new System.Drawing.Point(39, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 20);
+            this.label1.Size = new System.Drawing.Size(161, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Broj komentara";
+            this.label1.Text = "Number of comment";
             // 
             // txtComment
             // 
+            this.txtComment.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtComment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtComment.Location = new System.Drawing.Point(43, 60);
+            this.txtComment.Location = new System.Drawing.Point(42, 70);
             this.txtComment.Name = "txtComment";
             this.txtComment.ReadOnly = true;
-            this.txtComment.Size = new System.Drawing.Size(119, 26);
+            this.txtComment.Size = new System.Drawing.Size(137, 26);
             this.txtComment.TabIndex = 1;
             // 
             // txtDescritpion
             // 
+            this.txtDescritpion.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtDescritpion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtDescritpion.Location = new System.Drawing.Point(439, 161);
+            this.txtDescritpion.Location = new System.Drawing.Point(504, 119);
             this.txtDescritpion.Name = "txtDescritpion";
             this.txtDescritpion.ReadOnly = true;
-            this.txtDescritpion.Size = new System.Drawing.Size(326, 175);
+            this.txtDescritpion.Size = new System.Drawing.Size(326, 187);
             this.txtDescritpion.TabIndex = 2;
             this.txtDescritpion.Text = "";
             // 
             // btnBack
             // 
+            this.btnBack.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnBack.Location = new System.Drawing.Point(633, 437);
+            this.btnBack.Location = new System.Drawing.Point(589, 426);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(132, 43);
+            this.btnBack.Size = new System.Drawing.Size(155, 43);
             this.btnBack.TabIndex = 3;
-            this.btnBack.Text = "Nazad";
-            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // txtFirstName
             // 
+            this.txtFirstName.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtFirstName.Location = new System.Drawing.Point(42, 142);
             this.txtFirstName.Name = "txtFirstName";
@@ -98,12 +102,13 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label2.Location = new System.Drawing.Point(39, 119);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 20);
+            this.label2.Size = new System.Drawing.Size(89, 20);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Ime";
+            this.label2.Text = "First name";
             // 
             // txtLastName
             // 
+            this.txtLastName.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtLastName.Location = new System.Drawing.Point(42, 217);
             this.txtLastName.Name = "txtLastName";
@@ -117,13 +122,13 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label3.Location = new System.Drawing.Point(39, 194);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 20);
+            this.label3.Size = new System.Drawing.Size(88, 20);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Prezime";
+            this.label3.Text = "Last name";
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.dtComment);
             this.groupBox1.Controls.Add(this.label5);
@@ -141,7 +146,7 @@
             this.groupBox1.Size = new System.Drawing.Size(1037, 567);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Detalji komentara";
+            this.groupBox1.Text = "Detail of comment";
             // 
             // label6
             // 
@@ -149,9 +154,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label6.Location = new System.Drawing.Point(38, 274);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(142, 20);
+            this.label6.Size = new System.Drawing.Size(138, 20);
             this.label6.TabIndex = 12;
-            this.label6.Text = "Datum komentara";
+            this.label6.Text = "Date of comment";
             // 
             // dtComment
             // 
@@ -165,11 +170,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label5.Location = new System.Drawing.Point(435, 119);
+            this.label5.Location = new System.Drawing.Point(510, 76);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(98, 20);
+            this.label5.Size = new System.Drawing.Size(188, 20);
             this.label5.TabIndex = 10;
-            this.label5.Text = "Opis usluge";
+            this.label5.Text = "Description of comment";
             // 
             // frmCommentDetails
             // 

@@ -29,17 +29,22 @@
         private void InitializeComponent()
         {
             this.dgvRating = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.txtVehicle = new System.Windows.Forms.TextBox();
             this.RatingId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RatingValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ManufacturerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ModelName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtVehicle = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnPrintRating = new System.Windows.Forms.Button();
+            this.panelPrinting1 = new System.Windows.Forms.Panel();
+            this.txtSelected = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRating)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.panelPrinting1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvRating
@@ -53,46 +58,14 @@
             this.RatingValue,
             this.ManufacturerName,
             this.ModelName});
-            this.dgvRating.Location = new System.Drawing.Point(63, 243);
+            this.dgvRating.Location = new System.Drawing.Point(117, 182);
             this.dgvRating.Name = "dgvRating";
             this.dgvRating.RowHeadersWidth = 51;
             this.dgvRating.RowTemplate.Height = 24;
             this.dgvRating.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRating.Size = new System.Drawing.Size(850, 382);
+            this.dgvRating.Size = new System.Drawing.Size(881, 382);
             this.dgvRating.TabIndex = 0;
             this.dgvRating.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvRating_MouseDoubleClick);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnSearch);
-            this.groupBox1.Controls.Add(this.txtVehicle);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.groupBox1.Location = new System.Drawing.Point(240, 42);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(542, 135);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Unesite ime vozila";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnSearch.Location = new System.Drawing.Point(398, 54);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(110, 37);
-            this.btnSearch.TabIndex = 1;
-            this.btnSearch.Text = "Pretraži";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // txtVehicle
-            // 
-            this.txtVehicle.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txtVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtVehicle.Location = new System.Drawing.Point(45, 59);
-            this.txtVehicle.Name = "txtVehicle";
-            this.txtVehicle.Size = new System.Drawing.Size(294, 26);
-            this.txtVehicle.TabIndex = 0;
             // 
             // RatingId
             // 
@@ -143,19 +116,96 @@
             this.ModelName.Name = "ModelName";
             this.ModelName.Width = 125;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtVehicle);
+            this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.groupBox1.Location = new System.Drawing.Point(275, 13);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(602, 135);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Unesite ime vozila";
+            // 
+            // txtVehicle
+            // 
+            this.txtVehicle.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtVehicle.Location = new System.Drawing.Point(47, 60);
+            this.txtVehicle.Name = "txtVehicle";
+            this.txtVehicle.Size = new System.Drawing.Size(294, 26);
+            this.txtVehicle.TabIndex = 0;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnSearch.Location = new System.Drawing.Point(452, 55);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(110, 37);
+            this.btnSearch.TabIndex = 1;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnPrintRating
+            // 
+            this.btnPrintRating.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnPrintRating.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnPrintRating.Location = new System.Drawing.Point(833, 600);
+            this.btnPrintRating.Name = "btnPrintRating";
+            this.btnPrintRating.Size = new System.Drawing.Size(165, 49);
+            this.btnPrintRating.TabIndex = 2;
+            this.btnPrintRating.Text = "Print preview";
+            this.btnPrintRating.UseVisualStyleBackColor = false;
+            this.btnPrintRating.Click += new System.EventHandler(this.btnPrintRating_Click);
+            // 
+            // panelPrinting1
+            // 
+            this.panelPrinting1.Controls.Add(this.txtSelected);
+            this.panelPrinting1.Controls.Add(this.label6);
+            this.panelPrinting1.Controls.Add(this.groupBox1);
+            this.panelPrinting1.Controls.Add(this.btnPrintRating);
+            this.panelPrinting1.Controls.Add(this.dgvRating);
+            this.panelPrinting1.Location = new System.Drawing.Point(59, 38);
+            this.panelPrinting1.Name = "panelPrinting1";
+            this.panelPrinting1.Size = new System.Drawing.Size(1103, 691);
+            this.panelPrinting1.TabIndex = 3;
+            // 
+            // txtSelected
+            // 
+            this.txtSelected.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.txtSelected.Location = new System.Drawing.Point(341, 596);
+            this.txtSelected.Name = "txtSelected";
+            this.txtSelected.Size = new System.Drawing.Size(90, 32);
+            this.txtSelected.TabIndex = 20;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calisto MT", 13F);
+            this.label6.Location = new System.Drawing.Point(138, 600);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(197, 25);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Total rating value : ";
+            // 
             // frmRating
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1239, 705);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dgvRating);
+            this.ClientSize = new System.Drawing.Size(1239, 759);
+            this.Controls.Add(this.panelPrinting1);
             this.Name = "frmRating";
             this.Text = "frmRating";
             this.Load += new System.EventHandler(this.frmRating_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRating)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panelPrinting1.ResumeLayout(false);
+            this.panelPrinting1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -172,5 +222,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn RatingValue;
         private System.Windows.Forms.DataGridViewTextBoxColumn ManufacturerName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ModelName;
+        private System.Windows.Forms.Button btnPrintRating;
+        private System.Windows.Forms.Panel panelPrinting1;
+        private System.Windows.Forms.TextBox txtSelected;
+        private System.Windows.Forms.Label label6;
     }
 }

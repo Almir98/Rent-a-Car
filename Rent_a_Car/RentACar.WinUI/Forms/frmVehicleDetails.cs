@@ -49,5 +49,6 @@ namespace RentACar.WinUI.Forms
         {
             this.Close();
         }
+
     }
 }

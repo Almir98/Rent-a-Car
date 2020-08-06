@@ -104,6 +104,7 @@
             // 
             // txtCustomer
             // 
+            this.txtCustomer.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtCustomer.ForeColor = System.Drawing.SystemColors.Desktop;
             this.txtCustomer.Location = new System.Drawing.Point(27, 62);
@@ -113,13 +114,14 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnSearch.Location = new System.Drawing.Point(374, 57);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(113, 36);
             this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "Pretraži";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // groupBox1

@@ -41,6 +41,7 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtUsername.Location = new System.Drawing.Point(43, 69);
             this.txtUsername.Name = "txtUsername";
@@ -49,6 +50,7 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtPassword.Location = new System.Drawing.Point(43, 166);
             this.txtPassword.Name = "txtPassword";
@@ -62,9 +64,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label1.Location = new System.Drawing.Point(123, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 20);
+            this.label1.Size = new System.Drawing.Size(86, 20);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Korisničko ime";
+            this.label1.Text = "Username";
             // 
             // label2
             // 
@@ -72,19 +74,20 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label2.Location = new System.Drawing.Point(142, 133);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 20);
+            this.label2.Size = new System.Drawing.Size(83, 20);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Lozinka";
+            this.label2.Text = "Password";
             // 
             // btnClick
             // 
+            this.btnClick.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnClick.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnClick.Location = new System.Drawing.Point(43, 244);
             this.btnClick.Name = "btnClick";
             this.btnClick.Size = new System.Drawing.Size(269, 48);
             this.btnClick.TabIndex = 4;
-            this.btnClick.Text = "Prijavi se";
-            this.btnClick.UseVisualStyleBackColor = true;
+            this.btnClick.Text = "Login";
+            this.btnClick.UseVisualStyleBackColor = false;
             this.btnClick.Click += new System.EventHandler(this.btnClick_Click);
             // 
             // pictureBox1
@@ -110,7 +113,7 @@
             this.groupBox2.Size = new System.Drawing.Size(377, 326);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Prijava";
+            this.groupBox2.Text = "Login";
             // 
             // frmLogin
             // 

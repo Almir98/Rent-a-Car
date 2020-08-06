@@ -52,26 +52,29 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtFirstName);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.groupBox1.Location = new System.Drawing.Point(84, 82);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(774, 506);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Rating details";
             // 
             // btnBack
             // 
+            this.btnBack.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnBack.Location = new System.Drawing.Point(324, 358);
+            this.btnBack.Location = new System.Drawing.Point(323, 357);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(137, 36);
             this.btnBack.TabIndex = 14;
-            this.btnBack.Text = "Nazad";
-            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // txtRatingValue
             // 
+            this.txtRatingValue.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtRatingValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtRatingValue.Location = new System.Drawing.Point(447, 97);
             this.txtRatingValue.Name = "txtRatingValue";
@@ -84,12 +87,13 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label7.Location = new System.Drawing.Point(443, 64);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(62, 20);
+            this.label7.Size = new System.Drawing.Size(101, 20);
             this.label7.TabIndex = 12;
-            this.label7.Text = "Ocjena";
+            this.label7.Text = "Rating value";
             // 
             // txtRegistrationNumber
             // 
+            this.txtRegistrationNumber.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtRegistrationNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtRegistrationNumber.Location = new System.Drawing.Point(447, 194);
             this.txtRegistrationNumber.Name = "txtRegistrationNumber";
@@ -102,12 +106,13 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label6.Location = new System.Drawing.Point(443, 171);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(128, 20);
+            this.label6.Size = new System.Drawing.Size(160, 20);
             this.label6.TabIndex = 10;
-            this.label6.Text = "Broj registracije";
+            this.label6.Text = "Registration number";
             // 
             // txtLastName
             // 
+            this.txtLastName.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtLastName.Location = new System.Drawing.Point(73, 194);
             this.txtLastName.Name = "txtLastName";
@@ -120,12 +125,13 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label2.Location = new System.Drawing.Point(69, 171);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 20);
+            this.label2.Size = new System.Drawing.Size(88, 20);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Prezime";
+            this.label2.Text = "Last name";
             // 
             // txtFirstName
             // 
+            this.txtFirstName.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtFirstName.Location = new System.Drawing.Point(73, 98);
             this.txtFirstName.Name = "txtFirstName";
@@ -138,9 +144,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label1.Location = new System.Drawing.Point(69, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 20);
+            this.label1.Size = new System.Drawing.Size(89, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Ime";
+            this.label1.Text = "First name";
             // 
             // frmRatingDetails
             // 

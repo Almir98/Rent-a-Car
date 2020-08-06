@@ -60,12 +60,13 @@
             // 
             // btnBooking
             // 
+            this.btnBooking.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnBooking.Location = new System.Drawing.Point(384, 42);
             this.btnBooking.Name = "btnBooking";
             this.btnBooking.Size = new System.Drawing.Size(102, 29);
             this.btnBooking.TabIndex = 3;
-            this.btnBooking.Text = "Pretraži";
-            this.btnBooking.UseVisualStyleBackColor = true;
+            this.btnBooking.Text = "Search";
+            this.btnBooking.UseVisualStyleBackColor = false;
             this.btnBooking.Click += new System.EventHandler(this.btnBooking_Click);
             // 
             // groupBox1

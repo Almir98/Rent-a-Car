@@ -52,13 +52,14 @@
             // 
             // btnShowVehicles
             // 
+            this.btnShowVehicles.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnShowVehicles.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnShowVehicles.Location = new System.Drawing.Point(431, 66);
             this.btnShowVehicles.Name = "btnShowVehicles";
             this.btnShowVehicles.Size = new System.Drawing.Size(104, 34);
             this.btnShowVehicles.TabIndex = 2;
-            this.btnShowVehicles.Text = "Pretraži";
-            this.btnShowVehicles.UseVisualStyleBackColor = true;
+            this.btnShowVehicles.Text = "Search";
+            this.btnShowVehicles.UseVisualStyleBackColor = false;
             this.btnShowVehicles.Click += new System.EventHandler(this.btnShowVehicles_Click);
             // 
             // dgvVehicles

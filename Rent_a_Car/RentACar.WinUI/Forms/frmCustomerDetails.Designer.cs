@@ -47,17 +47,17 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(200, 56);
+            this.label1.Location = new System.Drawing.Point(213, 83);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 20);
+            this.label1.Size = new System.Drawing.Size(89, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Ime";
+            this.label1.Text = "First name";
             // 
             // txtFirstName
             // 
             this.txtFirstName.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtFirstName.Location = new System.Drawing.Point(203, 79);
+            this.txtFirstName.Location = new System.Drawing.Point(216, 106);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.ReadOnly = true;
             this.txtFirstName.Size = new System.Drawing.Size(405, 26);
@@ -67,7 +67,7 @@
             // 
             this.txtEmail.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtEmail.Location = new System.Drawing.Point(203, 287);
+            this.txtEmail.Location = new System.Drawing.Point(216, 314);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.ReadOnly = true;
             this.txtEmail.Size = new System.Drawing.Size(405, 26);
@@ -77,7 +77,7 @@
             // 
             this.txtCityName.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtCityName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtCityName.Location = new System.Drawing.Point(203, 367);
+            this.txtCityName.Location = new System.Drawing.Point(216, 394);
             this.txtCityName.Name = "txtCityName";
             this.txtCityName.Size = new System.Drawing.Size(405, 26);
             this.txtCityName.TabIndex = 3;
@@ -86,7 +86,7 @@
             // 
             this.txtPhone.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtPhone.Location = new System.Drawing.Point(203, 216);
+            this.txtPhone.Location = new System.Drawing.Point(216, 243);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.ReadOnly = true;
             this.txtPhone.Size = new System.Drawing.Size(405, 26);
@@ -96,7 +96,7 @@
             // 
             this.txtLastName.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtLastName.Location = new System.Drawing.Point(203, 144);
+            this.txtLastName.Location = new System.Drawing.Point(216, 171);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.ReadOnly = true;
             this.txtLastName.Size = new System.Drawing.Size(405, 26);
@@ -106,17 +106,17 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label5.Location = new System.Drawing.Point(200, 335);
+            this.label5.Location = new System.Drawing.Point(213, 362);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(98, 20);
+            this.label5.Size = new System.Drawing.Size(84, 20);
             this.label5.TabIndex = 11;
-            this.label5.Text = "Naziv grada";
+            this.label5.Text = "City name";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label6.Location = new System.Drawing.Point(200, 264);
+            this.label6.Location = new System.Drawing.Point(213, 291);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 20);
             this.label6.TabIndex = 12;
@@ -126,31 +126,31 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label7.Location = new System.Drawing.Point(200, 193);
+            this.label7.Location = new System.Drawing.Point(213, 220);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(104, 20);
+            this.label7.Size = new System.Drawing.Size(117, 20);
             this.label7.TabIndex = 13;
-            this.label7.Text = "Broj telefona";
+            this.label7.Text = "Phone number";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label8.Location = new System.Drawing.Point(200, 121);
+            this.label8.Location = new System.Drawing.Point(213, 148);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(71, 20);
+            this.label8.Size = new System.Drawing.Size(88, 20);
             this.label8.TabIndex = 14;
-            this.label8.Text = "Prezime";
+            this.label8.Text = "Last name";
             // 
             // btnAllCustomersBack
             // 
-            this.btnAllCustomersBack.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAllCustomersBack.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnAllCustomersBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnAllCustomersBack.Location = new System.Drawing.Point(488, 432);
+            this.btnAllCustomersBack.Location = new System.Drawing.Point(338, 479);
             this.btnAllCustomersBack.Name = "btnAllCustomersBack";
-            this.btnAllCustomersBack.Size = new System.Drawing.Size(120, 40);
+            this.btnAllCustomersBack.Size = new System.Drawing.Size(137, 40);
             this.btnAllCustomersBack.TabIndex = 15;
-            this.btnAllCustomersBack.Text = "Nazad";
+            this.btnAllCustomersBack.Text = "Back";
             this.btnAllCustomersBack.UseVisualStyleBackColor = false;
             this.btnAllCustomersBack.Click += new System.EventHandler(this.btnAllCustomersBack_Click);
             // 
@@ -173,7 +173,7 @@
             this.groupBox1.Size = new System.Drawing.Size(895, 619);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Detalji korisnika";
+            this.groupBox1.Text = "Details of user";
             // 
             // frmCustomerDetails
             // 
