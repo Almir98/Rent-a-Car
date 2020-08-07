@@ -34,5 +34,12 @@ namespace RentACar.WebAPI.Service
 
             return _mapper.Map<List<VehicleRequest>>(query.ToList());
         }
+
+        public override VehicleRequest GetByID(int id)
+        {
+            var vehicle = _context.Vehicle.Include(e => e.VehicleModel).Include(e => e.VehicleModel.Manufacturer).FirstOrDefault(a => a.VehicleId == id);
+
+            return _mapper.Map<VehicleRequest>(vehicle);
+        }
     }
 }

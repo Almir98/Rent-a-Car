@@ -5,8 +5,9 @@ namespace RentaCar.Data.Requests.Vehicle
     public class VehicleUpsert
     {
         public string RegistrationNumber { get; set; }
-        public byte[] Image { get; set; }
         public int VehicleNumber { get; set; }
+        public byte[] Image { get; set; }
+
         public double? DailyPrice { get; set; }
         public string Description { get; set; }
         public DateTime ManufacturerDate { get; set; }

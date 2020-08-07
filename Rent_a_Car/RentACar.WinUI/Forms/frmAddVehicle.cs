@@ -107,53 +107,57 @@ namespace RentACar.WinUI.Forms
 
         private async void btnSacuvaj_Click(object sender, EventArgs e)
         {
-            request.RegistrationNumber = txtRegistrationNumber.Text;
-            request.VehicleNumber = int.Parse(txtVehicleNumber.Text);
-            request.DailyPrice = double.Parse(txtDailyPrice.Text);
-            request.Description = rtxDescription.Text;
-            request.ManufacturerDate = dtDte.Value;
-            request.Mileage = txtMileage.Text;
-            request.Transmission = txtTransmission.Text;
-            request.NumberOfSeats = int.Parse(txtNumberOfSeats.Text);
-            request.Status = chkStatus.Checked;
-
-            // ove foreign moraju se posebno parsat
-            //branch
-
-            var idBranch = cmbBranch.SelectedValue;
-
-            if (int.TryParse(idBranch.ToString(), out int branchID))
+            if (this.ValidateChildren())
             {
-                request.BranchId = branchID;
+
+                request.RegistrationNumber = txtRegistrationNumber.Text;
+                request.VehicleNumber = int.Parse(txtVehicleNumber.Text);
+                request.DailyPrice = double.Parse(txtDailyPrice.Text);
+                request.Description = rtxDescription.Text;
+                request.ManufacturerDate = dtDte.Value;
+                request.Mileage = txtMileage.Text;
+                request.Transmission = txtTransmission.Text;
+                request.NumberOfSeats = int.Parse(txtNumberOfSeats.Text);
+                request.Status = chkStatus.Checked;
+
+                // ove foreign moraju se posebno parsat
+                //branch
+
+                var idBranch = cmbBranch.SelectedValue;
+
+                if (int.TryParse(idBranch.ToString(), out int branchID))
+                {
+                    request.BranchId = branchID;
+                }
+
+                //fueltype
+                var idFuel = cmbFuelType.SelectedValue;
+
+                if (int.TryParse(idFuel.ToString(), out int fuelid))
+                {
+                    request.FuelTypeId = fuelid;
+                }
+
+                // vehicletype
+                var idVehicleType = cmbVehicleType.SelectedValue;
+
+                if (int.TryParse(idVehicleType.ToString(), out int vehicletypeID))
+                {
+                    request.VehicleTypeId = vehicletypeID;
+                }
+
+                //vehiclemodel
+                var idVehiclemodel = cmbVehicleType.SelectedValue;
+
+                if (int.TryParse(idVehiclemodel.ToString(), out int vehiclemodelID))
+                {
+                    request.VehicleModelId = vehiclemodelID;
+                }
+
+                await _serviceVehicle.Insert<VehicleRequest>(request);
+                MessageBox.Show("Operation successfully completed!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
-
-            //fueltype
-            var idFuel = cmbFuelType.SelectedValue;
-
-            if (int.TryParse(idFuel.ToString(), out int fuelid))
-            {
-                request.FuelTypeId = fuelid;
-            }
-
-            // vehicletype
-            var idVehicleType = cmbVehicleType.SelectedValue;
-
-            if (int.TryParse(idVehicleType.ToString(), out int vehicletypeID))
-            {
-                request.VehicleTypeId = vehicletypeID;
-            }
-
-            //vehiclemodel
-            var idVehiclemodel = cmbVehicleType.SelectedValue;
-
-            if (int.TryParse(idVehiclemodel.ToString(), out int vehiclemodelID))
-            {
-                request.VehicleModelId = vehiclemodelID;
-            }
-
-            await _serviceVehicle.Insert<VehicleRequest>(request);
-            //MessageBox.Show("Operation successfully completed!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
         }
 
         private void btnAddImage_Click(object sender, EventArgs e)
@@ -170,6 +174,162 @@ namespace RentACar.WinUI.Forms
                 Image img = Image.FromFile(fileName);
                 pictureBox1.Image = img;
                 pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+        }
+
+        private void cmbManufacturer_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(cmbManufacturer.Text))
+            {
+                errorProvider.SetError(cmbManufacturer, " Required");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(cmbManufacturer, null);
+            }
+        }
+
+        private void cmbVehicleModel_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(cmbVehicleModel.Text))
+            {
+                errorProvider.SetError(cmbVehicleModel, " Required");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(cmbVehicleModel, null);
+            }
+        }
+
+        private void cmbVehicleType_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(cmbVehicleType.Text))
+            {
+                errorProvider.SetError(cmbVehicleType, " Required");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(cmbVehicleType, null);
+            }
+        }
+
+        private void txtRegistrationNumber_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtRegistrationNumber.Text))
+            {
+                errorProvider.SetError(txtRegistrationNumber, " Required");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(txtRegistrationNumber, null);
+            }
+        }
+
+        private void txtVehicleNumber_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtVehicleNumber.Text))
+            {
+                errorProvider.SetError(txtVehicleNumber, " Required");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(txtVehicleNumber, null);
+            }
+        }
+
+        private void txtDailyPrice_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtDailyPrice.Text))
+            {
+                errorProvider.SetError(txtDailyPrice, " Required");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(txtDailyPrice, null);
+            }
+        }
+
+        private void dtDte_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(dtDte.Text))
+            {
+                errorProvider.SetError(dtDte, " Required");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(dtDte, null);
+            }
+        }
+
+        private void cmbBranch_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(cmbBranch.Text))
+            {
+                errorProvider.SetError(cmbBranch, " Required");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(cmbBranch, null);
+            }
+        }
+
+        private void txtMileage_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtMileage.Text))
+            {
+                errorProvider.SetError(txtMileage, " Required");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(txtMileage, null);
+            }
+        }
+
+        private void txtTransmission_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtTransmission.Text))
+            {
+                errorProvider.SetError(txtTransmission, " Required");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(txtTransmission, null);
+            }
+        }
+
+        private void cmbFuelType_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(cmbFuelType.Text))
+            {
+                errorProvider.SetError(cmbFuelType, " Required");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(cmbFuelType, null);
+            }
+        }
+
+        private void rtxDescription_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(rtxDescription.Text))
+            {
+                errorProvider.SetError(rtxDescription, " Required");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(rtxDescription, null);
             }
         }
     }

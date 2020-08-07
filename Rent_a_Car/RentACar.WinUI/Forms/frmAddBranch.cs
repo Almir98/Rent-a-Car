@@ -36,25 +36,94 @@ namespace RentACar.WinUI.Forms
 
         private async void btnSaveBranch_Click(object sender, EventArgs e)
         {
-            var branch = new BranchUpsert()
+            if (this.ValidateChildren())
             {
-                BranchName = txtBranchName.Text,
-                PhoneNumber = txtPhoneNumber.Text,
-                Adress = txtAdress.Text,
-                OpenTime = DateTime.Parse(txtOpenTime.Text),
-                CloseTime = DateTime.Parse(txtClosedTime.Text),
-                Description = txtDescription.Text
-            };
+                var branch = new BranchUpsert()
+                {
+                    BranchName = txtBranchName.Text,
+                    PhoneNumber = txtPhoneNumber.Text,
+                    Adress = txtAdress.Text,
+                    OpenTime = DateTime.Parse(txtOpenTime.Text),
+                    CloseTime = DateTime.Parse(txtClosedTime.Text),
+                    Description = txtDescription.Text
+                };
 
-            var idCity = cmbCity.SelectedValue;
+                var idCity = cmbCity.SelectedValue;
 
-            if (int.TryParse(idCity.ToString(), out int cityid))
-            {
-                branch.CityId = cityid;
+                if (int.TryParse(idCity.ToString(), out int cityid))
+                {
+                    branch.CityId = cityid;
+                }
+
+                await _serviceBranch.Insert<BranchRequest>(branch);
+                MessageBox.Show("Operation successfully completed", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
+        }
 
-            await _serviceBranch.Insert<BranchRequest>(branch);
+        private void txtBranchName_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(txtBranchName.Text))
+            {
+                errorProvider.SetError(txtBranchName, " Required");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(txtBranchName, null);
+            }
+        }
+
+        private void txtPhoneNumber_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtPhoneNumber.Text))
+            {
+                errorProvider.SetError(txtPhoneNumber, " Required");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(txtBranchName, null);
+            }
+        }
+
+        private void txtAdress_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtAdress.Text))
+            {
+                errorProvider.SetError(txtAdress, " Required");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(txtAdress, null);
+            }
+        }
+
+        private void txtDescription_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtDescription.Text))
+            {
+                errorProvider.SetError(txtDescription, " Required");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(txtDescription, null);
+            }
+        }
+
+        private void cmbCity_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(cmbCity.Text))
+            {
+                errorProvider.SetError(cmbCity, " Required");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(cmbCity, null);
+            }
         }
     }
-
 }

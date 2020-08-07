@@ -31,14 +31,18 @@ namespace RentACar.WinUI.Forms
             {
                 var vehicle = await _apiservice.GetById<VehicleRequest>(_id);
 
-                txtRegistracija.Text = vehicle.RegistrationNumber;
+                txtRegistration.Text = vehicle.RegistrationNumber;
                 txtVehicleNumber.Text = vehicle.VehicleNumber.ToString();
                 txtDailyPrice.Text = vehicle.DailyPrice.ToString();
                 txtDescription.Text = vehicle.Description;
+                txtMileage.Text = vehicle.Mileage;
                 txtDate.Text = vehicle.ManufacturerDate.ToString();
                 txtTransmission.Text = vehicle.Transmission;
                 txtNumberOfSeats.Text = vehicle.NumberOfSeats.ToString();
                 chkStatus.Checked = vehicle.Status.Value;
+
+                txtManufacturer.Text = vehicle.VehicleModel.Manufacturer.ManufacturerName;
+                txtModelName.Text = vehicle.VehicleModel.ModelName;
 
                 pictureBox1.Image = GetImage(vehicle.Image);
                 pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -49,6 +53,5 @@ namespace RentACar.WinUI.Forms
         {
             this.Close();
         }
-
     }
 }

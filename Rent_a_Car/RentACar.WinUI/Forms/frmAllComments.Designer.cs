@@ -39,6 +39,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnPrintRating = new System.Windows.Forms.Button();
             this.panelPrinting2 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComments)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panelPrinting2.SuspendLayout();
@@ -151,6 +152,7 @@
             // 
             // panelPrinting2
             // 
+            this.panelPrinting2.Controls.Add(this.label8);
             this.panelPrinting2.Controls.Add(this.groupBox1);
             this.panelPrinting2.Controls.Add(this.dgvComments);
             this.panelPrinting2.Controls.Add(this.btnPrintRating);
@@ -158,6 +160,17 @@
             this.panelPrinting2.Name = "panelPrinting2";
             this.panelPrinting2.Size = new System.Drawing.Size(1164, 682);
             this.panelPrinting2.TabIndex = 5;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(833, 150);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(250, 17);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "* double click on record to read details";
             // 
             // frmAllComments
             // 
@@ -172,6 +185,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panelPrinting2.ResumeLayout(false);
+            this.panelPrinting2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -189,5 +203,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ModelName;
         private System.Windows.Forms.Button btnPrintRating;
         private System.Windows.Forms.Panel panelPrinting2;
+        private System.Windows.Forms.Label label8;
     }
 }

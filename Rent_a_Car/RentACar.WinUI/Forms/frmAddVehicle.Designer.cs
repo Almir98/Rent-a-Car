@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txtRegistrationNumber = new System.Windows.Forms.TextBox();
             this.txtVehicleNumber = new System.Windows.Forms.TextBox();
@@ -61,8 +62,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rtxDescription = new System.Windows.Forms.RichTextBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -83,6 +88,7 @@
             this.txtRegistrationNumber.Name = "txtRegistrationNumber";
             this.txtRegistrationNumber.Size = new System.Drawing.Size(300, 26);
             this.txtRegistrationNumber.TabIndex = 1;
+            this.txtRegistrationNumber.Validating += new System.ComponentModel.CancelEventHandler(this.txtRegistrationNumber_Validating);
             // 
             // txtVehicleNumber
             // 
@@ -92,6 +98,7 @@
             this.txtVehicleNumber.Name = "txtVehicleNumber";
             this.txtVehicleNumber.Size = new System.Drawing.Size(300, 26);
             this.txtVehicleNumber.TabIndex = 3;
+            this.txtVehicleNumber.Validating += new System.ComponentModel.CancelEventHandler(this.txtVehicleNumber_Validating);
             // 
             // label2
             // 
@@ -111,6 +118,7 @@
             this.txtDailyPrice.Name = "txtDailyPrice";
             this.txtDailyPrice.Size = new System.Drawing.Size(300, 26);
             this.txtDailyPrice.TabIndex = 5;
+            this.txtDailyPrice.Validating += new System.ComponentModel.CancelEventHandler(this.txtDailyPrice_Validating);
             // 
             // label3
             // 
@@ -150,6 +158,7 @@
             this.txtMileage.Name = "txtMileage";
             this.txtMileage.Size = new System.Drawing.Size(303, 26);
             this.txtMileage.TabIndex = 11;
+            this.txtMileage.Validating += new System.ComponentModel.CancelEventHandler(this.txtMileage_Validating);
             // 
             // label6
             // 
@@ -169,6 +178,7 @@
             this.txtTransmission.Name = "txtTransmission";
             this.txtTransmission.Size = new System.Drawing.Size(303, 26);
             this.txtTransmission.TabIndex = 13;
+            this.txtTransmission.Validating += new System.ComponentModel.CancelEventHandler(this.txtTransmission_Validating);
             // 
             // label7
             // 
@@ -208,6 +218,7 @@
             this.cmbFuelType.Name = "cmbFuelType";
             this.cmbFuelType.Size = new System.Drawing.Size(303, 28);
             this.cmbFuelType.TabIndex = 16;
+            this.cmbFuelType.Validating += new System.ComponentModel.CancelEventHandler(this.cmbFuelType_Validating);
             // 
             // chkStatus
             // 
@@ -260,6 +271,7 @@
             this.cmbVehicleModel.Name = "cmbVehicleModel";
             this.cmbVehicleModel.Size = new System.Drawing.Size(300, 28);
             this.cmbVehicleModel.TabIndex = 23;
+            this.cmbVehicleModel.Validating += new System.ComponentModel.CancelEventHandler(this.cmbVehicleModel_Validating);
             // 
             // label11
             // 
@@ -280,6 +292,7 @@
             this.cmbVehicleType.Name = "cmbVehicleType";
             this.cmbVehicleType.Size = new System.Drawing.Size(300, 28);
             this.cmbVehicleType.TabIndex = 25;
+            this.cmbVehicleType.Validating += new System.ComponentModel.CancelEventHandler(this.cmbVehicleType_Validating);
             // 
             // label12
             // 
@@ -311,6 +324,7 @@
             this.cmbManufacturer.Size = new System.Drawing.Size(300, 28);
             this.cmbManufacturer.TabIndex = 29;
             this.cmbManufacturer.SelectedIndexChanged += new System.EventHandler(this.cmbManufacturer_SelectedIndexChanged);
+            this.cmbManufacturer.Validating += new System.ComponentModel.CancelEventHandler(this.cmbManufacturer_Validating);
             // 
             // dtDte
             // 
@@ -320,6 +334,7 @@
             this.dtDte.Name = "dtDte";
             this.dtDte.Size = new System.Drawing.Size(300, 26);
             this.dtDte.TabIndex = 32;
+            this.dtDte.Validating += new System.ComponentModel.CancelEventHandler(this.dtDte_Validating);
             // 
             // groupBox1
             // 
@@ -371,6 +386,7 @@
             this.cmbBranch.Name = "cmbBranch";
             this.cmbBranch.Size = new System.Drawing.Size(301, 28);
             this.cmbBranch.TabIndex = 37;
+            this.cmbBranch.Validating += new System.ComponentModel.CancelEventHandler(this.cmbBranch_Validating);
             // 
             // txtImage
             // 
@@ -410,10 +426,19 @@
             this.rtxDescription.Size = new System.Drawing.Size(300, 164);
             this.rtxDescription.TabIndex = 33;
             this.rtxDescription.Text = "";
+            this.rtxDescription.Validating += new System.ComponentModel.CancelEventHandler(this.rtxDescription_Validating);
             // 
             // openFileDialog
             // 
             this.openFileDialog.FileName = "openFileDialog";
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmAddVehicle
             // 
@@ -427,6 +452,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -466,5 +493,7 @@
         private System.Windows.Forms.TextBox txtImage;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.ComboBox cmbBranch;
+        private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
