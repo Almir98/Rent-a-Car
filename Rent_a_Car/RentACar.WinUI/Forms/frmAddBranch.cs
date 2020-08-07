@@ -55,7 +55,7 @@ namespace RentACar.WinUI.Forms
                     branch.CityId = cityid;
                 }
 
-                await _serviceBranch.Insert<BranchRequest>(branch);
+                await _serviceBranch.Insert<Data.Model.Branch>(branch);
                 MessageBox.Show("Operation successfully completed", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }

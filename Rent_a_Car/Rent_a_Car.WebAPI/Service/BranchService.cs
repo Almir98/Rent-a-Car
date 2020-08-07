@@ -6,13 +6,13 @@ using System.Linq;
 
 namespace RentACar.WebAPI.Service
 {
-    public class BranchService : BaseCRUDService<BranchRequest, BranchSearchRequest, Branch, BranchUpsert, BranchUpsert>
+    public class BranchService : BaseCRUDService<Data.Model.Branch, BranchSearchRequest, Branch, BranchUpsert, BranchUpsert>
     {
         public BranchService(RentaCarContext context, IMapper mapper) : base(context, mapper)
         {
         }
 
-        public override List<BranchRequest> Get(BranchSearchRequest search)
+        public override List<Data.Model.Branch> Get(BranchSearchRequest search)
         {
             var query = _context.Set<Branch>().AsQueryable();
 
@@ -26,7 +26,7 @@ namespace RentACar.WebAPI.Service
                 query = query.Where(e => e.CityId == search.CityId);
             }
 
-            return _mapper.Map<List<BranchRequest>>(query.ToList());
+            return _mapper.Map<List<Data.Model.Branch>>(query.ToList());
         }
     }
 }

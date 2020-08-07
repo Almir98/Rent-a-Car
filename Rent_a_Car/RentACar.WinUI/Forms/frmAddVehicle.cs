@@ -154,7 +154,7 @@ namespace RentACar.WinUI.Forms
                     request.VehicleModelId = vehiclemodelID;
                 }
 
-                await _serviceVehicle.Insert<VehicleRequest>(request);
+                await _serviceVehicle.Insert<Data.Model.Vehicle>(request);
                 MessageBox.Show("Operation successfully completed!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }

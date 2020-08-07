@@ -33,7 +33,13 @@ namespace RentACar.WebAPI.Service
 
         public override Data.Model.Rating GetByID(int id)
         {
-            var rating = _context.Rating.Where(e => e.RatingId == id).Include(e => e.Customer).Include(e => e.Vehicle).FirstOrDefault();
+            var rating = _context.Rating
+                .Include(e => e.Customer)
+                .Include(e => e.Vehicle)
+                .Include(e => e.Customer.City)
+                .Include(e=>e.Vehicle.VehicleModel)
+                .Include(e=>e.Vehicle.VehicleModel.Manufacturer)
+                .FirstOrDefault(e => e.RatingId == id);
 
             return _mapper.Map<Data.Model.Rating>(rating);
         }

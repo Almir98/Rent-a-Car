@@ -7,23 +7,23 @@ using System.Linq;
 
 namespace RentACar.WebAPI.Service
 {
-    public class CityService : BaseService<CityRequest, CitySearchRequest, RentACar.WebAPI.Database.City>
+    public class CityService : BaseService<Data.Model.City, CitySearchRequest, RentACar.WebAPI.Database.City>
     {
         public CityService(RentaCarContext context, IMapper mapper) : base(context, mapper)
         {
         }
 
-        public override List<CityRequest> Get(CitySearchRequest search)
-        {
-            var query = _context.Set<City>().AsQueryable();
+        //public override List<Data.Model.City> Get(CitySearchRequest search)
+        //{
+        //    var query = _context.Set<City>().AsQueryable();
 
-            if (!string.IsNullOrWhiteSpace(search.CityName))
-            {
-                query = query.Where(x => x.CityName.StartsWith(search.CityName));
-            }
-            query = query.OrderBy(x => x.CityName);
+        //    if (!string.IsNullOrWhiteSpace(search.CityName))
+        //    {
+        //        query = query.Where(x => x.CityName.StartsWith(search.CityName));
+        //    }
+        //    query = query.OrderBy(x => x.CityName);
 
-            return _mapper.Map<List<CityRequest>>(query.ToList());
-        }
+        //    return _mapper.Map<List<Data.Model.City>>(query.ToList());
+        //}
     }
 }

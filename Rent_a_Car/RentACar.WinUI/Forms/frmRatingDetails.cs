@@ -19,10 +19,14 @@ namespace RentACar.WinUI.Forms
         {
             if (_id.HasValue)
             {
-                var rating = await _serviceRating.GetById<RatingRequest>(_id);
+                var rating = await _serviceRating.GetById<Data.Model.Rating>(_id);
 
                 txtFirstName.Text = rating.Customer.FirstName;
                 txtLastName.Text = rating.Customer.LastName;
+                txtUsername.Text = rating.Customer.Username;
+                txtCity.Text = rating.Customer.City.CityName;
+                txtManufacturer.Text = rating.Vehicle.VehicleModel.Manufacturer.ManufacturerName;
+                txtModelName.Text = rating.Vehicle.VehicleModel.ModelName;
                 txtRegistrationNumber.Text = rating.Vehicle.RegistrationNumber;
                 txtRatingValue.Text = rating.RatingValue.ToString();
             }

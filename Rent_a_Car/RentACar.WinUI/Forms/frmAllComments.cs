@@ -26,7 +26,7 @@ namespace RentACar.WinUI.Forms
 
         private async void frmAllComments_Load(object sender, EventArgs e)
         {
-            var list = await _serviceComments.Get<List<CommentRequest>>(null);
+            var list = await _serviceComments.Get<List<Data.Model.Comment>>(null);
 
             List<frmAllCommentsVM> newList = new List<frmAllCommentsVM>();
 
@@ -56,7 +56,7 @@ namespace RentACar.WinUI.Forms
                 ManufacturerName = txtSearch.Text,
             };
 
-            var result = await _serviceComments.Get<List<CommentRequest>>(search);
+            var result = await _serviceComments.Get<List<Data.Model.Comment>>(search);
             dgvComments.AutoGenerateColumns = false;
             dgvComments.DataSource = result;
         }

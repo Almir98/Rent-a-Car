@@ -7,13 +7,13 @@ using System.Linq;
 
 namespace RentACar.WebAPI.Service
 {
-    public class VehicleService : BaseCRUDService<VehicleRequest, VehicleSearchRequest, Vehicle, VehicleUpsert, VehicleUpsert>
+    public class VehicleService : BaseCRUDService<Data.Model.Vehicle, VehicleSearchRequest, Vehicle, VehicleUpsert, VehicleUpsert>
     {
         public VehicleService(RentaCarContext context, IMapper mapper) : base(context, mapper)
         {
         }
 
-        public override List<VehicleRequest> Get(VehicleSearchRequest search)
+        public override List<Data.Model.Vehicle> Get(VehicleSearchRequest search)
         {
             var query = _context.Set<Vehicle>().Include(x => x.VehicleModel.Manufacturer).Include(x => x.Branch).AsQueryable();
 
@@ -32,14 +32,14 @@ namespace RentACar.WebAPI.Service
             }
             query = query.OrderBy(x => x.VehicleNumber);
 
-            return _mapper.Map<List<VehicleRequest>>(query.ToList());
+            return _mapper.Map<List<Data.Model.Vehicle>>(query.ToList());
         }
 
-        public override VehicleRequest GetByID(int id)
+        public override Data.Model.Vehicle GetByID(int id)
         {
             var vehicle = _context.Vehicle.Include(e => e.VehicleModel).Include(e => e.VehicleModel.Manufacturer).FirstOrDefault(a => a.VehicleId == id);
 
-            return _mapper.Map<VehicleRequest>(vehicle);
+            return _mapper.Map<Data.Model.Vehicle>(vehicle);
         }
     }
 }

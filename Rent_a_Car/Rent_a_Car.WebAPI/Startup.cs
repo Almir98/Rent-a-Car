@@ -85,23 +85,17 @@ namespace Rent_a_Car.WebAPI
 
             #region Dependency injection
 
-            services.AddScoped<IService<FuelTypeRequest, object>, BaseService<FuelTypeRequest, object, RentACar.WebAPI.Database.FuelType>>();
+            services.AddScoped<IService<Data.Model.FuelType, object>, BaseService<Data.Model.FuelType, object, RentACar.WebAPI.Database.FuelType>>();
             services.AddScoped<IService<VehicleTypeRequest, object>, BaseService<VehicleTypeRequest, object, RentACar.WebAPI.Database.VehicleType>>();
-            services.AddScoped<IService<VehicleModelRequest, VehicleModelSearch>, VehicleModelService>();
-            services.AddScoped<IService<CityRequest, CitySearchRequest>, CityService>();
+            services.AddScoped<IService<Data.Model.VehicleModel, VehicleModelSearch>, VehicleModelService>();
+            services.AddScoped<IService<Data.Model.City, CitySearchRequest>, CityService>();
             services.AddScoped<IService<ManufacturerRequest, object>, BaseService<ManufacturerRequest, object, RentACar.WebAPI.Database.Manufacturer>>();
 
-
-            services.AddScoped<ICRUDService<BranchRequest, BranchSearchRequest, BranchUpsert, BranchUpsert>, BranchService>();
-            services.AddScoped<ICRUDService<VehicleRequest, VehicleSearchRequest, VehicleUpsert, VehicleUpsert>, VehicleService>();
-
+            services.AddScoped<ICRUDService<Data.Model.Branch, BranchSearchRequest, BranchUpsert, BranchUpsert>, BranchService>();
+            services.AddScoped<ICRUDService<Data.Model.Vehicle, VehicleSearchRequest, VehicleUpsert, VehicleUpsert>, VehicleService>();
             services.AddScoped<ICRUDService<Data.Model.Booking, BookingSearchRequest, BookingUpsert, BookingUpsert>, BookingService>();
-
             services.AddScoped<ICRUDService<Data.Model.Rating, RatingSearchRequest, RatingUpsert, RatingUpsert>, RatingService>();
-
-
             services.AddScoped<ICRUDService<Data.Model.Comment, CommentSearchRequest, CommentUpsert, CommentUpsert>, CommentService>();
-
             services.AddScoped<ICustomerService, CustomerService>();
 
             #endregion

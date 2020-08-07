@@ -53,7 +53,6 @@
             this.txtManufacturer = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMileage = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -234,7 +233,6 @@
             // groupBox1
             // 
             this.groupBox1.CausesValidation = false;
-            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.txt);
             this.groupBox1.Controls.Add(this.txtModelName);
             this.groupBox1.Controls.Add(this.label3);
@@ -326,17 +324,6 @@
             this.txtMileage.Size = new System.Drawing.Size(343, 26);
             this.txtMileage.TabIndex = 22;
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button2.Location = new System.Drawing.Point(532, 609);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(139, 37);
-            this.button2.TabIndex = 28;
-            this.button2.Text = "Save changes";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
             // frmVehicleDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -381,6 +368,5 @@
         private System.Windows.Forms.TextBox txtModelName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtManufacturer;
-        private System.Windows.Forms.Button button2;
     }
 }

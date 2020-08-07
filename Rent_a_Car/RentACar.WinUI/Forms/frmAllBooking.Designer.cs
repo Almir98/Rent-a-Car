@@ -81,7 +81,7 @@
             this.groupBox1.Size = new System.Drawing.Size(545, 113);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Unesite ime klijenta";
+            this.groupBox1.Text = "Enter first name for filtering";
             // 
             // dgvBooking
             // 
@@ -98,7 +98,7 @@
             this.dgvBooking.RowHeadersWidth = 51;
             this.dgvBooking.RowTemplate.Height = 24;
             this.dgvBooking.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBooking.Size = new System.Drawing.Size(1214, 329);
+            this.dgvBooking.Size = new System.Drawing.Size(1037, 329);
             this.dgvBooking.TabIndex = 5;
             this.dgvBooking.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBooking_CellMouseDoubleClick);
             // 
@@ -156,7 +156,7 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(1015, 156);
+            this.label8.Location = new System.Drawing.Point(838, 156);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(250, 17);
             this.label8.TabIndex = 17;

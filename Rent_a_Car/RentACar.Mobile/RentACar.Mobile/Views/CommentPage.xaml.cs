@@ -13,7 +13,7 @@ namespace RentACar.Mobile.Views
 
         public CommentPage()
         {
-            InitializeComponent();
+            //InitializeComponent();
             BindingContext = model = new CommentViewModel();
 
             NavigationPage.SetHasBackButton(this, true);

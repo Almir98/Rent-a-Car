@@ -19,7 +19,7 @@ namespace RentACar.WinUI.Forms
         {
             if (_id.HasValue)
             {
-                var branch = await _serviceBranch.GetById<BranchRequest>(_id);
+                var branch = await _serviceBranch.GetById<Data.Model.Branch>(_id);
 
                 txtBranchName.Text = branch.BranchName;
                 txtAdress.Text = branch.Adress;

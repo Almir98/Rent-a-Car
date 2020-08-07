@@ -31,13 +31,13 @@
             this.txtSearchVehicle = new System.Windows.Forms.TextBox();
             this.btnShowVehicles = new System.Windows.Forms.Button();
             this.dgvVehicles = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.VehicleId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VehicleNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RegistrationNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mileage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehicles)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -80,54 +80,9 @@
             this.dgvVehicles.RowHeadersWidth = 51;
             this.dgvVehicles.RowTemplate.Height = 24;
             this.dgvVehicles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVehicles.Size = new System.Drawing.Size(794, 398);
+            this.dgvVehicles.Size = new System.Drawing.Size(899, 398);
             this.dgvVehicles.TabIndex = 3;
             this.dgvVehicles.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvVehicles_MouseDoubleClick);
-            // 
-            // VehicleId
-            // 
-            this.VehicleId.DataPropertyName = "VehicleID";
-            this.VehicleId.HeaderText = "VehicleId";
-            this.VehicleId.MinimumWidth = 6;
-            this.VehicleId.Name = "VehicleId";
-            this.VehicleId.Visible = false;
-            this.VehicleId.Width = 125;
-            // 
-            // VehicleNumber
-            // 
-            this.VehicleNumber.DataPropertyName = "VehicleNumber";
-            this.VehicleNumber.HeaderText = "Broj vozila";
-            this.VehicleNumber.MinimumWidth = 6;
-            this.VehicleNumber.Name = "VehicleNumber";
-            this.VehicleNumber.ReadOnly = true;
-            this.VehicleNumber.Width = 150;
-            // 
-            // RegistrationNumber
-            // 
-            this.RegistrationNumber.DataPropertyName = "RegistrationNumber";
-            this.RegistrationNumber.HeaderText = "Broj registracije";
-            this.RegistrationNumber.MinimumWidth = 6;
-            this.RegistrationNumber.Name = "RegistrationNumber";
-            this.RegistrationNumber.ReadOnly = true;
-            this.RegistrationNumber.Width = 150;
-            // 
-            // Mileage
-            // 
-            this.Mileage.DataPropertyName = "Mileage";
-            this.Mileage.HeaderText = "Kilometraža";
-            this.Mileage.MinimumWidth = 6;
-            this.Mileage.Name = "Mileage";
-            this.Mileage.ReadOnly = true;
-            this.Mileage.Width = 150;
-            // 
-            // Status
-            // 
-            this.Status.DataPropertyName = "Status";
-            this.Status.HeaderText = "Dostupan";
-            this.Status.MinimumWidth = 6;
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            this.Status.Width = 150;
             // 
             // groupBox1
             // 
@@ -146,11 +101,56 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(617, 236);
+            this.label8.Location = new System.Drawing.Point(617, 226);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(250, 17);
             this.label8.TabIndex = 18;
             this.label8.Text = "* double click on record to read details";
+            // 
+            // VehicleId
+            // 
+            this.VehicleId.DataPropertyName = "VehicleID";
+            this.VehicleId.HeaderText = "VehicleId";
+            this.VehicleId.MinimumWidth = 6;
+            this.VehicleId.Name = "VehicleId";
+            this.VehicleId.Visible = false;
+            this.VehicleId.Width = 125;
+            // 
+            // VehicleNumber
+            // 
+            this.VehicleNumber.DataPropertyName = "VehicleNumber";
+            this.VehicleNumber.HeaderText = "Vehicle number";
+            this.VehicleNumber.MinimumWidth = 6;
+            this.VehicleNumber.Name = "VehicleNumber";
+            this.VehicleNumber.ReadOnly = true;
+            this.VehicleNumber.Width = 150;
+            // 
+            // RegistrationNumber
+            // 
+            this.RegistrationNumber.DataPropertyName = "RegistrationNumber";
+            this.RegistrationNumber.HeaderText = "Registration number";
+            this.RegistrationNumber.MinimumWidth = 6;
+            this.RegistrationNumber.Name = "RegistrationNumber";
+            this.RegistrationNumber.ReadOnly = true;
+            this.RegistrationNumber.Width = 150;
+            // 
+            // Mileage
+            // 
+            this.Mileage.DataPropertyName = "Mileage";
+            this.Mileage.HeaderText = "Mileage";
+            this.Mileage.MinimumWidth = 6;
+            this.Mileage.Name = "Mileage";
+            this.Mileage.ReadOnly = true;
+            this.Mileage.Width = 150;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Available";
+            this.Status.MinimumWidth = 6;
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            this.Status.Width = 150;
             // 
             // frmViewAllVehicles
             // 
@@ -177,11 +177,11 @@
         private System.Windows.Forms.Button btnShowVehicles;
         private System.Windows.Forms.DataGridView dgvVehicles;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridViewTextBoxColumn VehicleId;
         private System.Windows.Forms.DataGridViewTextBoxColumn VehicleNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn RegistrationNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn Mileage;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Status;
-        private System.Windows.Forms.Label label8;
     }
 }
