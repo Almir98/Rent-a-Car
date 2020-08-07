@@ -27,7 +27,6 @@ namespace RentACar.WinUI.Forms
             }
             catch (Exception err)
             {
-                MessageBox.Show(err.Message, "Autentifikacija", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

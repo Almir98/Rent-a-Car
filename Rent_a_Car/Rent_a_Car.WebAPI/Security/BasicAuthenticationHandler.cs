@@ -48,7 +48,6 @@ namespace RentACar.WebAPI.Security
                     Username = username,
                     Password = password
                 });
-
             }
             catch
             {
@@ -63,16 +62,13 @@ namespace RentACar.WebAPI.Security
                 new Claim(ClaimTypes.Name, user.FirstName),
             };
 
-
             claims.Add(new Claim(ClaimTypes.Role, user.CustomerType.Type));
-
 
             var identity = new ClaimsIdentity(claims, Scheme.Name);
             var principal = new ClaimsPrincipal(identity);
             var ticket = new AuthenticationTicket(principal, Scheme.Name);
 
             return AuthenticateResult.Success(ticket);
-
         }
     }
 }

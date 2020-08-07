@@ -41,6 +41,11 @@ namespace RentACar.WebAPI.Service
                 query = query.Where(x => x.City.CityName == request.CityName);
             }
 
+            if (!string.IsNullOrWhiteSpace(request.Username))
+            {
+                query = query.Where(x => x.Username.StartsWith(request.Username));
+            }
+
             query = query.OrderBy(x => x.City.CityName);
 
             return _mapper.Map<List<Data.Model.Customer>>(query);
@@ -76,7 +81,6 @@ namespace RentACar.WebAPI.Service
             }
             entity.PasswordSalt = GenerateSalt();
             entity.PasswordHash = GenerateHash(entity.PasswordSalt, request.Password);
-            entity.CustomerTypeId = 2;
 
             _context.Add(entity);
             _context.SaveChanges();
@@ -99,7 +103,7 @@ namespace RentACar.WebAPI.Service
 
         public Data.Model.Customer Authenticate(CustomerLoginRequest request)
         {
-            var customer = _context.Customer.Include("CustomerType").FirstOrDefault(x => x.Username == request.Username);
+            var customer = _context.Customer.Include(e=>e.CustomerType).FirstOrDefault(x => x.Username == request.Username);
 
             if (customer != null)
             {

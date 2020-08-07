@@ -41,7 +41,7 @@ namespace RentACar.WinUI
                 }
                 if (ex.Call.HttpStatus == System.Net.HttpStatusCode.Forbidden)
                 {
-                    MessageBox.Show("Forbidden.", "Warining", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Forbidden.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 throw;
             }
