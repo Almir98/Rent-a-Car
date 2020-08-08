@@ -9,8 +9,8 @@ namespace RentACar.Mobile.ViewModels
     public class RatingViewModel : BaseViewModel
     {
         private readonly APIService _serviceRating = new APIService("Rating");
-        private readonly APIService _serviceBooking = new APIService("Booking");
         private readonly APIService _serviceCustomer = new APIService("Customer");
+        private readonly APIService _serviceVehicle = new APIService("Vehicle");
 
         public ICommand RatingCommand { get; set; }
         public ICommand Init { get; set; }
@@ -37,14 +37,23 @@ namespace RentACar.Mobile.ViewModels
             set { SetProperty(ref _lastName, value); }
         }
 
+        public string _manufacturer = string.Empty;
+        public string Manufacturer
+        {
+            get { return _manufacturer; }
+            set { SetProperty(ref _manufacturer, value); }
+        }
+
         //Rating value
 
-        public int _ratingValue = 5;
+        public int _ratingValue = 0;
         public int Mark
         {
             get { return _ratingValue; }
             set { SetProperty(ref _ratingValue, value); }
         }
+
+        // data
 
         public Data.Model.Vehicle vehicle { get; set; }
 
@@ -56,9 +65,14 @@ namespace RentACar.Mobile.ViewModels
             var customerID = await _serviceCustomer.GetById<Data.Model.Customer>(APIService.CustomerId);
             customer = customerID;
 
+            var vehicleID = await _serviceVehicle.GetById<Data.Model.Vehicle>(vehicle.VehicleId);
+            vehicle = vehicleID;
+
             FirstName = customer.FirstName;
             LastName = customer.LastName;
+            Manufacturer = vehicle.VehicleModel.Manufacturer.ManufacturerName;
         }
+
 
         public async Task SetNewRating()
         {
@@ -67,13 +81,16 @@ namespace RentACar.Mobile.ViewModels
                 var customerID = await _serviceCustomer.GetById<Data.Model.Customer>(APIService.CustomerId);
                 customer = customerID;
 
+                var vehicleID = await _serviceVehicle.GetById<Data.Model.Vehicle>(vehicle.VehicleId);
+
+
                 bool answer = await Application.Current.MainPage.DisplayAlert("Alert", "Would you like to add rating?", "Yes", "No");
                 if (answer)
                 {
                     var request = new RatingUpsert
                     {
                         CustomerId = APIService.CustomerId,
-                        VehicleId = 1, //vehicle.VehicleId,                                    // ispravit !!!!!
+                        VehicleId =vehicle.VehicleId,                                    
                         RatingValue = Mark
                     };
 

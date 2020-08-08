@@ -11,11 +11,14 @@ namespace RentACar.Mobile.Views
     {
         RatingViewModel model = null;
 
-        public RatingPage()
+        public RatingPage(Data.Model.Vehicle clicked_vehicle)
         {
             InitializeComponent();
 
-            BindingContext = model = new RatingViewModel();
+            BindingContext = model = new RatingViewModel
+            {
+                vehicle=clicked_vehicle
+            };
         }
 
         protected async override void OnAppearing()

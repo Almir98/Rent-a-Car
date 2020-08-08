@@ -11,11 +11,10 @@
 		<vm:RatingViewModel />
 	</ContentPage.BindingContext>
 
-
 	<ContentPage.Content>
         <StackLayout Padding="50">
 
-			<Label FontSize="Large" HorizontalOptions="Center" Text="Please leave a rate for car!"></Label>
+			<Label FontSize="Large" HorizontalOptions="Center" Text="Please leave a mark for car!"></Label>
 
 			<Label Text="First name"></Label>
 			<Entry Text="{Binding FirstName}"></Entry>
@@ -24,7 +23,7 @@
 			<Entry Text="{Binding LastName}"></Entry>
 			
 			<Label Text="Manufacturer name"></Label>
-			<Entry Text="{Binding }"></Entry>
+			<Entry Text="{Binding Manufacturer }"></Entry>
 
 			<Label Text="Rating value (1-10)"></Label>
 			<Entry MaxLength="10" Text="{Binding Mark}"></Entry>

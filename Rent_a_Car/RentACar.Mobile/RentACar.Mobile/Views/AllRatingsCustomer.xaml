@@ -5,26 +5,26 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:vm="clr-namespace:RentACar.Mobile.ViewModels"
 			 mc:Ignorable="d"
-             x:Class="RentACar.Mobile.Views.MyBookingPage">
+             x:Class="RentACar.Mobile.Views.AllRatingsCustomer">
 
 	<ContentPage.BindingContext>
-		<vm:MyBookingViewModel />
+		<vm:AllRatingsCustomerViewModel />
 	</ContentPage.BindingContext>
 
 	<ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="20">
+			
+			<Label FontSize="Large" HorizontalOptions="Center" Text="Rented cars"></Label>
+			<Label FontSize="Large" HorizontalOptions="Center" Text="Click on item to add rating value !"></Label>
 
-			<Label  FontSize="Medium"  Text="All my bookings"
-                HorizontalOptions="CenterAndExpand" Margin="0,0,0,30" />
-
-			<ListView ItemsSource="{Binding BookingList}">
+			<ListView ItemsSource="{Binding BookingList}" ItemTapped="ListView_ItemTapped">
 				<ListView.ItemTemplate>
 					<DataTemplate>
 						<ViewCell>
 							<StackLayout Padding="20" Orientation="Horizontal">
 								<StackLayout Orientation="Vertical">
 									<StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="6">
-										<Label Text="Start date : "
+										<Label Text="Manufacturer : "
 										Style="{DynamicResource LargeLabel}" />
 
 										<Label Text="{Binding Vehicle.VehicleModel.Manufacturer.ManufacturerName}" 
@@ -35,7 +35,7 @@
 									</StackLayout>
 
 									<StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="6">
-										<Label Text="Start date : "
+										<Label Text="Vehicle model : "
 										Style="{DynamicResource LargeLabel}" />
 
 										<Label Text="{Binding Vehicle.VehicleModel.ModelName}" 
@@ -44,29 +44,7 @@
 										Style="{DynamicResource ListItemTextStyle}" 
 										FontSize="16" />
 									</StackLayout>
-									
 
-									<StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="6">
-										<Label Text="Start date : "
-										Style="{DynamicResource LargeLabel}" />
-
-										<Label Text="{Binding StartDate, StringFormat='{0:dd-MMM-yy}'}" 
-										d:Text="{Binding .}"
-										LineBreakMode="NoWrap" 
-										Style="{DynamicResource ListItemTextStyle}" 
-										FontSize="16" />
-									</StackLayout>
-
-									<StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="6">
-										<Label Text="End date : "
-										Style="{DynamicResource LargeLabel}" />
-
-									    <Label Text="{Binding EndDate, StringFormat='{0:dd-MMM-yy}'}" 
-										 d:Text="{Binding .}"
-										 LineBreakMode="NoWrap" 
-										 Style="{DynamicResource ListItemTextStyle}" 
-										 FontSize="16" />
-									</StackLayout>
 								</StackLayout>
 							</StackLayout>
 						</ViewCell>

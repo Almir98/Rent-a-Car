@@ -25,7 +25,7 @@ namespace RentACar.Mobile.ViewModels
 
         public Data.Model.Customer customer { get; set; }
 
-        public async Task AllBookings()
+        public async Task AllBookings() 
         {
                 var customerID = await _serviceCustomer.GetById<Data.Model.Customer>(APIService.CustomerId);
                 customer = customerID;
