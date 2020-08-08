@@ -12,7 +12,7 @@ namespace RentACar.Mobile.Views
     {
         VehicleDetailsViewModel model = null;
 
-        public VehicleDetailPage(VehicleRequest item)
+        public VehicleDetailPage(Data.Model.Vehicle item)
         {
             InitializeComponent();
 

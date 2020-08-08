@@ -17,5 +17,10 @@ namespace RentACar.Mobile.Views
         {
             await Navigation.PushModalAsync(new LoginPage());
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            DisplayAlert("Message", "Successfully! Thank you for registration!", "OK");
+        }
     }
 }

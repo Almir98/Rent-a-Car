@@ -18,12 +18,9 @@
 	</ContentPage.Resources>
 
 	<ContentPage.Content>
-        <StackLayout>
-            <Label Text="Vehicles"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="20">
 			
-			<Picker ItemsSource="{Binding VehicleList}" SelectedItem="{Binding }" Title="Odaberite automobil" ItemDisplayBinding="{Binding}"></Picker>
+			<Picker ItemsSource="{Binding ManufacturerList}" SelectedItem="{Binding }" Title="Filter vehicle" ItemDisplayBinding="{Binding}"></Picker>
 
 			<ListView ItemsSource="{Binding VehicleList}" ItemTapped="ListView_ItemTapped">
 				<ListView.ItemTemplate>
@@ -31,21 +28,78 @@
 						<ViewCell>
 							<StackLayout Padding="10" Orientation="Horizontal">
 								<StackLayout>
-								<Image WidthRequest="250" HeightRequest="250" Source="{Binding Image,Converter={StaticResource imgConv}}"></Image>
+								<Image WidthRequest="280" HeightRequest="280" Source="{Binding Image,Converter={StaticResource imgConv}}"></Image>
 								</StackLayout>
 
-								<StackLayout Orientation="Vertical">
-									
-									<Label Text="{Binding RegistrationNumber}" 
+								<StackLayout Orientation="Vertical" Grid.Row="1">
+
+									<Label Text="{Binding VehicleModel.Manufacturer.ManufacturerName}" 
 									d:Text="{Binding .}"
 									LineBreakMode="NoWrap" 
 									Style="{DynamicResource ListItemTextStyle}" 
 									FontSize="16" />
-									<Label Text="{Binding DailyPrice}" 
-									d:Text="Item descripton"
-									LineBreakMode="NoWrap"
-									Style="{DynamicResource ListItemDetailTextStyle}"
-									FontSize="13" />
+
+									<Label Text="{Binding VehicleModel.ModelName}" 
+									d:Text="{Binding .}"
+									LineBreakMode="NoWrap" 
+									Style="{DynamicResource ListItemTextStyle}" 
+									FontSize="16" />
+
+									<StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="6">
+										<Label Text="Registration number : "
+										Style="{DynamicResource LargeLabel}" />
+
+										<Label Text="{Binding RegistrationNumber}" 
+										d:Text="{Binding .}"
+										LineBreakMode="NoWrap" 
+										Style="{DynamicResource ListItemTextStyle}" 
+										FontSize="15" />
+									</StackLayout>
+
+									<StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="6">
+										<Label Text="Price per day : "
+										Style="{DynamicResource LargeLabel}" />
+
+										<Label Text="{Binding DailyPrice}" 
+										d:Text="{Binding .}"
+										LineBreakMode="NoWrap" 
+										Style="{DynamicResource ListItemTextStyle}" 
+										FontSize="15" />
+									</StackLayout>
+
+									<StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="6">
+										<Label Text="Mileage : "
+										Style="{DynamicResource LargeLabel}" />
+
+										<Label Text="{Binding Mileage}" 
+										d:Text="{Binding .}"
+										LineBreakMode="NoWrap" 
+										Style="{DynamicResource ListItemTextStyle}" 
+										FontSize="15" />
+									</StackLayout>
+
+									<StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="6">
+										<Label Text="Transmission : "
+										Style="{DynamicResource LargeLabel}" />
+
+										<Label Text="{Binding Transmission}" 
+										d:Text="{Binding .}"
+										LineBreakMode="NoWrap" 
+										Style="{DynamicResource ListItemTextStyle}" 
+										FontSize="15" />
+									</StackLayout>
+
+									<StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="6">
+										<Label Text="Number of seats : "
+										Style="{DynamicResource LargeLabel}" />
+
+										<Label Text="{Binding NumberOfSeats}" 
+										d:Text="{Binding .}"
+										LineBreakMode="NoWrap" 
+										Style="{DynamicResource ListItemTextStyle}" 
+										FontSize="15" />
+									</StackLayout>
+
 								</StackLayout>
 								
 							</StackLayout>

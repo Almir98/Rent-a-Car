@@ -24,7 +24,7 @@
 				<StackLayout>
 					<Image WidthRequest="250" HeightRequest="250" Source="{Binding vehicle.Image,Converter={StaticResource imgConv}}"></Image>
 				</StackLayout>
-				<StackLayout>
+				<StackLayout Padding="50">
 
 					<Label >Manufacturer:</Label>
 					<Entry IsReadOnly="True" Text="{Binding vehicle.VehicleModel.Manufacturer.ManufacturerName}"></Entry>
@@ -60,7 +60,7 @@
 					<Entry IsReadOnly="True" Text="{Binding vehicle.Description}"></Entry>
 
 
-					<Button Clicked="Booking_Clicked" Text="Booking"></Button>
+					<Button Clicked="Booking_Clicked" Text="Booking" Font="Bold,17"></Button>
 
 				</StackLayout>
 

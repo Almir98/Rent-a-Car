@@ -13,7 +13,7 @@
 
 
 	<ContentPage.Content>
-        <StackLayout Padding="20">
+        <StackLayout Padding="50">
 
 			<Label FontSize="Large" HorizontalOptions="Center" Text="Please leave a rate for car!"></Label>
 
@@ -29,7 +29,7 @@
 			<Label Text="Rating value (1-10)"></Label>
 			<Entry MaxLength="10" Text="{Binding Mark}"></Entry>
 
-			<Button Clicked="Button_Clicked" Text="Save rating"></Button>
+			<Button Clicked="Button_Clicked" Text="Save mark" Font="Bold,17"></Button>
 
 		</StackLayout>
     </ContentPage.Content>

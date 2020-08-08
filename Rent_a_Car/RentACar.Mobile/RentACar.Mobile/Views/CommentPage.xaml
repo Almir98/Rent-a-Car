@@ -3,24 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-			 xmlns:vm="clr-namespace:RentACar.Mobile.ViewModels"
-			 mc:Ignorable="d"
+             mc:Ignorable="d"
              x:Class="RentACar.Mobile.Views.CommentPage">
+    <ContentPage.Content>
+        <StackLayout Padding="50">
 
-	<ContentPage.BindingContext>
-		<vm:CommentViewModel />
-	</ContentPage.BindingContext>
-
-
-	<ContentPage.Content>
-        <StackLayout Padding="20">
-
-			<Label Text="FirstName"></Label>
+			<Label Text="First name"></Label>
 			<Entry Text="{Binding FirstName }"></Entry>
 
-			<Label Text="FirstName"></Label>
+			<Label Text="Last name"></Label>
 			<Entry Text="{Binding LastName }"></Entry>
 
+			
 			<Label Text="Vehicle"></Label>
 			<Entry Text="{Binding  }"></Entry>
 
@@ -28,10 +22,10 @@
 			<Entry Text="{Binding  }"></Entry>
 
 			<Label Text="Description"></Label>
-			<Entry WidthRequest="200" HeightRequest="200" Text="{Binding  }"></Entry>
+			<Entry WidthRequest="200" HeightRequest="200" Text="{Binding Description }"></Entry>
 
 
-			<Button Text="Save comment" Clicked="Button_Clicked"></Button>
+			<Button Command="{Binding SaveCommand}" Text="Save comment" Font="Bold,17"></Button>
 
 		</StackLayout>
     </ContentPage.Content>

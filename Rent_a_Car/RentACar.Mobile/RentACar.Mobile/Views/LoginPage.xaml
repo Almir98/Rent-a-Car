@@ -12,9 +12,9 @@
 	</ContentPage.BindingContext>
 	
 	<ContentPage.Content>
-        <StackLayout Padding="20" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+        <StackLayout Padding="400" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
 			<Label FontSize="Large" Text="Please sign in"
-			HorizontalOptions="CenterAndExpand" />
+			HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
 
 			<Label Text="Username"
                 HorizontalOptions="CenterAndExpand" />
@@ -24,10 +24,10 @@
                 HorizontalOptions="CenterAndExpand" />
 			<Entry IsPassword="True" Text="{Binding Password}"></Entry>
 
-			<Button Command="{Binding LoginCommand}" Text="Login"></Button>
+			<Button Command="{Binding LoginCommand}" Font="Bold,17" Text="Login"></Button>
 
 			<Button  
-                BorderColor="Transparent"
+                BorderColor="Transparent" Font="Bold,15"
                 Text="You don't have account, Create a free account" HorizontalOptions="End" Clicked="Register_Clicked">
 			</Button>
 

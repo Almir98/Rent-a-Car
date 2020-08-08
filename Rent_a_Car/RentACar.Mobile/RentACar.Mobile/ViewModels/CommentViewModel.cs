@@ -13,10 +13,13 @@ namespace RentACar.Mobile.ViewModels
 
 
         public ICommand CommentCommand { get; set; }
+        public ICommand SaveCommand { get; set; }
+
 
         public CommentViewModel()
         {
-            CommentCommand = new Command(async () => await SetComment());
+            CommentCommand = new Command(async () => await InitializationField());
+            SaveCommand = new Command(async () => await SetComment());
         }
 
         // propertiji
@@ -36,7 +39,7 @@ namespace RentACar.Mobile.ViewModels
         }
 
         private string _description = string.Empty;
-        public string description
+        public string Description
         {
             get { return _description; }
             set { SetProperty(ref _description, value); }
@@ -44,29 +47,43 @@ namespace RentACar.Mobile.ViewModels
 
         private Data.Model.Customer customer { get; set; }
 
-        public async Task SetComment()
+        public async Task InitializationField()
         {
             var customerID = await _serviceCustomer.GetById<Data.Model.Customer>(APIService.CustomerId);
             customer = customerID;
 
-            bool answer = await Application.Current.MainPage.DisplayAlert("Alert", "Would you like to leave a comment?", "Yes", "No");
-            if (answer)
-            {
-                FirstName = customer.FirstName;
-                LastName = customer.LastName;
-
-                var request = new CommentUpsert
-                {
-                    CustomerId = APIService.CustomerId,
-                    VehicleId = 1,                                                        // ISPRAVIT !!!!!
-                    DateOfComment = DateTime.Now,
-                    Description = description
-                };
-
-                await _serviceComment.Insert<Data.Model.Comment>(request);
-                await Application.Current.MainPage.DisplayAlert("Message", "Successfully! You added your comment for rented car!", "OK");
-            }
+            FirstName = customer.FirstName;
+            LastName = customer.LastName;
         }
 
+
+        public async Task SetComment()
+        {
+            try
+            {
+                var customerID = await _serviceCustomer.GetById<Data.Model.Customer>(APIService.CustomerId);
+                customer = customerID;
+
+                bool answer = await Application.Current.MainPage.DisplayAlert("Alert", "Would you like to leave a comment?", "Yes", "No");
+                if (answer)
+                {
+                    var request = new CommentUpsert
+                    {
+                        CustomerId = APIService.CustomerId,
+                        VehicleId = 4,                                                        // ISPRAVIT !!!!!
+                        DateOfComment = DateTime.Now,
+                        Description = Description
+                    };
+
+                    await _serviceComment.Insert<Data.Model.Comment>(request);
+                    await Application.Current.MainPage.DisplayAlert("Message", "Successfully! You added your comment for rented car!", "OK");
+
+                }
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "Somethning went wrong", "Try again");
+            }
+        }
     }
 }

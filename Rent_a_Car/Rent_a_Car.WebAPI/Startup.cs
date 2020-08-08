@@ -89,8 +89,8 @@ namespace Rent_a_Car.WebAPI
             services.AddScoped<IService<VehicleTypeRequest, object>, BaseService<VehicleTypeRequest, object, RentACar.WebAPI.Database.VehicleType>>();
             services.AddScoped<IService<Data.Model.VehicleModel, VehicleModelSearch>, VehicleModelService>();
             services.AddScoped<IService<Data.Model.City, CitySearchRequest>, CityService>();
-            services.AddScoped<IService<ManufacturerRequest, object>, BaseService<ManufacturerRequest, object, RentACar.WebAPI.Database.Manufacturer>>();
-
+            services.AddScoped<IService<Data.Model.Manufacturer, object>, BaseService<Data.Model.Manufacturer, object, RentACar.WebAPI.Database.Manufacturer>>();
+            
             services.AddScoped<ICRUDService<Data.Model.Branch, BranchSearchRequest, BranchUpsert, BranchUpsert>, BranchService>();
             services.AddScoped<ICRUDService<Data.Model.Vehicle, VehicleSearchRequest, VehicleUpsert, VehicleUpsert>, VehicleService>();
             services.AddScoped<ICRUDService<Data.Model.Booking, BookingSearchRequest, BookingUpsert, BookingUpsert>, BookingService>();

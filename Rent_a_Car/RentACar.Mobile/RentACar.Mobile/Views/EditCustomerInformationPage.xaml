@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="RentACar.Mobile.Views.EditCustomerInformationPage">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="50">
 
 			<Label Text="Edit information" Margin="0,30,0,0" FontAttributes="Bold" FontSize="20"></Label>
 
@@ -34,7 +34,7 @@
 			<Label Text="Confirm password"></Label>
 			<Entry x:Name="ConfirmPassword" IsPassword="True"></Entry>
 
-			<Button Clicked="Button_Clicked" HorizontalOptions="FillAndExpand" Text="Save"></Button>
+			<Button Clicked="Button_Clicked" HorizontalOptions="FillAndExpand" Text="Save" Font="Bold,17"></Button>
 
 		</StackLayout>
     </ContentPage.Content>

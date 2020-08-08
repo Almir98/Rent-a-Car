@@ -4,7 +4,7 @@ namespace RentACar.Mobile.ViewModels
 {
     public class VehicleDetailsViewModel
     {
-        public VehicleRequest vehicle { get; set; } = null;
+        public Data.Model.Vehicle vehicle { get; set; } = null;
 
     }
 }

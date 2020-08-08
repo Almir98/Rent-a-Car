@@ -24,7 +24,7 @@ namespace RentACar.Mobile.Views
 
         private async void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            var clicked_item = e.Item as RentaCar.Data.Requests.Vehicle.VehicleRequest;
+            var clicked_item = e.Item as Data.Model.Vehicle;
 
             await Navigation.PushAsync(new VehicleDetailPage(clicked_item));
         }

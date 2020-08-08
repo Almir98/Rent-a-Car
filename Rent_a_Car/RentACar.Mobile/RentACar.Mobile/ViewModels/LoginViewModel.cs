@@ -56,7 +56,7 @@ namespace RentACar.Mobile.ViewModels
             }
             catch (Exception ex)
             {
-                await Application.Current.MainPage.DisplayAlert("Error", "Wrong username or password", "Try again");
+                 await Application.Current.MainPage.DisplayAlert("Error", "Wrong username or password", "Try again");
             }
         }
     }

@@ -12,7 +12,7 @@
 	</ContentPage.BindingContext>
 
 	<ContentPage.Content>
-        <StackLayout Padding="15">
+        <StackLayout Padding="50">
     
 			<Label Text="FirstName"></Label>
 			<Entry Text="{Binding FirstName}"></Entry>
@@ -43,7 +43,7 @@
 				/>-->
                     <!--DateSelected="OnDateSelected"-->
 
-			<Button Text="Rent" Clicked="Button_Clicked"></Button>
+			<Button Text="Rent" Clicked="Button_Clicked" Font="Bold,17"></Button>
 			
 		</StackLayout>
     </ContentPage.Content>

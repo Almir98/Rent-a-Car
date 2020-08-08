@@ -12,7 +12,7 @@
 	</ContentPage.BindingContext>
 
 	<ContentPage.Content>
-		<StackLayout Padding="20">
+		<StackLayout Padding="50">
 			<Label  FontSize="Medium"  Text="Register to Rent a car"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" Margin="0,0,0,30" />
@@ -38,8 +38,9 @@
 			<Label Text="PasswordConfirm"></Label>
 			<Entry Text="{Binding PasswordConfirm}" IsPassword="True"></Entry>
 
-			<Button Command="{Binding RegisterCommand}" HorizontalOptions="FillAndExpand" Text="Submit"></Button>
-			<Button Clicked="Button_Clicked_Canceled" HorizontalOptions="FillAndExpand" Text="Cancel"></Button>
+			<Button Command="{Binding RegisterCommand}" Clicked="Button_Clicked" HorizontalOptions="FillAndExpand" Text="Register account" Font="Bold,17"></Button>
+			
+			<Button Clicked="Button_Clicked_Canceled" HorizontalOptions="FillAndExpand" Font="Bold,17" Text="Cancel"></Button>
 
 		</StackLayout>
     </ContentPage.Content>

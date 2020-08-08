@@ -15,12 +15,12 @@ namespace RentACar.WebAPI.Service
 
         public override List<Data.Model.Vehicle> Get(VehicleSearchRequest search)
         {
-            var query = _context.Set<Vehicle>().Include(x => x.VehicleModel.Manufacturer).Include(x => x.Branch).AsQueryable();
+            var query = _context.Set<Vehicle>().Include(x => x.VehicleModel).Include(e=>e.VehicleModel.Manufacturer).AsQueryable();
 
-            if (!string.IsNullOrEmpty(search.BranchName))
-            {
-                query = query.Where(x => x.Branch.BranchName == search.BranchName);
-            }
+            //if (!string.IsNullOrEmpty(search.BranchName))
+            //{
+            //    query = query.Where(x => x.Branch.BranchName == search.BranchName);
+            //}
 
             if (!string.IsNullOrEmpty(search.ManufacturerName))
             {
