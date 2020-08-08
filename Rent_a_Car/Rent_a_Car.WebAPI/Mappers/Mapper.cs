@@ -80,6 +80,8 @@ namespace Rent_a_Car.WebAPI.Mappers
 
 
             CreateMap<CustomerLoginRequest, Data.Model.Customer>().ReverseMap();
+            CreateMap<CustomerSearchRequest, Data.Model.Customer>().ReverseMap();
+            CreateMap<CustomerSearchRequest, Customer>().ReverseMap();
 
             // novi
 

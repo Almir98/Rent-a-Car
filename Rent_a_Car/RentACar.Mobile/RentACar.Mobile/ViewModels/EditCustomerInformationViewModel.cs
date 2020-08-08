@@ -120,48 +120,40 @@ namespace RentACar.Mobile.ViewModels
                     }
                 }
 
-                var userUpdate = await _serviceCustomer.Update<Data.Model.Customer>(APIService.CustomerId, new CustomerUpsert
-                {
-                    FirstName = FirstName,
-                    LastName = LastName,
-                    Phone = PhoneNumber,
-                    Email = Email,
-                    Username = Username,
-                    UserTypeId = 2
-                });
-
-                if (userUpdate == default(Data.Model.Customer))
-                    return;
+                var customerID = await _serviceCustomer.GetById<Data.Model.Customer>(APIService.CustomerId);
+                customer = customerID;
 
                 // Password
-
-                if (NewPassword != APIService.Password)
-                {
-                    await Application.Current.MainPage.DisplayAlert("Error", "Wrong old password", "Try again");
-                }
 
                 if (NewPassword != ConfirmPassword)
                 {
                     await Application.Current.MainPage.DisplayAlert("Error", "Password are not matched", "Try again");
                 }
 
-                await _serviceCustomer.Update<Data.Model.Customer>(APIService.CustomerId, new CustomerUpsert
+                var request = new CustomerUpsert
                 {
+                    FirstName = FirstName,
+                    LastName = LastName,
+                    Phone = PhoneNumber,
+                    CityId = customer.CityId,
+                    Email = Email,
+                    Username = Username,
+                    CustomerTypeId = 2,
                     Password = NewPassword,
                     PasswordConfirm = ConfirmPassword
-                });
+                };
 
                 APIService.Username = Username;
                 APIService.Password = NewPassword;
 
-                await Application.Current.MainPage.DisplayAlert("Succesfull", "Succesfully changed, please log in to confirm changes.", "OK");
+                var userUpdate = await _serviceCustomer.Update<Data.Model.Customer>(APIService.CustomerId,request);
+                await Application.Current.MainPage.DisplayAlert("Succesfull", "Succesfully changed, please log in with new username and password.", "OK");
+                await Application.Current.MainPage.Navigation.PushModalAsync(new LoginPage());
             }
             catch (Exception ex)
             {
                 await Application.Current.MainPage.DisplayAlert("Error", "Something went wrong.", "Try again");
             }
         }
-
-
     }
 }

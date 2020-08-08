@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace RentACar.WebAPI.Database
 {
@@ -30,6 +32,7 @@ namespace RentACar.WebAPI.Database
         {
             if (!optionsBuilder.IsConfigured)
             {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("Server=.;Database=RentaCar;Integrated Security=True;Trusted_Connection=True;");
             }
         }
@@ -144,19 +147,33 @@ namespace RentACar.WebAPI.Database
 
                 entity.Property(e => e.CustomerTypeId).HasColumnName("CustomerTypeID");
 
-                entity.Property(e => e.Email).HasMaxLength(50);
+                entity.Property(e => e.Email)
+                    .IsRequired()
+                    .HasMaxLength(50);
 
-                entity.Property(e => e.FirstName).HasMaxLength(50);
+                entity.Property(e => e.FirstName)
+                    .IsRequired()
+                    .HasMaxLength(50);
 
-                entity.Property(e => e.LastName).HasMaxLength(50);
+                entity.Property(e => e.LastName)
+                    .IsRequired()
+                    .HasMaxLength(50);
 
-                entity.Property(e => e.PasswordHash).HasMaxLength(50);
+                entity.Property(e => e.PasswordHash)
+                    .IsRequired()
+                    .HasMaxLength(50);
 
-                entity.Property(e => e.PasswordSalt).HasMaxLength(50);
+                entity.Property(e => e.PasswordSalt)
+                    .IsRequired()
+                    .HasMaxLength(50);
 
-                entity.Property(e => e.Phone).HasMaxLength(50);
+                entity.Property(e => e.Phone)
+                    .IsRequired()
+                    .HasMaxLength(50);
 
-                entity.Property(e => e.Username).HasMaxLength(50);
+                entity.Property(e => e.Username)
+                    .IsRequired()
+                    .HasMaxLength(50);
 
                 entity.HasOne(d => d.City)
                     .WithMany(p => p.Customer)

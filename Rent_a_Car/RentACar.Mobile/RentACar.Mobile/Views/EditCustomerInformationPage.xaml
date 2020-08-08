@@ -29,16 +29,14 @@
 			<Label Text="Username"></Label>
 			<Entry x:Name="Username" Text="{Binding Username}"></Entry>
 
-			<!--<Label Text="Old password"></Label>
-			<Entry x:Name="OldPassword" IsPassword="True"></Entry>
 
 			<Label Text="New password"></Label>
-			<Entry x:Name="NewPassword" IsPassword="True"></Entry>
+			<Entry x:Name="NewPassword" Text="{Binding NewPassword}" IsPassword="True"></Entry>
 
 			<Label Text="Confirm password"></Label>
-			<Entry x:Name="ConfirmPassword" IsPassword="True"></Entry>-->
+			<Entry x:Name="ConfirmPassword" Text="{Binding ConfirmPassword}" IsPassword="True"></Entry>
 
-			
+
 			<Button Command="{Binding SaveChanges}" HorizontalOptions="FillAndExpand" Text="Save" Font="Bold,17"></Button>
 
 		</StackLayout>

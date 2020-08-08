@@ -17,7 +17,6 @@ namespace RentACar.WebAPI.Controllers
             _service = service;
         }
 
-        [Authorize(Roles ="Administrator")]
         [HttpGet]
         public ActionResult<List<Data.Model.Customer>> Get([FromQuery]CustomerSearchRequest request)
         {
@@ -30,14 +29,14 @@ namespace RentACar.WebAPI.Controllers
             return _service.GetById(id);
         }
 
-        [Authorize(Roles = "Administrator")]     
+        //[Authorize(Roles = "Administrator")]     
         [HttpPost]
         public ActionResult<Data.Model.Customer> Insert(CustomerUpsert request)
         {
             return _service.Insert(request);
         }
 
-        [Authorize(Roles = "Administrator")]
+        //[Authorize(Roles = "Administrator")]
         [HttpPut("{id}")]
         public ActionResult<Data.Model.Customer> Update(int id, [FromBody]CustomerUpsert request)
         {

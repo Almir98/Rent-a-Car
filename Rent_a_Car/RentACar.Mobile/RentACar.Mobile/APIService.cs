@@ -65,7 +65,7 @@ namespace RentACar.Mobile
 
             try
             {
-                return await url.WithBasicAuth(Username, Password).PostJsonAsync(request).ReceiveJson<T>();
+                return await url./*WithBasicAuth(Username, Password).*/PostJsonAsync(request).ReceiveJson<T>();
             }
             catch (FlurlHttpException ex)
             {

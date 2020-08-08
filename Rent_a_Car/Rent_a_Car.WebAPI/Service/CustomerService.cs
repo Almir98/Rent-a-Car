@@ -24,7 +24,7 @@ namespace RentACar.WebAPI.Service
 
         public List<Data.Model.Customer> Get(CustomerSearchRequest request)
         {
-            var query = _context.Set<Customer>().Include(x => x.City).AsQueryable();
+            var query = _context.Customer.AsQueryable();
 
             if (!string.IsNullOrWhiteSpace(request.FirstName) || !string.IsNullOrWhiteSpace(request.LastName))
             {
@@ -36,19 +36,12 @@ namespace RentACar.WebAPI.Service
                 query = query.Where(x => x.LastName.StartsWith(request.LastName));
             }
 
-            if (!string.IsNullOrWhiteSpace(request.CityName))
-            {
-                query = query.Where(x => x.City.CityName == request.CityName);
-            }
-
             if (!string.IsNullOrWhiteSpace(request.Username))
             {
                 query = query.Where(x => x.Username.StartsWith(request.Username));
             }
 
-            query = query.OrderBy(x => x.City.CityName);
-
-            return _mapper.Map<List<Data.Model.Customer>>(query);
+            return _mapper.Map<List<Data.Model.Customer>>(query.ToList());
         }
 
         private static string GenerateSalt()

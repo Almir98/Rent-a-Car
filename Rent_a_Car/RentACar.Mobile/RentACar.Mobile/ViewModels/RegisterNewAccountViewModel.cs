@@ -34,8 +34,6 @@ namespace RentACar.Mobile.ViewModels
         {
             try
             {
-                //var _cityList = await _serviceCity.Get<CityRequest>(null);
-
                 if (Password != PasswordConfirm)
                 {
                     await Application.Current.MainPage.DisplayAlert("Error", "Password don't match", "Try again");
@@ -49,17 +47,20 @@ namespace RentACar.Mobile.ViewModels
                     return;
                 }
 
-                await _serviceCustomer.Insert<CustomerRequest>(new CustomerUpsert
+                var request = new CustomerUpsert
                 {
                     FirstName = FirstName,
                     LastName = LastName,
                     Phone = Phone,
                     Email = Email,
+                    CityId = CityId,
                     Username = Username,
                     Password = Password,
                     PasswordConfirm = PasswordConfirm,
-                    UserTypeId = 2
-                });
+                    CustomerTypeId = 2
+                };
+
+                await _serviceCustomer.Insert<Data.Model.Customer>(request);
 
                 await Application.Current.MainPage.DisplayAlert("Registred succesfully.", "Now just log in.", "OK");
                 await Application.Current.MainPage.Navigation.PushModalAsync(new LoginPage());
