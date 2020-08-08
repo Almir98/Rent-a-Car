@@ -4,6 +4,7 @@
     {
         Browse,
         Customer,
+        Bookings,
         Vehicle,
         Rating,
         Comment,

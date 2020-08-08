@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="clr-namespace:RentACar.Mobile.ViewModels"
+			 mc:Ignorable="d"
+             x:Class="RentACar.Mobile.Views.MyBookingPage">
+
+	<ContentPage.BindingContext>
+		<vm:MyBookingViewModel />
+	</ContentPage.BindingContext>
+
+	<ContentPage.Content>
+        <StackLayout>
+
+			<Label  FontSize="Medium"  Text="My bookings"
+                HorizontalOptions="CenterAndExpand" Margin="0,0,0,30" />
+
+			<ListView ItemsSource="{Binding BookingList}">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<StackLayout Padding="20" Orientation="Horizontal">
+								<StackLayout Orientation="Vertical">
+									<StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="6">
+										<Label Text="Start date : "
+										Style="{DynamicResource LargeLabel}" />
+
+										<Label Text="{Binding Vehicle.VehicleModel.Manufacturer.ManufacturerName}" 
+										d:Text="{Binding .}"
+										LineBreakMode="NoWrap" 
+										Style="{DynamicResource ListItemTextStyle}" 
+										FontSize="16" />
+									</StackLayout>
+
+									<StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="6">
+										<Label Text="Start date : "
+										Style="{DynamicResource LargeLabel}" />
+
+										<Label Text="{Binding Vehicle.VehicleModel.ModelName}" 
+										d:Text="{Binding .}"
+										LineBreakMode="NoWrap" 
+										Style="{DynamicResource ListItemTextStyle}" 
+										FontSize="16" />
+									</StackLayout>
+									
+
+									<StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="6">
+										<Label Text="Start date : "
+										Style="{DynamicResource LargeLabel}" />
+
+										<Label Text="{Binding StartDate, StringFormat='{0:dd-MMM-yy}'}" 
+										d:Text="{Binding .}"
+										LineBreakMode="NoWrap" 
+										Style="{DynamicResource ListItemTextStyle}" 
+										FontSize="16" />
+									</StackLayout>
+
+									<StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="6">
+										<Label Text="End date : "
+										Style="{DynamicResource LargeLabel}" />
+
+									    <Label Text="{Binding EndDate, StringFormat='{0:dd-MMM-yy}'}" 
+										 d:Text="{Binding .}"
+										 LineBreakMode="NoWrap" 
+										 Style="{DynamicResource ListItemTextStyle}" 
+										 FontSize="16" />
+									</StackLayout>
+								</StackLayout>
+							</StackLayout>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</StackLayout>
+    </ContentPage.Content>
+</ContentPage>

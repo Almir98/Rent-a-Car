@@ -29,10 +29,10 @@
 			<Entry Text="{Binding Email}"></Entry>
 
 			<Label Text="Start date"></Label>
-			<DatePicker x:Name="date" Date="{Binding StartDate}"></DatePicker>
+			<DatePicker Date="{Binding StartDate}"></DatePicker>
 			
 			<Label Text="End date"></Label>
-			<DatePicker x:Name="date" Date="{Binding EndDate}"></DatePicker>
+			<DatePicker Date="{Binding EndDate}"></DatePicker>
 
 			<Button Command="{Binding RentCommand}" Text="Book this car" Font="Bold,17"></Button>
 			

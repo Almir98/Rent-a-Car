@@ -5,36 +5,41 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="RentACar.Mobile.Views.EditCustomerInformationPage">
+	
+	
+	
+	
     <ContentPage.Content>
         <StackLayout Padding="50">
 
 			<Label Text="Edit information" Margin="0,30,0,0" FontAttributes="Bold" FontSize="20"></Label>
 
 			<Label Text="First name"></Label>
-			<Entry x:Name="FirstName"></Entry>
+			<Entry x:Name="FirstName" Text="{Binding FirstName}"></Entry>
 
 			<Label Text="Last name"></Label>
-			<Entry x:Name="LastName"></Entry>
+			<Entry x:Name="LastName" Text="{Binding LastName}"></Entry>
 
 			<Label Text="Email"></Label>
-			<Entry x:Name="Email"></Entry>
+			<Entry x:Name="Email" Text="{Binding Email}"></Entry>
 
 			<Label Text="Phone"></Label>
-			<Entry x:Name="Phone"></Entry>
+			<Entry x:Name="Phone" Text="{Binding PhoneNumber}"></Entry>
 
 			<Label Text="Username"></Label>
-			<Entry x:Name="Username"></Entry>
+			<Entry x:Name="Username" Text="{Binding Username}"></Entry>
 
-			<Label Text="Old password"></Label>
+			<!--<Label Text="Old password"></Label>
 			<Entry x:Name="OldPassword" IsPassword="True"></Entry>
 
 			<Label Text="New password"></Label>
 			<Entry x:Name="NewPassword" IsPassword="True"></Entry>
 
 			<Label Text="Confirm password"></Label>
-			<Entry x:Name="ConfirmPassword" IsPassword="True"></Entry>
+			<Entry x:Name="ConfirmPassword" IsPassword="True"></Entry>-->
 
-			<Button Clicked="Button_Clicked" HorizontalOptions="FillAndExpand" Text="Save" Font="Bold,17"></Button>
+			
+			<Button Command="{Binding SaveChanges}" HorizontalOptions="FillAndExpand" Text="Save" Font="Bold,17"></Button>
 
 		</StackLayout>
     </ContentPage.Content>

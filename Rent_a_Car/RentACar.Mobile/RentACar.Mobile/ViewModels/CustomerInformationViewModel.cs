@@ -103,9 +103,6 @@ namespace RentACar.Mobile.ViewModels
             Username = list.Username;
             City = list.City.CityName;
             CustomerType = list.CustomerType.Type;
-
         }
-
-
     }
 }

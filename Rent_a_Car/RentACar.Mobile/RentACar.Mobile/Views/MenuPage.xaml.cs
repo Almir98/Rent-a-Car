@@ -20,7 +20,8 @@ namespace RentACar.Mobile.Views
             {
                 new HomeMenuItem {Id = MenuItemType.Browse, Title="Home" },
                 new HomeMenuItem {Id = MenuItemType.Customer, Title="Customer profile" },
-                new HomeMenuItem {Id = MenuItemType.Vehicle, Title="Vehicle" },
+                new HomeMenuItem {Id = MenuItemType.Bookings, Title="My bookings" },
+                new HomeMenuItem {Id = MenuItemType.Vehicle, Title="Offers for rent" },
                 new HomeMenuItem {Id = MenuItemType.Rating, Title="Rate car" },
                 new HomeMenuItem {Id = MenuItemType.Comment, Title="Leave a comment" },
                 new HomeMenuItem {Id = MenuItemType.Contact, Title="Contact us" },

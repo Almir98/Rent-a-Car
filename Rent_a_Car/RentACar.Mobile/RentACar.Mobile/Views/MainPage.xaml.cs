@@ -33,6 +33,9 @@ namespace RentACar.Mobile.Views
                     case (int)MenuItemType.Customer:
                         MenuPages.Add(id, new NavigationPage(new CustomerInformationPage()));
                         break;
+                    case (int)MenuItemType.Bookings:
+                        MenuPages.Add(id, new NavigationPage(new MyBookingPage()));
+                        break;
                     case (int)MenuItemType.Vehicle:
                         MenuPages.Add(id, new NavigationPage(new VehiclePage()));
                         break;

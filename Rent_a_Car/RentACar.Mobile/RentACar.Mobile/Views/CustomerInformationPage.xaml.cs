@@ -31,7 +31,6 @@ namespace RentACar.Mobile.Views
         //    await Navigation.PopAsync();
         //}
 
-        // EDIT INFORMATIONS
 
         private async void Button_Clicked_Edit(object sender, EventArgs e)
         {
