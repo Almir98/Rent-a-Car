@@ -1,4 +1,5 @@
 ﻿using RentaCar.Data.Requests.Rating;
+using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -12,9 +13,11 @@ namespace RentACar.Mobile.ViewModels
         private readonly APIService _serviceCustomer = new APIService("Customer");
 
         public ICommand RatingCommand { get; set; }
+        public ICommand Init { get; set; }
 
         public RatingViewModel()
         {
+            Init = new Command(async () => await Initialization());
             RatingCommand = new Command(async () => await SetNewRating());
         }
 
@@ -27,7 +30,7 @@ namespace RentACar.Mobile.ViewModels
             set { SetProperty(ref _firstName, value); }
         }
 
-        private string _lastName = string.Empty;
+        public string _lastName = string.Empty;
         public string LastName
         {
             get { return _lastName; }
@@ -47,32 +50,46 @@ namespace RentACar.Mobile.ViewModels
 
         public Data.Model.Customer customer { get; set; }
 
-        public async Task SetNewRating()
+
+        public async Task Initialization()
         {
             var customerID = await _serviceCustomer.GetById<Data.Model.Customer>(APIService.CustomerId);
             customer = customerID;
 
             FirstName = customer.FirstName;
             LastName = customer.LastName;
+        }
 
-            bool answer = await Application.Current.MainPage.DisplayAlert("Alert", "Would you like to add rating?", "Yes", "No");
-            if (answer)
+        public async Task SetNewRating()
+        {
+            try
             {
+                var customerID = await _serviceCustomer.GetById<Data.Model.Customer>(APIService.CustomerId);
+                customer = customerID;
 
-                var request = new RatingUpsert
+                bool answer = await Application.Current.MainPage.DisplayAlert("Alert", "Would you like to add rating?", "Yes", "No");
+                if (answer)
                 {
-                    CustomerId = APIService.CustomerId,
-                    VehicleId = 1, //vehicle.VehicleId,                                    // ispravit !!!!!
-                    RatingValue = Mark
-                };
+                    var request = new RatingUpsert
+                    {
+                        CustomerId = APIService.CustomerId,
+                        VehicleId = 1, //vehicle.VehicleId,                                    // ispravit !!!!!
+                        RatingValue = Mark
+                    };
 
-                if (Mark <= 0 || Mark > 10)
-                {
-                    await Application.Current.MainPage.DisplayAlert("Error", "You have to add mark in range 1 - 10!", "OK");
+                    if (Mark <= 0 || Mark > 10)
+                    {
+                        await Application.Current.MainPage.DisplayAlert("Error", "You have to add mark in range 1 - 10!", "OK");
+                        return;
+                    }
+
+                    await _serviceRating.Insert<Data.Model.Rating>(request);
+                    await Application.Current.MainPage.DisplayAlert("Message", "Successfully! You added your mark for rented car!", "OK");
                 }
-
-                await _serviceRating.Insert<Data.Model.Rating>(request);
-                await Application.Current.MainPage.DisplayAlert("Message", "Successfully! You added your mark for rented car!", "OK");
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "Somethning went wrong", "Try again");
             }
         }
     }

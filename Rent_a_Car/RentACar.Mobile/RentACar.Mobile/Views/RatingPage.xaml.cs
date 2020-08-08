@@ -21,12 +21,7 @@ namespace RentACar.Mobile.Views
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            await model.SetNewRating();
-        }
-
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-            DisplayAlert("Message", "Successfully! Thank you for rating car!", "OK");
+            await model.Initialization();
         }
     }
 }

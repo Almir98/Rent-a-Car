@@ -9,8 +9,6 @@ namespace RentACar.Mobile.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BookingVehicle : ContentPage
     {
-        private readonly APIService _serviceCustomer = new APIService("Customer");
-
         BookingVehicleViewModel model = null;
 
         public BookingVehicle(Data.Model.Vehicle vehicle = null)
@@ -30,15 +28,6 @@ namespace RentACar.Mobile.Views
         {
             base.OnAppearing();
             await model.Init();
-            await model.RentCar();
-
-        }
-
-        // For renting car 
-
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-            DisplayAlert("Message", "Successfully! You rented car!", "OK");
         }
     }
 }

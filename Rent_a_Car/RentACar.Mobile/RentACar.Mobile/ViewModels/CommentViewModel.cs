@@ -77,7 +77,6 @@ namespace RentACar.Mobile.ViewModels
 
                     await _serviceComment.Insert<Data.Model.Comment>(request);
                     await Application.Current.MainPage.DisplayAlert("Message", "Successfully! You added your comment for rented car!", "OK");
-
                 }
             }
             catch (Exception ex)

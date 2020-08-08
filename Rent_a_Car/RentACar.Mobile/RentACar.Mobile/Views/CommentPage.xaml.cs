@@ -17,9 +17,7 @@ namespace RentACar.Mobile.Views
         public CommentPage()
         {
             InitializeComponent();
-            BindingContext = model = new CommentViewModel
-            {
-            };
+            BindingContext = model = new CommentViewModel();
         }
 
         protected async override void OnAppearing()

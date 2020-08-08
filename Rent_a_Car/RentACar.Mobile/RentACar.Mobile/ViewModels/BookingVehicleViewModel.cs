@@ -10,6 +10,8 @@ namespace RentACar.Mobile.ViewModels
     {
         private readonly APIService _serviceBooking = new APIService("Booking");
         private readonly APIService _serviceCustomer = new APIService("Customer");
+        private readonly APIService _serviceVehicle = new APIService("Vehicle");
+
 
         public BookingVehicleViewModel()
         {
@@ -21,7 +23,6 @@ namespace RentACar.Mobile.ViewModels
         public ICommand RentCommand { get; set; }
 
 
-        //FirstName
         string _firstName = string.Empty;
         public string FirstName
         {
@@ -29,7 +30,6 @@ namespace RentACar.Mobile.ViewModels
             set { SetProperty(ref _firstName, value); }
         }
 
-        //LAST NAME
         string _lastName = string.Empty;
         public string LastName
         {
@@ -37,7 +37,6 @@ namespace RentACar.Mobile.ViewModels
             set { SetProperty(ref _lastName, value); }
         }
 
-        // Phone
         string _phone = string.Empty;
         public string Phone
         {
@@ -45,7 +44,6 @@ namespace RentACar.Mobile.ViewModels
             set { SetProperty(ref _phone, value); }
         }
 
-        // EMAIL
         string _email = string.Empty;
         public string Email
         {
@@ -53,45 +51,59 @@ namespace RentACar.Mobile.ViewModels
             set { SetProperty(ref _email, value); }
         }
 
-        string _registration = string.Empty;
-        public string RegistationNumber
+        DateTime _startDate;
+        public DateTime StartDate
         {
-            get { return _registration; }
-            set { SetProperty(ref _registration, value); }
+            get { return _startDate; }
+            set { SetProperty(ref _startDate, value); }
+        }
+
+        DateTime _endDate;
+        public DateTime EndDate
+        {
+            get { return _endDate; }
+            set { SetProperty(ref _endDate, value); }
         }
 
 
         public Data.Model.Customer customer { get; set; }
 
 
-        // Initialization
         public async Task Init()
         {
             var customerID = await _serviceCustomer.GetById<Data.Model.Customer>(APIService.CustomerId);
             customer = customerID;
-            RegistationNumber = Vehicle.RegistrationNumber;
 
             FirstName = customer.FirstName;
             LastName = customer.LastName;
             Phone = customer.Phone;
             Email = customer.Email;
+
+                                            // dodat jos propertija od auta kad nadjem nacin  !!!
         }
 
-        // renting
+
         public Data.Model.Vehicle Vehicle { get; set; }
 
         public async Task RentCar()
         {
-            var request = new BookingUpsert
+            try
             {
-                CustomerId = APIService.CustomerId,
-                StartDate = DateTime.Now,
-                EndDate = DateTime.Now,
-                //VehicleId=Vehicle.VehicleId,
-                VehicleId = 1
-            };
-
-            await _serviceBooking.Insert<Data.Model.Booking>(request);
+                var request = new BookingUpsert
+                {
+                    CustomerId = APIService.CustomerId,
+                    StartDate = StartDate,
+                    EndDate = EndDate,
+                    //VehicleId=Vehicle.VehicleId,
+                    VehicleId = 1                                                    // ISPRAVIT 
+                };
+                await _serviceBooking.Insert<Data.Model.Booking>(request);
+                await Application.Current.MainPage.DisplayAlert("Message", "Successfully!", "OK");
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "Somethning went wrong", "Try again");
+            }
         }
 
     }

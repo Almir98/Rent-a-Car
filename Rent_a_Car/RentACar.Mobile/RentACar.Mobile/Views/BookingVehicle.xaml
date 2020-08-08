@@ -13,7 +13,9 @@
 
 	<ContentPage.Content>
         <StackLayout Padding="50">
-    
+
+			<Label FontSize="Large" HorizontalOptions="Center" Text="Book this car"></Label>
+
 			<Label Text="FirstName"></Label>
 			<Entry Text="{Binding FirstName}"></Entry>
 
@@ -26,24 +28,13 @@
 			<Label Text="Email"></Label>
 			<Entry Text="{Binding Email}"></Entry>
 
-			<Label Text="Registration"></Label>
-			<Entry Text="{Binding RegistrationNumber}"></Entry>
-
 			<Label Text="Start date"></Label>
-			<!--<DatePicker x:Name=""
-                    Format="D"
-                    Margin="30, 0, 0, 30"
-				/>-->
-                    <!--DateSelected="OnDateSelected-->
-
+			<DatePicker x:Name="date" Date="{Binding StartDate}"></DatePicker>
+			
 			<Label Text="End date"></Label>
-			<!--<DatePicker x:Name="startDatePicker"
-                    Format="D"
-                    Margin="30, 0, 0, 30"
-				/>-->
-                    <!--DateSelected="OnDateSelected"-->
+			<DatePicker x:Name="date" Date="{Binding EndDate}"></DatePicker>
 
-			<Button Text="Rent" Clicked="Button_Clicked" Font="Bold,17"></Button>
+			<Button Command="{Binding RentCommand}" Text="Book this car" Font="Bold,17"></Button>
 			
 		</StackLayout>
     </ContentPage.Content>

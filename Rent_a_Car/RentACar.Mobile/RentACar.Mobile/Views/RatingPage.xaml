@@ -29,7 +29,7 @@
 			<Label Text="Rating value (1-10)"></Label>
 			<Entry MaxLength="10" Text="{Binding Mark}"></Entry>
 
-			<Button Clicked="Button_Clicked" Text="Save mark" Font="Bold,17"></Button>
+			<Button Command="{Binding RatingCommand}" Text="Save mark" Font="Bold,17"></Button>
 
 		</StackLayout>
     </ContentPage.Content>
