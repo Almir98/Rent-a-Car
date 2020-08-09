@@ -14,10 +14,13 @@ namespace RentACar.Mobile.Views
     public partial class CommentPage : ContentPage
     {
         public CommentViewModel model = null;
-        public CommentPage()
+        public CommentPage(Data.Model.Vehicle clicked_item)
         {
             InitializeComponent();
-            BindingContext = model = new CommentViewModel();
+            BindingContext = model = new CommentViewModel
+            {
+                vehicle=clicked_item
+            };
         }
 
         protected async override void OnAppearing()

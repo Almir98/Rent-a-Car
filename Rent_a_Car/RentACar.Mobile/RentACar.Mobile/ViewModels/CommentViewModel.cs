@@ -1,4 +1,5 @@
 ﻿using RentaCar.Data.Requests.Comments;
+using RentACar.Mobile.Views;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -38,6 +39,20 @@ namespace RentACar.Mobile.ViewModels
             set { SetProperty(ref _lastName, value); }
         }
 
+        private string _manufacturer = string.Empty;
+        public string ManufacturerName
+        {
+            get { return _manufacturer; }
+            set { SetProperty(ref _manufacturer, value); }
+        }
+
+        private string _modelName = string.Empty;
+        public string ModelName
+        {
+            get { return _modelName; }
+            set { SetProperty(ref _modelName, value); }
+        }
+
         private string _description = string.Empty;
         public string Description
         {
@@ -45,7 +60,9 @@ namespace RentACar.Mobile.ViewModels
             set { SetProperty(ref _description, value); }
         }
 
-        private Data.Model.Customer customer { get; set; }
+        public Data.Model.Customer customer { get; set; }
+        public Data.Model.Vehicle vehicle { get; set; }
+
 
         public async Task InitializationField()
         {
@@ -54,11 +71,19 @@ namespace RentACar.Mobile.ViewModels
 
             FirstName = customer.FirstName;
             LastName = customer.LastName;
+            ManufacturerName = vehicle.VehicleModel.Manufacturer.ManufacturerName;
+            ModelName = vehicle.VehicleModel.ModelName;
         }
 
 
         public async Task SetComment()
         {
+            if (string.IsNullOrEmpty(Description))
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "All fields are required", "Try again");
+                return;
+            }
+
             try
             {
                 var customerID = await _serviceCustomer.GetById<Data.Model.Customer>(APIService.CustomerId);
@@ -70,13 +95,14 @@ namespace RentACar.Mobile.ViewModels
                     var request = new CommentUpsert
                     {
                         CustomerId = APIService.CustomerId,
-                        VehicleId = 4,                                                        // ISPRAVIT !!!!!
+                        VehicleId = vehicle.VehicleId,                                                        
                         DateOfComment = DateTime.Now,
                         Description = Description
                     };
 
                     await _serviceComment.Insert<Data.Model.Comment>(request);
                     await Application.Current.MainPage.DisplayAlert("Message", "Successfully! You added your comment for rented car!", "OK");
+                    await Application.Current.MainPage.Navigation.PushModalAsync(new MainPage());
                 }
             }
             catch (Exception ex)

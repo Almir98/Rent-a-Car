@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="clr-namespace:RentACar.Mobile.ViewModels"
+			 mc:Ignorable="d"
+             x:Class="RentACar.Mobile.Views.AllCommentsCustomer">
+
+	<ContentPage.BindingContext>
+		<vm:AllCommentsCustomerViewModel />
+	</ContentPage.BindingContext>
+
+	<ContentPage.Content>
+        <StackLayout Padding="20">
+
+			<Label FontSize="Large" HorizontalOptions="Center" Text="Rented cars"></Label>
+			<Label FontSize="Large" HorizontalOptions="Center" Text="Click on item to add comment!"></Label>
+
+			<ListView ItemsSource="{Binding BookingList}" ItemTapped="ListView_ItemTapped">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<StackLayout Padding="20" Orientation="Horizontal">
+								<StackLayout Orientation="Vertical">
+									<StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="6">
+										<Label Text="Manufacturer : "
+										Style="{DynamicResource LargeLabel}" />
+
+										<Label Text="{Binding Vehicle.VehicleModel.Manufacturer.ManufacturerName}" 
+										d:Text="{Binding .}"
+										LineBreakMode="NoWrap" 
+										Style="{DynamicResource ListItemTextStyle}" 
+										FontSize="16" />
+									</StackLayout>
+
+									<StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="6">
+										<Label Text="Vehicle model : "
+										Style="{DynamicResource LargeLabel}" />
+
+										<Label Text="{Binding Vehicle.VehicleModel.ModelName}" 
+										d:Text="{Binding .}"
+										LineBreakMode="NoWrap" 
+										Style="{DynamicResource ListItemTextStyle}" 
+										FontSize="16" />
+									</StackLayout>
+
+								</StackLayout>
+							</StackLayout>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</StackLayout>
+    </ContentPage.Content>
+</ContentPage>

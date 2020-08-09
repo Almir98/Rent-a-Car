@@ -1,4 +1,5 @@
-﻿using RentACar.Mobile.Views;
+﻿using RentaCar.Data.Requests.Customer;
+using RentACar.Mobile.Views;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -39,9 +40,24 @@ namespace RentACar.Mobile.ViewModels
             APIService.Username = Username;
             APIService.Password = Password;
 
+            if(string.IsNullOrEmpty(Username) || string.IsNullOrEmpty(Password))
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "All fields are required", "Try again");
+                return;
+            }
+
             try
             {
-                List<Data.Model.Customer> list = await _service.Get<List<Data.Model.Customer>>(null);
+                List<Data.Model.Customer> list = await _service.Get<List<Data.Model.Customer>>(new CustomerSearchRequest { 
+                    
+                    Username=Username
+                });
+
+                if(list.Count==0)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Error", "Wrong username or password", "Try again");
+                    return;
+                }
 
                 foreach (var item in list)
                 {

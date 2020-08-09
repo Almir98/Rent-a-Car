@@ -43,7 +43,7 @@ namespace RentACar.Mobile.Views
                         MenuPages.Add(id, new NavigationPage(new AllRatingsCustomer()));
                         break;
                     case (int)MenuItemType.Comment:
-                        MenuPages.Add(id, new NavigationPage(new CommentPage()));
+                        MenuPages.Add(id, new NavigationPage(new AllCommentsCustomer()));
                         break;
                     case (int)MenuItemType.Contact:
                         MenuPages.Add(id, new NavigationPage(new ContactPage()));

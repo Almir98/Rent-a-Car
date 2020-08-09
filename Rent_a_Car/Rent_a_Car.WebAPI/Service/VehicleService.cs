@@ -28,7 +28,7 @@ namespace RentACar.WebAPI.Service
             }
             if (!string.IsNullOrEmpty(search.RegistrationNumber))
             {
-                query = query.Where(x => x.RegistrationNumber == search.RegistrationNumber);
+                query = query.Where(x => x.RegistrationNumber.StartsWith(search.RegistrationNumber));
             }
             query = query.OrderBy(x => x.VehicleNumber);
 

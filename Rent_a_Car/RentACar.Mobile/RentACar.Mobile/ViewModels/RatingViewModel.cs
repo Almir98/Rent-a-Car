@@ -76,13 +76,19 @@ namespace RentACar.Mobile.ViewModels
 
         public async Task SetNewRating()
         {
+
+            if (Mark <= 0 || Mark > 10)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "You have to add mark in range 1 - 10!", "OK");
+                return;
+            }
+
             try
             {
                 var customerID = await _serviceCustomer.GetById<Data.Model.Customer>(APIService.CustomerId);
                 customer = customerID;
 
                 var vehicleID = await _serviceVehicle.GetById<Data.Model.Vehicle>(vehicle.VehicleId);
-
 
                 bool answer = await Application.Current.MainPage.DisplayAlert("Alert", "Would you like to add rating?", "Yes", "No");
                 if (answer)
@@ -93,13 +99,6 @@ namespace RentACar.Mobile.ViewModels
                         VehicleId =vehicle.VehicleId,                                    
                         RatingValue = Mark
                     };
-
-                    if (Mark <= 0 || Mark > 10)
-                    {
-                        await Application.Current.MainPage.DisplayAlert("Error", "You have to add mark in range 1 - 10!", "OK");
-                        return;
-                    }
-
                     await _serviceRating.Insert<Data.Model.Rating>(request);
                     await Application.Current.MainPage.DisplayAlert("Message", "Successfully! You added your mark for rented car!", "OK");
                 }

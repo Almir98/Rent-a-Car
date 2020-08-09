@@ -20,7 +20,7 @@ namespace RentACar.WinUI.Forms
 
         private async void frmRating_Load(object sender, EventArgs e)
         {
-            var list = await _serviceRating.Get<List<RatingRequest>>(null);
+            var list = await _serviceRating.Get<List<Data.Model.Rating>>(null);
              
             List<frmRatingVM> newList = new List<frmRatingVM>();
 
@@ -61,7 +61,7 @@ namespace RentACar.WinUI.Forms
             {
                 ManufacturerName = txtVehicle.Text,
             };
-            var list = await _serviceRating.Get<List<RatingRequest>>(search);
+            var list = await _serviceRating.Get<List<Data.Model.Rating>>(search);
         }
 
         private void dgvRating_MouseDoubleClick(object sender, MouseEventArgs e)

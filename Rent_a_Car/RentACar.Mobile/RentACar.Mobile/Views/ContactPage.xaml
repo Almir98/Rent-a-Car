@@ -16,21 +16,21 @@
 				VerticalOptions="Center"
                  Margin="0,60,0,30">
 		</Label>
-			
-		<Label Margin="10,0,0,40">
+
+		<Label FontSize="Large" Margin="0,60,0,50" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
 			Project implementation from subject Software development II
 		</Label>
 
-		<Label Margin="50,0,0,0">
+		<Label Margin="0,5,0,30" HorizontalOptions="CenterAndExpand">
 			1. REST API ASP .NET Core application</Label>
-		<Label Margin="50,0,0,0">
+		<Label Margin="0,5,0,30" HorizontalOptions="CenterAndExpand">
 			2. Windows forms application</Label>
-		<Label Margin="50,0,0,0">
+		<Label Margin="0,5,0,30" HorizontalOptions="CenterAndExpand" >
 			3. Xamarin forms application</Label>
 
 		<Label Text="Link for source code :"
-                 Margin="10,30,0,0" />
-		<Label Margin="10,0,0,0">
+                 Margin="0,10,0,10" HorizontalOptions="CenterAndExpand"/>
+		<Label Margin="0,10,0,30" HorizontalOptions="CenterAndExpand">
 				<Label.FormattedText>
 					<FormattedString>
 						<Span Text="https://github.com/Almir98"
@@ -45,7 +45,7 @@
 				</Label.FormattedText>
 		</Label>
 
-		<Label VerticalOptions="End" Text="© Almir Tihak, Faculty of Information technology, University Džemal Bijedić of Mostar 2020"
-                 Margin="10,50,0,0" />
+		<Label VerticalOptions="End" HorizontalOptions="CenterAndExpand" Text="© Almir Tihak, Faculty of Information technology, University Džemal Bijedić of Mostar 2020"
+                 Margin="10,50,0,100" />
 	</StackLayout>
 </ContentPage>

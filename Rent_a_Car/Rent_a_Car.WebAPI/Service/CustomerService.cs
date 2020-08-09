@@ -28,17 +28,17 @@ namespace RentACar.WebAPI.Service
 
             if (!string.IsNullOrWhiteSpace(request.FirstName) || !string.IsNullOrWhiteSpace(request.LastName))
             {
-                query = query.Where(x => x.FirstName.StartsWith(request.FirstName));
+                query = query.Where(x => x.FirstName == request.FirstName);
             }
 
             if (!string.IsNullOrWhiteSpace(request.LastName))
             {
-                query = query.Where(x => x.LastName.StartsWith(request.LastName));
+                query = query.Where(x => x.LastName == request.LastName);
             }
 
             if (!string.IsNullOrWhiteSpace(request.Username))
             {
-                query = query.Where(x => x.Username.StartsWith(request.Username));
+                query = query.Where(x => x.Username == request.Username);
             }
 
             return _mapper.Map<List<Data.Model.Customer>>(query.ToList());

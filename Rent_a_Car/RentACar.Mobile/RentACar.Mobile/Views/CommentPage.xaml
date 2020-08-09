@@ -16,12 +16,12 @@
 
 			
 			<Label Text="Vehicle"></Label>
-			<Entry Text="{Binding  }"></Entry>
+			<Entry Text="{Binding ManufacturerName }"></Entry>
 
 			<Label Text="Vehicle model"></Label>
-			<Entry Text="{Binding  }"></Entry>
+			<Entry Text="{Binding ModelName}"></Entry>
 
-			<Label Text="Description"></Label>
+			<Label Text="Comment"></Label>
 			<Entry WidthRequest="200" HeightRequest="200" Text="{Binding Description }"></Entry>
 
 
