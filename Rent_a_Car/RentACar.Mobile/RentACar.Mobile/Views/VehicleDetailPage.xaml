@@ -57,8 +57,10 @@
 					<CheckBox IsChecked="{Binding vehicle.Status}"></CheckBox>
 
 					<Label >Description:</Label>
-					<Entry IsReadOnly="True" Text="{Binding vehicle.Description}"></Entry>
+					<Entry HeightRequest="100" IsReadOnly="True" Text="{Binding vehicle.Description}"></Entry>
 
+					<Label >Average car rating :</Label>
+					<Entry IsReadOnly="True" Text="{Binding AverageRating }"></Entry>
 
 					<Button Clicked="Booking_Clicked" Text="Booking" Font="Bold,17"></Button>
 

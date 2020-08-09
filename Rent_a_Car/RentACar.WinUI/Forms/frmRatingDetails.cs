@@ -1,5 +1,6 @@
 ﻿using RentaCar.Data.Requests.Rating;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Windows.Forms;
@@ -9,6 +10,7 @@ namespace RentACar.WinUI.Forms
     public partial class frmRatingDetails : Form
     {
         protected readonly APIService _serviceRating = new APIService("Rating");
+
         private int? _id = null;
 
         public frmRatingDetails(int? id)
@@ -31,6 +33,21 @@ namespace RentACar.WinUI.Forms
                 txtModelName.Text = rating.Vehicle.VehicleModel.ModelName;
                 txtRegistrationNumber.Text = rating.Vehicle.RegistrationNumber;
                 txtRatingValue.Text = rating.RatingValue.ToString();
+
+                var allRatings = await _serviceRating.Get<List<Data.Model.Rating>>(null);
+                float avgRating = 0;
+                int i = 0;
+
+                foreach (var item in allRatings)
+                {
+                    if(rating.Vehicle.VehicleId==item.VehicleId)
+                    {
+                        avgRating += item.RatingValue;
+                        i++;
+                    }
+                }
+                var result = avgRating / i;
+                txtAverageValue.Text = result.ToString();
             }
         }
 

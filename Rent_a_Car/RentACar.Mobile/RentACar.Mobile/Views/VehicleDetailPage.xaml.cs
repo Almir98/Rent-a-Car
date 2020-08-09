@@ -22,6 +22,12 @@ namespace RentACar.Mobile.Views
             };
         }
 
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            await model.Init();
+        }
+
         private async void Booking_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new BookingVehicle());

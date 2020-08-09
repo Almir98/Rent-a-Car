@@ -22,7 +22,7 @@
 			<Entry Text="{Binding ModelName}"></Entry>
 
 			<Label Text="Comment"></Label>
-			<Entry WidthRequest="200" HeightRequest="200" Text="{Binding Description }"></Entry>
+			<Entry  HeightRequest="100" Text="{Binding Description }"></Entry>
 
 
 			<Button Command="{Binding SaveCommand}" Text="Save comment" Font="Bold,17"></Button>
