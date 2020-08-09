@@ -32,7 +32,6 @@
             this.txtRegistration = new System.Windows.Forms.TextBox();
             this.txtVehicleNumber = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtDescription = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtDate = new System.Windows.Forms.TextBox();
@@ -53,6 +52,7 @@
             this.txtManufacturer = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMileage = new System.Windows.Forms.TextBox();
+            this.txtDescription = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -97,16 +97,6 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Vehicle number";
             // 
-            // txtDescription
-            // 
-            this.txtDescription.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtDescription.Location = new System.Drawing.Point(532, 187);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.ReadOnly = true;
-            this.txtDescription.Size = new System.Drawing.Size(343, 26);
-            this.txtDescription.TabIndex = 5;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -121,7 +111,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label5.Location = new System.Drawing.Point(532, 164);
+            this.label5.Location = new System.Drawing.Point(526, 164);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(95, 20);
             this.label5.TabIndex = 8;
@@ -141,10 +131,10 @@
             // 
             this.txtNumberOfSeats.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtNumberOfSeats.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtNumberOfSeats.Location = new System.Drawing.Point(532, 118);
+            this.txtNumberOfSeats.Location = new System.Drawing.Point(530, 118);
             this.txtNumberOfSeats.Name = "txtNumberOfSeats";
             this.txtNumberOfSeats.ReadOnly = true;
-            this.txtNumberOfSeats.Size = new System.Drawing.Size(343, 26);
+            this.txtNumberOfSeats.Size = new System.Drawing.Size(381, 26);
             this.txtNumberOfSeats.TabIndex = 13;
             // 
             // label7
@@ -181,10 +171,10 @@
             // 
             this.txtTransmission.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtTransmission.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtTransmission.Location = new System.Drawing.Point(532, 57);
+            this.txtTransmission.Location = new System.Drawing.Point(530, 57);
             this.txtTransmission.Name = "txtTransmission";
             this.txtTransmission.ReadOnly = true;
-            this.txtTransmission.Size = new System.Drawing.Size(343, 26);
+            this.txtTransmission.Size = new System.Drawing.Size(381, 26);
             this.txtTransmission.TabIndex = 17;
             // 
             // label9
@@ -199,9 +189,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(548, 242);
+            this.pictureBox1.Location = new System.Drawing.Point(531, 323);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(327, 316);
+            this.pictureBox1.Size = new System.Drawing.Size(380, 316);
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
@@ -222,7 +212,7 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button1.Location = new System.Drawing.Point(726, 609);
+            this.button1.Location = new System.Drawing.Point(654, 658);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(139, 37);
             this.button1.TabIndex = 20;
@@ -233,6 +223,7 @@
             // groupBox1
             // 
             this.groupBox1.CausesValidation = false;
+            this.groupBox1.Controls.Add(this.txtDescription);
             this.groupBox1.Controls.Add(this.txt);
             this.groupBox1.Controls.Add(this.txtModelName);
             this.groupBox1.Controls.Add(this.label3);
@@ -250,7 +241,6 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtVehicleNumber);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.txtDescription);
             this.groupBox1.Controls.Add(this.txtNumberOfSeats);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label7);
@@ -259,7 +249,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.groupBox1.Location = new System.Drawing.Point(40, 28);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1022, 685);
+            this.groupBox1.Size = new System.Drawing.Size(1022, 701);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Vehicle details";
@@ -324,6 +314,15 @@
             this.txtMileage.Size = new System.Drawing.Size(343, 26);
             this.txtMileage.TabIndex = 22;
             // 
+            // txtDescription
+            // 
+            this.txtDescription.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtDescription.Location = new System.Drawing.Point(531, 187);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(380, 111);
+            this.txtDescription.TabIndex = 28;
+            this.txtDescription.Text = "";
+            // 
             // frmVehicleDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -347,7 +346,6 @@
         private System.Windows.Forms.TextBox txtRegistration;
         private System.Windows.Forms.TextBox txtVehicleNumber;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtDate;
@@ -368,5 +366,6 @@
         private System.Windows.Forms.TextBox txtModelName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtManufacturer;
+        private System.Windows.Forms.RichTextBox txtDescription;
     }
 }

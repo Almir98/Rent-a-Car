@@ -59,9 +59,12 @@ namespace RentACar.WinUI.Forms
         {
             var search = new RatingSearchRequest()
             {
-                ManufacturerName = txtVehicle.Text,
+                ManufacturerName=txtVehicle.Text
             };
+
             var list = await _serviceRating.Get<List<Data.Model.Rating>>(search);
+            dgvRating.AutoGenerateColumns = false;
+            dgvRating.DataSource = list;
         }
 
         private void dgvRating_MouseDoubleClick(object sender, MouseEventArgs e)

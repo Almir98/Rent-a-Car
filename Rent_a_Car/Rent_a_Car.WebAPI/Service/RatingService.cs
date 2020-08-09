@@ -26,6 +26,7 @@ namespace RentACar.WebAPI.Service
             {
                 query = query.Where(x => x.Vehicle.VehicleModel.Manufacturer.ManufacturerName.StartsWith(search.ManufacturerName));
             }
+            
             query = query.OrderBy(x => x.RatingValue);
 
             return _mapper.Map<List<Data.Model.Rating>>(query.ToList());

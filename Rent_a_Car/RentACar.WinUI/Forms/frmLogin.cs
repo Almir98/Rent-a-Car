@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Data.Model;
+using RentaCar.Data.Requests.Customer;
+using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace RentACar.WinUI.Forms
@@ -19,14 +22,27 @@ namespace RentACar.WinUI.Forms
                     APIService.Username = txtUsername.Text;
                     APIService.Password = txtPassword.Text;
 
-                    await _apiService.Get<dynamic>(null);
-
+                if (string.IsNullOrEmpty(txtUsername.Text) || string.IsNullOrEmpty(txtPassword.Text)){
+                    MessageBox.Show("All fields are required! Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                var request = new CustomerSearchRequest{
+                    Username=txtUsername.Text
+                };
+                var customer=await _apiService.Get<List<Data.Model.Customer>>(request);
+                if(customer.Count==0){
+                    MessageBox.Show("Customer with this credentials don't exist! Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else{
                     frmIndex frm = new frmIndex();
                     frm.Show();
                     this.Hide();
+                }
             }
             catch (Exception err)
             {
+                MessageBox.Show(err.Message, "Wrong username or password", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
