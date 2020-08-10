@@ -6,7 +6,10 @@
 			 xmlns:vm="clr-namespace:RentACar.Mobile.ViewModels"
 			 xmlns:converters="clr-namespace:RentACar.Mobile.Converters"
 			 mc:Ignorable="d"
-             x:Class="RentACar.Mobile.Views.VehiclePage">
+             x:Class="RentACar.Mobile.Views.VehiclePage"
+             BackgroundColor="LightBlue"
+			 >
+	
 	<ContentPage.BindingContext>
 		<vm:VehicleViewModel />
 	</ContentPage.BindingContext>

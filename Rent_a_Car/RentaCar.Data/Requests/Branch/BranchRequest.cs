@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace RentaCar.Data.Requests.Branch
 {
     public class BranchRequest
     {
-        public int BranchId { get; set; }
         public string BranchName { get; set; }
         public string PhoneNumber { get; set; }
         public string Adress { get; set; }

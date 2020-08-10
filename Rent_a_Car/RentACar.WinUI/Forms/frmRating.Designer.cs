@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvRating = new System.Windows.Forms.DataGridView();
-            this.RatingId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RatingValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ManufacturerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ModelName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtVehicle = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -43,6 +37,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtSelected = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.RatingId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RatingValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ManufacturerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ModelName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRating)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panelPrinting1.SuspendLayout();
@@ -68,55 +68,6 @@
             this.dgvRating.TabIndex = 0;
             this.dgvRating.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvRating_MouseDoubleClick);
             // 
-            // RatingId
-            // 
-            this.RatingId.DataPropertyName = "RatingId";
-            this.RatingId.HeaderText = "RatingId";
-            this.RatingId.MinimumWidth = 6;
-            this.RatingId.Name = "RatingId";
-            this.RatingId.Visible = false;
-            this.RatingId.Width = 125;
-            // 
-            // FirstName
-            // 
-            this.FirstName.DataPropertyName = "FirstName";
-            this.FirstName.HeaderText = "FirstName";
-            this.FirstName.MinimumWidth = 6;
-            this.FirstName.Name = "FirstName";
-            this.FirstName.Width = 125;
-            // 
-            // LastName
-            // 
-            this.LastName.DataPropertyName = "LastName";
-            this.LastName.HeaderText = "LastName";
-            this.LastName.MinimumWidth = 6;
-            this.LastName.Name = "LastName";
-            this.LastName.Width = 125;
-            // 
-            // RatingValue
-            // 
-            this.RatingValue.DataPropertyName = "RatingValue";
-            this.RatingValue.HeaderText = "RatingValue";
-            this.RatingValue.MinimumWidth = 6;
-            this.RatingValue.Name = "RatingValue";
-            this.RatingValue.Width = 125;
-            // 
-            // ManufacturerName
-            // 
-            this.ManufacturerName.DataPropertyName = "ManufacturerName";
-            this.ManufacturerName.HeaderText = "ManufacturerName";
-            this.ManufacturerName.MinimumWidth = 6;
-            this.ManufacturerName.Name = "ManufacturerName";
-            this.ManufacturerName.Width = 125;
-            // 
-            // ModelName
-            // 
-            this.ModelName.DataPropertyName = "ModelName";
-            this.ModelName.HeaderText = "ModelName";
-            this.ModelName.MinimumWidth = 6;
-            this.ModelName.Name = "ModelName";
-            this.ModelName.Width = 125;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtVehicle);
@@ -127,7 +78,7 @@
             this.groupBox1.Size = new System.Drawing.Size(602, 135);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Unesite ime vozila";
+            this.groupBox1.Text = "Filter by manufacturer name";
             // 
             // txtVehicle
             // 
@@ -205,6 +156,55 @@
             this.label6.TabIndex = 19;
             this.label6.Text = "Total rating value : ";
             // 
+            // RatingId
+            // 
+            this.RatingId.DataPropertyName = "RatingId";
+            this.RatingId.HeaderText = "RatingId";
+            this.RatingId.MinimumWidth = 6;
+            this.RatingId.Name = "RatingId";
+            this.RatingId.Visible = false;
+            this.RatingId.Width = 125;
+            // 
+            // FirstName
+            // 
+            this.FirstName.DataPropertyName = "FirstName";
+            this.FirstName.HeaderText = "First name";
+            this.FirstName.MinimumWidth = 6;
+            this.FirstName.Name = "FirstName";
+            this.FirstName.Width = 125;
+            // 
+            // LastName
+            // 
+            this.LastName.DataPropertyName = "LastName";
+            this.LastName.HeaderText = "Last name";
+            this.LastName.MinimumWidth = 6;
+            this.LastName.Name = "LastName";
+            this.LastName.Width = 125;
+            // 
+            // RatingValue
+            // 
+            this.RatingValue.DataPropertyName = "RatingValue";
+            this.RatingValue.HeaderText = "Rating value";
+            this.RatingValue.MinimumWidth = 6;
+            this.RatingValue.Name = "RatingValue";
+            this.RatingValue.Width = 125;
+            // 
+            // ManufacturerName
+            // 
+            this.ManufacturerName.DataPropertyName = "ManufacturerName";
+            this.ManufacturerName.HeaderText = "Manufacturer name";
+            this.ManufacturerName.MinimumWidth = 6;
+            this.ManufacturerName.Name = "ManufacturerName";
+            this.ManufacturerName.Width = 125;
+            // 
+            // ModelName
+            // 
+            this.ModelName.DataPropertyName = "ModelName";
+            this.ModelName.HeaderText = "Model name";
+            this.ModelName.MinimumWidth = 6;
+            this.ModelName.Name = "ModelName";
+            this.ModelName.Width = 125;
+            // 
             // frmRating
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -229,16 +229,16 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtVehicle;
+        private System.Windows.Forms.Button btnPrintRating;
+        private System.Windows.Forms.Panel panelPrinting1;
+        private System.Windows.Forms.TextBox txtSelected;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridViewTextBoxColumn RatingId;
         private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn RatingValue;
         private System.Windows.Forms.DataGridViewTextBoxColumn ManufacturerName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ModelName;
-        private System.Windows.Forms.Button btnPrintRating;
-        private System.Windows.Forms.Panel panelPrinting1;
-        private System.Windows.Forms.TextBox txtSelected;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
     }
 }

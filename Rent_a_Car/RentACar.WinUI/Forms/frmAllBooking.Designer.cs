@@ -93,7 +93,7 @@
             this.NumberOfDays,
             this.TotalPrice,
             this.Canceled});
-            this.dgvBooking.Location = new System.Drawing.Point(51, 176);
+            this.dgvBooking.Location = new System.Drawing.Point(51, 258);
             this.dgvBooking.Name = "dgvBooking";
             this.dgvBooking.RowHeadersWidth = 51;
             this.dgvBooking.RowTemplate.Height = 24;
@@ -156,7 +156,7 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(838, 156);
+            this.label8.Location = new System.Drawing.Point(838, 227);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(250, 17);
             this.label8.TabIndex = 17;
@@ -166,7 +166,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1331, 529);
+            this.ClientSize = new System.Drawing.Size(1331, 674);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dgvBooking);
             this.Controls.Add(this.groupBox1);

@@ -23,9 +23,28 @@ namespace RentACar.WinUI.Forms
             {
                 FirstName = txtBookingSearch.Text
             };
-
             var result = await _serviceBooking.Get<List<Data.Model.Booking>>(search);
-            dgvBooking.DataSource = result;
+
+            List<frmAllBookingVM> finalList = new List<frmAllBookingVM>();
+            foreach (var item in result)
+            {
+                frmAllBookingVM form = new frmAllBookingVM
+                {
+                    BookingId=item.BookingId,
+                    NumberOfDays=item.NumberOfDays,
+                    TotalPrice=item.TotalPrice,
+                    StartDate=item.StartDate,
+                    EndDate=item.EndDate,
+                    Canceled=item.Canceled,
+                    Discount=item.Discount,
+                    Description=item.Description,
+                    FirstName=item.Customer.FirstName,
+                    LastName=item.Customer.LastName
+                };
+                finalList.Add(form);
+            }
+            dgvBooking.AutoGenerateColumns = false;
+            dgvBooking.DataSource = finalList;
         }
 
         private async void frmAllBooking_Load(object sender, EventArgs e)
@@ -51,10 +70,8 @@ namespace RentACar.WinUI.Forms
                 };
                 newList.Add(form);
             }
-
             dgvBooking.AutoGenerateColumns = false;
             dgvBooking.DataSource = newList;
-
         }
 
         private void dgvBooking_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)

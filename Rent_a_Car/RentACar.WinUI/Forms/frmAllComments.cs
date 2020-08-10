@@ -55,10 +55,26 @@ namespace RentACar.WinUI.Forms
             {
                 ManufacturerName = txtSearch.Text,
             };
+            var resultList = await _serviceComments.Get<List<Data.Model.Comment>>(search);
+            
+            List<frmAllCommentsVM> finalList = new List<frmAllCommentsVM>();
 
-            var result = await _serviceComments.Get<List<Data.Model.Comment>>(search);
+            foreach (var item in resultList)
+            {
+                frmAllCommentsVM form = new frmAllCommentsVM
+                {
+                    CommentId=item.CommentId,
+                    Description=item.Description,
+                    DateOfComment=item.DateOfComment,
+                    FirstName=item.Customer.FirstName,
+                    LastName=item.Customer.LastName,
+                    ManufacturerName=item.Vehicle.VehicleModel.Manufacturer.ManufacturerName,
+                    ModelName=item.Vehicle.VehicleModel.ModelName
+                };
+                finalList.Add(form);
+            }
             dgvComments.AutoGenerateColumns = false;
-            dgvComments.DataSource = result;
+            dgvComments.DataSource = finalList;
         }
 
         private void dgvComments_MouseDoubleClick(object sender, MouseEventArgs e)

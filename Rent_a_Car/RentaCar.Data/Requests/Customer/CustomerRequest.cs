@@ -1,4 +1,7 @@
-﻿using RentaCar.Data.Requests.City;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using RentaCar.Data.Requests.City;
 
 namespace RentaCar.Data.Requests.Customer
 {

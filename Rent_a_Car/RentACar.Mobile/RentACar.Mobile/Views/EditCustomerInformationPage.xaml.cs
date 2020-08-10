@@ -12,7 +12,6 @@ namespace RentACar.Mobile.Views
     public partial class EditCustomerInformationPage : ContentPage
     {
         private EditCustomerInformationViewModel model = null;
-
         public EditCustomerInformationPage()
         {
             InitializeComponent();
@@ -24,6 +23,5 @@ namespace RentACar.Mobile.Views
             base.OnAppearing();
             await model.Initialization();
         }
-
     }
 }

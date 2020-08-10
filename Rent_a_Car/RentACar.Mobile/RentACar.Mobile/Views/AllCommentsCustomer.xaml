@@ -5,7 +5,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:vm="clr-namespace:RentACar.Mobile.ViewModels"
 			 mc:Ignorable="d"
-             x:Class="RentACar.Mobile.Views.AllCommentsCustomer">
+             x:Class="RentACar.Mobile.Views.AllCommentsCustomer"
+             BackgroundColor="LightBlue"
+			 >
 
 	<ContentPage.BindingContext>
 		<vm:AllCommentsCustomerViewModel />

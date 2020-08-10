@@ -93,7 +93,7 @@
             this.groupBox1.Size = new System.Drawing.Size(549, 140);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Enter first name for filtering";
+            this.groupBox1.Text = "Filter by first name";
             // 
             // label8
             // 
@@ -118,7 +118,7 @@
             // FirstName
             // 
             this.FirstName.DataPropertyName = "FirstName";
-            this.FirstName.HeaderText = "FirstName";
+            this.FirstName.HeaderText = "First name";
             this.FirstName.MaxInputLength = 327;
             this.FirstName.MinimumWidth = 6;
             this.FirstName.Name = "FirstName";
@@ -127,7 +127,7 @@
             // LastName
             // 
             this.LastName.DataPropertyName = "LastName";
-            this.LastName.HeaderText = "LastName";
+            this.LastName.HeaderText = "Last name";
             this.LastName.MinimumWidth = 6;
             this.LastName.Name = "LastName";
             this.LastName.Width = 125;
@@ -135,7 +135,7 @@
             // Phone
             // 
             this.Phone.DataPropertyName = "Phone";
-            this.Phone.HeaderText = "PhoneNumber";
+            this.Phone.HeaderText = "Phone number";
             this.Phone.MinimumWidth = 6;
             this.Phone.Name = "Phone";
             this.Phone.Width = 125;

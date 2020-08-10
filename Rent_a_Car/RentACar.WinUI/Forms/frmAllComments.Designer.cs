@@ -77,7 +77,7 @@
             // FirstName
             // 
             this.FirstName.DataPropertyName = "FirstName";
-            this.FirstName.HeaderText = "FirstName";
+            this.FirstName.HeaderText = "First name";
             this.FirstName.MinimumWidth = 6;
             this.FirstName.Name = "FirstName";
             this.FirstName.Width = 125;
@@ -85,7 +85,7 @@
             // LastName
             // 
             this.LastName.DataPropertyName = "LastName";
-            this.LastName.HeaderText = "LastName";
+            this.LastName.HeaderText = "Last name";
             this.LastName.MinimumWidth = 6;
             this.LastName.Name = "LastName";
             this.LastName.Width = 125;
@@ -93,7 +93,7 @@
             // ManufacturerName
             // 
             this.ManufacturerName.DataPropertyName = "ManufacturerName";
-            this.ManufacturerName.HeaderText = "ManufacturerName";
+            this.ManufacturerName.HeaderText = "Manufacturer name";
             this.ManufacturerName.MinimumWidth = 6;
             this.ManufacturerName.Name = "ManufacturerName";
             this.ManufacturerName.Width = 125;
@@ -101,7 +101,7 @@
             // ModelName
             // 
             this.ModelName.DataPropertyName = "ModelName";
-            this.ModelName.HeaderText = "ModelName";
+            this.ModelName.HeaderText = "Model name";
             this.ModelName.MinimumWidth = 6;
             this.ModelName.Name = "ModelName";
             this.ModelName.Width = 125;
@@ -131,12 +131,13 @@
             // 
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.txtSearch);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.groupBox1.Location = new System.Drawing.Point(321, 26);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(489, 121);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Unesite proizvođača vozila";
+            this.groupBox1.Text = "Filter by manufacturer name";
             // 
             // btnPrintRating
             // 
@@ -196,13 +197,13 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnPrintRating;
+        private System.Windows.Forms.Panel panelPrinting2;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridViewTextBoxColumn CommentId;
         private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ManufacturerName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ModelName;
-        private System.Windows.Forms.Button btnPrintRating;
-        private System.Windows.Forms.Panel panelPrinting2;
-        private System.Windows.Forms.Label label8;
     }
 }

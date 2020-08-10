@@ -4,15 +4,27 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:vm="clr-namespace:RentACar.Mobile.ViewModels"
+			 xmlns:converters="clr-namespace:RentACar.Mobile.Converters"
 			 mc:Ignorable="d"
-             x:Class="RentACar.Mobile.Views.LoginPage">
+             x:Class="RentACar.Mobile.Views.LoginPage"
+             BackgroundColor="LightBlue"
+			 >
 
 	<ContentPage.BindingContext>
 		<vm:LoginViewModel />
 	</ContentPage.BindingContext>
-	
+
+	<ContentPage.Resources>
+		<ResourceDictionary>
+		<converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
+	</ResourceDictionary>
+	</ContentPage.Resources>
+
 	<ContentPage.Content>
-        <StackLayout Padding="400" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+        <StackLayout Padding="100" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+
+			<Image HeightRequest="250" WidthRequest="250" HorizontalOptions="Center" x:Name="imgDisp" ></Image>
+
 			<Label FontSize="Large" Text="Please sign in"
 			HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
 
@@ -27,7 +39,7 @@
 			<Button Command="{Binding LoginCommand}" Font="Bold,17" Text="Login"></Button>
 
 			<Button  
-                BorderColor="Transparent" Font="Bold,15"
+                Font="Bold,17"
                 Text="You don't have account, Create a free account" HorizontalOptions="End" Clicked="Register_Clicked">
 			</Button>
 

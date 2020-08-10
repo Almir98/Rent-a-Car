@@ -130,7 +130,6 @@ namespace RentACar.WinUI.Forms
                     request.BranchId = branchID;
                 }
 
-                //fueltype
                 var idFuel = cmbFuelType.SelectedValue;
 
                 if (int.TryParse(idFuel.ToString(), out int fuelid))
@@ -138,7 +137,6 @@ namespace RentACar.WinUI.Forms
                     request.FuelTypeId = fuelid;
                 }
 
-                // vehicletype
                 var idVehicleType = cmbVehicleType.SelectedValue;
 
                 if (int.TryParse(idVehicleType.ToString(), out int vehicletypeID))
@@ -146,7 +144,6 @@ namespace RentACar.WinUI.Forms
                     request.VehicleTypeId = vehicletypeID;
                 }
 
-                //vehiclemodel
                 var idVehiclemodel = cmbVehicleType.SelectedValue;
 
                 if (int.TryParse(idVehiclemodel.ToString(), out int vehiclemodelID))

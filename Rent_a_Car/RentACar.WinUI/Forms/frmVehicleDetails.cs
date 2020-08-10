@@ -29,7 +29,7 @@ namespace RentACar.WinUI.Forms
         {
             if (_id.HasValue)
             {
-                var vehicle = await _apiservice.GetById<VehicleRequest>(_id);
+                var vehicle = await _apiservice.GetById<Data.Model.Vehicle>(_id);
 
                 txtRegistration.Text = vehicle.RegistrationNumber;
                 txtVehicleNumber.Text = vehicle.VehicleNumber.ToString();

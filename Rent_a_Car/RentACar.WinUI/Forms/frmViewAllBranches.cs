@@ -20,7 +20,7 @@ namespace RentACar.WinUI.Forms
 
         private async Task LoadCity()
         {
-            var list = await _serviceCity.Get<List<City>>();
+            var list = await _serviceCity.Get<List<Data.Model.City>>();
             list.Insert(0, new City());
 
             cmbCity.DisplayMember = "CityName";
@@ -33,7 +33,7 @@ namespace RentACar.WinUI.Forms
         {
             await LoadCity();
 
-            var result = await _apiService.Get<List<BranchRequest>>(null);
+            var result = await _apiService.Get<List<Data.Model.Branch>>(null);
             dgvBranch.AutoGenerateColumns = false;
             dgvBranch.DataSource = result;
         }
@@ -50,7 +50,7 @@ namespace RentACar.WinUI.Forms
 
         private async Task LoadBranch(int cityID)
         {
-            var result = await _apiService.Get<List<BranchRequest>>(new BranchSearchRequest
+            var result = await _apiService.Get<List<Data.Model.Branch>>(new BranchSearchRequest
             {
                 CityId = cityID
             });

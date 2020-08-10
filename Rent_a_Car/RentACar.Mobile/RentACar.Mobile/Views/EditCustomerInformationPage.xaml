@@ -3,16 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="RentACar.Mobile.Views.EditCustomerInformationPage">
-	
-	
-	
-	
-    <ContentPage.Content>
+			 xmlns:vm="clr-namespace:RentACar.Mobile.ViewModels"
+			 mc:Ignorable="d"
+             x:Class="RentACar.Mobile.Views.EditCustomerInformationPage"
+             BackgroundColor="LightBlue">
+
+	<ContentPage.BindingContext>
+		<vm:EditCustomerInformationViewModel/>
+	</ContentPage.BindingContext>
+
+	<ContentPage.Content>
         <StackLayout Padding="50">
 
-			<Label Text="Edit information" Margin="0,30,0,0" FontAttributes="Bold" FontSize="20"></Label>
+			<Label FontSize="Large" HorizontalOptions="Center" Text="Edit information"></Label>
 
 			<Label Text="First name"></Label>
 			<Entry x:Name="FirstName" Text="{Binding FirstName}"></Entry>
@@ -36,8 +39,7 @@
 			<Label Text="Confirm password"></Label>
 			<Entry x:Name="ConfirmPassword" Text="{Binding ConfirmPassword}" IsPassword="True"></Entry>
 
-
-			<Button Command="{Binding SaveChanges}" HorizontalOptions="FillAndExpand" Text="Save" Font="Bold,17"></Button>
+			<Button Command="{Binding SaveChanges}" Text="Save" Font="Bold,17"></Button>
 
 		</StackLayout>
     </ContentPage.Content>

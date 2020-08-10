@@ -14,7 +14,6 @@ using RentaCar.Data.Requests.Booking;
 using RentaCar.Data.Requests.Branch;
 using RentaCar.Data.Requests.City;
 using RentaCar.Data.Requests.Comments;
-using RentaCar.Data.Requests.Fuel_type;
 using RentaCar.Data.Requests.Manufacturer;
 using RentaCar.Data.Requests.Rating;
 using RentaCar.Data.Requests.Vehicle;

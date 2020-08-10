@@ -6,7 +6,9 @@
 			 xmlns:vm1="clr-namespace:RentACar.Mobile.ViewModels"
 			 xmlns:converters="clr-namespace:RentACar.Mobile.Converters"
 			 mc:Ignorable="d"
-             x:Class="RentACar.Mobile.Views.VehicleDetailPage">
+             x:Class="RentACar.Mobile.Views.VehicleDetailPage"
+             BackgroundColor="LightBlue"
+			 >
 
 	<ContentPage.BindingContext>
 		<vm1:VehicleDetailsViewModel></vm1:VehicleDetailsViewModel>
@@ -66,7 +68,7 @@
 
 					<Label FontSize="15" Text="Vehicles with similar ratings"></Label>
 				
-					<ListView HeightRequest="200" ItemsSource="{Binding RecommendedVehicleList}" BackgroundColor="LightBlue" >
+					<ListView HeightRequest="200" ItemsSource="{Binding RecommendedVehicleList}" BackgroundColor="AntiqueWhite" >
 						<ListView.ItemTemplate>
 							<DataTemplate>
 								<ViewCell>

@@ -12,18 +12,5 @@ namespace RentACar.WebAPI.Service
         public CityService(RentaCarContext context, IMapper mapper) : base(context, mapper)
         {
         }
-
-        //public override List<Data.Model.City> Get(CitySearchRequest search)
-        //{
-        //    var query = _context.Set<City>().AsQueryable();
-
-        //    if (!string.IsNullOrWhiteSpace(search.CityName))
-        //    {
-        //        query = query.Where(x => x.CityName.StartsWith(search.CityName));
-        //    }
-        //    query = query.OrderBy(x => x.CityName);
-
-        //    return _mapper.Map<List<Data.Model.City>>(query.ToList());
-        //}
     }
 }

@@ -64,12 +64,12 @@ namespace RentACar.Mobile.ViewModels
         {
             var customerID = await _serviceCustomer.GetById<Data.Model.Customer>(APIService.CustomerId);
             customer = customerID;
+            FirstName = customer.FirstName;
+            LastName = customer.LastName;
 
             var vehicleID = await _serviceVehicle.GetById<Data.Model.Vehicle>(vehicle.VehicleId);
             vehicle = vehicleID;
 
-            FirstName = customer.FirstName;
-            LastName = customer.LastName;
             Manufacturer = vehicle.VehicleModel.Manufacturer.ManufacturerName;
         }
 

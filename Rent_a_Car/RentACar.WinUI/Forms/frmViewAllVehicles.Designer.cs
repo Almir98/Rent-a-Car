@@ -34,10 +34,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.VehicleId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VehicleNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ManufacturerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ModelName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RegistrationNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mileage = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Transmission = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumberOfSeats = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FuelName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehicles)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -69,18 +72,21 @@
             this.dgvVehicles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVehicles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.VehicleId,
-            this.VehicleNumber,
+            this.ManufacturerName,
+            this.ModelName,
             this.RegistrationNumber,
             this.Mileage,
-            this.Status});
+            this.Transmission,
+            this.NumberOfSeats,
+            this.FuelName});
             this.dgvVehicles.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvVehicles.Location = new System.Drawing.Point(73, 253);
+            this.dgvVehicles.Location = new System.Drawing.Point(48, 328);
             this.dgvVehicles.Margin = new System.Windows.Forms.Padding(10, 10, 3, 3);
             this.dgvVehicles.Name = "dgvVehicles";
             this.dgvVehicles.RowHeadersWidth = 51;
             this.dgvVehicles.RowTemplate.Height = 24;
             this.dgvVehicles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVehicles.Size = new System.Drawing.Size(899, 398);
+            this.dgvVehicles.Size = new System.Drawing.Size(1211, 398);
             this.dgvVehicles.TabIndex = 3;
             this.dgvVehicles.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvVehicles_MouseDoubleClick);
             // 
@@ -94,14 +100,14 @@
             this.groupBox1.Size = new System.Drawing.Size(653, 161);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Pretraga po broju registracije";
+            this.groupBox1.Text = "Filter by manufacturer name";
             // 
             // label8
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(617, 226);
+            this.label8.Location = new System.Drawing.Point(984, 301);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(250, 17);
             this.label8.TabIndex = 18;
@@ -109,21 +115,28 @@
             // 
             // VehicleId
             // 
-            this.VehicleId.DataPropertyName = "VehicleID";
+            this.VehicleId.DataPropertyName = "VehicleId";
             this.VehicleId.HeaderText = "VehicleId";
             this.VehicleId.MinimumWidth = 6;
             this.VehicleId.Name = "VehicleId";
             this.VehicleId.Visible = false;
             this.VehicleId.Width = 125;
             // 
-            // VehicleNumber
+            // ManufacturerName
             // 
-            this.VehicleNumber.DataPropertyName = "VehicleNumber";
-            this.VehicleNumber.HeaderText = "Vehicle number";
-            this.VehicleNumber.MinimumWidth = 6;
-            this.VehicleNumber.Name = "VehicleNumber";
-            this.VehicleNumber.ReadOnly = true;
-            this.VehicleNumber.Width = 150;
+            this.ManufacturerName.DataPropertyName = "ManufacturerName";
+            this.ManufacturerName.HeaderText = "Manufacturer name";
+            this.ManufacturerName.MinimumWidth = 6;
+            this.ManufacturerName.Name = "ManufacturerName";
+            this.ManufacturerName.Width = 125;
+            // 
+            // ModelName
+            // 
+            this.ModelName.DataPropertyName = "ModelName";
+            this.ModelName.HeaderText = "Model name";
+            this.ModelName.MinimumWidth = 6;
+            this.ModelName.Name = "ModelName";
+            this.ModelName.Width = 125;
             // 
             // RegistrationNumber
             // 
@@ -143,20 +156,35 @@
             this.Mileage.ReadOnly = true;
             this.Mileage.Width = 150;
             // 
-            // Status
+            // Transmission
             // 
-            this.Status.DataPropertyName = "Status";
-            this.Status.HeaderText = "Available";
-            this.Status.MinimumWidth = 6;
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            this.Status.Width = 150;
+            this.Transmission.DataPropertyName = "Transmission";
+            this.Transmission.HeaderText = "Transmission";
+            this.Transmission.MinimumWidth = 6;
+            this.Transmission.Name = "Transmission";
+            this.Transmission.Width = 125;
+            // 
+            // NumberOfSeats
+            // 
+            this.NumberOfSeats.DataPropertyName = "NumberOfSeats";
+            this.NumberOfSeats.HeaderText = "Number of seats";
+            this.NumberOfSeats.MinimumWidth = 6;
+            this.NumberOfSeats.Name = "NumberOfSeats";
+            this.NumberOfSeats.Width = 125;
+            // 
+            // FuelName
+            // 
+            this.FuelName.DataPropertyName = "FuelName";
+            this.FuelName.HeaderText = "Fuel name";
+            this.FuelName.MinimumWidth = 6;
+            this.FuelName.Name = "FuelName";
+            this.FuelName.Width = 125;
             // 
             // frmViewAllVehicles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1101, 738);
+            this.ClientSize = new System.Drawing.Size(1301, 738);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvVehicles);
@@ -179,9 +207,12 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridViewTextBoxColumn VehicleId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VehicleNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ManufacturerName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ModelName;
         private System.Windows.Forms.DataGridViewTextBoxColumn RegistrationNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn Mileage;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Transmission;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumberOfSeats;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FuelName;
     }
 }

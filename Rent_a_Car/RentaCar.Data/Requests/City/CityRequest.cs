@@ -1,4 +1,8 @@
-﻿namespace RentaCar.Data.Requests.City
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace RentaCar.Data.Requests.City
 {
     public class CityRequest
     {

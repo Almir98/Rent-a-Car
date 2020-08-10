@@ -19,8 +19,8 @@ namespace RentACar.Mobile.Views
             menuItems = new List<HomeMenuItem>
             {
                 new HomeMenuItem {Id = MenuItemType.Browse, Title="Home" },
-                new HomeMenuItem {Id = MenuItemType.Customer, Title="Customer profile" },
-                new HomeMenuItem {Id = MenuItemType.Bookings, Title="My bookings" },
+                new HomeMenuItem {Id = MenuItemType.Customer, Title="Your profile" },
+                new HomeMenuItem {Id = MenuItemType.Bookings, Title="Your bookings" },
                 new HomeMenuItem {Id = MenuItemType.Vehicle, Title="Offers for rent" },
                 new HomeMenuItem {Id = MenuItemType.Rating, Title="Rate car" },
                 new HomeMenuItem {Id = MenuItemType.Comment, Title="Leave a comment" },

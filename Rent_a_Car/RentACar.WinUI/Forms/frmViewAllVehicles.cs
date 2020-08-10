@@ -1,4 +1,5 @@
 ﻿using RentaCar.Data.Requests.Vehicle;
+using RentaCar.Data.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -18,14 +19,30 @@ namespace RentACar.WinUI.Forms
         {
             var search = new VehicleSearchRequest()
             {
-                RegistrationNumber = txtSearchVehicle.Text
-                //ManufacturerName=txtSearchVehicle.Text,
-                //BranchName=txtSearchVehicle.Text
+                ManufacturerName=txtSearchVehicle.Text
             };
+            var result = await _service.Get<List<Data.Model.Vehicle>>(search);
 
-            var result = await _service.Get<List<VehicleRequest>>(search);
+            List<frmAllVehiclesVM> finalList = new List<frmAllVehiclesVM>();
+
+            foreach (var item in result)
+            {
+                frmAllVehiclesVM form = new frmAllVehiclesVM
+                {
+                    VehicleId=item.VehicleId,
+                    ManufacturerName=item.VehicleModel.Manufacturer.ManufacturerName,
+                    ModelName=item.VehicleModel.ModelName,
+                    RegistrationNumber=item.RegistrationNumber,
+                    Image = item.Image,
+                    Mileage = item.Mileage,
+                    Transmission=item.Transmission,
+                    NumberOfSeats=item.NumberOfSeats,
+                    FuelName=item.FuelType.FuelName
+                };
+                finalList.Add(form);
+            }
             dgvVehicles.AutoGenerateColumns = false;
-            dgvVehicles.DataSource = result;
+            dgvVehicles.DataSource = finalList;
         }
 
         private void dgvVehicles_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -37,10 +54,28 @@ namespace RentACar.WinUI.Forms
 
         private async void frmViewAllVehicles_Load(object sender, EventArgs e)
         {
-            var result = await _service.Get<List<VehicleRequest>>(null);
-            dgvVehicles.AutoGenerateColumns = false;
-            dgvVehicles.DataSource = result;
+            var result = await _service.Get<List<Data.Model.Vehicle>>(null);
 
+            List<frmAllVehiclesVM> newList = new List<frmAllVehiclesVM>();
+
+            foreach (var item in result)
+            {
+                frmAllVehiclesVM form = new frmAllVehiclesVM
+                {
+                    VehicleId=item.VehicleId,
+                    ManufacturerName=item.VehicleModel.Manufacturer.ManufacturerName,
+                    ModelName=item.VehicleModel.ModelName,
+                    Image=item.Image,
+                    RegistrationNumber=item.RegistrationNumber,
+                    Mileage=item.Mileage,
+                    Transmission=item.Transmission,
+                    NumberOfSeats=item.NumberOfSeats,
+                    FuelName=item.FuelType.FuelName
+                };
+                newList.Add(form);
+            }
+            dgvVehicles.AutoGenerateColumns = false;
+            dgvVehicles.DataSource = newList;
         }
     }
 }

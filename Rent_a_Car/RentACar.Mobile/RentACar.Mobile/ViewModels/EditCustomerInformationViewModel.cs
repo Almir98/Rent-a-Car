@@ -17,12 +17,10 @@ namespace RentACar.Mobile.ViewModels
         public ICommand Init { get; set; }
         public ICommand SaveChanges { get; set; }
 
-
         public EditCustomerInformationViewModel()
         {
             Init = new Command(async () => await Initialization());
             SaveChanges = new Command(async () => await SaveEditChanges());
-
         }
 
         // properties for edit
@@ -89,9 +87,7 @@ namespace RentACar.Mobile.ViewModels
             Email = customer.Email;
             PhoneNumber = customer.Phone;
             Username = customer.Username;
-            
         }
-
 
         public async Task SaveEditChanges()
         {

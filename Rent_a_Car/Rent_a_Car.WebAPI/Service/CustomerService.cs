@@ -28,7 +28,7 @@ namespace RentACar.WebAPI.Service
 
             if (!string.IsNullOrWhiteSpace(request.FirstName) || !string.IsNullOrWhiteSpace(request.LastName))
             {
-                query = query.Where(x => x.FirstName == request.FirstName);
+                query = query.Where(x => x.FirstName.StartsWith(request.FirstName));
             }
 
             if (!string.IsNullOrWhiteSpace(request.LastName))

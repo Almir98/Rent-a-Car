@@ -47,7 +47,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(39, 37);
+            this.label1.Location = new System.Drawing.Point(61, 88);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(161, 20);
             this.label1.TabIndex = 0;
@@ -57,7 +57,7 @@
             // 
             this.txtComment.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtComment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtComment.Location = new System.Drawing.Point(42, 70);
+            this.txtComment.Location = new System.Drawing.Point(64, 121);
             this.txtComment.Name = "txtComment";
             this.txtComment.ReadOnly = true;
             this.txtComment.Size = new System.Drawing.Size(137, 26);
@@ -90,7 +90,7 @@
             // 
             this.txtFirstName.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtFirstName.Location = new System.Drawing.Point(42, 142);
+            this.txtFirstName.Location = new System.Drawing.Point(64, 193);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.ReadOnly = true;
             this.txtFirstName.Size = new System.Drawing.Size(283, 26);
@@ -100,7 +100,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(39, 119);
+            this.label2.Location = new System.Drawing.Point(61, 170);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 20);
             this.label2.TabIndex = 4;
@@ -110,7 +110,7 @@
             // 
             this.txtLastName.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtLastName.Location = new System.Drawing.Point(42, 217);
+            this.txtLastName.Location = new System.Drawing.Point(64, 268);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.ReadOnly = true;
             this.txtLastName.Size = new System.Drawing.Size(283, 26);
@@ -120,7 +120,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.Location = new System.Drawing.Point(39, 194);
+            this.label3.Location = new System.Drawing.Point(61, 245);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 20);
             this.label3.TabIndex = 6;
@@ -152,7 +152,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label6.Location = new System.Drawing.Point(38, 274);
+            this.label6.Location = new System.Drawing.Point(60, 325);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(138, 20);
             this.label6.TabIndex = 12;
@@ -161,7 +161,7 @@
             // dtComment
             // 
             this.dtComment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dtComment.Location = new System.Drawing.Point(42, 310);
+            this.dtComment.Location = new System.Drawing.Point(64, 361);
             this.dtComment.Name = "dtComment";
             this.dtComment.Size = new System.Drawing.Size(282, 26);
             this.dtComment.TabIndex = 11;

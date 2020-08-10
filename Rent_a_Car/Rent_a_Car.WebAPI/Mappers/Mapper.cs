@@ -4,7 +4,6 @@ using RentaCar.Data.Requests.Branch;
 using RentaCar.Data.Requests.City;
 using RentaCar.Data.Requests.Comments;
 using RentaCar.Data.Requests.Customer;
-using RentaCar.Data.Requests.Fuel_type;
 using RentaCar.Data.Requests.Manufacturer;
 using RentaCar.Data.Requests.Rating;
 using RentaCar.Data.Requests.Vehicle;
@@ -62,7 +61,6 @@ namespace Rent_a_Car.WebAPI.Mappers
             CreateMap<CommentRequest, RentACar.WebAPI.Database.Comment>().ReverseMap();
 
 
-            CreateMap<FuelTypeRequest, RentACar.WebAPI.Database.FuelType>().ReverseMap();
             CreateMap<VehicleTypeRequest, RentACar.WebAPI.Database.VehicleType>().ReverseMap();
             CreateMap<VehicleModelRequest, RentACar.WebAPI.Database.VehicleModel>().ReverseMap();
 

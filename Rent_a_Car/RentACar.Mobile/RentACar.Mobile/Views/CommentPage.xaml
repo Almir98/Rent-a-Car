@@ -3,10 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="RentACar.Mobile.Views.CommentPage">
-    <ContentPage.Content>
+			 xmlns:vm="clr-namespace:RentACar.Mobile.ViewModels"
+			 mc:Ignorable="d"
+             x:Class="RentACar.Mobile.Views.CommentPage"
+             BackgroundColor="LightBlue"
+			 >
+
+	<ContentPage.BindingContext>
+		<vm:CommentViewModel />
+	</ContentPage.BindingContext>
+
+	<ContentPage.Content>
         <StackLayout Padding="50">
+			
+			<Label FontSize="Large" HorizontalOptions="Center" Text="Please leave a comment for car!"></Label>
+
 
 			<Label Text="First name"></Label>
 			<Entry Text="{Binding FirstName }"></Entry>
@@ -23,7 +34,6 @@
 
 			<Label Text="Comment"></Label>
 			<Entry  HeightRequest="100" Text="{Binding Description }"></Entry>
-
 
 			<Button Command="{Binding SaveCommand}" Text="Save comment" Font="Bold,17"></Button>
 

@@ -5,7 +5,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:viewModels="clr-namespace:RentACar.Mobile.ViewModels"
 			 mc:Ignorable="d"
-             x:Class="RentACar.Mobile.Views.CustomerInformationPage">
+             x:Class="RentACar.Mobile.Views.CustomerInformationPage"
+             BackgroundColor="LightBlue"
+			 >
 
 	<ContentPage.BindingContext>
 		<viewModels:CustomerInformationViewModel/>
@@ -45,7 +47,7 @@
 			<Label Text="City name"></Label>
 			<Entry Text="{Binding City}"></Entry>
 
-			<Button Clicked="Button_Clicked_Edit" Text="Edit informations" BackgroundColor="LightGray" Margin="0,20,0,0" Font="Bold,17" ></Button>
+			<Button Clicked="Button_Clicked_Edit" Text="Edit informations" Font="Bold,17" ></Button>
 
 		</StackLayout>
     </ContentPage.Content>

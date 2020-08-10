@@ -49,7 +49,7 @@ namespace RentACar.WinUI.Forms
                 i++;
             }
             totalRating =totalRating/i;
-            txtSelected.Text = totalRating.ToString();
+            txtSelected.Text = totalRating.ToString("F");
 
             dgvRating.AutoGenerateColumns = false;
             dgvRating.DataSource = newList;
@@ -61,10 +61,27 @@ namespace RentACar.WinUI.Forms
             {
                 ManufacturerName=txtVehicle.Text
             };
-
             var list = await _serviceRating.Get<List<Data.Model.Rating>>(search);
+
+            List<frmRatingVM> finalList = new List<frmRatingVM>();
+
+            foreach (var item in list)
+            {
+                frmRatingVM form = new frmRatingVM
+                {
+                    RatingId=item.RatingId,
+                    RatingValue=item.RatingValue,
+                    FirstName=item.Customer.FirstName,
+                    LastName=item.Customer.LastName,
+                    Username=item.Customer.Username,
+                    RegistrationNumber=item.Vehicle.RegistrationNumber,
+                    ModelName=item.Vehicle.VehicleModel.ModelName,
+                    ManufacturerName=item.Vehicle.VehicleModel.Manufacturer.ManufacturerName
+                };
+                finalList.Add(form) ;
+            }
             dgvRating.AutoGenerateColumns = false;
-            dgvRating.DataSource = list;
+            dgvRating.DataSource = finalList;
         }
 
         private void dgvRating_MouseDoubleClick(object sender, MouseEventArgs e)
