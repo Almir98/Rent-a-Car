@@ -64,8 +64,74 @@
 
 					<Button Clicked="Booking_Clicked" Text="Booking" Font="Bold,17"></Button>
 
-				</StackLayout>
+					<Label FontSize="15" Text="Vehicles with similar ratings"></Label>
+				
+					<ListView HeightRequest="200" ItemsSource="{Binding RecommendedVehicleList}" BackgroundColor="LightBlue" >
+						<ListView.ItemTemplate>
+							<DataTemplate>
+								<ViewCell>
+									<StackLayout Padding="10" Orientation="Horizontal">
+										<StackLayout>
+											<Image WidthRequest="200" HeightRequest="200" Source="{Binding Image,Converter={StaticResource imgConv}}"></Image>
+										</StackLayout>
+										<StackLayout Orientation="Vertical">
 
+											<StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="6">
+												<Label Text="Manufacturer name : "
+												Style="{DynamicResource LargeLabel}" />
+												<Label Text="{Binding VehicleModel.Manufacturer.ManufacturerName} " 
+												d:Text="{Binding .}"
+												LineBreakMode="NoWrap" 
+												Style="{DynamicResource ListItemTextStyle}" 
+												FontSize="15" />
+											</StackLayout>
+
+											<StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="6">
+												<Label Text="Model name : "
+												Style="{DynamicResource LargeLabel}" />
+												<Label Text="{Binding VehicleModel.ModelName} " 
+												d:Text="{Binding .}"
+												LineBreakMode="NoWrap" 
+												Style="{DynamicResource ListItemTextStyle}" 
+												FontSize="15" />
+											</StackLayout>
+
+											<StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="6">
+												<Label Text="Price per day : "
+												Style="{DynamicResource LargeLabel}" />
+												<Label Text="{Binding DailyPrice} " 
+												d:Text="{Binding .}"
+												LineBreakMode="NoWrap" 
+												Style="{DynamicResource ListItemTextStyle}" 
+												FontSize="15" />
+											</StackLayout>
+
+											<StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="6">
+												<Label Text="Mileage :"
+												Style="{DynamicResource LargeLabel}" />
+												<Label Text="{Binding Mileage} " 
+												d:Text="{Binding .}"
+												LineBreakMode="NoWrap" 
+												Style="{DynamicResource ListItemTextStyle}" 
+												FontSize="15" />
+											</StackLayout>
+
+											<StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="6">
+												<Label Text="Transmission :"
+												Style="{DynamicResource LargeLabel}" />
+												<Label Text="{Binding Transmission} " 
+												d:Text="{Binding .}"
+												LineBreakMode="NoWrap" 
+												Style="{DynamicResource ListItemTextStyle}" 
+												FontSize="15" />
+											</StackLayout>
+										</StackLayout>
+									</StackLayout>
+								</ViewCell>
+							</DataTemplate>
+						</ListView.ItemTemplate>
+					</ListView>
+				</StackLayout>
 			</StackLayout>
 		</ScrollView>
 	</ContentPage.Content>

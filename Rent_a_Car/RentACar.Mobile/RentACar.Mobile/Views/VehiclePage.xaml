@@ -22,7 +22,7 @@
 			
 			<Picker ItemsSource="{Binding ManufacturerList}" SelectedItem="{Binding }" Title="Filter vehicle" ItemDisplayBinding="{Binding}"></Picker>
 
-			<ListView ItemsSource="{Binding VehicleList}" ItemTapped="ListView_ItemTapped">
+			<ListView ItemsSource="{Binding VehicleList}" ItemTapped="ListView_ItemTapped" BackgroundColor="LightBlue">
 				<ListView.ItemTemplate>
 					<DataTemplate>
 						<ViewCell>

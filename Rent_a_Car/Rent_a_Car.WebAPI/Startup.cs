@@ -98,6 +98,7 @@ namespace Rent_a_Car.WebAPI
             services.AddScoped<ICRUDService<Data.Model.Comment, CommentSearchRequest, CommentUpsert, CommentUpsert>, CommentService>();
             
             services.AddScoped<ICustomerService, CustomerService>();
+            services.AddScoped<IRecommendService,RecommendService>();
 
             #endregion
         }

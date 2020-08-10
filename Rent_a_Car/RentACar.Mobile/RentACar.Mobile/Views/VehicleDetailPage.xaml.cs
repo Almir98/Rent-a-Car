@@ -25,7 +25,7 @@ namespace RentACar.Mobile.Views
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            await model.Init();
+            await model.Initialization();
         }
 
         private async void Booking_Clicked(object sender, EventArgs e)
