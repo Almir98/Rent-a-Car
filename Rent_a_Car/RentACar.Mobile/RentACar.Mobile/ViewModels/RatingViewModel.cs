@@ -44,6 +44,14 @@ namespace RentACar.Mobile.ViewModels
             set { SetProperty(ref _manufacturer, value); }
         }
 
+        public string _modelName = string.Empty;
+        public string ModelName
+        {
+            get { return _modelName; }
+            set { SetProperty(ref _modelName, value); }
+        }
+
+
         //Rating value
 
         public int _ratingValue = 0;
@@ -71,6 +79,7 @@ namespace RentACar.Mobile.ViewModels
             vehicle = vehicleID;
 
             Manufacturer = vehicle.VehicleModel.Manufacturer.ManufacturerName;
+            ModelName = vehicle.VehicleModel.ModelName;
         }
 
 
@@ -97,7 +106,8 @@ namespace RentACar.Mobile.ViewModels
                     {
                         CustomerId = APIService.CustomerId,
                         VehicleId =vehicle.VehicleId,                                    
-                        RatingValue = Mark
+                        RatingValue = Mark,
+                        RatingStatus=true
                     };
                     await _serviceRating.Insert<Data.Model.Rating>(request);
                     await Application.Current.MainPage.DisplayAlert("Message", "Successfully! You added your mark for rented car!", "OK");

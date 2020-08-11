@@ -12,6 +12,8 @@ namespace RentACar.Mobile.Views
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
+            imgDisp.Source = "img.png";
+
         }
 
         private async void Register_Clicked(object sender, EventArgs e)

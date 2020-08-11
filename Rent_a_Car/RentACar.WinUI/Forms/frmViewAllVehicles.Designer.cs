@@ -68,6 +68,7 @@
             // 
             // dgvVehicles
             // 
+            this.dgvVehicles.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvVehicles.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvVehicles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVehicles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -92,10 +93,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.txtSearchVehicle);
             this.groupBox1.Controls.Add(this.btnShowVehicles);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.groupBox1.Location = new System.Drawing.Point(151, 28);
+            this.groupBox1.Location = new System.Drawing.Point(306, 56);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(653, 161);
             this.groupBox1.TabIndex = 4;
@@ -124,61 +126,61 @@
             // 
             // ManufacturerName
             // 
+            this.ManufacturerName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ManufacturerName.DataPropertyName = "ManufacturerName";
             this.ManufacturerName.HeaderText = "Manufacturer name";
             this.ManufacturerName.MinimumWidth = 6;
             this.ManufacturerName.Name = "ManufacturerName";
-            this.ManufacturerName.Width = 125;
             // 
             // ModelName
             // 
+            this.ModelName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ModelName.DataPropertyName = "ModelName";
             this.ModelName.HeaderText = "Model name";
             this.ModelName.MinimumWidth = 6;
             this.ModelName.Name = "ModelName";
-            this.ModelName.Width = 125;
             // 
             // RegistrationNumber
             // 
+            this.RegistrationNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.RegistrationNumber.DataPropertyName = "RegistrationNumber";
             this.RegistrationNumber.HeaderText = "Registration number";
             this.RegistrationNumber.MinimumWidth = 6;
             this.RegistrationNumber.Name = "RegistrationNumber";
             this.RegistrationNumber.ReadOnly = true;
-            this.RegistrationNumber.Width = 150;
             // 
             // Mileage
             // 
+            this.Mileage.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Mileage.DataPropertyName = "Mileage";
             this.Mileage.HeaderText = "Mileage";
             this.Mileage.MinimumWidth = 6;
             this.Mileage.Name = "Mileage";
             this.Mileage.ReadOnly = true;
-            this.Mileage.Width = 150;
             // 
             // Transmission
             // 
+            this.Transmission.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Transmission.DataPropertyName = "Transmission";
             this.Transmission.HeaderText = "Transmission";
             this.Transmission.MinimumWidth = 6;
             this.Transmission.Name = "Transmission";
-            this.Transmission.Width = 125;
             // 
             // NumberOfSeats
             // 
+            this.NumberOfSeats.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.NumberOfSeats.DataPropertyName = "NumberOfSeats";
             this.NumberOfSeats.HeaderText = "Number of seats";
             this.NumberOfSeats.MinimumWidth = 6;
             this.NumberOfSeats.Name = "NumberOfSeats";
-            this.NumberOfSeats.Width = 125;
             // 
             // FuelName
             // 
+            this.FuelName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.FuelName.DataPropertyName = "FuelName";
             this.FuelName.HeaderText = "Fuel name";
             this.FuelName.MinimumWidth = 6;
             this.FuelName.Name = "FuelName";
-            this.FuelName.Width = 125;
             // 
             // frmViewAllVehicles
             // 

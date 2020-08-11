@@ -20,17 +20,17 @@
 
 
 			<Label Text="First name"></Label>
-			<Entry Text="{Binding FirstName }"></Entry>
+			<Entry Text="{Binding FirstName }" IsReadOnly="True" BackgroundColor="LightGray"></Entry>
 
 			<Label Text="Last name"></Label>
-			<Entry Text="{Binding LastName }"></Entry>
+			<Entry Text="{Binding LastName }" IsReadOnly="True" BackgroundColor="LightGray"></Entry>
 
 			
 			<Label Text="Vehicle"></Label>
-			<Entry Text="{Binding ManufacturerName }"></Entry>
+			<Entry Text="{Binding ManufacturerName }" IsReadOnly="True" BackgroundColor="LightGray"></Entry>
 
 			<Label Text="Vehicle model"></Label>
-			<Entry Text="{Binding ModelName}"></Entry>
+			<Entry Text="{Binding ModelName}" IsReadOnly="True" BackgroundColor="LightGray"></Entry>
 
 			<Label Text="Comment"></Label>
 			<Entry  HeightRequest="100" Text="{Binding Description }"></Entry>

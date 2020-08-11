@@ -39,7 +39,7 @@
 			<Label Text="PasswordConfirm"></Label>
 			<Entry Text="{Binding PasswordConfirm}" IsPassword="True"></Entry>
 
-			<Button Command="{Binding RegisterCommand}" Clicked="Button_Clicked" HorizontalOptions="FillAndExpand" Text="Register account" Font="Bold,17"></Button>
+			<Button Command="{Binding RegisterCommand}" HorizontalOptions="FillAndExpand" Text="Register account" Font="Bold,17"></Button>
 			
 			<Button Clicked="Button_Clicked_Canceled" HorizontalOptions="FillAndExpand" Font="Bold,17" Text="Cancel"></Button>
 

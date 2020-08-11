@@ -47,6 +47,7 @@
             // 
             // dgvComments
             // 
+            this.dgvComments.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvComments.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvComments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvComments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -56,12 +57,12 @@
             this.ManufacturerName,
             this.ModelName});
             this.dgvComments.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvComments.Location = new System.Drawing.Point(123, 170);
+            this.dgvComments.Location = new System.Drawing.Point(152, 260);
             this.dgvComments.Name = "dgvComments";
             this.dgvComments.RowHeadersWidth = 51;
             this.dgvComments.RowTemplate.Height = 24;
             this.dgvComments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvComments.Size = new System.Drawing.Size(960, 373);
+            this.dgvComments.Size = new System.Drawing.Size(996, 373);
             this.dgvComments.TabIndex = 0;
             this.dgvComments.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvComments_MouseDoubleClick);
             // 
@@ -76,35 +77,35 @@
             // 
             // FirstName
             // 
+            this.FirstName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.FirstName.DataPropertyName = "FirstName";
             this.FirstName.HeaderText = "First name";
             this.FirstName.MinimumWidth = 6;
             this.FirstName.Name = "FirstName";
-            this.FirstName.Width = 125;
             // 
             // LastName
             // 
+            this.LastName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.LastName.DataPropertyName = "LastName";
             this.LastName.HeaderText = "Last name";
             this.LastName.MinimumWidth = 6;
             this.LastName.Name = "LastName";
-            this.LastName.Width = 125;
             // 
             // ManufacturerName
             // 
+            this.ManufacturerName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ManufacturerName.DataPropertyName = "ManufacturerName";
             this.ManufacturerName.HeaderText = "Manufacturer name";
             this.ManufacturerName.MinimumWidth = 6;
             this.ManufacturerName.Name = "ManufacturerName";
-            this.ManufacturerName.Width = 125;
             // 
             // ModelName
             // 
+            this.ModelName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ModelName.DataPropertyName = "ModelName";
             this.ModelName.HeaderText = "Model name";
             this.ModelName.MinimumWidth = 6;
             this.ModelName.Name = "ModelName";
-            this.ModelName.Width = 125;
             // 
             // txtSearch
             // 
@@ -129,10 +130,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.txtSearch);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.groupBox1.Location = new System.Drawing.Point(321, 26);
+            this.groupBox1.Location = new System.Drawing.Point(393, 45);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(489, 121);
             this.groupBox1.TabIndex = 3;
@@ -143,7 +145,7 @@
             // 
             this.btnPrintRating.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnPrintRating.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnPrintRating.Location = new System.Drawing.Point(895, 596);
+            this.btnPrintRating.Location = new System.Drawing.Point(983, 656);
             this.btnPrintRating.Name = "btnPrintRating";
             this.btnPrintRating.Size = new System.Drawing.Size(165, 49);
             this.btnPrintRating.TabIndex = 4;
@@ -153,13 +155,14 @@
             // 
             // panelPrinting2
             // 
+            this.panelPrinting2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelPrinting2.Controls.Add(this.label8);
+            this.panelPrinting2.Controls.Add(this.btnPrintRating);
             this.panelPrinting2.Controls.Add(this.groupBox1);
             this.panelPrinting2.Controls.Add(this.dgvComments);
-            this.panelPrinting2.Controls.Add(this.btnPrintRating);
-            this.panelPrinting2.Location = new System.Drawing.Point(70, 23);
+            this.panelPrinting2.Location = new System.Drawing.Point(70, 12);
             this.panelPrinting2.Name = "panelPrinting2";
-            this.panelPrinting2.Size = new System.Drawing.Size(1164, 682);
+            this.panelPrinting2.Size = new System.Drawing.Size(1250, 723);
             this.panelPrinting2.TabIndex = 5;
             // 
             // label8
@@ -167,7 +170,7 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(833, 150);
+            this.label8.Location = new System.Drawing.Point(898, 223);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(250, 17);
             this.label8.TabIndex = 18;

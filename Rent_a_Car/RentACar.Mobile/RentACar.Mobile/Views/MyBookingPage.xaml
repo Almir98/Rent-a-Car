@@ -16,8 +16,7 @@
 	<ContentPage.Content>
         <StackLayout>
 
-			<Label  FontSize="Medium"  Text="All my bookings"
-                HorizontalOptions="CenterAndExpand" Margin="0,0,0,30" />
+			<Label FontSize="Large" HorizontalOptions="Center" Text="All your bookings"></Label>
 
 			<ListView ItemsSource="{Binding BookingList}">
 				<ListView.ItemTemplate>

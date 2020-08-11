@@ -40,7 +40,10 @@ namespace RentACar.Mobile.ViewModels
 
             foreach (var item in list)
             {
-                BookingList.Add(item);
+                if(item.CommentStatus==false)
+                {
+                    BookingList.Add(item);
+                }
             }
         }
     }

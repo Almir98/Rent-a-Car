@@ -22,30 +22,28 @@
 		</StackLayout>
 	</NavigationPage.TitleView>
 	
-
 	<ContentPage.Content>
 		<StackLayout Padding="50">
 
-			<Label  FontSize="Medium"  Text="Profile information"
-                HorizontalOptions="CenterAndExpand" Margin="0,0,0,30" />
+			<Label FontSize="Large" HorizontalOptions="Center" Text="Profile information"></Label>
 
 			<Label Text="First name"></Label>
-			<Entry Text="{Binding FirstName}"></Entry>
+			<Entry Text="{Binding FirstName}" IsReadOnly="True" BackgroundColor="LightGray"></Entry>
 
 			<Label Text="Last name"></Label>
-			<Entry Text="{Binding LastName}"></Entry>
+			<Entry Text="{Binding LastName}" IsReadOnly="True" BackgroundColor="LightGray"></Entry>
 
 			<Label Text="Phone"></Label>
-			<Entry Text="{Binding Phone}"></Entry>
+			<Entry Text="{Binding Phone}" IsReadOnly="True" BackgroundColor="LightGray"></Entry>
 
 			<Label Text="Email"></Label>
-			<Entry Text="{Binding Email}"></Entry>
+			<Entry Text="{Binding Email}" IsReadOnly="True" BackgroundColor="LightGray"></Entry>
 
 			<Label Text="Username"></Label>
-			<Entry Text="{Binding Username}"></Entry>
+			<Entry Text="{Binding Username}" IsReadOnly="True" BackgroundColor="LightGray"></Entry>
 
 			<Label Text="City name"></Label>
-			<Entry Text="{Binding City}"></Entry>
+			<Entry Text="{Binding City}" IsReadOnly="True" BackgroundColor="LightGray"></Entry>
 
 			<Button Clicked="Button_Clicked_Edit" Text="Edit informations" Font="Bold,17" ></Button>
 

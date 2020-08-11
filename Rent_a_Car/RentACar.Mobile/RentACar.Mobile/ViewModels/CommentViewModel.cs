@@ -97,9 +97,9 @@ namespace RentACar.Mobile.ViewModels
                         CustomerId = APIService.CustomerId,
                         VehicleId = vehicle.VehicleId,                                                        
                         DateOfComment = DateTime.Now,
-                        Description = Description
+                        Description = Description,
+                        CommentStatus = true
                     };
-
                     await _serviceComment.Insert<Data.Model.Comment>(request);
                     await Application.Current.MainPage.DisplayAlert("Message", "Successfully! You added your comment for rented car!", "OK");
                     await Application.Current.MainPage.Navigation.PushModalAsync(new MainPage());

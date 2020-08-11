@@ -338,6 +338,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.cmbBranch);
             this.groupBox1.Controls.Add(this.txtImage);
             this.groupBox1.Controls.Add(this.btnAddImage);

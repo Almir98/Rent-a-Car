@@ -29,40 +29,40 @@
 				<StackLayout Padding="50">
 
 					<Label >Manufacturer:</Label>
-					<Entry IsReadOnly="True" Text="{Binding vehicle.VehicleModel.Manufacturer.ManufacturerName}"></Entry>
+					<Entry IsReadOnly="True" Text="{Binding vehicle.VehicleModel.Manufacturer.ManufacturerName}" BackgroundColor="LightGray"></Entry>
 
 					<Label >Vehicle model:</Label>
-					<Entry IsReadOnly="True" Text="{Binding vehicle.VehicleModel.ModelName}"></Entry>
+					<Entry IsReadOnly="True" Text="{Binding vehicle.VehicleModel.ModelName}" BackgroundColor="LightGray"></Entry>
 
 					<Label >Registration number:</Label>
-					<Entry IsReadOnly="True" Text="{Binding vehicle.RegistrationNumber}"></Entry>
+					<Entry IsReadOnly="True" Text="{Binding vehicle.RegistrationNumber}" BackgroundColor="LightGray"></Entry>
 
 					<Label >Vehicle number:</Label>
-					<Entry IsReadOnly="True" Text="{Binding vehicle.VehicleNumber}"></Entry>
+					<Entry IsReadOnly="True" Text="{Binding vehicle.VehicleNumber}" BackgroundColor="LightGray"></Entry>
 
 					<Label >Daily price:</Label>
-					<Entry IsReadOnly="True" Text="{Binding vehicle.DailyPrice}"></Entry>
+					<Entry IsReadOnly="True" Text="{Binding vehicle.DailyPrice}" BackgroundColor="LightGray"></Entry>
 
 					<Label >Number of seats:</Label>
-					<Entry IsReadOnly="True" Text="{Binding vehicle.NumberOfSeats}"></Entry>
+					<Entry IsReadOnly="True" Text="{Binding vehicle.NumberOfSeats}" BackgroundColor="LightGray"></Entry>
 
 					<Label >Manufacturer date:</Label>
-					<Entry IsReadOnly="True" Text="{Binding vehicle.ManufacturerDate}"></Entry>
+					<Entry IsReadOnly="True" Text="{Binding vehicle.ManufacturerDate}" BackgroundColor="LightGray"></Entry>
 
 					<Label >Mileage:</Label>
-					<Entry IsReadOnly="True" Text="{Binding vehicle.Mileage}"></Entry>
+					<Entry IsReadOnly="True" Text="{Binding vehicle.Mileage}" BackgroundColor="LightGray"></Entry>
 
 					<Label >Transmission:</Label>
-					<Entry IsReadOnly="True" Text="{Binding vehicle.Transmission}"></Entry>
+					<Entry IsReadOnly="True" Text="{Binding vehicle.Transmission}" BackgroundColor="LightGray"></Entry>
 
 					<Label >Status:</Label>
-					<CheckBox IsChecked="{Binding vehicle.Status}"></CheckBox>
+					<CheckBox IsChecked="{Binding vehicle.Status}" BackgroundColor="LightGray"></CheckBox>
 
 					<Label >Description:</Label>
-					<Entry HeightRequest="100" IsReadOnly="True" Text="{Binding vehicle.Description}"></Entry>
+					<Entry HeightRequest="100" IsReadOnly="True" Text="{Binding vehicle.Description}" BackgroundColor="LightGray"></Entry>
 
 					<Label >Average car rating :</Label>
-					<Entry IsReadOnly="True" Text="{Binding AverageRating }"></Entry>
+					<Entry IsReadOnly="True" Text="{Binding AverageRating }" BackgroundColor="LightGray"></Entry>
 
 					<Button Clicked="Booking_Clicked" Text="Booking" Font="Bold,17"></Button>
 

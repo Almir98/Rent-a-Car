@@ -44,6 +44,7 @@
             // 
             // dgvAllCustomers
             // 
+            this.dgvAllCustomers.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvAllCustomers.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvAllCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAllCustomers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -52,12 +53,12 @@
             this.LastName,
             this.Phone,
             this.Email});
-            this.dgvAllCustomers.Location = new System.Drawing.Point(140, 207);
+            this.dgvAllCustomers.Location = new System.Drawing.Point(99, 248);
             this.dgvAllCustomers.Name = "dgvAllCustomers";
             this.dgvAllCustomers.RowHeadersWidth = 51;
             this.dgvAllCustomers.RowTemplate.Height = 24;
             this.dgvAllCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAllCustomers.Size = new System.Drawing.Size(751, 348);
+            this.dgvAllCustomers.Size = new System.Drawing.Size(802, 348);
             this.dgvAllCustomers.TabIndex = 0;
             this.dgvAllCustomers.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvAllCustomers_MouseDoubleClick);
             // 
@@ -85,6 +86,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.txtCustomer);
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
@@ -100,7 +102,7 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(641, 187);
+            this.label8.Location = new System.Drawing.Point(651, 216);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(250, 17);
             this.label8.TabIndex = 19;
@@ -117,36 +119,36 @@
             // 
             // FirstName
             // 
+            this.FirstName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.FirstName.DataPropertyName = "FirstName";
             this.FirstName.HeaderText = "First name";
             this.FirstName.MaxInputLength = 327;
             this.FirstName.MinimumWidth = 6;
             this.FirstName.Name = "FirstName";
-            this.FirstName.Width = 125;
             // 
             // LastName
             // 
+            this.LastName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.LastName.DataPropertyName = "LastName";
             this.LastName.HeaderText = "Last name";
             this.LastName.MinimumWidth = 6;
             this.LastName.Name = "LastName";
-            this.LastName.Width = 125;
             // 
             // Phone
             // 
+            this.Phone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Phone.DataPropertyName = "Phone";
             this.Phone.HeaderText = "Phone number";
             this.Phone.MinimumWidth = 6;
             this.Phone.Name = "Phone";
-            this.Phone.Width = 125;
             // 
             // Email
             // 
+            this.Email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Email.DataPropertyName = "Email";
             this.Email.HeaderText = "Email";
             this.Email.MinimumWidth = 6;
             this.Email.Name = "Email";
-            this.Email.Width = 125;
             // 
             // frmAllCustomers
             // 

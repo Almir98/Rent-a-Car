@@ -51,18 +51,32 @@ namespace RentACar.Mobile.ViewModels
             set { SetProperty(ref _email, value); }
         }
 
-        DateTime _startDate;
+        DateTime _startDate=DateTime.Now;
         public DateTime StartDate
         {
             get { return _startDate; }
             set { SetProperty(ref _startDate, value); }
         }
 
-        DateTime _endDate;
+        DateTime _endDate=DateTime.Now;
         public DateTime EndDate
         {
             get { return _endDate; }
             set { SetProperty(ref _endDate, value); }
+        }
+
+        string _manufacturerName = string.Empty;
+        public string ManufacturerName
+        {
+            get { return _manufacturerName; }
+            set { SetProperty(ref _manufacturerName, value); }
+        }
+
+        string _modelName = string.Empty;
+        public string ModelName
+        {
+            get { return _modelName; }
+            set { SetProperty(ref _modelName, value); }
         }
 
 
@@ -78,8 +92,8 @@ namespace RentACar.Mobile.ViewModels
             LastName = customer.LastName;
             Phone = customer.Phone;
             Email = customer.Email;
-
-                                            // dodat jos propertija od auta kad nadjem nacin  !!!
+            ManufacturerName = Vehicle.VehicleModel.Manufacturer.ManufacturerName;
+            ModelName = Vehicle.VehicleModel.ModelName;
         }
 
 
@@ -94,9 +108,11 @@ namespace RentACar.Mobile.ViewModels
                     CustomerId = APIService.CustomerId,
                     StartDate = StartDate,
                     EndDate = EndDate,
-                    //VehicleId=Vehicle.VehicleId,
-                    VehicleId = 1                                                    // ISPRAVIT 
+                    VehicleId = Vehicle.VehicleId,
+                    RatingStatus = false,
+                    CommentStatus = false
                 };
+
                 await _serviceBooking.Insert<Data.Model.Booking>(request);
                 await Application.Current.MainPage.DisplayAlert("Message", "Successfully!", "OK");
             }

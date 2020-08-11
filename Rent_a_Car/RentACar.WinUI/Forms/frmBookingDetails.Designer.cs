@@ -255,6 +255,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnback);
             this.groupBox1.Controls.Add(this.txtReservationID);

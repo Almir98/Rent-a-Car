@@ -13,5 +13,7 @@ namespace RentaCar.Data.Requests.Comments
         public string Description { get; set; }
         [Required]
         public DateTime DateOfComment { get; set; }
+        public bool? CommentStatus { get; set; }
+
     }
 }

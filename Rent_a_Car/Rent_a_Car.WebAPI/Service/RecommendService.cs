@@ -70,9 +70,9 @@ namespace RentACar.WebAPI.Service
             double x = 0, y1 = 0, y2 = 0;
             for (int i = 0; i < ratings1.Count; i++)
             {
-                x = ratings1[i].RatingValue * ratings2[i].RatingValue;
-                y1 = ratings1[i].RatingValue * ratings1[i].RatingValue;
-                y2 = ratings2[i].RatingValue * ratings2[i].RatingValue;
+                x += ratings1[i].RatingValue * ratings2[i].RatingValue;
+                y1 += ratings1[i].RatingValue * ratings1[i].RatingValue;
+                y2 += ratings2[i].RatingValue * ratings2[i].RatingValue;
             }
             y1 = Math.Sqrt(y1);
             y2 = Math.Sqrt(y2);

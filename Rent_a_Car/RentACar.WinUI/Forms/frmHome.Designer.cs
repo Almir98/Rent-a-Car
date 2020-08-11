@@ -37,7 +37,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.label2.Location = new System.Drawing.Point(635, 9);
+            this.label2.Location = new System.Drawing.Point(631, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(173, 42);
             this.label2.TabIndex = 1;
@@ -46,7 +46,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::RentACar.WinUI.Properties.Resources.img;
-            this.pictureBox1.Location = new System.Drawing.Point(278, 66);
+            this.pictureBox1.Location = new System.Drawing.Point(264, 68);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(810, 666);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -57,7 +57,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1293, 768);
+            this.ClientSize = new System.Drawing.Size(1349, 768);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Name = "frmHome";

@@ -95,6 +95,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::RentACar.WinUI.Properties.Resources.login;
             this.pictureBox1.Location = new System.Drawing.Point(287, 26);
             this.pictureBox1.Name = "pictureBox1";
@@ -105,6 +106,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtUsername);
             this.groupBox2.Controls.Add(this.txtPassword);

@@ -50,6 +50,7 @@
             // 
             // dgvRating
             // 
+            this.dgvRating.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvRating.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvRating.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRating.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -59,7 +60,7 @@
             this.RatingValue,
             this.ManufacturerName,
             this.ModelName});
-            this.dgvRating.Location = new System.Drawing.Point(26, 182);
+            this.dgvRating.Location = new System.Drawing.Point(47, 202);
             this.dgvRating.Name = "dgvRating";
             this.dgvRating.RowHeadersWidth = 51;
             this.dgvRating.RowTemplate.Height = 24;
@@ -70,10 +71,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.txtVehicle);
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.groupBox1.Location = new System.Drawing.Point(275, 13);
+            this.groupBox1.Location = new System.Drawing.Point(274, 26);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(602, 135);
             this.groupBox1.TabIndex = 1;
@@ -105,7 +107,7 @@
             // 
             this.btnPrintRating.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnPrintRating.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnPrintRating.Location = new System.Drawing.Point(833, 600);
+            this.btnPrintRating.Location = new System.Drawing.Point(860, 624);
             this.btnPrintRating.Name = "btnPrintRating";
             this.btnPrintRating.Size = new System.Drawing.Size(165, 49);
             this.btnPrintRating.TabIndex = 2;
@@ -115,15 +117,16 @@
             // 
             // panelPrinting1
             // 
+            this.panelPrinting1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelPrinting1.Controls.Add(this.label8);
             this.panelPrinting1.Controls.Add(this.txtSelected);
             this.panelPrinting1.Controls.Add(this.label6);
             this.panelPrinting1.Controls.Add(this.groupBox1);
             this.panelPrinting1.Controls.Add(this.btnPrintRating);
             this.panelPrinting1.Controls.Add(this.dgvRating);
-            this.panelPrinting1.Location = new System.Drawing.Point(59, 38);
+            this.panelPrinting1.Location = new System.Drawing.Point(59, 25);
             this.panelPrinting1.Name = "panelPrinting1";
-            this.panelPrinting1.Size = new System.Drawing.Size(1103, 691);
+            this.panelPrinting1.Size = new System.Drawing.Size(1103, 704);
             this.panelPrinting1.TabIndex = 3;
             // 
             // label8
@@ -131,7 +134,7 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(790, 162);
+            this.label8.Location = new System.Drawing.Point(811, 182);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(250, 17);
             this.label8.TabIndex = 21;
@@ -141,7 +144,7 @@
             // 
             this.txtSelected.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.txtSelected.Location = new System.Drawing.Point(341, 596);
+            this.txtSelected.Location = new System.Drawing.Point(286, 630);
             this.txtSelected.Name = "txtSelected";
             this.txtSelected.Size = new System.Drawing.Size(90, 32);
             this.txtSelected.TabIndex = 20;
@@ -150,7 +153,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calisto MT", 13F);
-            this.label6.Location = new System.Drawing.Point(138, 600);
+            this.label6.Location = new System.Drawing.Point(83, 634);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(197, 25);
             this.label6.TabIndex = 19;
@@ -167,43 +170,43 @@
             // 
             // FirstName
             // 
+            this.FirstName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.FirstName.DataPropertyName = "FirstName";
             this.FirstName.HeaderText = "First name";
             this.FirstName.MinimumWidth = 6;
             this.FirstName.Name = "FirstName";
-            this.FirstName.Width = 125;
             // 
             // LastName
             // 
+            this.LastName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.LastName.DataPropertyName = "LastName";
             this.LastName.HeaderText = "Last name";
             this.LastName.MinimumWidth = 6;
             this.LastName.Name = "LastName";
-            this.LastName.Width = 125;
             // 
             // RatingValue
             // 
+            this.RatingValue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.RatingValue.DataPropertyName = "RatingValue";
             this.RatingValue.HeaderText = "Rating value";
             this.RatingValue.MinimumWidth = 6;
             this.RatingValue.Name = "RatingValue";
-            this.RatingValue.Width = 125;
             // 
             // ManufacturerName
             // 
+            this.ManufacturerName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ManufacturerName.DataPropertyName = "ManufacturerName";
             this.ManufacturerName.HeaderText = "Manufacturer name";
             this.ManufacturerName.MinimumWidth = 6;
             this.ManufacturerName.Name = "ManufacturerName";
-            this.ManufacturerName.Width = 125;
             // 
             // ModelName
             // 
+            this.ModelName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ModelName.DataPropertyName = "ModelName";
             this.ModelName.HeaderText = "Model name";
             this.ModelName.MinimumWidth = 6;
             this.ModelName.Name = "ModelName";
-            this.ModelName.Width = 125;
             // 
             // frmRating
             // 

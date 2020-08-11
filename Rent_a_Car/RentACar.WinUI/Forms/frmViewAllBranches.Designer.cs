@@ -47,6 +47,7 @@
             // 
             this.dgvBranch.AllowUserToAddRows = false;
             this.dgvBranch.AllowUserToDeleteRows = false;
+            this.dgvBranch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvBranch.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgvBranch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBranch.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -55,7 +56,7 @@
             this.PhoneNumber,
             this.Adress});
             this.dgvBranch.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvBranch.Location = new System.Drawing.Point(231, 206);
+            this.dgvBranch.Location = new System.Drawing.Point(231, 216);
             this.dgvBranch.Name = "dgvBranch";
             this.dgvBranch.ReadOnly = true;
             this.dgvBranch.RowHeadersWidth = 51;
@@ -67,6 +68,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.cmbCity);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.groupBox1.Location = new System.Drawing.Point(348, 34);
@@ -111,30 +113,30 @@
             // 
             // BranchName
             // 
+            this.BranchName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.BranchName.DataPropertyName = "BranchName";
             this.BranchName.HeaderText = "BranchName";
             this.BranchName.MinimumWidth = 6;
             this.BranchName.Name = "BranchName";
             this.BranchName.ReadOnly = true;
-            this.BranchName.Width = 125;
             // 
             // PhoneNumber
             // 
+            this.PhoneNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.PhoneNumber.DataPropertyName = "PhoneNumber";
             this.PhoneNumber.HeaderText = "PhoneNumber";
             this.PhoneNumber.MinimumWidth = 6;
             this.PhoneNumber.Name = "PhoneNumber";
             this.PhoneNumber.ReadOnly = true;
-            this.PhoneNumber.Width = 125;
             // 
             // Adress
             // 
+            this.Adress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Adress.DataPropertyName = "Adress";
             this.Adress.HeaderText = "Adress";
             this.Adress.MinimumWidth = 6;
             this.Adress.Name = "Adress";
             this.Adress.ReadOnly = true;
-            this.Adress.Width = 125;
             // 
             // frmViewAllBranches
             // 

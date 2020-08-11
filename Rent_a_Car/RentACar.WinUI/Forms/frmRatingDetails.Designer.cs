@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtAverageValue = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.txtRatingValue = new System.Windows.Forms.TextBox();
             this.txtCity = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,14 +50,13 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtAverageValue = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.txtAverageValue);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtRatingValue);
@@ -81,6 +82,25 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Rating details";
+            // 
+            // txtAverageValue
+            // 
+            this.txtAverageValue.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txtAverageValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtAverageValue.Location = new System.Drawing.Point(577, 391);
+            this.txtAverageValue.Name = "txtAverageValue";
+            this.txtAverageValue.Size = new System.Drawing.Size(97, 26);
+            this.txtAverageValue.TabIndex = 24;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label9.Location = new System.Drawing.Point(573, 357);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(161, 20);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "Average rating value";
             // 
             // txtRatingValue
             // 
@@ -260,6 +280,7 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel3.Controls.Add(this.groupBox1);
             this.panel3.Controls.Add(this.btnBack);
             this.panel3.Controls.Add(this.btnPrint);
@@ -267,25 +288,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1139, 693);
             this.panel3.TabIndex = 24;
-            // 
-            // txtAverageValue
-            // 
-            this.txtAverageValue.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.txtAverageValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtAverageValue.Location = new System.Drawing.Point(577, 391);
-            this.txtAverageValue.Name = "txtAverageValue";
-            this.txtAverageValue.Size = new System.Drawing.Size(97, 26);
-            this.txtAverageValue.TabIndex = 24;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label9.Location = new System.Drawing.Point(573, 357);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(161, 20);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "Average rating value";
             // 
             // frmRatingDetails
             // 

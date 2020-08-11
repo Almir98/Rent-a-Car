@@ -13,5 +13,8 @@ namespace RentaCar.Data.Requests.Booking
         public DateTime StartDate { get; set; }
         [Required]
         public DateTime EndDate { get; set; }
+
+        public bool? RatingStatus { get; set; }
+        public bool? CommentStatus { get; set; }
     }
 }

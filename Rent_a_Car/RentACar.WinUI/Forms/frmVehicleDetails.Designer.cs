@@ -46,13 +46,13 @@
             this.chkStatus = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtDescription = new System.Windows.Forms.RichTextBox();
             this.txt = new System.Windows.Forms.Label();
             this.txtModelName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtManufacturer = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMileage = new System.Windows.Forms.TextBox();
-            this.txtDescription = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -222,6 +222,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.CausesValidation = false;
             this.groupBox1.Controls.Add(this.txtDescription);
             this.groupBox1.Controls.Add(this.txt);
@@ -253,6 +254,15 @@
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Vehicle details";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtDescription.Location = new System.Drawing.Point(531, 187);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(380, 111);
+            this.txtDescription.TabIndex = 28;
+            this.txtDescription.Text = "";
             // 
             // txt
             // 
@@ -313,15 +323,6 @@
             this.txtMileage.ReadOnly = true;
             this.txtMileage.Size = new System.Drawing.Size(343, 26);
             this.txtMileage.TabIndex = 22;
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txtDescription.Location = new System.Drawing.Point(531, 187);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(380, 111);
-            this.txtDescription.TabIndex = 28;
-            this.txtDescription.Text = "";
             // 
             // frmVehicleDetails
             // 

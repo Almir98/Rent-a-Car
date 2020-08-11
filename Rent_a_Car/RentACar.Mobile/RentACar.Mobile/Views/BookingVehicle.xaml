@@ -19,16 +19,22 @@
 			<Label FontSize="Large" HorizontalOptions="Center" Text="Book this car"></Label>
 
 			<Label Text="FirstName"></Label>
-			<Entry Text="{Binding FirstName}"></Entry>
+			<Entry Text="{Binding FirstName}" IsReadOnly="True"></Entry>
 
 			<Label Text="Last Name"></Label>
-			<Entry Text="{Binding LastName}"></Entry>
+			<Entry Text="{Binding LastName}" IsReadOnly="True"></Entry>
 
 			<Label Text="Phone "></Label>
-			<Entry Text="{Binding Phone}"></Entry>
+			<Entry Text="{Binding Phone}" IsReadOnly="True"></Entry>
 
 			<Label Text="Email"></Label>
-			<Entry Text="{Binding Email}"></Entry>
+			<Entry Text="{Binding Email}" IsReadOnly="True"></Entry>
+
+			<Label Text="Manufacturer name"></Label>
+			<Entry Text="{Binding ManufacturerName}" IsReadOnly="True"></Entry>
+
+			<Label Text="Model name"></Label>
+			<Entry Text="{Binding ModelName}" IsReadOnly="True"></Entry>
 
 			<Label Text="Start date"></Label>
 			<DatePicker Date="{Binding StartDate}"></DatePicker>

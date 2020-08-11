@@ -11,7 +11,7 @@ namespace RentACar.Mobile.Views
     {
         BookingVehicleViewModel model = null;
 
-        public BookingVehicle(Data.Model.Vehicle vehicle = null)
+        public BookingVehicle(Data.Model.Vehicle vehicle)
         {
             InitializeComponent();
 

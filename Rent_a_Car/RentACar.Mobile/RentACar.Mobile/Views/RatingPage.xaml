@@ -19,13 +19,16 @@
 			<Label FontSize="Large" HorizontalOptions="Center" Text="Please leave a mark for car!"></Label>
 
 			<Label Text="First name"></Label>
-			<Entry Text="{Binding FirstName}"></Entry>
+			<Entry Text="{Binding FirstName}" IsReadOnly="True" BackgroundColor="LightGray"></Entry>
 
 			<Label Text="Last name"></Label>
-			<Entry Text="{Binding LastName}"></Entry>
+			<Entry Text="{Binding LastName}" IsReadOnly="True" BackgroundColor="LightGray"></Entry>
 			
 			<Label Text="Manufacturer name"></Label>
-			<Entry Text="{Binding Manufacturer }"></Entry>
+			<Entry Text="{Binding Manufacturer }" IsReadOnly="True" BackgroundColor="LightGray"></Entry>
+
+			<Label Text="Manufacturer name"></Label>
+			<Entry Text="{Binding ModelName }" IsReadOnly="True" BackgroundColor="LightGray"></Entry>
 
 			<Label Text="Rating value (1-10)"></Label>
 			<Entry MaxLength="10" Text="{Binding Mark}"></Entry>
