@@ -22,8 +22,10 @@
 
 	<ContentPage.Content>
         <StackLayout Padding="20">
-			
-			<Picker ItemsSource="{Binding ManufacturerList}" SelectedItem="{Binding }" Title="Filter vehicle" ItemDisplayBinding="{Binding}"></Picker>
+
+			<Label FontSize="Medium">Filter by manufacturer name</Label>
+			<Entry Placeholder="Audi, BMW or etc." Text="{Binding ManufacturerName}"></Entry>
+			<Button Text="Search" HorizontalOptions="Center" Command="{Binding SearchVehicles}"  Font="Bold,17"></Button>
 
 			<ListView ItemsSource="{Binding VehicleList}" ItemTapped="ListView_ItemTapped" BackgroundColor="LightBlue">
 				<ListView.ItemTemplate>
