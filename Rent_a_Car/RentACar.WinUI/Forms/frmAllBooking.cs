@@ -31,15 +31,12 @@ namespace RentACar.WinUI.Forms
                 frmAllBookingVM form = new frmAllBookingVM
                 {
                     BookingId=item.BookingId,
-                    NumberOfDays=item.NumberOfDays,
-                    TotalPrice=item.TotalPrice,
                     StartDate=item.StartDate,
                     EndDate=item.EndDate,
-                    Canceled=item.Canceled,
-                    Discount=item.Discount,
-                    Description=item.Description,
                     FirstName=item.Customer.FirstName,
-                    LastName=item.Customer.LastName
+                    LastName=item.Customer.LastName,
+                    ManufacturerName = item.Vehicle.VehicleModel.Manufacturer.ManufacturerName,
+                    ModelName = item.Vehicle.VehicleModel.ModelName
                 };
                 finalList.Add(form);
             }
@@ -58,15 +55,12 @@ namespace RentACar.WinUI.Forms
                 frmAllBookingVM form = new frmAllBookingVM
                 {
                     BookingId = item.BookingId,
-                    NumberOfDays = item.NumberOfDays,
-                    TotalPrice = item.TotalPrice,
                     StartDate = item.StartDate,
                     EndDate = item.EndDate,
-                    Canceled = item.Canceled,
-                    Discount = item.Discount,
-                    Description = item.Description,
                     FirstName = item.Customer.FirstName,
                     LastName = item.Customer.LastName,
+                    ManufacturerName=item.Vehicle.VehicleModel.Manufacturer.ManufacturerName,
+                    ModelName=item.Vehicle.VehicleModel.ModelName
                 };
                 newList.Add(form);
             }

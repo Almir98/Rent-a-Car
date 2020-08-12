@@ -18,6 +18,7 @@ namespace RentACar.WebAPI.Service
             var query = _context.Vehicle.Include(x => x.VehicleModel)
                 .Include(e=>e.VehicleModel.Manufacturer)
                 .Include(e=>e.FuelType)
+                .Include(e => e.Branch)
                 .AsQueryable();
 
             if (!string.IsNullOrEmpty(search.ManufacturerName))

@@ -44,8 +44,6 @@ namespace RentACar.WebAPI.Database
 
                 entity.Property(e => e.CustomerId).HasColumnName("CustomerID");
 
-                entity.Property(e => e.Description).HasMaxLength(200);
-
                 entity.Property(e => e.EndDate).HasColumnType("datetime");
 
                 entity.Property(e => e.StartDate).HasColumnType("datetime");
@@ -291,8 +289,6 @@ namespace RentACar.WebAPI.Database
                     .HasName("PK_ModelID");
 
                 entity.Property(e => e.ModelId).HasColumnName("ModelID");
-
-                entity.Property(e => e.Description).HasMaxLength(200);
 
                 entity.Property(e => e.ManufacturerId).HasColumnName("ManufacturerID");
 

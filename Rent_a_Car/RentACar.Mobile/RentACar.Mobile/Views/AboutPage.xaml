@@ -6,6 +6,7 @@
              mc:Ignorable="d"
              x:Class="RentACar.Mobile.Views.AboutPage"
              xmlns:vm="clr-namespace:RentACar.Mobile.ViewModels"
+             BackgroundColor="LightBlue"
              Title="{Binding Title}">
     
     <ContentPage.BindingContext>

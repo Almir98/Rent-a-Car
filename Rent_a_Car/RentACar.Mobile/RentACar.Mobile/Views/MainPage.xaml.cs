@@ -19,6 +19,7 @@ namespace RentACar.Mobile.Views
             MasterBehavior = MasterBehavior.Popover;
 
             MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
+
         }
 
         public async Task NavigateFromMenu(int id)
@@ -51,7 +52,6 @@ namespace RentACar.Mobile.Views
                     case (int)MenuItemType.Logout:
                         MenuPages.Add(id, new NavigationPage(new LoginPage()));
                         break;
-
                 }
             }
 

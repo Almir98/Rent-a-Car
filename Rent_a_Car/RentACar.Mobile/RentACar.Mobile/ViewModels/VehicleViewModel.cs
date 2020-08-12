@@ -19,12 +19,10 @@ namespace RentACar.Mobile.ViewModels
         }
         public ICommand InitCommand { get; set; }
 
-        
         public ObservableCollection<Data.Model.Manufacturer> ManufacturerList { get; set; } = new ObservableCollection<Data.Model.Manufacturer>();
 
         public ObservableCollection<Data.Model.Vehicle> VehicleList { get; set; } = new ObservableCollection<Data.Model.Vehicle>();
 
-        
         public async Task Init()
         {
             var list = await _vehicleService.Get<IEnumerable<Data.Model.Vehicle>>(null);
@@ -42,10 +40,7 @@ namespace RentACar.Mobile.ViewModels
             VehicleList.Clear();
             foreach (var vehicle in list)
             {
-                //if(vehicle.Status==false)
-                //{
                 VehicleList.Add(vehicle);
-                //}
             }
         }
     }

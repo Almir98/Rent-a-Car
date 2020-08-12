@@ -103,8 +103,19 @@
 										FontSize="15" />
 									</StackLayout>
 
+									<StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="6">
+										<Label Text="Branch : "
+										LineBreakMode="NoWrap" 
+										Style="{DynamicResource LargeLabel}"  />
+
+										<Label Text="{Binding Branch.BranchName}" 
+										d:Text="{Binding .}"
+										LineBreakMode="NoWrap" 
+										Style="{DynamicResource ListItemTextStyle}" 
+										FontSize="15" />
+									</StackLayout>
+
 								</StackLayout>
-								
 							</StackLayout>
 						</ViewCell>
 					</DataTemplate>

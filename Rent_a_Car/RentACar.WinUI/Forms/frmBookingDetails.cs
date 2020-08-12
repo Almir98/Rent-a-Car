@@ -19,18 +19,16 @@ namespace RentACar.WinUI.Forms
         {
             if (_id.HasValue)
             {
-                var booking = await _serviceBooking.GetById<BookingRequest>(_id);
+                var booking = await _serviceBooking.GetById<Data.Model.Booking>(_id);
 
                 txtReservationID.Text = booking.BookingId.ToString();
-                txtNumberOfDays.Text = booking.NumberOfDays.ToString();
-                txtTotalPrice.Text = booking.TotalPrice.ToString();
                 dtStart.Value = booking.StartDate;
                 dtEndDate.Value = booking.EndDate;
-                chkCanceled.Checked = booking.Canceled.Value;
-                txtDescription.Text = booking.Description;
-                txtDisscount.Text = booking.Discount.ToString();
                 txtFirstName.Text = booking.Customer.FirstName;
                 txtLastName.Text = booking.Customer.LastName;
+                txtManufacturer.Text = booking.Vehicle.VehicleModel.Manufacturer.ManufacturerName;
+                txtModel.Text = booking.Vehicle.VehicleModel.ModelName;
+                txtDailyPrice.Text = booking.Vehicle.DailyPrice.ToString();
             }
         }
 

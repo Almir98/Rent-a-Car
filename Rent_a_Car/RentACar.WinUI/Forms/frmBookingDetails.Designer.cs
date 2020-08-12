@@ -30,19 +30,10 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txtReservationID = new System.Windows.Forms.TextBox();
-            this.txtNumberOfDays = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtTotalPrice = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtDisscount = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dtStart = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.dtEndDate = new System.Windows.Forms.DateTimePicker();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.chkCanceled = new System.Windows.Forms.CheckBox();
-            this.txtDescription = new System.Windows.Forms.RichTextBox();
             this.Prezime = new System.Windows.Forms.Label();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -50,6 +41,12 @@
             this.btnback = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtDailyPrice = new System.Windows.Forms.TextBox();
+            this.txtModel = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtManufacturer = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,55 +69,6 @@
             this.txtReservationID.ReadOnly = true;
             this.txtReservationID.Size = new System.Drawing.Size(294, 26);
             this.txtReservationID.TabIndex = 1;
-            // 
-            // txtNumberOfDays
-            // 
-            this.txtNumberOfDays.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txtNumberOfDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtNumberOfDays.Location = new System.Drawing.Point(50, 316);
-            this.txtNumberOfDays.Name = "txtNumberOfDays";
-            this.txtNumberOfDays.ReadOnly = true;
-            this.txtNumberOfDays.Size = new System.Drawing.Size(295, 26);
-            this.txtNumberOfDays.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(46, 293);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Number of days";
-            // 
-            // txtTotalPrice
-            // 
-            this.txtTotalPrice.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txtTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtTotalPrice.Location = new System.Drawing.Point(50, 398);
-            this.txtTotalPrice.Name = "txtTotalPrice";
-            this.txtTotalPrice.ReadOnly = true;
-            this.txtTotalPrice.Size = new System.Drawing.Size(295, 26);
-            this.txtTotalPrice.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.Location = new System.Drawing.Point(52, 375);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Total price";
-            // 
-            // txtDisscount
-            // 
-            this.txtDisscount.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txtDisscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtDisscount.Location = new System.Drawing.Point(571, 239);
-            this.txtDisscount.Name = "txtDisscount";
-            this.txtDisscount.Size = new System.Drawing.Size(321, 26);
-            this.txtDisscount.TabIndex = 7;
             // 
             // label4
             // 
@@ -158,48 +106,6 @@
             this.dtEndDate.Name = "dtEndDate";
             this.dtEndDate.Size = new System.Drawing.Size(321, 26);
             this.dtEndDate.TabIndex = 10;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label9.Location = new System.Drawing.Point(568, 295);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(95, 20);
-            this.label9.TabIndex = 14;
-            this.label9.Text = "Description";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label10.Location = new System.Drawing.Point(568, 217);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(76, 20);
-            this.label10.TabIndex = 15;
-            this.label10.Text = "Discount";
-            // 
-            // chkCanceled
-            // 
-            this.chkCanceled.AutoSize = true;
-            this.chkCanceled.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.chkCanceled.Location = new System.Drawing.Point(51, 478);
-            this.chkCanceled.Name = "chkCanceled";
-            this.chkCanceled.Size = new System.Drawing.Size(101, 24);
-            this.chkCanceled.TabIndex = 17;
-            this.chkCanceled.Text = "Canceled";
-            this.chkCanceled.UseVisualStyleBackColor = true;
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtDescription.Location = new System.Drawing.Point(571, 328);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.ReadOnly = true;
-            this.txtDescription.Size = new System.Drawing.Size(321, 166);
-            this.txtDescription.TabIndex = 18;
-            this.txtDescription.Text = "";
             // 
             // Prezime
             // 
@@ -245,7 +151,7 @@
             // 
             this.btnback.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnback.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnback.Location = new System.Drawing.Point(643, 537);
+            this.btnback.Location = new System.Drawing.Point(726, 398);
             this.btnback.Name = "btnback";
             this.btnback.Size = new System.Drawing.Size(166, 43);
             this.btnback.TabIndex = 25;
@@ -256,24 +162,21 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.txtDailyPrice);
+            this.groupBox1.Controls.Add(this.txtModel);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txtManufacturer);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnback);
             this.groupBox1.Controls.Add(this.txtReservationID);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtFirstName);
-            this.groupBox1.Controls.Add(this.txtNumberOfDays);
             this.groupBox1.Controls.Add(this.Prezime);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtLastName);
-            this.groupBox1.Controls.Add(this.txtTotalPrice);
-            this.groupBox1.Controls.Add(this.txtDescription);
-            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.chkCanceled);
             this.groupBox1.Controls.Add(this.dtStart);
-            this.groupBox1.Controls.Add(this.txtDisscount);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.dtEndDate);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
@@ -283,6 +186,66 @@
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Booking details";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label6.Location = new System.Drawing.Point(567, 218);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(89, 20);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "Daily price";
+            // 
+            // txtDailyPrice
+            // 
+            this.txtDailyPrice.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtDailyPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtDailyPrice.Location = new System.Drawing.Point(571, 250);
+            this.txtDailyPrice.Name = "txtDailyPrice";
+            this.txtDailyPrice.ReadOnly = true;
+            this.txtDailyPrice.Size = new System.Drawing.Size(321, 26);
+            this.txtDailyPrice.TabIndex = 31;
+            // 
+            // txtModel
+            // 
+            this.txtModel.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtModel.Location = new System.Drawing.Point(49, 448);
+            this.txtModel.Name = "txtModel";
+            this.txtModel.ReadOnly = true;
+            this.txtModel.Size = new System.Drawing.Size(295, 26);
+            this.txtModel.TabIndex = 30;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label3.Location = new System.Drawing.Point(50, 321);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(154, 20);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Manufacturer name";
+            // 
+            // txtManufacturer
+            // 
+            this.txtManufacturer.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtManufacturer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtManufacturer.Location = new System.Drawing.Point(49, 353);
+            this.txtManufacturer.Name = "txtManufacturer";
+            this.txtManufacturer.ReadOnly = true;
+            this.txtManufacturer.Size = new System.Drawing.Size(295, 26);
+            this.txtManufacturer.TabIndex = 28;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label2.Location = new System.Drawing.Point(50, 409);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 20);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Model name";
             // 
             // frmBookingDetails
             // 
@@ -304,19 +267,10 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtReservationID;
-        private System.Windows.Forms.TextBox txtNumberOfDays;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtTotalPrice;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtDisscount;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dtStart;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtEndDate;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.CheckBox chkCanceled;
-        private System.Windows.Forms.RichTextBox txtDescription;
         private System.Windows.Forms.Label Prezime;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label label8;
@@ -324,5 +278,11 @@
         private System.Windows.Forms.Button btnback;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtManufacturer;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtModel;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtDailyPrice;
     }
 }

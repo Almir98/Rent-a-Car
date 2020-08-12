@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvBranch = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmbCity = new System.Windows.Forms.ComboBox();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.label8 = new System.Windows.Forms.Label();
             this.BranchId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BranchName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PhoneNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Adress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbCity = new System.Windows.Forms.ComboBox();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBranch)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -65,41 +65,6 @@
             this.dgvBranch.Size = new System.Drawing.Size(762, 330);
             this.dgvBranch.TabIndex = 3;
             this.dgvBranch.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvBranch_MouseDoubleClick);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.Controls.Add(this.cmbCity);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.groupBox1.Location = new System.Drawing.Point(348, 34);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(443, 119);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Select branch";
-            // 
-            // cmbCity
-            // 
-            this.cmbCity.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.cmbCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cmbCity.FormattingEnabled = true;
-            this.cmbCity.Location = new System.Drawing.Point(77, 55);
-            this.cmbCity.Name = "cmbCity";
-            this.cmbCity.Size = new System.Drawing.Size(282, 28);
-            this.cmbCity.TabIndex = 4;
-            this.cmbCity.Text = "Izaberite";
-            this.cmbCity.SelectedIndexChanged += new System.EventHandler(this.cmbCity_SelectedIndexChanged);
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(743, 186);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(250, 17);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "* double click on record to read details";
             // 
             // BranchId
             // 
@@ -137,6 +102,41 @@
             this.Adress.MinimumWidth = 6;
             this.Adress.Name = "Adress";
             this.Adress.ReadOnly = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Controls.Add(this.cmbCity);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.groupBox1.Location = new System.Drawing.Point(348, 34);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(443, 119);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Select branch";
+            // 
+            // cmbCity
+            // 
+            this.cmbCity.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cmbCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cmbCity.FormattingEnabled = true;
+            this.cmbCity.Location = new System.Drawing.Point(77, 55);
+            this.cmbCity.Name = "cmbCity";
+            this.cmbCity.Size = new System.Drawing.Size(282, 28);
+            this.cmbCity.TabIndex = 4;
+            this.cmbCity.Text = "Izaberite";
+            this.cmbCity.SelectedIndexChanged += new System.EventHandler(this.cmbCity_SelectedIndexChanged);
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(743, 186);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(250, 17);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "* double click on record to read details";
             // 
             // frmViewAllBranches
             // 

@@ -37,9 +37,10 @@
             this.BookingId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumberOfDays = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Canceled = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ManufacturerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ModelName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooking)).BeginInit();
             this.SuspendLayout();
@@ -77,7 +78,7 @@
             this.groupBox1.Controls.Add(this.btnBooking);
             this.groupBox1.Controls.Add(this.txtBookingSearch);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.groupBox1.Location = new System.Drawing.Point(323, 37);
+            this.groupBox1.Location = new System.Drawing.Point(392, 33);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(545, 113);
             this.groupBox1.TabIndex = 4;
@@ -92,15 +93,16 @@
             this.BookingId,
             this.FirstName,
             this.LastName,
-            this.NumberOfDays,
-            this.TotalPrice,
-            this.Canceled});
+            this.ManufacturerName,
+            this.ModelName,
+            this.StartDate,
+            this.EndDate});
             this.dgvBooking.Location = new System.Drawing.Point(51, 258);
             this.dgvBooking.Name = "dgvBooking";
             this.dgvBooking.RowHeadersWidth = 51;
             this.dgvBooking.RowTemplate.Height = 24;
             this.dgvBooking.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBooking.Size = new System.Drawing.Size(1060, 329);
+            this.dgvBooking.Size = new System.Drawing.Size(1155, 329);
             this.dgvBooking.TabIndex = 5;
             this.dgvBooking.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBooking_CellMouseDoubleClick);
             // 
@@ -109,7 +111,7 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(861, 226);
+            this.label8.Location = new System.Drawing.Point(956, 224);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(250, 17);
             this.label8.TabIndex = 17;
@@ -140,29 +142,37 @@
             this.LastName.MinimumWidth = 6;
             this.LastName.Name = "LastName";
             // 
-            // NumberOfDays
+            // ManufacturerName
             // 
-            this.NumberOfDays.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NumberOfDays.DataPropertyName = "NumberOfDays";
-            this.NumberOfDays.HeaderText = "NumberOfDays";
-            this.NumberOfDays.MinimumWidth = 6;
-            this.NumberOfDays.Name = "NumberOfDays";
+            this.ManufacturerName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ManufacturerName.DataPropertyName = "ManufacturerName";
+            this.ManufacturerName.HeaderText = "Manufacturer name";
+            this.ManufacturerName.MinimumWidth = 6;
+            this.ManufacturerName.Name = "ManufacturerName";
             // 
-            // TotalPrice
+            // ModelName
             // 
-            this.TotalPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TotalPrice.DataPropertyName = "TotalPrice";
-            this.TotalPrice.HeaderText = "TotalPrice";
-            this.TotalPrice.MinimumWidth = 6;
-            this.TotalPrice.Name = "TotalPrice";
+            this.ModelName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ModelName.DataPropertyName = "ModelName";
+            this.ModelName.HeaderText = "Model name";
+            this.ModelName.MinimumWidth = 6;
+            this.ModelName.Name = "ModelName";
             // 
-            // Canceled
+            // StartDate
             // 
-            this.Canceled.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Canceled.DataPropertyName = "Canceled";
-            this.Canceled.HeaderText = "Canceled";
-            this.Canceled.MinimumWidth = 6;
-            this.Canceled.Name = "Canceled";
+            this.StartDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.StartDate.DataPropertyName = "StartDate";
+            this.StartDate.HeaderText = "Start date";
+            this.StartDate.MinimumWidth = 6;
+            this.StartDate.Name = "StartDate";
+            // 
+            // EndDate
+            // 
+            this.EndDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.EndDate.DataPropertyName = "EndDate";
+            this.EndDate.HeaderText = "End date";
+            this.EndDate.MinimumWidth = 6;
+            this.EndDate.Name = "EndDate";
             // 
             // frmAllBooking
             // 
@@ -193,8 +203,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn BookingId;
         private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumberOfDays;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Canceled;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ManufacturerName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ModelName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StartDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EndDate;
     }
 }

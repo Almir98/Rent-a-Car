@@ -71,9 +71,7 @@ namespace RentACar.Mobile.ViewModels
 
             try
             {
-
                 List<Data.Model.Customer> list = await _service.Get<List<Data.Model.Customer>>(new CustomerSearchRequest { 
-                    
                     Username=Username
                 });
 
@@ -90,7 +88,6 @@ namespace RentACar.Mobile.ViewModels
                         APIService.CustomerId = item.CustomerId;
                     }
                 }
-
                 await _service.Get<dynamic>(null);
                 Application.Current.MainPage = new MainPage();
             }

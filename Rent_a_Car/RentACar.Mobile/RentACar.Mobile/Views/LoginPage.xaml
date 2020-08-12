@@ -23,7 +23,7 @@
 	<ContentPage.Content>
         <StackLayout Padding="100" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
 
-			<Image HeightRequest="250" WidthRequest="250" HorizontalOptions="Center" x:Name="imgDisp" ></Image>
+			<Image HeightRequest="300" WidthRequest="300" HorizontalOptions="Center" x:Name="imgDisp" ></Image>
 
 			<Label FontSize="Large" Text="Please sign in"
 			HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
