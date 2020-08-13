@@ -109,7 +109,6 @@ namespace RentACar.WinUI.Forms
         {
             if (this.ValidateChildren())
             {
-
                 request.RegistrationNumber = txtRegistrationNumber.Text;
                 request.VehicleNumber = int.Parse(txtVehicleNumber.Text);
                 request.DailyPrice = double.Parse(txtDailyPrice.Text);

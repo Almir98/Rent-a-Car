@@ -1,5 +1,6 @@
 ﻿using RentaCar.Data.Requests.Manufacturer;
 using RentaCar.Data.Requests.Vehicle;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
@@ -11,7 +12,8 @@ namespace RentACar.Mobile.ViewModels
     public class VehicleViewModel : BaseViewModel
     {
         private readonly APIService _vehicleService = new APIService("Vehicle");          
-        private readonly APIService _manufacturerService = new APIService("Manufacturer");
+        private readonly APIService _bookingService = new APIService("Booking");
+
 
         public VehicleViewModel()
         {
@@ -23,8 +25,6 @@ namespace RentACar.Mobile.ViewModels
         public ICommand SearchVehicles { get; set; }
 
 
-        public ObservableCollection<Data.Model.Manufacturer> ManufacturerList { get; set; } = new ObservableCollection<Data.Model.Manufacturer>();
-
         public ObservableCollection<Data.Model.Vehicle> VehicleList { get; set; } = new ObservableCollection<Data.Model.Vehicle>();
 
         string _manufacturerName = string.Empty;
@@ -34,15 +34,37 @@ namespace RentACar.Mobile.ViewModels
             set { SetProperty(ref _manufacturerName, value); }
         }
 
+        DateTime _startDate = DateTime.Now;
+        public DateTime DateNow
+        {
+            get { return _startDate; }
+            set { SetProperty(ref _startDate, value); }
+        }
 
         public async Task Init()
         {
             var list = await _vehicleService.Get<IEnumerable<Data.Model.Vehicle>>(null);
+            var bookingList = await _bookingService.Get<List<Data.Model.Booking>>(null);
+            var key = true;
 
             VehicleList.Clear();
             foreach (var vehicle in list)
             {
-                VehicleList.Add(vehicle);
+                foreach (var item in bookingList)
+                {
+                    if(vehicle.VehicleId == item.VehicleId)
+                    {
+                        if(item.EndDate >= DateNow)
+                        {
+                            key = false;
+                        }
+                    }
+                }
+                if (key == true)
+                {
+                    VehicleList.Add(vehicle);
+                }
+                key = true;
             }
         }
 
