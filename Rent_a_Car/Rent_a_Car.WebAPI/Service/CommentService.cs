@@ -25,6 +25,11 @@ namespace RentACar.WebAPI.Service
             {
                 query = query.Where(x => x.Vehicle.VehicleModel.Manufacturer.ManufacturerName.StartsWith(search.ManufacturerName));
             }
+
+            if (search?.CustomerID.HasValue == true)
+            {
+                query = query.Where(x => x.Customer.CustomerId == search.CustomerID);
+            }
             query = query.OrderBy(x => x.DateOfComment);
 
             return _mapper.Map<List<Data.Model.Comment>>(query.ToList());

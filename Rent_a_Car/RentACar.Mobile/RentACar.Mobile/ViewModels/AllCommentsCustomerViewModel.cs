@@ -11,6 +11,7 @@ namespace RentACar.Mobile.ViewModels
 {
     public class AllCommentsCustomerViewModel: BaseViewModel
     {
+        private readonly APIService _serviceCustomer = new APIService("Customer");
         private readonly APIService _serviceBooking = new APIService("Booking");
 
         public ICommand Init { get; set; }
@@ -27,7 +28,7 @@ namespace RentACar.Mobile.ViewModels
         
         public async Task Initialization()
         {
-            var customerID = await _serviceBooking.GetById<Data.Model.Customer>(APIService.CustomerId);
+            var customerID = await _serviceCustomer.GetById<Data.Model.Customer>(APIService.CustomerId);
             customer = customerID;
 
             var request = new BookingSearchRequest

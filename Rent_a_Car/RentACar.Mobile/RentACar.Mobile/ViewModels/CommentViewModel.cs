@@ -1,6 +1,8 @@
-﻿using RentaCar.Data.Requests.Comments;
+﻿using RentaCar.Data.Requests.Booking;
+using RentaCar.Data.Requests.Comments;
 using RentACar.Mobile.Views;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -11,6 +13,7 @@ namespace RentACar.Mobile.ViewModels
     {
         private readonly APIService _serviceComment = new APIService("Comment");
         private readonly APIService _serviceCustomer = new APIService("Customer");
+        private readonly APIService _serviceBooking = new APIService("Booking");
 
 
         public ICommand CommentCommand { get; set; }
@@ -83,7 +86,6 @@ namespace RentACar.Mobile.ViewModels
                 await Application.Current.MainPage.DisplayAlert("Error", "All fields are required", "Try again");
                 return;
             }
-
             try
             {
                 var customerID = await _serviceCustomer.GetById<Data.Model.Customer>(APIService.CustomerId);
@@ -102,7 +104,40 @@ namespace RentACar.Mobile.ViewModels
                     };
                     await _serviceComment.Insert<Data.Model.Comment>(request);
                     await Application.Current.MainPage.DisplayAlert("Message", "Successfully! You added your comment for rented car!", "OK");
-                    await Application.Current.MainPage.Navigation.PushModalAsync(new MainPage());
+
+                    var listComment = await _serviceComment.Get<List<Data.Model.Comment>>(new CommentSearchRequest
+                    {
+                        CustomerID = customer.CustomerId
+                    });
+
+                    var listBooking = await _serviceBooking.Get<List<Data.Model.Booking>>(new BookingSearchRequest
+                    {
+                        CustomerID = customer.CustomerId
+                    });
+
+                    foreach (var item in listComment)
+                    {
+                        foreach (var book in listBooking)
+                        {
+                            if (item.VehicleId == book.VehicleId)
+                            {
+                                if (book.CommentStatus == false)
+                                {
+                                    var req = new BookingUpsert
+                                    {
+                                        CustomerId = book.CustomerId,
+                                        VehicleId = book.VehicleId,
+                                        StartDate = book.StartDate,
+                                        EndDate = book.EndDate,
+                                        RatingStatus = book.RatingStatus,
+                                        CommentStatus = true
+                                    };
+                                    await _serviceBooking.Update<Data.Model.Booking>(book.BookingId, req);
+                                    return;
+                                }
+                            }
+                        }
+                    }
                 }
             }
             catch (Exception ex)

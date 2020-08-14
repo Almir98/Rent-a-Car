@@ -3,5 +3,7 @@
     public class RatingSearchRequest
     {
         public string ManufacturerName { get; set; }
+        public int? CustomerID { get; set; }
+
     }
 }

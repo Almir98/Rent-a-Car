@@ -143,7 +143,7 @@ namespace RentACar.WinUI.Forms
                     request.VehicleTypeId = vehicletypeID;
                 }
 
-                var idVehiclemodel = cmbVehicleType.SelectedValue;
+                var idVehiclemodel = cmbVehicleModel.SelectedValue;
 
                 if (int.TryParse(idVehiclemodel.ToString(), out int vehiclemodelID))
                 {

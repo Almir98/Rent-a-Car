@@ -1,5 +1,8 @@
-﻿using RentaCar.Data.Requests.Rating;
+﻿using RentaCar.Data.Requests.Booking;
+using RentaCar.Data.Requests.Rating;
+using RentACar.Mobile.Views;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -11,6 +14,7 @@ namespace RentACar.Mobile.ViewModels
         private readonly APIService _serviceRating = new APIService("Rating");
         private readonly APIService _serviceCustomer = new APIService("Customer");
         private readonly APIService _serviceVehicle = new APIService("Vehicle");
+        private readonly APIService _serviceBooking = new APIService("Booking");
 
         public ICommand RatingCommand { get; set; }
         public ICommand Init { get; set; }
@@ -68,6 +72,7 @@ namespace RentACar.Mobile.ViewModels
         public Data.Model.Customer customer { get; set; }
 
 
+
         public async Task Initialization()
         {
             var customerID = await _serviceCustomer.GetById<Data.Model.Customer>(APIService.CustomerId);
@@ -85,7 +90,6 @@ namespace RentACar.Mobile.ViewModels
 
         public async Task SetNewRating()
         {
-
             if (Mark <= 0 || Mark > 10)
             {
                 await Application.Current.MainPage.DisplayAlert("Error", "You have to add mark in range 1 - 10!", "OK");
@@ -106,11 +110,43 @@ namespace RentACar.Mobile.ViewModels
                     {
                         CustomerId = APIService.CustomerId,
                         VehicleId =vehicle.VehicleId,                                    
-                        RatingValue = Mark,
-                        RatingStatus=true
+                        RatingValue = Mark
                     };
                     await _serviceRating.Insert<Data.Model.Rating>(request);
                     await Application.Current.MainPage.DisplayAlert("Message", "Successfully! You added your mark for rented car!", "OK");
+
+                    var listRatings = await _serviceRating.Get<List<Data.Model.Rating>>(new RatingSearchRequest { 
+                        CustomerID=customer.CustomerId
+                    });
+
+                    var listBooking = await _serviceBooking.Get<List<Data.Model.Booking>>(new BookingSearchRequest
+                    {
+                        CustomerID = customer.CustomerId
+                    });
+
+                    foreach (var item in listRatings)
+                    {
+                        foreach (var book in listBooking)
+                        {
+                            if(item.VehicleId== book.VehicleId)
+                            {
+                                if(book.RatingStatus==false)
+                                {
+                                    var req = new BookingUpsert
+                                    {
+                                        CustomerId=book.CustomerId,
+                                        VehicleId=book.VehicleId,
+                                        StartDate=book.StartDate,
+                                        EndDate=book.EndDate,
+                                        RatingStatus=true,
+                                        CommentStatus=book.CommentStatus
+                                    };
+                                    await _serviceBooking.Update<Data.Model.Booking>(book.BookingId, req);
+                                    return;
+                                }
+                            }
+                        }
+                    }
                 }
             }
             catch (Exception ex)

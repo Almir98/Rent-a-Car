@@ -15,10 +15,10 @@ namespace RentaCar.Data.Requests.Customer
         public string Email { get; set; }
         [Required]
         public string Username { get; set; }
-        [Required]
+
         public string Password { get; set; }
-        [Required]
         public string PasswordConfirm { get; set; }
+
         [Required]
         public int CustomerTypeId { get; set; }
         [Required]

@@ -4,5 +4,6 @@
     {
         public int? CustomerID { get; set; }
         public string FirstName { get; set; }
+        public int? VehicleID { get; set; }
     }
 }

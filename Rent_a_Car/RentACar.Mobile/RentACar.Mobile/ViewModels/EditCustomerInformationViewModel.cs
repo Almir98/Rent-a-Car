@@ -121,11 +121,6 @@ namespace RentACar.Mobile.ViewModels
 
                 // Password
 
-                if (NewPassword != ConfirmPassword)
-                {
-                    await Application.Current.MainPage.DisplayAlert("Error", "Password are not matched", "Try again");
-                }
-
                 var request = new CustomerUpsert
                 {
                     FirstName = FirstName,
@@ -135,12 +130,11 @@ namespace RentACar.Mobile.ViewModels
                     Email = Email,
                     Username = Username,
                     CustomerTypeId = 2,
-                    Password = NewPassword,
-                    PasswordConfirm = ConfirmPassword
+                    Password=APIService.Password,
+                    PasswordConfirm=APIService.Password
                 };
 
                 APIService.Username = Username;
-                APIService.Password = NewPassword;
 
                 var userUpdate = await _serviceCustomer.Update<Data.Model.Customer>(APIService.CustomerId,request);
                 await Application.Current.MainPage.DisplayAlert("Succesfull", "Succesfully changed, please log in with new username and password.", "OK");

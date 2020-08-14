@@ -40,14 +40,17 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dtComment = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnPrintRating = new System.Windows.Forms.Button();
+            this.panelPrinting3 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
+            this.panelPrinting3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(61, 88);
+            this.label1.Location = new System.Drawing.Point(61, 81);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(161, 20);
             this.label1.TabIndex = 0;
@@ -57,7 +60,7 @@
             // 
             this.txtComment.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtComment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtComment.Location = new System.Drawing.Point(64, 121);
+            this.txtComment.Location = new System.Drawing.Point(64, 114);
             this.txtComment.Name = "txtComment";
             this.txtComment.ReadOnly = true;
             this.txtComment.Size = new System.Drawing.Size(137, 26);
@@ -67,7 +70,7 @@
             // 
             this.txtDescritpion.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtDescritpion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtDescritpion.Location = new System.Drawing.Point(504, 119);
+            this.txtDescritpion.Location = new System.Drawing.Point(567, 213);
             this.txtDescritpion.Name = "txtDescritpion";
             this.txtDescritpion.ReadOnly = true;
             this.txtDescritpion.Size = new System.Drawing.Size(326, 187);
@@ -78,9 +81,9 @@
             // 
             this.btnBack.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnBack.Location = new System.Drawing.Point(589, 426);
+            this.btnBack.Location = new System.Drawing.Point(476, 537);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(155, 43);
+            this.btnBack.Size = new System.Drawing.Size(155, 49);
             this.btnBack.TabIndex = 3;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = false;
@@ -90,7 +93,7 @@
             // 
             this.txtFirstName.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtFirstName.Location = new System.Drawing.Point(64, 193);
+            this.txtFirstName.Location = new System.Drawing.Point(65, 193);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.ReadOnly = true;
             this.txtFirstName.Size = new System.Drawing.Size(283, 26);
@@ -110,7 +113,7 @@
             // 
             this.txtLastName.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtLastName.Location = new System.Drawing.Point(64, 268);
+            this.txtLastName.Location = new System.Drawing.Point(65, 282);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.ReadOnly = true;
             this.txtLastName.Size = new System.Drawing.Size(283, 26);
@@ -130,21 +133,22 @@
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.dtComment);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtComment);
-            this.groupBox1.Controls.Add(this.txtDescritpion);
             this.groupBox1.Controls.Add(this.btnBack);
+            this.groupBox1.Controls.Add(this.btnPrintRating);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtFirstName);
-            this.groupBox1.Controls.Add(this.txtLastName);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txtDescritpion);
+            this.groupBox1.Controls.Add(this.txtComment);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.txtFirstName);
+            this.groupBox1.Controls.Add(this.dtComment);
+            this.groupBox1.Controls.Add(this.txtLastName);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.groupBox1.Location = new System.Drawing.Point(51, 40);
+            this.groupBox1.Location = new System.Drawing.Point(46, 42);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1037, 567);
+            this.groupBox1.Size = new System.Drawing.Size(1158, 611);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detail of comment";
@@ -153,7 +157,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label6.Location = new System.Drawing.Point(60, 325);
+            this.label6.Location = new System.Drawing.Point(573, 81);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(138, 20);
             this.label6.TabIndex = 12;
@@ -162,7 +166,7 @@
             // dtComment
             // 
             this.dtComment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dtComment.Location = new System.Drawing.Point(64, 361);
+            this.dtComment.Location = new System.Drawing.Point(577, 117);
             this.dtComment.Name = "dtComment";
             this.dtComment.Size = new System.Drawing.Size(282, 26);
             this.dtComment.TabIndex = 11;
@@ -171,24 +175,45 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label5.Location = new System.Drawing.Point(510, 76);
+            this.label5.Location = new System.Drawing.Point(573, 170);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(188, 20);
             this.label5.TabIndex = 10;
             this.label5.Text = "Description of comment";
             // 
+            // btnPrintRating
+            // 
+            this.btnPrintRating.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnPrintRating.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnPrintRating.Location = new System.Drawing.Point(694, 537);
+            this.btnPrintRating.Name = "btnPrintRating";
+            this.btnPrintRating.Size = new System.Drawing.Size(165, 49);
+            this.btnPrintRating.TabIndex = 13;
+            this.btnPrintRating.Text = "Print preview";
+            this.btnPrintRating.UseVisualStyleBackColor = false;
+            this.btnPrintRating.Click += new System.EventHandler(this.btnPrintRating_Click);
+            // 
+            // panelPrinting3
+            // 
+            this.panelPrinting3.Controls.Add(this.groupBox1);
+            this.panelPrinting3.Location = new System.Drawing.Point(21, 27);
+            this.panelPrinting3.Name = "panelPrinting3";
+            this.panelPrinting3.Size = new System.Drawing.Size(1245, 711);
+            this.panelPrinting3.TabIndex = 14;
+            // 
             // frmCommentDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1154, 643);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(1335, 783);
+            this.Controls.Add(this.panelPrinting3);
             this.Name = "frmCommentDetails";
             this.Text = "frmCommentDetails";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmCommentDetails_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panelPrinting3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -207,5 +232,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dtComment;
+        private System.Windows.Forms.Button btnPrintRating;
+        private System.Windows.Forms.Panel panelPrinting3;
     }
 }

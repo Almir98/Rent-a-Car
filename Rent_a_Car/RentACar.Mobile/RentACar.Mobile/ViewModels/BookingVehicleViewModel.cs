@@ -1,4 +1,5 @@
 ﻿using RentaCar.Data.Requests.Booking;
+using RentACar.Mobile.Views;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -96,13 +97,18 @@ namespace RentACar.Mobile.ViewModels
             ModelName = Vehicle.VehicleModel.ModelName;
         }
 
-
         public Data.Model.Vehicle Vehicle { get; set; }
 
         public async Task RentCar()
         {
             try
             {
+                if(StartDate>=EndDate)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Error", "The end date must be greater than the start date of the reservation", "Try again");
+                    return;
+                }
+
                 var request = new BookingUpsert
                 {
                     CustomerId = APIService.CustomerId,

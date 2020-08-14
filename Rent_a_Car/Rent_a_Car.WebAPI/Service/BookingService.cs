@@ -15,7 +15,7 @@ namespace RentACar.WebAPI.Service
 
         public override List<Data.Model.Booking> Get(BookingSearchRequest search)
         {
-            var query = _context.Set<Booking>().Include(x => x.Customer)
+            var query = _context.Set<Database.Booking>().Include(x => x.Customer)
                 .Include(e=>e.Vehicle)
                 .Include(e=>e.Vehicle.VehicleModel)
                 .Include(e=>e.Vehicle.VehicleModel.Manufacturer)
@@ -30,10 +30,17 @@ namespace RentACar.WebAPI.Service
             {
                 query = query.Where(x => x.Customer.CustomerId == search.CustomerID);
             }
+
+            if (search?.VehicleID.HasValue == true)
+            {
+                query = query.Where(x => x.Vehicle.VehicleId == search.VehicleID);
+            }
+
             query = query.OrderBy(x => x.BookingId);
 
             return _mapper.Map<List<Data.Model.Booking>>(query.ToList());
         }
+
 
         public override Data.Model.Booking GetByID(int id)
         {

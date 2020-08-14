@@ -1,6 +1,7 @@
 ﻿using RentaCar.Data.Requests.Customer;
 using RentACar.Mobile.Views;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -45,6 +46,16 @@ namespace RentACar.Mobile.ViewModels
                 {
                     await Application.Current.MainPage.DisplayAlert("Error", "All fields are required", "Try again");
                     return;
+                }
+
+                var userList = await _serviceCustomer.Get<List<Data.Model.Customer>>(null);
+                foreach (var item in userList)
+                {
+                    if (item.Username == Username)
+                    {
+                        await Application.Current.MainPage.DisplayAlert("Error", "Username already exist !", "Try again");
+                        return;
+                    }
                 }
 
                 var request = new CustomerUpsert

@@ -32,13 +32,6 @@
 			<Label Text="Username"></Label>
 			<Entry x:Name="Username" Text="{Binding Username}"></Entry>
 
-
-			<Label Text="New password"></Label>
-			<Entry x:Name="NewPassword" Text="{Binding NewPassword}" IsPassword="True"></Entry>
-
-			<Label Text="Confirm password"></Label>
-			<Entry x:Name="ConfirmPassword" Text="{Binding ConfirmPassword}" IsPassword="True"></Entry>
-
 			<Button Command="{Binding SaveChanges}" Text="Save" Font="Bold,17"></Button>
 
 		</StackLayout>

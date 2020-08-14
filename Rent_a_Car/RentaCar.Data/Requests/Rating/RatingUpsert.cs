@@ -10,6 +10,5 @@ namespace RentaCar.Data.Requests.Rating
         public int CustomerId { get; set; }
         [Required]
         public int VehicleId { get; set; }
-        public bool? RatingStatus { get; set; }
     }
 }

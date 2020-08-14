@@ -19,22 +19,22 @@
 			<Label FontSize="Large" HorizontalOptions="Center" Text="Book this car"></Label>
 
 			<Label Text="FirstName"></Label>
-			<Entry Text="{Binding FirstName}" IsReadOnly="True"></Entry>
+			<Entry Text="{Binding FirstName}" IsReadOnly="True" BackgroundColor="LightGray"></Entry>
 
 			<Label Text="Last Name"></Label>
-			<Entry Text="{Binding LastName}" IsReadOnly="True"></Entry>
+			<Entry Text="{Binding LastName}" IsReadOnly="True" BackgroundColor="LightGray"></Entry>
 
 			<Label Text="Phone "></Label>
-			<Entry Text="{Binding Phone}" IsReadOnly="True"></Entry>
+			<Entry Text="{Binding Phone}" IsReadOnly="True" BackgroundColor="LightGray"></Entry>
 
 			<Label Text="Email"></Label>
-			<Entry Text="{Binding Email}" IsReadOnly="True"></Entry>
+			<Entry Text="{Binding Email}" IsReadOnly="True" BackgroundColor="LightGray"></Entry>
 
 			<Label Text="Manufacturer name"></Label>
-			<Entry Text="{Binding ManufacturerName}" IsReadOnly="True"></Entry>
+			<Entry Text="{Binding ManufacturerName}" IsReadOnly="True" BackgroundColor="LightGray"></Entry>
 
 			<Label Text="Model name"></Label>
-			<Entry Text="{Binding ModelName}" IsReadOnly="True"></Entry>
+			<Entry Text="{Binding ModelName}" IsReadOnly="True" BackgroundColor="LightGray"></Entry>
 
 			<Label Text="Start date"></Label>
 			<DatePicker Date="{Binding StartDate}"></DatePicker>

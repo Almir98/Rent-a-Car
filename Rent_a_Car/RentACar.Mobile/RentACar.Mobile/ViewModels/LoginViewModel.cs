@@ -88,7 +88,7 @@ namespace RentACar.Mobile.ViewModels
                         APIService.CustomerId = item.CustomerId;
                     }
                 }
-                await _service.Get<dynamic>(null);
+                //await _service.Get<dynamic>(null);
                 Application.Current.MainPage = new MainPage();
             }
             catch (Exception ex)
