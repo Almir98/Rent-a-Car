@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Helper;
 using Microsoft.EntityFrameworkCore;
 using RentaCar.Data.Requests.Customer;
 using RentACar.WebAPI.Database;
@@ -44,26 +45,6 @@ namespace RentACar.WebAPI.Service
             return _mapper.Map<List<Data.Model.Customer>>(query.ToList());
         }
 
-        private static string GenerateSalt()
-        {
-            var buffer = new byte[16];
-            (new RNGCryptoServiceProvider()).GetBytes(buffer);
-            return Convert.ToBase64String(buffer);
-        }
-        private static string GenerateHash(string salt, string password)
-        {
-            byte[] src = Convert.FromBase64String(salt);
-            byte[] bytes = Encoding.Unicode.GetBytes(password);
-            byte[] dst = new byte[src.Length + bytes.Length];
-
-            System.Buffer.BlockCopy(src, 0, dst, 0, src.Length);
-            System.Buffer.BlockCopy(bytes, 0, dst, src.Length, bytes.Length);
-
-            HashAlgorithm algorithm = HashAlgorithm.Create("SHA1");
-            byte[] inArray = algorithm.ComputeHash(dst);
-            return Convert.ToBase64String(inArray);
-        }
-
         public Data.Model.Customer Insert(CustomerUpsert request)
         {
             var entity = _mapper.Map<Customer>(request);
@@ -72,8 +53,8 @@ namespace RentACar.WebAPI.Service
             {
                 throw new Exception("Password and password confirm not matched !");
             }
-            entity.PasswordSalt = GenerateSalt();
-            entity.PasswordHash = GenerateHash(entity.PasswordSalt, request.Password);
+            entity.PasswordSalt = HashGenerator.GenerateSalt();
+            entity.PasswordHash = HashGenerator.GenerateHash(entity.PasswordSalt, request.Password);
 
             _context.Add(entity);
             _context.SaveChanges();
@@ -100,7 +81,7 @@ namespace RentACar.WebAPI.Service
 
             if (customer != null)
             {
-                var newHash = GenerateHash(customer.PasswordSalt, request.Password);
+                var newHash = HashGenerator.GenerateHash(customer.PasswordSalt, request.Password);
 
                 if (customer.PasswordHash == newHash)
                 {

@@ -11,10 +11,8 @@ namespace RentaCar.Data.Requests.Branch
         public string PhoneNumber { get; set; }
         [Required]
         public string Adress { get; set; }
-        [Required]
-        public DateTime? OpenTime { get; set; }
-        [Required]
-        public DateTime? CloseTime { get; set; }
+        public string OpenTime { get; set; }
+        public string CloseTime { get; set; }
         [Required(AllowEmptyStrings = false)]
         public string Description { get; set; }
         [Required]

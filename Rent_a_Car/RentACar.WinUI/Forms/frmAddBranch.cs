@@ -43,8 +43,8 @@ namespace RentACar.WinUI.Forms
                     BranchName = txtBranchName.Text,
                     PhoneNumber = txtPhoneNumber.Text,
                     Adress = txtAdress.Text,
-                    OpenTime = DateTime.Parse(txtOpenTime.Text),
-                    CloseTime = DateTime.Parse(txtClosedTime.Text),
+                    OpenTime = txtOpenTime.Text,
+                    CloseTime = txtClosedTime.Text,
                     Description = txtDescription.Text
                 };
 
@@ -123,6 +123,32 @@ namespace RentACar.WinUI.Forms
             else
             {
                 errorProvider.SetError(cmbCity, null);
+            }
+        }
+
+        private void txtOpenTime_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtOpenTime.Text))
+            {
+                errorProvider.SetError(txtOpenTime, " Required");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(txtOpenTime, null);
+            }
+        }
+
+        private void txtClosedTime_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtClosedTime.Text))
+            {
+                errorProvider.SetError(txtClosedTime, " Required");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(txtClosedTime, null);
             }
         }
     }

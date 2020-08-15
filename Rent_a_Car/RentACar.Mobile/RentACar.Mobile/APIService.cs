@@ -18,7 +18,7 @@ namespace RentACar.Mobile
         private readonly string _route;
 
 #if DEBUG 
-        private string _apiUrl = "http://localhost:51887/api";
+        private string _apiUrl = "http://localhost:51886/api";
 #endif
 #if RELEASE
         private string _apiUrl = "https://mywebsite.azure.com/api/";

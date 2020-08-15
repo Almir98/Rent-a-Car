@@ -11,16 +11,16 @@ services:
     ports:
       - 1401:1433
     networks:
-      - moviepicknet
+      - rentacarnet
 
-  Rent_a_Car.WebAPI-api:
+  rent_a_car:
     restart: unless-stopped
     build:
       context: .
     environment:
-      - ConnectionStrings:Rent_a_Car=Server=rentacar-sql,1433;Database=170044;User=sa;Password=QWElkj132!;ConnectRetryCount=0
+      - ConnectionStrings:RentACar=Server=rentacar-sql,1433;Database=170044;User=sa;Password=QWElkj132!;ConnectRetryCount=0
     ports:
-      - 51887:80
+      - 51886
     networks:
       - rentacarnet      
     links:
@@ -29,5 +29,5 @@ services:
       - rentacar-sql
 
 networks:
-  moviepicknet:
+  rentacarnet:
     driver: bridge       

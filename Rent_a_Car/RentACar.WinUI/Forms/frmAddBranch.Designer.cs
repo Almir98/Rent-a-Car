@@ -152,6 +152,7 @@
             this.txtOpenTime.Name = "txtOpenTime";
             this.txtOpenTime.Size = new System.Drawing.Size(100, 26);
             this.txtOpenTime.TabIndex = 10;
+            this.txtOpenTime.Validating += new System.ComponentModel.CancelEventHandler(this.txtOpenTime_Validating);
             // 
             // txtClosedTime
             // 
@@ -161,6 +162,7 @@
             this.txtClosedTime.Name = "txtClosedTime";
             this.txtClosedTime.Size = new System.Drawing.Size(100, 26);
             this.txtClosedTime.TabIndex = 11;
+            this.txtClosedTime.Validating += new System.ComponentModel.CancelEventHandler(this.txtClosedTime_Validating);
             // 
             // label6
             // 

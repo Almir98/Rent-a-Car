@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace RentACar.WebAPI.Database
 {
@@ -30,7 +32,8 @@ namespace RentACar.WebAPI.Database
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=.;Database=RentaCar;Trusted_Connection=True;");
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                optionsBuilder.UseSqlServer("Server=.;Database=RentaCar;Integrated Security=True;Trusted_Connection=True;");
             }
         }
 
@@ -75,13 +78,13 @@ namespace RentACar.WebAPI.Database
 
                 entity.Property(e => e.CityId).HasColumnName("CityID");
 
-                entity.Property(e => e.CloseTime).HasColumnType("datetime");
+                entity.Property(e => e.CloseTime).HasMaxLength(10);
 
                 entity.Property(e => e.Description)
                     .IsRequired()
                     .HasMaxLength(500);
 
-                entity.Property(e => e.OpenTime).HasColumnType("datetime");
+                entity.Property(e => e.OpenTime).HasMaxLength(10);
 
                 entity.Property(e => e.PhoneNumber)
                     .IsRequired()
@@ -156,11 +159,11 @@ namespace RentACar.WebAPI.Database
 
                 entity.Property(e => e.PasswordHash)
                     .IsRequired()
-                    .HasMaxLength(100);
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.PasswordSalt)
                     .IsRequired()
-                    .HasMaxLength(100);
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.Phone)
                     .IsRequired()

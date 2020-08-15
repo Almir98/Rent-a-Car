@@ -28,5 +28,9 @@
     <ProjectReference Include="..\RentaCar.Data\RentaCar.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
+
 
 </Project>

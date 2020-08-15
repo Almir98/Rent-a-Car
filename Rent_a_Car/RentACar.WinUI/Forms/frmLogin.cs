@@ -30,6 +30,7 @@ namespace RentACar.WinUI.Forms
                     Username=txtUsername.Text
                 };
                 var customer=await _apiService.Get<List<Data.Model.Customer>>(request);
+
                 if(customer.Count==0){
                     MessageBox.Show("Customer with this credentials don't exist! Try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
