@@ -1,0 +1,33 @@
+version: '3'
+services:
+#mssql docker
+  rentacar-sql:
+    image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+    restart: unless-stopped
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=QWElkj132!
+      - MSSQL_PID=Developer
+    ports:
+      - 1401:1433
+    networks:
+      - moviepicknet
+
+  Rent_a_Car.WebAPI-api:
+    restart: unless-stopped
+    build:
+      context: .
+    environment:
+      - ConnectionStrings:Rent_a_Car=Server=rentacar-sql,1433;Database=170044;User=sa;Password=QWElkj132!;ConnectRetryCount=0
+    ports:
+      - 51887:80
+    networks:
+      - rentacarnet      
+    links:
+      - rentacar-sql
+    depends_on:
+      - rentacar-sql
+
+networks:
+  moviepicknet:
+    driver: bridge       
