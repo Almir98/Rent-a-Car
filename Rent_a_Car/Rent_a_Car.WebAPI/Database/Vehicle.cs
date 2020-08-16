@@ -23,10 +23,10 @@ namespace RentACar.WebAPI.Database
         public string Transmission { get; set; }
         public int NumberOfSeats { get; set; }
         public bool? Status { get; set; }
-        public int BranchId { get; set; }
-        public int FuelTypeId { get; set; }
-        public int VehicleTypeId { get; set; }
-        public int VehicleModelId { get; set; }
+        public int? BranchId { get; set; }
+        public int? FuelTypeId { get; set; }
+        public int? VehicleTypeId { get; set; }
+        public int? VehicleModelId { get; set; }
 
         public virtual Branch Branch { get; set; }
         public virtual FuelType FuelType { get; set; }

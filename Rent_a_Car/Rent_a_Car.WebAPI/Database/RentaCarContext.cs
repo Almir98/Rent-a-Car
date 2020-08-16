@@ -32,7 +32,6 @@ namespace RentACar.WebAPI.Database
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("Server=.;Database=RentaCar;Integrated Security=True;Trusted_Connection=True;");
             }
         }
@@ -54,13 +53,11 @@ namespace RentACar.WebAPI.Database
                 entity.HasOne(d => d.Customer)
                     .WithMany(p => p.Booking)
                     .HasForeignKey(d => d.CustomerId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Booking_CustomerID");
 
                 entity.HasOne(d => d.Vehicle)
                     .WithMany(p => p.Booking)
                     .HasForeignKey(d => d.VehicleId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Booking_VehicleID");
             });
 
@@ -93,7 +90,6 @@ namespace RentACar.WebAPI.Database
                 entity.HasOne(d => d.City)
                     .WithMany(p => p.Branch)
                     .HasForeignKey(d => d.CityId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Branch_CityID");
             });
 
@@ -127,13 +123,11 @@ namespace RentACar.WebAPI.Database
                 entity.HasOne(d => d.Customer)
                     .WithMany(p => p.Comment)
                     .HasForeignKey(d => d.CustomerId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Comment_CustomerID");
 
                 entity.HasOne(d => d.Vehicle)
                     .WithMany(p => p.Comment)
                     .HasForeignKey(d => d.VehicleId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Comment_VehicleID");
             });
 
@@ -176,7 +170,6 @@ namespace RentACar.WebAPI.Database
                 entity.HasOne(d => d.City)
                     .WithMany(p => p.Customer)
                     .HasForeignKey(d => d.CityId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Customer_CityID");
 
                 entity.HasOne(d => d.CustomerType)
@@ -221,13 +214,11 @@ namespace RentACar.WebAPI.Database
                 entity.HasOne(d => d.Customer)
                     .WithMany(p => p.Rating)
                     .HasForeignKey(d => d.CustomerId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Rating_CustomerID");
 
                 entity.HasOne(d => d.Vehicle)
                     .WithMany(p => p.Rating)
                     .HasForeignKey(d => d.VehicleId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Rating_VehicleID");
             });
 
@@ -262,25 +253,21 @@ namespace RentACar.WebAPI.Database
                 entity.HasOne(d => d.Branch)
                     .WithMany(p => p.Vehicle)
                     .HasForeignKey(d => d.BranchId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Vehicle_BranchID");
 
                 entity.HasOne(d => d.FuelType)
                     .WithMany(p => p.Vehicle)
                     .HasForeignKey(d => d.FuelTypeId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Vehicle_FuelTypeID");
 
                 entity.HasOne(d => d.VehicleModel)
                     .WithMany(p => p.Vehicle)
                     .HasForeignKey(d => d.VehicleModelId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Vehicle_ModelID");
 
                 entity.HasOne(d => d.VehicleType)
                     .WithMany(p => p.Vehicle)
                     .HasForeignKey(d => d.VehicleTypeId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Vehicle_VehicleTypeID");
             });
 
@@ -300,7 +287,6 @@ namespace RentACar.WebAPI.Database
                 entity.HasOne(d => d.Manufacturer)
                     .WithMany(p => p.VehicleModel)
                     .HasForeignKey(d => d.ManufacturerId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Model_ManufacturerID");
             });
 

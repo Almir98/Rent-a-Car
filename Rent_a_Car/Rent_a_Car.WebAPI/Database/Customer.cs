@@ -20,7 +20,7 @@ namespace RentACar.WebAPI.Database
         public string Username { get; set; }
         public string PasswordSalt { get; set; }
         public string PasswordHash { get; set; }
-        public int CityId { get; set; }
+        public int? CityId { get; set; }
         public int? CustomerTypeId { get; set; }
 
         public virtual City City { get; set; }

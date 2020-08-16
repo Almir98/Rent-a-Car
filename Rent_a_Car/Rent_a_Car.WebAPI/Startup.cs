@@ -41,7 +41,9 @@ namespace Rent_a_Car.WebAPI
 
             services.AddControllers();
 
-            services.AddDbContext<RentaCarContext>(c => c.UseSqlServer(Configuration.GetConnectionString("RentaCarCS")));    
+            
+            services.AddDbContext<RentaCarContext>(c => c.UseSqlServer(Configuration.GetConnectionString("RentaCarCS"))
+            .EnableSensitiveDataLogging());    
 
             services.AddControllers().AddNewtonsoftJson(options =>
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore

@@ -17,7 +17,7 @@ namespace RentACar.WebAPI.Database
         public string OpenTime { get; set; }
         public string CloseTime { get; set; }
         public string Description { get; set; }
-        public int CityId { get; set; }
+        public int? CityId { get; set; }
 
         public virtual City City { get; set; }
         public virtual ICollection<Vehicle> Vehicle { get; set; }

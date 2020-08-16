@@ -1,5 +1,8 @@
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using RentACar.WebAPI;
+using RentACar.WebAPI.Database;
 
 namespace Rent_a_Car.WebAPI
 {
@@ -7,7 +10,14 @@ namespace Rent_a_Car.WebAPI
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var host = CreateHostBuilder(args).Build();
+
+            using (var scope = host.Services.CreateScope())
+            {
+                var context = scope.ServiceProvider.GetRequiredService<RentaCarContext>();
+                SetupService.Seed(context);
+            }
+            host.Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

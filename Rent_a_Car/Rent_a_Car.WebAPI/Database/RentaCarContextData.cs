@@ -56,6 +56,7 @@ namespace RentACar.WebAPI.Database
                 PostCode = "70230"
             });
 
+
             // CUSTOMER -> Administrator
 
             Customer c = new Customer
@@ -207,7 +208,7 @@ namespace RentACar.WebAPI.Database
             modelBuilder.Entity<VehicleType>().HasData(new VehicleType()
             {
                 VehcileTypeId = 5,
-                TypeName = "Off-road"
+                TypeName = "Off road"
             });
 
             // MANUFACTURER
@@ -362,7 +363,7 @@ namespace RentACar.WebAPI.Database
                 Status = true,
                 BranchId = 2,
                 FuelTypeId = 2,
-                VehicleTypeId = 1,
+                VehicleTypeId = 4,
                 VehicleModelId = 2
             });
 
@@ -422,7 +423,7 @@ namespace RentACar.WebAPI.Database
                 Status = true,
                 BranchId = 4,
                 FuelTypeId = 1,
-                VehicleTypeId = 1,
+                VehicleTypeId = 3,
                 VehicleModelId = 5
             });
 
@@ -451,7 +452,7 @@ namespace RentACar.WebAPI.Database
             {
                 VehicleId = 7,
                 RegistrationNumber = "G77-G-777",
-                Image = File.ReadAllBytes("img/citroen"),
+                Image = File.ReadAllBytes("img/citroen.jpg"),
                 VehicleNumber = 7,
                 DailyPrice = 90,
                 Description = "Citroen C5 150 KS. Vrhunski auto, super ocuvan. Spreman da odgovori na sve vase potrebe.",
@@ -462,9 +463,10 @@ namespace RentACar.WebAPI.Database
                 Status = true,
                 BranchId = 2,
                 FuelTypeId = 1,
-                VehicleTypeId = 2,
+                VehicleTypeId = 5,
                 VehicleModelId = 7
             });
+
 
             // BOOKING
 
@@ -668,6 +670,7 @@ namespace RentACar.WebAPI.Database
                 CustomerId = 2,
                 VehicleId = 5
             });
+
         }
     }
 }
