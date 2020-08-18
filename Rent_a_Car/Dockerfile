@@ -10,6 +10,7 @@ RUN dotnet publish "Rent_a_Car.WebAPI" -c Release -o /app
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app .
+ADD ./Rent_a_Car.WebAPI/img ./img
 
 
 ENTRYPOINT ["dotnet", "RentACar.WebAPI.dll"] 

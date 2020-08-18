@@ -13,20 +13,21 @@ services:
     networks:
       - rentacarnet
 
-  rent_a_car:
+  rent_a_car-api:
     restart: unless-stopped
     build:
       context: .
     environment:
       - ConnectionStrings:RentACar=Server=rentacar-sql,1433;Database=170044;User=sa;Password=QWElkj132!;ConnectRetryCount=0
     ports:
-      - 51886
+      - 51886:80
     networks:
       - rentacarnet      
     links:
       - rentacar-sql
     depends_on:
       - rentacar-sql
+    image: billings-docker:latest
 
 networks:
   rentacarnet:

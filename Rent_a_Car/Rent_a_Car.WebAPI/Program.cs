@@ -1,8 +1,11 @@
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using RentACar.WebAPI;
 using RentACar.WebAPI.Database;
+using System;
 
 namespace Rent_a_Car.WebAPI
 {

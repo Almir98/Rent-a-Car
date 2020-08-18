@@ -467,7 +467,6 @@ namespace RentACar.WebAPI.Database
                 VehicleModelId = 7
             });
 
-
             // BOOKING
 
             modelBuilder.Entity<Booking>().HasData(new Booking()
