@@ -1,14 +1,12 @@
 Software development II project - Rent a car 
 
-Desktop:
+Desktop application:
+	Username: desktop
+	Password: test
 
-Username: desktop
-Password: test
-
-Mobile:
-
-Username: mobile
-Username: test
+Mobile application
+	Username: mobile
+	Password: test
 ________________________________________________________________________
 
 This project contains 3 interconnected applications:
