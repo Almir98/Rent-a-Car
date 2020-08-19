@@ -20,7 +20,7 @@ services:
     environment:
       - ConnectionStrings:RentCar=Server=rentacar-sql,1433;Database=170044;User=sa;Password=QWElkj132!;ConnectRetryCount=0
     ports:
-      - 51887:80
+      - 51886:80
     networks:
       - rentacarnet      
     links:
