@@ -1,12 +1,11 @@
-#Software development II project - Rent a car 
+Software development II project - Rent a car 
 
-##Credentials:
-###Desktop:
+Desktop:
 
 Username: desktop
 Password: test
 
-###Mobile:
+Mobile:
 
 Username: mobile
 Username: test
