@@ -42,7 +42,7 @@ namespace Rent_a_Car.WebAPI
             services.AddControllers();
 
             
-            services.AddDbContext<RentaCarContext>(c => c.UseSqlServer(Configuration.GetConnectionString("RentaCarCS"))
+            services.AddDbContext<RentaCarContext>(c => c.UseSqlServer(Configuration.GetConnectionString("RentCar"))
             .EnableSensitiveDataLogging());    
 
             services.AddControllers().AddNewtonsoftJson(options =>

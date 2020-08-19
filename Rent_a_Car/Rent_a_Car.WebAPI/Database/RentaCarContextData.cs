@@ -26,13 +26,13 @@ namespace RentACar.WebAPI.Database
                 Type = "Korisnik"
             });
 
-            //CITY
-            
+            ////CITY
+
             modelBuilder.Entity<City>().HasData(new City()
             {
-                CityId=1,
-                CityName="Sarajevo",
-                PostCode="71000"
+                CityId = 1,
+                CityName = "Sarajevo",
+                PostCode = "71000"
             });
 
             modelBuilder.Entity<City>().HasData(new City()
@@ -98,11 +98,11 @@ namespace RentACar.WebAPI.Database
                 BranchId = 1,
                 BranchName = "Kramar",
                 PhoneNumber = "255 251",
-                Adress="Nova Otoka 4",
-                OpenTime="08:00",
-                CloseTime="17:00",
-                Description="Dođite i uvjerite se u nas kvalitet.",
-                CityId=1
+                Adress = "Nova Otoka 4",
+                OpenTime = "08:00",
+                CloseTime = "17:00",
+                Description = "Dođite i uvjerite se u nas kvalitet.",
+                CityId = 1
             });
 
             modelBuilder.Entity<Branch>().HasData(new Branch()
@@ -145,8 +145,8 @@ namespace RentACar.WebAPI.Database
 
             modelBuilder.Entity<FuelType>().HasData(new FuelType()
             {
-                FuelTypeId=1,
-                FuelName="Diesel"
+                FuelTypeId = 1,
+                FuelName = "Diesel"
             });
 
             modelBuilder.Entity<FuelType>().HasData(new FuelType()
@@ -183,8 +183,8 @@ namespace RentACar.WebAPI.Database
 
             modelBuilder.Entity<VehicleType>().HasData(new VehicleType()
             {
-                VehcileTypeId=1,
-                TypeName="Limousine"
+                VehcileTypeId = 1,
+                TypeName = "Limousine"
             });
 
             modelBuilder.Entity<VehicleType>().HasData(new VehicleType()
@@ -215,8 +215,8 @@ namespace RentACar.WebAPI.Database
 
             modelBuilder.Entity<Manufacturer>().HasData(new Manufacturer()
             {
-                ManufacturerId=1,
-                ManufacturerName="Audi"
+                ManufacturerId = 1,
+                ManufacturerName = "Audi"
             });
 
             modelBuilder.Entity<Manufacturer>().HasData(new Manufacturer()
@@ -255,25 +255,13 @@ namespace RentACar.WebAPI.Database
                 ManufacturerName = "Škoda"
             });
 
-            modelBuilder.Entity<Manufacturer>().HasData(new Manufacturer()
-            {
-                ManufacturerId = 8,
-                ManufacturerName = "Opel"
-            });
-
-            modelBuilder.Entity<Manufacturer>().HasData(new Manufacturer()
-            {
-                ManufacturerId = 9,
-                ManufacturerName = "Seat"
-            });
-
             //VEHICLEMODEL
 
             modelBuilder.Entity<VehicleModel>().HasData(new VehicleModel()
             {
-                ModelId=1,
-                ModelName="A6",
-                ManufacturerId=1
+                ModelId = 1,
+                ModelName = "A6",
+                ManufacturerId = 1
             });
 
             modelBuilder.Entity<VehicleModel>().HasData(new VehicleModel()
@@ -318,33 +306,27 @@ namespace RentACar.WebAPI.Database
                 ManufacturerId = 6
             });
 
-            modelBuilder.Entity<VehicleModel>().HasData(new VehicleModel()
-            {
-                ModelId = 8,
-                ModelName = "Octavia",
-                ManufacturerId = 7
-            });
 
             // VEHICLES
 
             // Audi A6 
             modelBuilder.Entity<Vehicle>().HasData(new Vehicle()
             {
-                VehicleId=1,
-                RegistrationNumber="A11-A-111",
-                Image=File.ReadAllBytes("img/audia6.jpg"),
-                VehicleNumber=1,
-                DailyPrice=100,
-                Description="Audi A6 3.0 TDI Quattro. Vrhunski auto, super ocuvan. Spreman da odgovori na sve vase potrebe.",
-                ManufacturerDate=new DateTime(2015, 6, 6),
-                Mileage="170500",
-                Transmission="Automatik",
-                NumberOfSeats=5,
-                Status=true,
-                BranchId=1,
-                FuelTypeId=1,
-                VehicleTypeId=1,
-                VehicleModelId=1
+                VehicleId = 1,
+                RegistrationNumber = "A11-A-111",
+                Image = File.ReadAllBytes("img/audia6.jpg"),
+                VehicleNumber = 1,
+                DailyPrice = 100,
+                Description = "Audi A6 3.0 TDI Quattro. Vrhunski auto, super ocuvan. Spreman da odgovori na sve vase potrebe.",
+                ManufacturerDate = new DateTime(2015, 6, 6),
+                Mileage = "170500",
+                Transmission = "Automatik",
+                NumberOfSeats = 5,
+                Status = true,
+                BranchId = 1,
+                FuelTypeId = 1,
+                VehicleTypeId = 1,
+                VehicleModelId = 1
             });
 
             // Audi A7 
@@ -471,13 +453,13 @@ namespace RentACar.WebAPI.Database
 
             modelBuilder.Entity<Booking>().HasData(new Booking()
             {
-                BookingId=1,
-                StartDate=new DateTime(2020,08,16),
-                EndDate=new DateTime(2020,08,16),
-                CustomerId=2,
-                VehicleId=1,
-                RatingStatus=false,
-                CommentStatus=false
+                BookingId = 1,
+                StartDate = new DateTime(2020, 08, 16),
+                EndDate = new DateTime(2020, 08, 16),
+                CustomerId = 2,
+                VehicleId = 1,
+                RatingStatus = false,
+                CommentStatus = false
             });
 
             modelBuilder.Entity<Booking>().HasData(new Booking()
@@ -550,11 +532,11 @@ namespace RentACar.WebAPI.Database
 
             modelBuilder.Entity<Comment>().HasData(new Comment()
             {
-                CommentId=1,
-                Description="Audi A6 je vrhunski auto. Preporučujem ga, sve pohvale.",
-                DateOfComment=new DateTime(2020,08,16),
-                CustomerId=2,
-                VehicleId=1
+                CommentId = 1,
+                Description = "Audi A6 je vrhunski auto. Preporučujem ga, sve pohvale.",
+                DateOfComment = new DateTime(2020, 08, 16),
+                CustomerId = 2,
+                VehicleId = 1
             });
 
             modelBuilder.Entity<Comment>().HasData(new Comment()
@@ -616,10 +598,10 @@ namespace RentACar.WebAPI.Database
 
             modelBuilder.Entity<Rating>().HasData(new Rating()
             {
-                RatingId=1,
-                RatingValue=9,
-                CustomerId=2,
-                VehicleId=1
+                RatingId = 1,
+                RatingValue = 9,
+                CustomerId = 2,
+                VehicleId = 1
             });
 
             modelBuilder.Entity<Rating>().HasData(new Rating()

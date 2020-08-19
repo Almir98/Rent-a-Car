@@ -11,7 +11,7 @@ namespace RentACar.WebAPI
     {
         public static void Seed(RentaCarContext context)
         {
-            context.Database.Migrate();
+            context.Database.EnsureCreated();
         }
     }
 }

@@ -7,28 +7,27 @@ services:
     environment:
       - ACCEPT_EULA=Y
       - SA_PASSWORD=QWElkj132!
-      - MSSQL_PID=Developer
+      - MSSQL_PID=Enterprise
     ports:
       - 1401:1433
     networks:
       - rentacarnet
 
-  rent_a_car-api:
+  rentacar-api:
     restart: unless-stopped
     build:
       context: .
     environment:
-      - ConnectionStrings:RentACar=Server=rentacar-sql,1433;Database=170044;User=sa;Password=QWElkj132!;ConnectRetryCount=0
+      - ConnectionStrings:RentCar=Server=rentacar-sql,1433;Database=170044;User=sa;Password=QWElkj132!;ConnectRetryCount=0
     ports:
-      - 51886:80
+      - 51887:80
     networks:
       - rentacarnet      
     links:
       - rentacar-sql
     depends_on:
       - rentacar-sql
-    image: billings-docker:latest
-
+      
 networks:
   rentacarnet:
-    driver: bridge       
+    driver: bridge  
