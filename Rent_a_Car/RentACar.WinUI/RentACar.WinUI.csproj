@@ -70,11 +70,23 @@
     <Compile Include="Forms\frmAddBranch.Designer.cs">
       <DependentUpon>frmAddBranch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmAddManufacturer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddManufacturer.Designer.cs">
+      <DependentUpon>frmAddManufacturer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmAddVehicle.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\frmAddVehicle.Designer.cs">
       <DependentUpon>frmAddVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAddVehicleModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAddVehicleModel.Designer.cs">
+      <DependentUpon>frmAddVehicleModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmAllBooking.cs">
       <SubType>Form</SubType>
@@ -174,8 +186,14 @@
     <EmbeddedResource Include="Forms\frmAddBranch.resx">
       <DependentUpon>frmAddBranch.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAddManufacturer.resx">
+      <DependentUpon>frmAddManufacturer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmAddVehicle.resx">
       <DependentUpon>frmAddVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAddVehicleModel.resx">
+      <DependentUpon>frmAddVehicleModel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmAllBooking.resx">
       <DependentUpon>frmAllBooking.cs</DependentUpon>

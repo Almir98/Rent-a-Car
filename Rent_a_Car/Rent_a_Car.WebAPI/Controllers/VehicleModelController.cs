@@ -3,14 +3,13 @@ using Microsoft.AspNetCore.Mvc;
 using Rent_a_Car.WebAPI.Controllers;
 using Rent_a_Car.WebAPI.Interface;
 using RentaCar.Data.Requests.VehicleModel;
+using RentACar.WebAPI.Interface;
 
 namespace RentACar.WebAPI.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class VehicleModelController : BaseController<Data.Model.VehicleModel, VehicleModelSearch>
+    public class VehicleModelController : BaseCRUDController<Data.Model.VehicleModel, VehicleModelSearch, VehicleModelUpsert, VehicleModelUpsert>
     {
-        public VehicleModelController(IService<VehicleModel, VehicleModelSearch> service) : base(service)
+        public VehicleModelController(ICRUDService<VehicleModel, VehicleModelSearch, VehicleModelUpsert, VehicleModelUpsert> service) : base(service)
         {
         }
     }

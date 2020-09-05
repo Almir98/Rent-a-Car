@@ -168,5 +168,19 @@ namespace RentACar.WinUI
             form.Show();
 
         }
+
+        private void newManufacturerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddManufacturer form = new frmAddManufacturer();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void newVehicleModelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddVehicleModel form = new frmAddVehicleModel();
+            form.MdiParent = this;
+            form.Show();
+        }
     }
 }

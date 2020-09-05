@@ -87,12 +87,11 @@ namespace RentACar.Mobile.ViewModels
         public async Task Init()
         {
             var customerID = await _serviceCustomer.GetById<Data.Model.Customer>(APIService.CustomerId);
-            customer = customerID;
 
-            FirstName = customer.FirstName;
-            LastName = customer.LastName;
-            Phone = customer.Phone;
-            Email = customer.Email;
+            FirstName = customerID.FirstName;
+            LastName = customerID.LastName;
+            Phone = customerID.Phone;
+            Email = customerID.Email;
             ManufacturerName = Vehicle.VehicleModel.Manufacturer.ManufacturerName;
             ModelName = Vehicle.VehicleModel.ModelName;
         }

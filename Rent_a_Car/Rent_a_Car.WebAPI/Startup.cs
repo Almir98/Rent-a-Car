@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using Rent_a_Car.WebAPI.Filters;
+//using Rent_a_Car.WebAPI.Filters;
 using Rent_a_Car.WebAPI.Interface;
 using Rent_a_Car.WebAPI.Service;
 using RentaCar.Data.Requests.Booking;
@@ -37,7 +37,7 @@ namespace Rent_a_Car.WebAPI
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc(x => x.Filters.Add<ErrorFilter>());        
+            //services.AddMvc(x => x.Filters.Add<ErrorFilter>());        
 
             services.AddControllers();
 
@@ -88,10 +88,11 @@ namespace Rent_a_Car.WebAPI
 
             services.AddScoped<IService<Data.Model.FuelType, object>, BaseService<Data.Model.FuelType, object, RentACar.WebAPI.Database.FuelType>>();
             services.AddScoped<IService<VehicleTypeRequest, object>, BaseService<VehicleTypeRequest, object, RentACar.WebAPI.Database.VehicleType>>();
-            services.AddScoped<IService<Data.Model.VehicleModel, VehicleModelSearch>, VehicleModelService>();
             services.AddScoped<IService<Data.Model.City, CitySearchRequest>, CityService>();
-            services.AddScoped<IService<Data.Model.Manufacturer, object>, BaseService<Data.Model.Manufacturer, object, RentACar.WebAPI.Database.Manufacturer>>();
+
+            services.AddScoped<ICRUDService<Data.Model.VehicleModel, VehicleModelSearch, VehicleModelUpsert, VehicleModelUpsert>, VehicleModelService>();
             
+            services.AddScoped<ICRUDService<Data.Model.Manufacturer, ManufacturerSearchRequest, ManufacturerUpsert, ManufacturerUpsert>, ManufacturerService>();
             services.AddScoped<ICRUDService<Data.Model.Branch, BranchSearchRequest, BranchUpsert, BranchUpsert>, BranchService>();
             services.AddScoped<ICRUDService<Data.Model.Vehicle, VehicleSearchRequest, VehicleUpsert, VehicleUpsert>, VehicleService>();
             services.AddScoped<ICRUDService<Data.Model.Booking, BookingSearchRequest, BookingUpsert, BookingUpsert>, BookingService>();
