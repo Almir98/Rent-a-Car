@@ -21,10 +21,16 @@ namespace RentACar.WebAPI.Service
                 .Include(e => e.Branch)
                 .AsQueryable();
 
+            if (!string.IsNullOrEmpty(search.RegistrationNumber))
+            {
+                query = query.Where(x => x.RegistrationNumber == search.RegistrationNumber);
+            }
+
             if (!string.IsNullOrEmpty(search.ManufacturerName))
             {
                 query = query.Where(x => x.VehicleModel.Manufacturer.ManufacturerName.StartsWith(search.ManufacturerName));
             }
+
             query = query.OrderBy(x => x.VehicleModel.Manufacturer.ManufacturerName);
 
             return _mapper.Map<List<Data.Model.Vehicle>>(query.ToList());

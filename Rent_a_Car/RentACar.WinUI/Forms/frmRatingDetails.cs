@@ -88,9 +88,5 @@ namespace RentACar.WinUI.Forms
             memoryImage = new Bitmap(panelPrinting.Width, panelPrinting.Height);
             panelPrinting.DrawToBitmap(memoryImage, new Rectangle(0, 0, panelPrinting.Width, panelPrinting.Height));
         }
-
-
-
-
     }
 }

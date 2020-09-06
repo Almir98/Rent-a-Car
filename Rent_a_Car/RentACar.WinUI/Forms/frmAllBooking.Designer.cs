@@ -32,8 +32,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnBooking = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtStartDate = new System.Windows.Forms.DateTimePicker();
             this.dgvBooking = new System.Windows.Forms.DataGridView();
-            this.label8 = new System.Windows.Forms.Label();
             this.BookingId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,15 +42,18 @@
             this.ModelName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtEndDate = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooking)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBookingSearch
             // 
-            this.txtBookingSearch.Location = new System.Drawing.Point(17, 45);
+            this.txtBookingSearch.Location = new System.Drawing.Point(129, 31);
             this.txtBookingSearch.Name = "txtBookingSearch";
-            this.txtBookingSearch.Size = new System.Drawing.Size(292, 26);
+            this.txtBookingSearch.Size = new System.Drawing.Size(225, 26);
             this.txtBookingSearch.TabIndex = 1;
             // 
             // label1
@@ -63,7 +67,7 @@
             // btnBooking
             // 
             this.btnBooking.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnBooking.Location = new System.Drawing.Point(384, 42);
+            this.btnBooking.Location = new System.Drawing.Point(207, 191);
             this.btnBooking.Name = "btnBooking";
             this.btnBooking.Size = new System.Drawing.Size(102, 29);
             this.btnBooking.TabIndex = 3;
@@ -74,16 +78,36 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.dtEndDate);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.dtStartDate);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnBooking);
             this.groupBox1.Controls.Add(this.txtBookingSearch);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.groupBox1.Location = new System.Drawing.Point(392, 33);
+            this.groupBox1.Location = new System.Drawing.Point(377, 23);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(545, 113);
+            this.groupBox1.Size = new System.Drawing.Size(545, 235);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Enter first name for filtering";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(18, 88);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(137, 20);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Reservation from";
+            // 
+            // dtStartDate
+            // 
+            this.dtStartDate.Location = new System.Drawing.Point(22, 111);
+            this.dtStartDate.Name = "dtStartDate";
+            this.dtStartDate.Size = new System.Drawing.Size(200, 26);
+            this.dtStartDate.TabIndex = 4;
             // 
             // dgvBooking
             // 
@@ -97,7 +121,7 @@
             this.ModelName,
             this.StartDate,
             this.EndDate});
-            this.dgvBooking.Location = new System.Drawing.Point(51, 258);
+            this.dgvBooking.Location = new System.Drawing.Point(74, 304);
             this.dgvBooking.Name = "dgvBooking";
             this.dgvBooking.RowHeadersWidth = 51;
             this.dgvBooking.RowTemplate.Height = 24;
@@ -105,17 +129,6 @@
             this.dgvBooking.Size = new System.Drawing.Size(1155, 329);
             this.dgvBooking.TabIndex = 5;
             this.dgvBooking.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvBooking_CellMouseDoubleClick);
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(956, 224);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(250, 17);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "* double click on record to read details";
             // 
             // BookingId
             // 
@@ -174,6 +187,33 @@
             this.EndDate.MinimumWidth = 6;
             this.EndDate.Name = "EndDate";
             // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(979, 275);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(250, 17);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "* double click on record to read details";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(281, 88);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(28, 20);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "To";
+            // 
+            // dtEndDate
+            // 
+            this.dtEndDate.Location = new System.Drawing.Point(285, 111);
+            this.dtEndDate.Name = "dtEndDate";
+            this.dtEndDate.Size = new System.Drawing.Size(200, 26);
+            this.dtEndDate.TabIndex = 6;
+            // 
             // frmAllBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -207,5 +247,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ModelName;
         private System.Windows.Forms.DataGridViewTextBoxColumn StartDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn EndDate;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dtStartDate;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dtEndDate;
     }
 }

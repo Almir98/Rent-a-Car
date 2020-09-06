@@ -102,7 +102,7 @@ namespace RentACar.Mobile.ViewModels
         {
             try
             {
-                if(StartDate>=EndDate)
+                if(StartDate==EndDate || EndDate<StartDate)
                 {
                     await Application.Current.MainPage.DisplayAlert("Error", "The end date must be greater than the start date of the reservation", "Try again");
                     return;

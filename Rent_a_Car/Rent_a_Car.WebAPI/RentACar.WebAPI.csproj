@@ -18,6 +18,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.ML" Version="1.5.1" />
     <PackageReference Include="Microsoft.ML.Recommender" Version="0.17.1" />
+    <PackageReference Include="Microsoft.ReportingServices.ReportViewerControl.WebForms" Version="150.1404.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.4.1" />
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.4.1" />

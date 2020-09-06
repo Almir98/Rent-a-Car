@@ -94,35 +94,13 @@ namespace RentACar.WinUI.Forms
 
         // Report 
 
-        PrintPreviewDialog printPreview = new PrintPreviewDialog();
-        PrintDocument printDocument = new PrintDocument();
-        
         private void btnPrintRating_Click(object sender, EventArgs e)
         {
-            Print(this.panelPrinting1);
+            frmRatingReport frm = new frmRatingReport(dgvRating.DataSource as List<frmRatingVM>);
+            frm.Show();
         }
 
-        public void Print(Panel panelPrinting)
-        {
-            PrinterSettings ps = new PrinterSettings();
-            panelPrinting1 = panelPrinting;
-            GetPrintingArea(panelPrinting);
-            printPreview.Document = printDocument;
-            printDocument.PrintPage += new PrintPageEventHandler(printDocument_printPage);
-            printPreview.ShowDialog();
-        }
 
-        public void printDocument_printPage(object sender, PrintPageEventArgs e)
-        {
-            Rectangle pagearea = e.PageBounds;
-            e.Graphics.DrawImage(memoryImage, (pagearea.Width / 2) - (this.panelPrinting1.Width / 2), this.panelPrinting1.Location.Y);
-        }
 
-        Bitmap memoryImage;
-        public void GetPrintingArea(Panel panelPrinting)
-        {
-            memoryImage = new Bitmap(panelPrinting.Width, panelPrinting.Height);
-            panelPrinting.DrawToBitmap(memoryImage, new Rectangle(0, 0, panelPrinting.Width, panelPrinting.Height));
-        }
     }
 }

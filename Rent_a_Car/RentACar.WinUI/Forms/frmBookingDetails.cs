@@ -29,6 +29,10 @@ namespace RentACar.WinUI.Forms
                 txtManufacturer.Text = booking.Vehicle.VehicleModel.Manufacturer.ManufacturerName;
                 txtModel.Text = booking.Vehicle.VehicleModel.ModelName;
                 txtDailyPrice.Text = booking.Vehicle.DailyPrice.ToString();
+
+                var total = (booking.EndDate - booking.StartDate).TotalDays;
+                total =total*booking.Vehicle.DailyPrice;
+                txtTotal.Text =total.ToString("#.##");
             }
         }
 

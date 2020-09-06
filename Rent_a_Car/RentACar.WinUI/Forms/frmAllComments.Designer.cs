@@ -149,7 +149,7 @@
             this.btnPrintRating.Name = "btnPrintRating";
             this.btnPrintRating.Size = new System.Drawing.Size(165, 49);
             this.btnPrintRating.TabIndex = 4;
-            this.btnPrintRating.Text = "Print preview";
+            this.btnPrintRating.Text = "Generate report";
             this.btnPrintRating.UseVisualStyleBackColor = false;
             this.btnPrintRating.Click += new System.EventHandler(this.btnPrintRating_Click);
             // 

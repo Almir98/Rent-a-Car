@@ -120,7 +120,6 @@ namespace RentACar.WinUI.Forms
                 request.Status = chkStatus.Checked;
 
                 // ove foreign moraju se posebno parsat
-                //branch
 
                 var idBranch = cmbBranch.SelectedValue;
 
@@ -150,9 +149,24 @@ namespace RentACar.WinUI.Forms
                     request.VehicleModelId = vehiclemodelID;
                 }
 
-                await _serviceVehicle.Insert<Data.Model.Vehicle>(request);
-                MessageBox.Show("Operation successfully completed!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+
+                var search = new VehicleSearchRequest
+                {
+                    RegistrationNumber = txtRegistrationNumber.Text
+                };
+                var list = await _serviceVehicle.Get<List<Data.Model.Vehicle>>(search);
+
+                if (list.Count >= 1)
+                {
+                    MessageBox.Show("A car with this registration number already exists, please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Close();
+                }
+                else
+                {
+                    await _serviceVehicle.Insert<Data.Model.Vehicle>(request);
+                    MessageBox.Show("Operation successfully completed!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
             }
         }
 

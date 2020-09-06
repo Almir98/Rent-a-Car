@@ -9,7 +9,7 @@ services:
       - SA_PASSWORD=QWElkj132!
       - MSSQL_PID=Enterprise
     ports:
-      - 1401:1433
+      - 1402:1433
     networks:
       - rentacarnet
 

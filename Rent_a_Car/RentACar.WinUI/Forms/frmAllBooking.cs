@@ -21,8 +21,16 @@ namespace RentACar.WinUI.Forms
         {
             var search = new BookingSearchRequest()
             {
-                FirstName = txtBookingSearch.Text
+                FirstName = txtBookingSearch.Text,
+                StartDate=dtStartDate.Value,
+                EndDate=dtEndDate.Value
             };
+
+            if(search.EndDate<=search.StartDate)
+            {
+                MessageBox.Show("The end date must be greater than the start date", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
             var result = await _serviceBooking.Get<List<Data.Model.Booking>>(search);
 
             List<frmAllBookingVM> finalList = new List<frmAllBookingVM>();
@@ -74,5 +82,6 @@ namespace RentACar.WinUI.Forms
             frmBookingDetails frm = new frmBookingDetails(int.Parse(id.ToString()));
             frm.Show();
         }
+
     }
 }

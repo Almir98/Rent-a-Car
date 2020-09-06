@@ -47,6 +47,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtManufacturer = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -151,7 +155,7 @@
             // 
             this.btnback.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnback.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnback.Location = new System.Drawing.Point(726, 398);
+            this.btnback.Location = new System.Drawing.Point(614, 465);
             this.btnback.Name = "btnback";
             this.btnback.Size = new System.Drawing.Size(166, 43);
             this.btnback.TabIndex = 25;
@@ -162,6 +166,10 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.txtTotal);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtDailyPrice);
             this.groupBox1.Controls.Add(this.txtModel);
@@ -204,7 +212,7 @@
             this.txtDailyPrice.Location = new System.Drawing.Point(571, 250);
             this.txtDailyPrice.Name = "txtDailyPrice";
             this.txtDailyPrice.ReadOnly = true;
-            this.txtDailyPrice.Size = new System.Drawing.Size(321, 26);
+            this.txtDailyPrice.Size = new System.Drawing.Size(128, 26);
             this.txtDailyPrice.TabIndex = 31;
             // 
             // txtModel
@@ -247,6 +255,46 @@
             this.label2.TabIndex = 27;
             this.label2.Text = "Model name";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label7.Location = new System.Drawing.Point(568, 308);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(88, 20);
+            this.label7.TabIndex = 34;
+            this.label7.Text = "Total price";
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtTotal.Location = new System.Drawing.Point(572, 340);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
+            this.txtTotal.Size = new System.Drawing.Size(127, 26);
+            this.txtTotal.TabIndex = 33;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label9.Location = new System.Drawing.Point(705, 253);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(34, 20);
+            this.label9.TabIndex = 35;
+            this.label9.Text = "KM";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label10.Location = new System.Drawing.Point(705, 346);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(34, 20);
+            this.label10.TabIndex = 36;
+            this.label10.Text = "KM";
+            // 
             // frmBookingDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -284,5 +332,9 @@
         private System.Windows.Forms.TextBox txtModel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtDailyPrice;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
     }
 }

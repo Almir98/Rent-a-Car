@@ -37,10 +37,10 @@
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnPrintRating = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dtComment = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnPrintRating = new System.Windows.Forms.Button();
             this.panelPrinting3 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.panelPrinting3.SuspendLayout();
@@ -153,6 +153,28 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detail of comment";
             // 
+            // btnPrintRating
+            // 
+            this.btnPrintRating.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnPrintRating.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnPrintRating.Location = new System.Drawing.Point(694, 537);
+            this.btnPrintRating.Name = "btnPrintRating";
+            this.btnPrintRating.Size = new System.Drawing.Size(220, 49);
+            this.btnPrintRating.TabIndex = 13;
+            this.btnPrintRating.Text = "Print screen of comment";
+            this.btnPrintRating.UseVisualStyleBackColor = false;
+            this.btnPrintRating.Click += new System.EventHandler(this.btnPrintRating_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label5.Location = new System.Drawing.Point(573, 170);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(188, 20);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Description of comment";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -170,28 +192,6 @@
             this.dtComment.Name = "dtComment";
             this.dtComment.Size = new System.Drawing.Size(282, 26);
             this.dtComment.TabIndex = 11;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label5.Location = new System.Drawing.Point(573, 170);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(188, 20);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Description of comment";
-            // 
-            // btnPrintRating
-            // 
-            this.btnPrintRating.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnPrintRating.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnPrintRating.Location = new System.Drawing.Point(694, 537);
-            this.btnPrintRating.Name = "btnPrintRating";
-            this.btnPrintRating.Size = new System.Drawing.Size(165, 49);
-            this.btnPrintRating.TabIndex = 13;
-            this.btnPrintRating.Text = "Print preview";
-            this.btnPrintRating.UseVisualStyleBackColor = false;
-            this.btnPrintRating.Click += new System.EventHandler(this.btnPrintRating_Click);
             // 
             // panelPrinting3
             // 

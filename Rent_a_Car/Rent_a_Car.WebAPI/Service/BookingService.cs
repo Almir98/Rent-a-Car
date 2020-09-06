@@ -21,6 +21,14 @@ namespace RentACar.WebAPI.Service
                 .Include(e=>e.Vehicle.VehicleModel.Manufacturer)
                 .AsQueryable();
 
+            if(search.StartDate!=null && search.EndDate!=null)
+            {
+                var startdate = search.StartDate.Value.Date;
+                var enddate = search.EndDate.Value.Date;
+
+                query = query.Where(e => e.StartDate.Date >= startdate && e.EndDate.Date <= enddate);
+            }
+
             if (!string.IsNullOrEmpty(search.FirstName))
             {
                 query = query.Where(x => x.Customer.FirstName.StartsWith(search.FirstName));

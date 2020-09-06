@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.dgvRating = new System.Windows.Forms.DataGridView();
+            this.RatingId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RatingValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ManufacturerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ModelName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtVehicle = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -37,12 +43,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtSelected = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.RatingId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RatingValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ManufacturerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ModelName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRating)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panelPrinting1.SuspendLayout();
@@ -68,96 +68,6 @@
             this.dgvRating.Size = new System.Drawing.Size(1014, 382);
             this.dgvRating.TabIndex = 0;
             this.dgvRating.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvRating_MouseDoubleClick);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.Controls.Add(this.txtVehicle);
-            this.groupBox1.Controls.Add(this.btnSearch);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.groupBox1.Location = new System.Drawing.Point(274, 26);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(602, 135);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filter by manufacturer name";
-            // 
-            // txtVehicle
-            // 
-            this.txtVehicle.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txtVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtVehicle.Location = new System.Drawing.Point(47, 60);
-            this.txtVehicle.Name = "txtVehicle";
-            this.txtVehicle.Size = new System.Drawing.Size(294, 26);
-            this.txtVehicle.TabIndex = 0;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnSearch.Location = new System.Drawing.Point(452, 55);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(110, 37);
-            this.btnSearch.TabIndex = 1;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // btnPrintRating
-            // 
-            this.btnPrintRating.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnPrintRating.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnPrintRating.Location = new System.Drawing.Point(860, 624);
-            this.btnPrintRating.Name = "btnPrintRating";
-            this.btnPrintRating.Size = new System.Drawing.Size(165, 49);
-            this.btnPrintRating.TabIndex = 2;
-            this.btnPrintRating.Text = "Print preview";
-            this.btnPrintRating.UseVisualStyleBackColor = false;
-            this.btnPrintRating.Click += new System.EventHandler(this.btnPrintRating_Click);
-            // 
-            // panelPrinting1
-            // 
-            this.panelPrinting1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panelPrinting1.Controls.Add(this.label8);
-            this.panelPrinting1.Controls.Add(this.txtSelected);
-            this.panelPrinting1.Controls.Add(this.label6);
-            this.panelPrinting1.Controls.Add(this.groupBox1);
-            this.panelPrinting1.Controls.Add(this.btnPrintRating);
-            this.panelPrinting1.Controls.Add(this.dgvRating);
-            this.panelPrinting1.Location = new System.Drawing.Point(59, 25);
-            this.panelPrinting1.Name = "panelPrinting1";
-            this.panelPrinting1.Size = new System.Drawing.Size(1103, 704);
-            this.panelPrinting1.TabIndex = 3;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(811, 182);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(250, 17);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "* double click on record to read details";
-            // 
-            // txtSelected
-            // 
-            this.txtSelected.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txtSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.txtSelected.Location = new System.Drawing.Point(286, 630);
-            this.txtSelected.Name = "txtSelected";
-            this.txtSelected.Size = new System.Drawing.Size(90, 32);
-            this.txtSelected.TabIndex = 20;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calisto MT", 13F);
-            this.label6.Location = new System.Drawing.Point(83, 634);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(197, 25);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Total rating value : ";
             // 
             // RatingId
             // 
@@ -207,6 +117,96 @@
             this.ModelName.HeaderText = "Model name";
             this.ModelName.MinimumWidth = 6;
             this.ModelName.Name = "ModelName";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Controls.Add(this.txtVehicle);
+            this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.groupBox1.Location = new System.Drawing.Point(274, 26);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(602, 135);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filter by manufacturer name";
+            // 
+            // txtVehicle
+            // 
+            this.txtVehicle.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtVehicle.Location = new System.Drawing.Point(47, 60);
+            this.txtVehicle.Name = "txtVehicle";
+            this.txtVehicle.Size = new System.Drawing.Size(294, 26);
+            this.txtVehicle.TabIndex = 0;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnSearch.Location = new System.Drawing.Point(452, 55);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(110, 37);
+            this.btnSearch.TabIndex = 1;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnPrintRating
+            // 
+            this.btnPrintRating.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnPrintRating.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnPrintRating.Location = new System.Drawing.Point(860, 624);
+            this.btnPrintRating.Name = "btnPrintRating";
+            this.btnPrintRating.Size = new System.Drawing.Size(165, 49);
+            this.btnPrintRating.TabIndex = 2;
+            this.btnPrintRating.Text = "Generate report";
+            this.btnPrintRating.UseVisualStyleBackColor = false;
+            this.btnPrintRating.Click += new System.EventHandler(this.btnPrintRating_Click);
+            // 
+            // panelPrinting1
+            // 
+            this.panelPrinting1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelPrinting1.Controls.Add(this.label8);
+            this.panelPrinting1.Controls.Add(this.txtSelected);
+            this.panelPrinting1.Controls.Add(this.label6);
+            this.panelPrinting1.Controls.Add(this.groupBox1);
+            this.panelPrinting1.Controls.Add(this.btnPrintRating);
+            this.panelPrinting1.Controls.Add(this.dgvRating);
+            this.panelPrinting1.Location = new System.Drawing.Point(59, 25);
+            this.panelPrinting1.Name = "panelPrinting1";
+            this.panelPrinting1.Size = new System.Drawing.Size(1103, 704);
+            this.panelPrinting1.TabIndex = 3;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(811, 182);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(250, 17);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "* double click on record to read details";
+            // 
+            // txtSelected
+            // 
+            this.txtSelected.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.txtSelected.Location = new System.Drawing.Point(286, 630);
+            this.txtSelected.Name = "txtSelected";
+            this.txtSelected.Size = new System.Drawing.Size(90, 32);
+            this.txtSelected.TabIndex = 20;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calisto MT", 13F);
+            this.label6.Location = new System.Drawing.Point(83, 634);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(197, 25);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Total rating value : ";
             // 
             // frmRating
             // 
