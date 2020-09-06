@@ -61,8 +61,12 @@ namespace RentACar.WinUI.Forms
             {
                 ManufacturerName=txtVehicle.Text
             };
-            var list = await _serviceRating.Get<List<Data.Model.Rating>>(search);
 
+            if(txtRatingValue.Text!=""){
+                search.RatingValue = int.Parse(txtRatingValue.Text);
+            }
+
+            var list = await _serviceRating.Get<List<Data.Model.Rating>>(search);
             List<frmRatingVM> finalList = new List<frmRatingVM>();
 
             foreach (var item in list)

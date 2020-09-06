@@ -33,7 +33,7 @@ namespace RentACar.WinUI.Forms
             {
                 if(search.EndDate.Value.Date <= search.StartDate.Value.Date)
                 {
-                    MessageBox.Show("The scope of period days must be at least 1 day and the end date must be greater than the start date", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("The scope of period days must be at least 1 day and the end date must be greater than the start date.", "Try again", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     this.Close();
                 }
             }

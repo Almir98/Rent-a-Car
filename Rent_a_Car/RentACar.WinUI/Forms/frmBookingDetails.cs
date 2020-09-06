@@ -30,9 +30,11 @@ namespace RentACar.WinUI.Forms
                 txtModel.Text = booking.Vehicle.VehicleModel.ModelName;
                 txtDailyPrice.Text = booking.Vehicle.DailyPrice.ToString();
 
-                var total = (booking.EndDate - booking.StartDate).TotalDays;
+                var total = (booking.EndDate.Date - booking.StartDate.Date).TotalDays;
+                txtTotalDays.Text = total.ToString();
+
                 total =total*booking.Vehicle.DailyPrice;
-                txtTotal.Text =total.ToString("#.##");
+                txtTotalPrice.Text =total.ToString("#.##");
             }
         }
 
@@ -40,5 +42,6 @@ namespace RentACar.WinUI.Forms
         {
             this.Close();
         }
+
     }
 }

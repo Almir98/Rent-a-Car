@@ -159,7 +159,7 @@
             this.btnPrintRating.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnPrintRating.Location = new System.Drawing.Point(694, 537);
             this.btnPrintRating.Name = "btnPrintRating";
-            this.btnPrintRating.Size = new System.Drawing.Size(220, 49);
+            this.btnPrintRating.Size = new System.Drawing.Size(286, 49);
             this.btnPrintRating.TabIndex = 13;
             this.btnPrintRating.Text = "Print screen of comment";
             this.btnPrintRating.UseVisualStyleBackColor = false;

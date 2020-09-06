@@ -270,11 +270,11 @@
             // 
             this.btnPrint.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnPrint.Location = new System.Drawing.Point(839, 613);
+            this.btnPrint.Location = new System.Drawing.Point(792, 613);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(137, 43);
+            this.btnPrint.Size = new System.Drawing.Size(199, 43);
             this.btnPrint.TabIndex = 23;
-            this.btnPrint.Text = "Print review";
+            this.btnPrint.Text = "Print screen of rating";
             this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
@@ -285,6 +285,7 @@
             this.panel3.Controls.Add(this.btnBack);
             this.panel3.Controls.Add(this.btnPrint);
             this.panel3.Location = new System.Drawing.Point(39, 12);
+            this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1139, 693);
             this.panel3.TabIndex = 24;
             // 

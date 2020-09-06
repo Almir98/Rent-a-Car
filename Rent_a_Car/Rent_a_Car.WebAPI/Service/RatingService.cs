@@ -22,6 +22,11 @@ namespace RentACar.WebAPI.Service
                 .Include(e => e.Vehicle.VehicleModel.Manufacturer)
                 .AsQueryable();
 
+            if (search?.RatingValue.HasValue==true)
+            {
+                query = query.Where(x => x.RatingValue == search.RatingValue);
+            }
+
             if (!string.IsNullOrWhiteSpace(search.ManufacturerName))
             {
                 query = query.Where(x => x.Vehicle.VehicleModel.Manufacturer.ManufacturerName.StartsWith(search.ManufacturerName));

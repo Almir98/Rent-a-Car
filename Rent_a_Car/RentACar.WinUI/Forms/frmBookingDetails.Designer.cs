@@ -41,16 +41,18 @@
             this.btnback = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtTotalDays = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtTotalPrice = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtDailyPrice = new System.Windows.Forms.TextBox();
             this.txtModel = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtManufacturer = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtTotal = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -155,7 +157,7 @@
             // 
             this.btnback.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnback.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnback.Location = new System.Drawing.Point(614, 465);
+            this.btnback.Location = new System.Drawing.Point(653, 486);
             this.btnback.Name = "btnback";
             this.btnback.Size = new System.Drawing.Size(166, 43);
             this.btnback.TabIndex = 25;
@@ -166,10 +168,12 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.txtTotalDays);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txtTotal);
+            this.groupBox1.Controls.Add(this.txtTotalPrice);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtDailyPrice);
             this.groupBox1.Controls.Add(this.txtModel);
@@ -195,6 +199,66 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Booking details";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label12.Location = new System.Drawing.Point(570, 297);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(86, 20);
+            this.label12.TabIndex = 38;
+            this.label12.Text = "Total days";
+            // 
+            // txtTotalDays
+            // 
+            this.txtTotalDays.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txtTotalDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtTotalDays.Location = new System.Drawing.Point(571, 321);
+            this.txtTotalDays.Name = "txtTotalDays";
+            this.txtTotalDays.ReadOnly = true;
+            this.txtTotalDays.Size = new System.Drawing.Size(130, 26);
+            this.txtTotalDays.TabIndex = 37;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label10.Location = new System.Drawing.Point(707, 399);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(34, 20);
+            this.label10.TabIndex = 36;
+            this.label10.Text = "KM";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label9.Location = new System.Drawing.Point(705, 253);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(34, 20);
+            this.label9.TabIndex = 35;
+            this.label9.Text = "KM";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label7.Location = new System.Drawing.Point(567, 370);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(88, 20);
+            this.label7.TabIndex = 34;
+            this.label7.Text = "Total price";
+            // 
+            // txtTotalPrice
+            // 
+            this.txtTotalPrice.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.txtTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtTotalPrice.Location = new System.Drawing.Point(571, 393);
+            this.txtTotalPrice.Name = "txtTotalPrice";
+            this.txtTotalPrice.ReadOnly = true;
+            this.txtTotalPrice.Size = new System.Drawing.Size(130, 26);
+            this.txtTotalPrice.TabIndex = 33;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -207,7 +271,7 @@
             // 
             // txtDailyPrice
             // 
-            this.txtDailyPrice.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtDailyPrice.BackColor = System.Drawing.SystemColors.ControlDark;
             this.txtDailyPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtDailyPrice.Location = new System.Drawing.Point(571, 250);
             this.txtDailyPrice.Name = "txtDailyPrice";
@@ -255,46 +319,6 @@
             this.label2.TabIndex = 27;
             this.label2.Text = "Model name";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label7.Location = new System.Drawing.Point(568, 308);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 20);
-            this.label7.TabIndex = 34;
-            this.label7.Text = "Total price";
-            // 
-            // txtTotal
-            // 
-            this.txtTotal.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtTotal.Location = new System.Drawing.Point(572, 340);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.ReadOnly = true;
-            this.txtTotal.Size = new System.Drawing.Size(127, 26);
-            this.txtTotal.TabIndex = 33;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label9.Location = new System.Drawing.Point(705, 253);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(34, 20);
-            this.label9.TabIndex = 35;
-            this.label9.Text = "KM";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label10.Location = new System.Drawing.Point(705, 346);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(34, 20);
-            this.label10.TabIndex = 36;
-            this.label10.Text = "KM";
-            // 
             // frmBookingDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -333,8 +357,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtDailyPrice;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.TextBox txtTotalPrice;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtTotalDays;
     }
 }
