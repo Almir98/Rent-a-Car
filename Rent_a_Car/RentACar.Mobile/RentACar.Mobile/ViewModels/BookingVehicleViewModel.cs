@@ -1,6 +1,7 @@
 ﻿using RentaCar.Data.Requests.Booking;
 using RentACar.Mobile.Views;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -22,7 +23,6 @@ namespace RentACar.Mobile.ViewModels
 
         public ICommand InitCommand { get; set; }
         public ICommand RentCommand { get; set; }
-
 
         string _firstName = string.Empty;
         public string FirstName
@@ -52,7 +52,8 @@ namespace RentACar.Mobile.ViewModels
             set { SetProperty(ref _email, value); }
         }
 
-        DateTime _startDate=DateTime.Now;
+
+        DateTime _startDate= DateTime.Now;
         public DateTime StartDate
         {
             get { return _startDate; }
@@ -65,6 +66,7 @@ namespace RentACar.Mobile.ViewModels
             get { return _endDate; }
             set { SetProperty(ref _endDate, value); }
         }
+
 
         string _manufacturerName = string.Empty;
         public string ManufacturerName
@@ -80,9 +82,14 @@ namespace RentACar.Mobile.ViewModels
             set { SetProperty(ref _modelName, value); }
         }
 
+        public float _totalPrice = 0;
+        public float TotalPrice
+        {
+            get { return _totalPrice; }
+            set { SetProperty(ref _totalPrice, value); }
+        }
 
         public Data.Model.Customer customer { get; set; }
-
 
         public async Task Init()
         {
@@ -102,17 +109,32 @@ namespace RentACar.Mobile.ViewModels
         {
             try
             {
-                if(StartDate==EndDate || EndDate<StartDate)
+                if (StartDate.Date == EndDate.Date || EndDate.Date <= StartDate.Date)
                 {
-                    await Application.Current.MainPage.DisplayAlert("Error", "The end date must be greater than the start date of the reservation", "Try again");
+                    await Application.Current.MainPage.DisplayAlert("Error", "The scope of booking period must be at least 1 day and the end date must be greater than the start date.", "Try again");
                     return;
+                }
+
+                var search = new BookingSearchRequest
+                {
+                    VehicleID = Vehicle.VehicleId
+                };
+                var listBooking = await _serviceBooking.Get<List<Data.Model.Booking>>(search);
+
+                foreach (var item in listBooking)
+                {
+                    if(item.EndDate.Date > DateTime.Now.Date)
+                    {
+                        await Application.Current.MainPage.DisplayAlert("Error", "The vehicle is already reserved. After the reservation expires, you can reserve the vehicle again", "Try again");
+                        return;
+                    }
                 }
 
                 var request = new BookingUpsert
                 {
                     CustomerId = APIService.CustomerId,
-                    StartDate = StartDate,
-                    EndDate = EndDate,
+                    StartDate = StartDate.Date,
+                    EndDate = EndDate.Date,
                     VehicleId = Vehicle.VehicleId,
                     RatingStatus = false,
                     CommentStatus = false
@@ -120,6 +142,9 @@ namespace RentACar.Mobile.ViewModels
 
                 await _serviceBooking.Insert<Data.Model.Booking>(request);
                 await Application.Current.MainPage.DisplayAlert("Message", "Successfully!", "OK");
+                //await Application.Current.MainPage.Navigation.PushAsync(new VehiclePage());
+                
+                //Application.Current.MainPage = new NavigationPage(new MainPage());
             }
             catch (Exception ex)
             {

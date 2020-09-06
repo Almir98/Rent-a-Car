@@ -54,7 +54,7 @@ namespace RentACar.Mobile.ViewModels
                 {
                     if(vehicle.VehicleId == item.VehicleId)
                     {
-                        if(item.EndDate >= DateNow)
+                        if(item.EndDate.Date >= DateNow.Date)
                         {
                             key = false;
                         }

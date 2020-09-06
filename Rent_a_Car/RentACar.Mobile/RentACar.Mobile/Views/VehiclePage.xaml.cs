@@ -26,7 +26,7 @@ namespace RentACar.Mobile.Views
         {
             var clicked_item = e.Item as Data.Model.Vehicle;
 
-            await Navigation.PushAsync(new VehicleDetailPage(clicked_item));
+            await Navigation.PushModalAsync(new VehicleDetailPage(clicked_item));
         }
 
     }

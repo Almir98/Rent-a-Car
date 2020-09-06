@@ -30,7 +30,7 @@ namespace RentACar.Mobile.Views
 
         private async void Booking_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new BookingVehicle(model.vehicle));
+            await Navigation.PushModalAsync(new BookingVehicle(model.vehicle));
         }
     }
 }
