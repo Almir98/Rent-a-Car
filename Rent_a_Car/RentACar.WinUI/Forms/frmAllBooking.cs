@@ -19,18 +19,25 @@ namespace RentACar.WinUI.Forms
 
         private async void btnBooking_Click(object sender, EventArgs e)
         {
-            var search = new BookingSearchRequest()
-            {
+            var search = new BookingSearchRequest(){
                 FirstName = txtBookingSearch.Text,
-                StartDate=dtStartDate.Value,
-                EndDate=dtEndDate.Value
+                StartDate=dtStartDate.Value.Date,
+                EndDate = dtEndDate.Value.Date
             };
 
-            if(search.EndDate<=search.StartDate)
-            {
-                MessageBox.Show("The end date must be greater than the start date", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Close();
+            if (chkDate.Checked){
+                search.StartDate = null;
+                search.EndDate = null;
             }
+            else
+            {
+                if(search.EndDate.Value.Date <= search.StartDate.Value.Date)
+                {
+                    MessageBox.Show("The scope of period days must be at least 1 day and the end date must be greater than the start date", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Close();
+                }
+            }
+
             var result = await _serviceBooking.Get<List<Data.Model.Booking>>(search);
 
             List<frmAllBookingVM> finalList = new List<frmAllBookingVM>();

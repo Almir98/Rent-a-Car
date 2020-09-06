@@ -36,7 +36,7 @@ namespace RentACar.WinUI.Forms
                 {
                     CommentId = item.CommentId,
                     Description = item.Description,
-                    DateOfComment = item.DateOfComment,
+                    DateOfComment = item.DateOfComment.Date,
                     FirstName = item.Customer.FirstName,
                     LastName = item.Customer.LastName,
                     ManufacturerName = item.Vehicle.VehicleModel.Manufacturer.ManufacturerName,
@@ -53,10 +53,19 @@ namespace RentACar.WinUI.Forms
         {
             var search = new CommentSearchRequest()
             {
-                ManufacturerName = txtSearch.Text,
+                ManufacturerName = txtManufacturerName.Text,
+                FirstName = txtFirstName.Text,
             };
+
+            if(chkDisable.Checked){
+                search.DateOfComment = null;
+            }
+            else
+            {
+                search.DateOfComment = dtOfComment.Value.Date;
+            }
+
             var resultList = await _serviceComments.Get<List<Data.Model.Comment>>(search);
-            
             List<frmAllCommentsVM> finalList = new List<frmAllCommentsVM>();
 
             foreach (var item in resultList)

@@ -21,9 +21,21 @@ namespace RentACar.WebAPI.Service
                 .Include(e=>e.Vehicle.VehicleModel.Manufacturer)
                 .AsQueryable();
 
+            if (search.DateOfComment != null)
+            {
+                var dateComment = search.DateOfComment.Value.Date;
+
+                query = query.Where(e => e.DateOfComment.Date == dateComment);
+            }
+
             if (!string.IsNullOrEmpty(search.ManufacturerName))
             {
                 query = query.Where(x => x.Vehicle.VehicleModel.Manufacturer.ManufacturerName.StartsWith(search.ManufacturerName));
+            }
+
+            if (!string.IsNullOrEmpty(search.FirstName))
+            {
+                query = query.Where(x => x.Customer.FirstName.StartsWith(search.FirstName));
             }
 
             if (search?.CustomerID.HasValue == true)
