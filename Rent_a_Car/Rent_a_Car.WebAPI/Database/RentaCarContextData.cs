@@ -249,11 +249,6 @@ namespace RentACar.WebAPI.Database
                 ManufacturerName = "Citroen"
             });
 
-            modelBuilder.Entity<Manufacturer>().HasData(new Manufacturer()
-            {
-                ManufacturerId = 7,
-                ManufacturerName = "Škoda"
-            });
 
             //VEHICLEMODEL
 
