@@ -9,6 +9,6 @@ namespace RentaCar.Data.Requests.Comments
         public DateTime? DateOfComment { get; set; }
 
         public int? CustomerID { get; set; }
-
+        public int? VehicleId { get; set; }
     }
 }

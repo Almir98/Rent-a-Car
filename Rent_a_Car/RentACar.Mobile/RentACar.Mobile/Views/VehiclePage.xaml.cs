@@ -14,6 +14,8 @@ namespace RentACar.Mobile.Views
         {
             InitializeComponent();
             BindingContext = model = new VehicleViewModel();
+            NavigationPage.SetHasNavigationBar(this, true);
+            NavigationPage.SetHasBackButton(this, true);
         }
 
         protected async override void OnAppearing()
@@ -26,7 +28,7 @@ namespace RentACar.Mobile.Views
         {
             var clicked_item = e.Item as Data.Model.Vehicle;
 
-            await Navigation.PushModalAsync(new VehicleDetailPage(clicked_item));
+            await Navigation.PushAsync(new VehicleDetailPage(clicked_item));
         }
 
     }

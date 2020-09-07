@@ -15,6 +15,7 @@ namespace RentACar.Mobile.Views
         public VehicleDetailPage(Data.Model.Vehicle item)
         {
             InitializeComponent();
+            NavigationPage.SetHasBackButton(this, true);
 
             BindingContext = model = new VehicleDetailsViewModel
             {

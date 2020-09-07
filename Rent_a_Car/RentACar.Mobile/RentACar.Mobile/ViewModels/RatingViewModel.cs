@@ -65,12 +65,18 @@ namespace RentACar.Mobile.ViewModels
             set { SetProperty(ref _ratingValue, value); }
         }
 
+        DateTime _date = DateTime.Now;
+        public DateTime RatingDate
+        {
+            get { return _date; }
+            set { SetProperty(ref _date, value); }
+        }
+
         // data
 
         public Data.Model.Vehicle vehicle { get; set; }
 
         public Data.Model.Customer customer { get; set; }
-
 
 
         public async Task Initialization()
@@ -98,10 +104,15 @@ namespace RentACar.Mobile.ViewModels
 
             try
             {
+                var listRatings = await _serviceRating.Get<List<Data.Model.Rating>>(new RatingSearchRequest { 
+                      CustomerID=customer.CustomerId
+                });
+
+
                 var customerID = await _serviceCustomer.GetById<Data.Model.Customer>(APIService.CustomerId);
                 customer = customerID;
 
-                var vehicleID = await _serviceVehicle.GetById<Data.Model.Vehicle>(vehicle.VehicleId);
+                var car = await _serviceVehicle.GetById<Data.Model.Vehicle>(vehicle.VehicleId);
 
                 bool answer = await Application.Current.MainPage.DisplayAlert("Alert", "Would you like to add rating?", "Yes", "No");
                 if (answer)
@@ -115,38 +126,57 @@ namespace RentACar.Mobile.ViewModels
                     await _serviceRating.Insert<Data.Model.Rating>(request);
                     await Application.Current.MainPage.DisplayAlert("Message", "Successfully! You added your mark for rented car!", "OK");
 
-                    var listRatings = await _serviceRating.Get<List<Data.Model.Rating>>(new RatingSearchRequest { 
-                        CustomerID=customer.CustomerId
-                    });
 
                     var listBooking = await _serviceBooking.Get<List<Data.Model.Booking>>(new BookingSearchRequest
                     {
                         CustomerID = customer.CustomerId
                     });
 
-                    foreach (var item in listRatings)
+                    foreach (var item in listBooking)
                     {
-                        foreach (var book in listBooking)
+                        if(item.VehicleId == car.VehicleId && item.CustomerId==customer.CustomerId)
                         {
-                            if(item.VehicleId== book.VehicleId)
+                            if(item.RatingStatus==false)
                             {
-                                if(book.RatingStatus==false)
+                                var req = new BookingUpsert
                                 {
-                                    var req = new BookingUpsert
-                                    {
-                                        CustomerId=book.CustomerId,
-                                        VehicleId=book.VehicleId,
-                                        StartDate=book.StartDate,
-                                        EndDate=book.EndDate,
-                                        RatingStatus=true,
-                                        CommentStatus=book.CommentStatus
-                                    };
-                                    await _serviceBooking.Update<Data.Model.Booking>(book.BookingId, req);
-                                    return;
-                                }
+                                    CustomerId = item.CustomerId,
+                                    VehicleId = item.VehicleId,
+                                    StartDate = item.StartDate,
+                                    EndDate = item.EndDate,
+                                    RatingStatus = true,
+                                    CommentStatus = item.CommentStatus
+                                };
+                                await _serviceBooking.Update<Data.Model.Booking>(item.BookingId, req);
+                                return;
                             }
                         }
                     }
+
+
+                    //foreach (var item in listRatings)
+                    //{
+                    //    foreach (var book in listBooking)
+                    //    {
+                    //        if(item.VehicleId== book.VehicleId)
+                    //        {
+                    //            if(book.RatingStatus==false)
+                    //            {
+                    //                var req = new BookingUpsert
+                    //                {
+                    //                    CustomerId=book.CustomerId,
+                    //                    VehicleId=book.VehicleId,
+                    //                    StartDate=book.StartDate,
+                    //                    EndDate=book.EndDate,
+                    //                    RatingStatus=true,
+                    //                    CommentStatus=book.CommentStatus
+                    //                };
+                    //                await _serviceBooking.Update<Data.Model.Booking>(book.BookingId, req);
+                    //                return;
+                    //            }
+                    //        }
+                    //    }
+                    //}
                 }
             }
             catch (Exception ex)

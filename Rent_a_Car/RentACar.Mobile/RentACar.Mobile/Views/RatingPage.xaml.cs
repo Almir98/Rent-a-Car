@@ -14,6 +14,8 @@ namespace RentACar.Mobile.Views
         public RatingPage(Data.Model.Vehicle clicked_vehicle)
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, true);
+            NavigationPage.SetHasBackButton(this, true);
 
             BindingContext = model = new RatingViewModel
             {

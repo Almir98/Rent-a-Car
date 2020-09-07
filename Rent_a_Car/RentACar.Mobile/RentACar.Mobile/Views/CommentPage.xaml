@@ -32,6 +32,9 @@
 			<Label Text="Vehicle model"></Label>
 			<Entry Text="{Binding ModelName}" IsReadOnly="True" BackgroundColor="LightGray"></Entry>
 
+			<Label Text="Date of comment"></Label>
+			<DatePicker Date="{Binding CommentDate}" IsEnabled="False"></DatePicker>
+			
 			<Label Text="Comment"></Label>
 			<Entry  HeightRequest="100" Text="{Binding Description }"></Entry>
 

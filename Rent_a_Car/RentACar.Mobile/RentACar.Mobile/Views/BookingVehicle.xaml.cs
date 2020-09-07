@@ -20,7 +20,6 @@ namespace RentACar.Mobile.Views
                 Vehicle = vehicle
             };
 
-            NavigationPage.SetHasNavigationBar(this, true);
             NavigationPage.SetHasBackButton(this, true);
         }
 

@@ -139,18 +139,19 @@ namespace RentACar.Mobile.ViewModels
                     RatingStatus = false,
                     CommentStatus = false
                 };
-
                 await _serviceBooking.Insert<Data.Model.Booking>(request);
-                await Application.Current.MainPage.DisplayAlert("Message", "Successfully!", "OK");
-                //await Application.Current.MainPage.Navigation.PushAsync(new VehiclePage());
-                
-                //Application.Current.MainPage = new NavigationPage(new MainPage());
+
+                var days = (request.EndDate.Date - request.StartDate.Date).TotalDays;
+                var total = Vehicle.DailyPrice * days;
+
+                var message = string.Format("Successfully! Total price for {0} days of reservation cost {1} KM.", days,total);
+                await Application.Current.MainPage.DisplayAlert("Message", message, "OK");
+            
             }
             catch (Exception ex)
             {
                 await Application.Current.MainPage.DisplayAlert("Error", "Somethning went wrong", "Try again");
             }
         }
-
     }
 }
