@@ -66,6 +66,10 @@ namespace RentACar.Mobile.ViewModels
                 }
                 key = true;
             }
+            if (VehicleList.Count == 0)
+            {
+                await Application.Current.MainPage.DisplayAlert("Warning", "The list is empty. All vehicles we own are currently reserved.Please, try again later.", "OK");
+            }
         }
 
         //Load search vehicles
@@ -84,6 +88,11 @@ namespace RentACar.Mobile.ViewModels
             foreach (var item in list)
             {
                 VehicleList.Add(item);
+            }
+
+            if (VehicleList.Count == 0)
+            {
+                await Application.Current.MainPage.DisplayAlert("Warning", "We do not offer this brand of vehicle", "Try again");
             }
         }
     }

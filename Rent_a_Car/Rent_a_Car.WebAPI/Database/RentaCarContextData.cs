@@ -594,7 +594,7 @@ namespace RentACar.WebAPI.Database
             });
 
 
-            // RATING
+            // RATING                                                   FALI RatingDate
 
             modelBuilder.Entity<Rating>().HasData(new Rating()
             {

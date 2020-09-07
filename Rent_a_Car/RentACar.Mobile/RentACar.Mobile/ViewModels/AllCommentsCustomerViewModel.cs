@@ -41,10 +41,14 @@ namespace RentACar.Mobile.ViewModels
 
             foreach (var item in list)
             {
-                if(item.CommentStatus==false)
+                if(item.CommentStatus==false && item.EndDate.Date<=DateTime.Now.Date)
                 {
                     BookingList.Add(item);
                 }
+            }
+            if(BookingList.Count==0)
+            {
+                await Application.Current.MainPage.DisplayAlert("Warning", "The list is empty. You can leave a comment on the reserved vehicle after the reservation expires. Please, try again later.", "OK");
             }
         }
     }

@@ -12,6 +12,7 @@ namespace RentACar.WinUI.Forms
         protected APIService _serviceBranch = new APIService("Branch");
         protected APIService _serviceCity = new APIService("City");
 
+
         public frmAddBranch()
         {
             InitializeComponent();
@@ -55,9 +56,23 @@ namespace RentACar.WinUI.Forms
                     branch.CityId = cityid;
                 }
 
-                await _serviceBranch.Insert<Data.Model.Branch>(branch);
-                MessageBox.Show("Operation successfully completed", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                var search = new BranchSearchRequest
+                {
+                    PhoneNumber=txtPhoneNumber.Text
+                };
+                var list = await _serviceBranch.Get<List<Data.Model.Branch>>(search);
+
+                if (list.Count >= 1)
+                {
+                    MessageBox.Show("Branch with this phonenumber already exists, please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Close();
+                }
+                else
+                {
+                    await _serviceBranch.Insert<Data.Model.Branch>(branch);
+                    MessageBox.Show("Operation successfully completed", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
             }
         }
 

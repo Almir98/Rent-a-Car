@@ -342,5 +342,31 @@ namespace RentACar.WinUI.Forms
                 errorProvider.SetError(rtxDescription, null);
             }
         }
+
+        private void txtNumberOfSeats_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtNumberOfSeats.Text))
+            {
+                errorProvider.SetError(txtNumberOfSeats, " Required");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(txtNumberOfSeats, null);
+            }
+        }
+
+        private void txtImage_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtImage.Text))
+            {
+                errorProvider.SetError(txtImage, " Required");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(txtImage, null);
+            }
+        }
     }
 }

@@ -16,11 +16,16 @@ namespace RentACar.WebAPI.Service
         {
             var query = _context.Set<Branch>().AsQueryable();
 
-            if (!string.IsNullOrWhiteSpace(search.BranchName))                   // search for string
+            if (!string.IsNullOrWhiteSpace(search.BranchName))                  
             {
                 query = query.Where(x => x.BranchName.StartsWith(search.BranchName));
             }
 
+            if (!string.IsNullOrWhiteSpace(search.PhoneNumber))                  
+            {
+                query = query.Where(x => x.PhoneNumber.StartsWith(search.PhoneNumber));
+            }
+            
             if (search?.CityId.HasValue == true)
             {
                 query = query.Where(e => e.CityId == search.CityId);

@@ -200,6 +200,7 @@
             this.txtNumberOfSeats.Name = "txtNumberOfSeats";
             this.txtNumberOfSeats.Size = new System.Drawing.Size(301, 26);
             this.txtNumberOfSeats.TabIndex = 15;
+            this.txtNumberOfSeats.Validating += new System.ComponentModel.CancelEventHandler(this.txtNumberOfSeats_Validating);
             // 
             // label8
             // 
@@ -399,6 +400,7 @@
             this.txtImage.Name = "txtImage";
             this.txtImage.Size = new System.Drawing.Size(261, 26);
             this.txtImage.TabIndex = 36;
+            this.txtImage.Validating += new System.ComponentModel.CancelEventHandler(this.txtImage_Validating);
             // 
             // btnAddImage
             // 
