@@ -164,31 +164,6 @@ namespace RentACar.Mobile.ViewModels
                             }
                         }
                     }
-
-
-                    //foreach (var item in listRatings)
-                    //{
-                    //    foreach (var book in listBooking)
-                    //    {
-                    //        if(item.VehicleId== book.VehicleId)
-                    //        {
-                    //            if(book.RatingStatus==false)
-                    //            {
-                    //                var req = new BookingUpsert
-                    //                {
-                    //                    CustomerId=book.CustomerId,
-                    //                    VehicleId=book.VehicleId,
-                    //                    StartDate=book.StartDate,
-                    //                    EndDate=book.EndDate,
-                    //                    RatingStatus=true,
-                    //                    CommentStatus=book.CommentStatus
-                    //                };
-                    //                await _serviceBooking.Update<Data.Model.Booking>(book.BookingId, req);
-                    //                return;
-                    //            }
-                    //        }
-                    //    }
-                    //}
                 }
             }
             catch (Exception ex)

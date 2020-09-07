@@ -454,7 +454,7 @@ namespace RentACar.WebAPI.Database
             modelBuilder.Entity<Booking>().HasData(new Booking()
             {
                 BookingId = 1,
-                StartDate = new DateTime(2020, 08, 16),
+                StartDate = new DateTime(2020, 08, 14),
                 EndDate = new DateTime(2020, 08, 16),
                 CustomerId = 2,
                 VehicleId = 1,
@@ -465,7 +465,7 @@ namespace RentACar.WebAPI.Database
             modelBuilder.Entity<Booking>().HasData(new Booking()
             {
                 BookingId = 2,
-                StartDate = new DateTime(2020, 08, 16),
+                StartDate = new DateTime(2020, 08, 14),
                 EndDate = new DateTime(2020, 08, 16),
                 CustomerId = 2,
                 VehicleId = 2,
@@ -476,7 +476,7 @@ namespace RentACar.WebAPI.Database
             modelBuilder.Entity<Booking>().HasData(new Booking()
             {
                 BookingId = 3,
-                StartDate = new DateTime(2020, 08, 16),
+                StartDate = new DateTime(2020, 08, 14),
                 EndDate = new DateTime(2020, 08, 16),
                 CustomerId = 2,
                 VehicleId = 3,
@@ -487,45 +487,45 @@ namespace RentACar.WebAPI.Database
             modelBuilder.Entity<Booking>().HasData(new Booking()
             {
                 BookingId = 4,
-                StartDate = new DateTime(2020, 08, 16),
+                StartDate = new DateTime(2020, 08, 14),
                 EndDate = new DateTime(2020, 08, 16),
                 CustomerId = 2,
                 VehicleId = 4,
                 RatingStatus = false,
-                CommentStatus = false
+                CommentStatus = true
             });
 
             modelBuilder.Entity<Booking>().HasData(new Booking()
             {
                 BookingId = 5,
-                StartDate = new DateTime(2020, 08, 16),
+                StartDate = new DateTime(2020, 08, 14),
                 EndDate = new DateTime(2020, 08, 16),
                 CustomerId = 2,
                 VehicleId = 5,
                 RatingStatus = false,
-                CommentStatus = false
+                CommentStatus = true
             });
 
             modelBuilder.Entity<Booking>().HasData(new Booking()
             {
                 BookingId = 6,
-                StartDate = new DateTime(2020, 08, 16),
+                StartDate = new DateTime(2020, 08, 14),
                 EndDate = new DateTime(2020, 08, 16),
                 CustomerId = 2,
                 VehicleId = 6,
                 RatingStatus = false,
-                CommentStatus = false
+                CommentStatus = true
             });
 
             modelBuilder.Entity<Booking>().HasData(new Booking()
             {
                 BookingId = 7,
-                StartDate = new DateTime(2020, 08, 16),
+                StartDate = new DateTime(2020, 08, 14),
                 EndDate = new DateTime(2020, 08, 16),
                 CustomerId = 2,
                 VehicleId = 7,
                 RatingStatus = false,
-                CommentStatus = false
+                CommentStatus = true
             });
 
             // COMMENT
@@ -594,14 +594,15 @@ namespace RentACar.WebAPI.Database
             });
 
 
-            // RATING                                                   FALI RatingDate
+            // RATING                                                  
 
             modelBuilder.Entity<Rating>().HasData(new Rating()
             {
                 RatingId = 1,
                 RatingValue = 9,
                 CustomerId = 2,
-                VehicleId = 1
+                VehicleId = 1,
+                RatingDate=new DateTime(2020,08,16)
             });
 
             modelBuilder.Entity<Rating>().HasData(new Rating()
@@ -609,7 +610,8 @@ namespace RentACar.WebAPI.Database
                 RatingId = 2,
                 RatingValue = 10,
                 CustomerId = 2,
-                VehicleId = 2
+                VehicleId = 2,
+                RatingDate = new DateTime(2020, 08, 16)
             });
 
             modelBuilder.Entity<Rating>().HasData(new Rating()
@@ -617,7 +619,8 @@ namespace RentACar.WebAPI.Database
                 RatingId = 3,
                 RatingValue = 7,
                 CustomerId = 2,
-                VehicleId = 3
+                VehicleId = 3,
+                RatingDate = new DateTime(2020, 08, 16)
             });
 
             modelBuilder.Entity<Rating>().HasData(new Rating()
@@ -625,7 +628,8 @@ namespace RentACar.WebAPI.Database
                 RatingId = 4,
                 RatingValue = 5,
                 CustomerId = 2,
-                VehicleId = 4
+                VehicleId = 4,
+                RatingDate = new DateTime(2020, 08, 16)
             });
 
             modelBuilder.Entity<Rating>().HasData(new Rating()
@@ -633,7 +637,8 @@ namespace RentACar.WebAPI.Database
                 RatingId = 5,
                 RatingValue = 6,
                 CustomerId = 2,
-                VehicleId = 5
+                VehicleId = 5,
+                RatingDate = new DateTime(2020, 08, 16)
             });
 
             modelBuilder.Entity<Rating>().HasData(new Rating()
@@ -641,7 +646,8 @@ namespace RentACar.WebAPI.Database
                 RatingId = 6,
                 RatingValue = 7,
                 CustomerId = 2,
-                VehicleId = 6
+                VehicleId = 6,
+                RatingDate = new DateTime(2020, 08, 16)
             });
 
             modelBuilder.Entity<Rating>().HasData(new Rating()
@@ -649,9 +655,9 @@ namespace RentACar.WebAPI.Database
                 RatingId = 7,
                 RatingValue = 4,
                 CustomerId = 2,
-                VehicleId = 5
+                VehicleId = 5,
+                RatingDate = new DateTime(2020, 08, 16)
             });
-
         }
     }
 }
