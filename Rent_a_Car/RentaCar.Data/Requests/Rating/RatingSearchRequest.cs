@@ -6,7 +6,7 @@
         public int? RatingValue { get; set; }
 
         public int? CustomerID { get; set; }
-        public int VehicleId { get; set; }
+        public int? VehicleId { get; set; }
 
     }
 }

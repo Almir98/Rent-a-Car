@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-//using Rent_a_Car.WebAPI.Filters;
+using Rent_a_Car.WebAPI.Filters;
 using Rent_a_Car.WebAPI.Interface;
 using Rent_a_Car.WebAPI.Service;
 using RentaCar.Data.Requests.Booking;
@@ -37,7 +37,7 @@ namespace Rent_a_Car.WebAPI
 
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddMvc(x => x.Filters.Add<ErrorFilter>());        
+            services.AddMvc(x => x.Filters.Add<ErrorFilter>());        
 
             services.AddControllers();
 

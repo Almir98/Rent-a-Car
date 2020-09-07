@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace RentaCar.Data.Requests.Rating
 {
@@ -10,5 +11,6 @@ namespace RentaCar.Data.Requests.Rating
         public int CustomerId { get; set; }
         [Required]
         public int VehicleId { get; set; }
+        public DateTime? RatingDate { get; set; }
     }
 }

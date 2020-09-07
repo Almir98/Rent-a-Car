@@ -104,11 +104,6 @@ namespace RentACar.Mobile.ViewModels
 
             try
             {
-                var listRatings = await _serviceRating.Get<List<Data.Model.Rating>>(new RatingSearchRequest { 
-                      CustomerID=customer.CustomerId
-                });
-
-
                 var customerID = await _serviceCustomer.GetById<Data.Model.Customer>(APIService.CustomerId);
                 customer = customerID;
 
@@ -121,8 +116,25 @@ namespace RentACar.Mobile.ViewModels
                     {
                         CustomerId = APIService.CustomerId,
                         VehicleId =vehicle.VehicleId,                                    
-                        RatingValue = Mark
+                        RatingValue = Mark,
+                        RatingDate=DateTime.Now.Date
                     };
+
+                    var listRatings = await _serviceRating.Get<List<Data.Model.Rating>>(new RatingSearchRequest
+                    {
+                        CustomerID = customer.CustomerId,
+                        VehicleId = vehicle.VehicleId
+                    });
+
+                    foreach (var rat in listRatings)
+                    {
+                        if (RatingDate.Date==rat.RatingDate.Date)
+                        {
+                            await Application.Current.MainPage.DisplayAlert("Message", "Rating for this reservation already exist! You can add just 1 rating for reservation", "Try again");
+                            return;
+                        }
+                    }
+
                     await _serviceRating.Insert<Data.Model.Rating>(request);
                     await Application.Current.MainPage.DisplayAlert("Message", "Successfully! You added your mark for rented car!", "OK");
 

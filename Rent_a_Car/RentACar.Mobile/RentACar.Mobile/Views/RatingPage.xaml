@@ -30,6 +30,9 @@
 			<Label Text="Manufacturer name"></Label>
 			<Entry Text="{Binding ModelName }" IsReadOnly="True" BackgroundColor="LightGray"></Entry>
 
+			<Label Text="Date"></Label>
+			<DatePicker Date="{Binding RatingDate}" IsEnabled="False"></DatePicker>
+
 			<Label Text="Rating value (1-10)"></Label>
 			<Entry MaxLength="10" Text="{Binding Mark}"></Entry>
 

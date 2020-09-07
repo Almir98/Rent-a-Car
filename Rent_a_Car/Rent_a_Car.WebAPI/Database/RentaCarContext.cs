@@ -32,8 +32,7 @@ namespace RentACar.WebAPI.Database
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=.;Database=RentaCar;Integrated Security=True;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=.;Database=RentCar;Integrated Security=True;Trusted_Connection=True;");
             }
         }
 
@@ -41,6 +40,10 @@ namespace RentACar.WebAPI.Database
         {
             modelBuilder.Entity<Booking>(entity =>
             {
+                entity.HasIndex(e => e.CustomerId);
+
+                entity.HasIndex(e => e.VehicleId);
+
                 entity.Property(e => e.BookingId).HasColumnName("BookingID");
 
                 entity.Property(e => e.CustomerId).HasColumnName("CustomerID");
@@ -64,6 +67,8 @@ namespace RentACar.WebAPI.Database
 
             modelBuilder.Entity<Branch>(entity =>
             {
+                entity.HasIndex(e => e.CityId);
+
                 entity.Property(e => e.BranchId).HasColumnName("BranchID");
 
                 entity.Property(e => e.Adress)
@@ -109,6 +114,10 @@ namespace RentACar.WebAPI.Database
 
             modelBuilder.Entity<Comment>(entity =>
             {
+                entity.HasIndex(e => e.CustomerId);
+
+                entity.HasIndex(e => e.VehicleId);
+
                 entity.Property(e => e.CommentId).HasColumnName("CommentID");
 
                 entity.Property(e => e.CustomerId).HasColumnName("CustomerID");
@@ -134,6 +143,10 @@ namespace RentACar.WebAPI.Database
 
             modelBuilder.Entity<Customer>(entity =>
             {
+                entity.HasIndex(e => e.CityId);
+
+                entity.HasIndex(e => e.CustomerTypeId);
+
                 entity.Property(e => e.CustomerId).HasColumnName("CustomerID");
 
                 entity.Property(e => e.CityId).HasColumnName("CityID");
@@ -206,9 +219,15 @@ namespace RentACar.WebAPI.Database
 
             modelBuilder.Entity<Rating>(entity =>
             {
+                entity.HasIndex(e => e.CustomerId);
+
+                entity.HasIndex(e => e.VehicleId);
+
                 entity.Property(e => e.RatingId).HasColumnName("RatingID");
 
                 entity.Property(e => e.CustomerId).HasColumnName("CustomerID");
+
+                entity.Property(e => e.RatingDate).HasColumnType("datetime");
 
                 entity.Property(e => e.VehicleId).HasColumnName("VehicleID");
 
@@ -225,6 +244,14 @@ namespace RentACar.WebAPI.Database
 
             modelBuilder.Entity<Vehicle>(entity =>
             {
+                entity.HasIndex(e => e.BranchId);
+
+                entity.HasIndex(e => e.FuelTypeId);
+
+                entity.HasIndex(e => e.VehicleModelId);
+
+                entity.HasIndex(e => e.VehicleTypeId);
+
                 entity.Property(e => e.VehicleId).HasColumnName("VehicleID");
 
                 entity.Property(e => e.BranchId).HasColumnName("BranchID");
@@ -276,6 +303,8 @@ namespace RentACar.WebAPI.Database
             {
                 entity.HasKey(e => e.ModelId)
                     .HasName("PK_ModelID");
+
+                entity.HasIndex(e => e.ManufacturerId);
 
                 entity.Property(e => e.ModelId).HasColumnName("ModelID");
 

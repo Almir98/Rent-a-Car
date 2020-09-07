@@ -70,8 +70,6 @@ namespace RentACar.Mobile.ViewModels
             set { SetProperty(ref _date, value); }
         }
 
-
-
         public Data.Model.Customer customer { get; set; }
         public Data.Model.Vehicle vehicle { get; set; }
 
@@ -86,7 +84,6 @@ namespace RentACar.Mobile.ViewModels
             ManufacturerName = vehicle.VehicleModel.Manufacturer.ManufacturerName;
             ModelName = vehicle.VehicleModel.ModelName;
         }
-
 
         public async Task SetComment()
         {
@@ -122,7 +119,7 @@ namespace RentACar.Mobile.ViewModels
 
                     foreach (var com in listComment)
                     {
-                        if (CommentDate == com.DateOfComment)
+                        if (CommentDate.Date == com.DateOfComment.Date)
                         {
                             await Application.Current.MainPage.DisplayAlert("Message", "Comment for this reservation already exist! You can add just 1 comment for reservation", "Try again");
                             return;
@@ -157,29 +154,6 @@ namespace RentACar.Mobile.ViewModels
                             }
                         }
                     }
-                    //foreach (var item in listComment)
-                    //{
-                    //    foreach (var book in listBooking)
-                    //    {
-                    //        if (item.VehicleId == book.VehicleId)
-                    //        {
-                    //            if (book.CommentStatus == false)
-                    //            {
-                    //                var req = new BookingUpsert
-                    //                {
-                    //                    CustomerId = book.CustomerId,
-                    //                    VehicleId = book.VehicleId,
-                    //                    StartDate = book.StartDate,
-                    //                    EndDate = book.EndDate,
-                    //                    RatingStatus = book.RatingStatus,
-                    //                    CommentStatus = true
-                    //                };
-                    //                await _serviceBooking.Update<Data.Model.Booking>(book.BookingId, req);
-                    //                return;
-                    //            }
-                    //        }
-                    //    }
-                    //}
                 }
             }
             catch (Exception ex)

@@ -37,6 +37,11 @@ namespace RentACar.WebAPI.Service
                 query = query.Where(x => x.Customer.CustomerId == search.CustomerID);
             }
 
+            if (search.VehicleId.HasValue == true)
+            {
+                query = query.Where(x => x.Vehicle.VehicleId == search.VehicleId);
+            }
+
             query = query.OrderBy(x => x.RatingValue);
 
             return _mapper.Map<List<Data.Model.Rating>>(query.ToList());

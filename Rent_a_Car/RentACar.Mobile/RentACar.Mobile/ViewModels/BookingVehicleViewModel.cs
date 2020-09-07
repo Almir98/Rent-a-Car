@@ -123,7 +123,7 @@ namespace RentACar.Mobile.ViewModels
 
                 foreach (var item in listBooking)
                 {
-                    if(item.EndDate.Date > DateTime.Now.Date)
+                    if(item.EndDate.Date >= DateTime.Now.Date)
                     {
                         await Application.Current.MainPage.DisplayAlert("Error", "The vehicle is already reserved. After the reservation expires, you can reserve the vehicle again", "Try again");
                         return;
