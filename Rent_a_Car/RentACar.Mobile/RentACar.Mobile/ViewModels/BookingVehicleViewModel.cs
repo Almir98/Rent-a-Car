@@ -109,6 +109,13 @@ namespace RentACar.Mobile.ViewModels
         {
             try
             {
+
+                if(StartDate.Date < DateTime.Now.Date)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Error", "You cannot book before today", "Try again");
+                    return;
+                }
+
                 if (StartDate.Date == EndDate.Date || EndDate.Date <= StartDate.Date)
                 {
                     await Application.Current.MainPage.DisplayAlert("Error", "The scope of booking period must be at least 1 day and the end date must be greater than the start date.", "Try again");

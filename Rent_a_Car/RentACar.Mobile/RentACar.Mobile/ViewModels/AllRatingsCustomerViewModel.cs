@@ -49,7 +49,7 @@ namespace RentACar.Mobile.ViewModels
             }
             if (BookingList.Count == 0)
             {
-                await Application.Current.MainPage.DisplayAlert("Warning", "The list is empty. You can leave a rating on the reserved vehicle after the reservation expires. Please, try again later.", "OK");
+                await Application.Current.MainPage.DisplayAlert("Warning", "The list is empty. You can leave a rating on the reserved vehicle after the reservation expires or you have not booked yet. Please, try again later.", "OK");
             }
         }
     }

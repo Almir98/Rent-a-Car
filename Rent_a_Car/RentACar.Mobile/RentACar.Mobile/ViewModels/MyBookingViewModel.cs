@@ -42,6 +42,11 @@ namespace RentACar.Mobile.ViewModels
                 {
                     BookingList.Add(item);
                 }
+
+                if (BookingList.Count == 0)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Warning", "You don't have any bookings yet.", "OK");
+                }
         }
     }
 }
