@@ -458,73 +458,73 @@ namespace RentACar.WebAPI.Database
                 EndDate = new DateTime(2020, 08, 16),
                 CustomerId = 2,
                 VehicleId = 1,
-                RatingStatus = false,
-                CommentStatus = false
+                RatingStatus = true,
+                CommentStatus = true
             });
 
             modelBuilder.Entity<Booking>().HasData(new Booking()
             {
                 BookingId = 2,
-                StartDate = new DateTime(2020, 08, 14),
-                EndDate = new DateTime(2020, 08, 16),
+                StartDate = new DateTime(2020, 08, 01),
+                EndDate = new DateTime(2020, 08, 05),
                 CustomerId = 2,
                 VehicleId = 2,
-                RatingStatus = false,
-                CommentStatus = false
+                RatingStatus = true,
+                CommentStatus = true
             });
 
             modelBuilder.Entity<Booking>().HasData(new Booking()
             {
                 BookingId = 3,
-                StartDate = new DateTime(2020, 08, 14),
-                EndDate = new DateTime(2020, 08, 16),
+                StartDate = new DateTime(2020, 08, 02),
+                EndDate = new DateTime(2020, 08, 10),
                 CustomerId = 2,
                 VehicleId = 3,
-                RatingStatus = false,
-                CommentStatus = false
+                RatingStatus = true,
+                CommentStatus = true
             });
 
             modelBuilder.Entity<Booking>().HasData(new Booking()
             {
                 BookingId = 4,
-                StartDate = new DateTime(2020, 08, 14),
-                EndDate = new DateTime(2020, 08, 16),
+                StartDate = new DateTime(2020, 08, 03),
+                EndDate = new DateTime(2020, 08, 10),
                 CustomerId = 2,
                 VehicleId = 4,
-                RatingStatus = false,
+                RatingStatus = true,
                 CommentStatus = true
             });
 
             modelBuilder.Entity<Booking>().HasData(new Booking()
             {
                 BookingId = 5,
-                StartDate = new DateTime(2020, 08, 14),
-                EndDate = new DateTime(2020, 08, 16),
+                StartDate = new DateTime(2020, 08, 05),
+                EndDate = new DateTime(2020, 08, 07),
                 CustomerId = 2,
                 VehicleId = 5,
-                RatingStatus = false,
+                RatingStatus = true,
                 CommentStatus = true
             });
 
             modelBuilder.Entity<Booking>().HasData(new Booking()
             {
                 BookingId = 6,
-                StartDate = new DateTime(2020, 08, 14),
-                EndDate = new DateTime(2020, 08, 16),
+                StartDate = new DateTime(2020, 08, 07),
+                EndDate = new DateTime(2020, 08, 10),
                 CustomerId = 2,
                 VehicleId = 6,
-                RatingStatus = false,
+                RatingStatus = true,
                 CommentStatus = true
             });
 
             modelBuilder.Entity<Booking>().HasData(new Booking()
             {
                 BookingId = 7,
-                StartDate = new DateTime(2020, 08, 14),
-                EndDate = new DateTime(2020, 08, 16),
+                StartDate = new DateTime(2020, 08, 11),
+                EndDate = new DateTime(2020, 08, 13),
                 CustomerId = 2,
                 VehicleId = 7,
-                RatingStatus = false,
+                RatingStatus = true,
                 CommentStatus = true
             });
 
@@ -534,7 +534,7 @@ namespace RentACar.WebAPI.Database
             {
                 CommentId = 1,
                 Description = "Audi A6 je vrhunski auto. Preporučujem ga, sve pohvale.",
-                DateOfComment = new DateTime(2020, 08, 16),
+                DateOfComment = new DateTime(2020, 08, 10),
                 CustomerId = 2,
                 VehicleId = 1
             });
@@ -543,7 +543,7 @@ namespace RentACar.WebAPI.Database
             {
                 CommentId = 2,
                 Description = "Audi A7 je vrhunski auto. Preporučujem ga, sve pohvale.",
-                DateOfComment = new DateTime(2020, 08, 16),
+                DateOfComment = new DateTime(2020, 08, 11),
                 CustomerId = 2,
                 VehicleId = 2
             });
@@ -552,7 +552,7 @@ namespace RentACar.WebAPI.Database
             {
                 CommentId = 3,
                 Description = "BMW 530d je vrhunski auto. Preporučujem ga, sve pohvale.",
-                DateOfComment = new DateTime(2020, 08, 16),
+                DateOfComment = new DateTime(2020, 08, 12),
                 CustomerId = 2,
                 VehicleId = 3
             });
@@ -561,7 +561,7 @@ namespace RentACar.WebAPI.Database
             {
                 CommentId = 4,
                 Description = "Mercede-Benz C220 CDI je vrhunski auto. Preporučujem ga, sve pohvale.",
-                DateOfComment = new DateTime(2020, 08, 16),
+                DateOfComment = new DateTime(2020, 08, 12),
                 CustomerId = 2,
                 VehicleId = 4
             });
@@ -570,7 +570,7 @@ namespace RentACar.WebAPI.Database
             {
                 CommentId = 5,
                 Description = "Volkswagen Passat 8 je vrhunski auto. Preporučujem ga, sve pohvale.",
-                DateOfComment = new DateTime(2020, 08, 16),
+                DateOfComment = new DateTime(2020, 08, 13),
                 CustomerId = 2,
                 VehicleId = 5
             });
@@ -579,7 +579,7 @@ namespace RentACar.WebAPI.Database
             {
                 CommentId = 6,
                 Description = "Porsche Carrera 4S je vrhunski auto. Preporučujem ga, sve pohvale.",
-                DateOfComment = new DateTime(2020, 08, 16),
+                DateOfComment = new DateTime(2020, 08, 14),
                 CustomerId = 2,
                 VehicleId = 6
             });
@@ -588,7 +588,7 @@ namespace RentACar.WebAPI.Database
             {
                 CommentId = 7,
                 Description = "Citroen C5 HDI je vrhunski auto. Preporučujem ga, sve pohvale.",
-                DateOfComment = new DateTime(2020, 08, 16),
+                DateOfComment = new DateTime(2020, 08, 15),
                 CustomerId = 2,
                 VehicleId = 7
             });
@@ -602,7 +602,7 @@ namespace RentACar.WebAPI.Database
                 RatingValue = 9,
                 CustomerId = 2,
                 VehicleId = 1,
-                RatingDate=new DateTime(2020,08,16)
+                RatingDate=new DateTime(2020,08,10)
             });
 
             modelBuilder.Entity<Rating>().HasData(new Rating()
@@ -611,7 +611,7 @@ namespace RentACar.WebAPI.Database
                 RatingValue = 10,
                 CustomerId = 2,
                 VehicleId = 2,
-                RatingDate = new DateTime(2020, 08, 16)
+                RatingDate = new DateTime(2020, 08, 11)
             });
 
             modelBuilder.Entity<Rating>().HasData(new Rating()
@@ -620,7 +620,7 @@ namespace RentACar.WebAPI.Database
                 RatingValue = 7,
                 CustomerId = 2,
                 VehicleId = 3,
-                RatingDate = new DateTime(2020, 08, 16)
+                RatingDate = new DateTime(2020, 08, 12)
             });
 
             modelBuilder.Entity<Rating>().HasData(new Rating()
@@ -629,7 +629,7 @@ namespace RentACar.WebAPI.Database
                 RatingValue = 5,
                 CustomerId = 2,
                 VehicleId = 4,
-                RatingDate = new DateTime(2020, 08, 16)
+                RatingDate = new DateTime(2020, 08, 13)
             });
 
             modelBuilder.Entity<Rating>().HasData(new Rating()
@@ -638,7 +638,7 @@ namespace RentACar.WebAPI.Database
                 RatingValue = 6,
                 CustomerId = 2,
                 VehicleId = 5,
-                RatingDate = new DateTime(2020, 08, 16)
+                RatingDate = new DateTime(2020, 08, 14)
             });
 
             modelBuilder.Entity<Rating>().HasData(new Rating()
@@ -647,7 +647,7 @@ namespace RentACar.WebAPI.Database
                 RatingValue = 7,
                 CustomerId = 2,
                 VehicleId = 6,
-                RatingDate = new DateTime(2020, 08, 16)
+                RatingDate = new DateTime(2020, 08, 15)
             });
 
             modelBuilder.Entity<Rating>().HasData(new Rating()
