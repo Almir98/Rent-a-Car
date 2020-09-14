@@ -22,15 +22,15 @@ namespace RentACar.WinUI.Forms
                 var booking = await _serviceBooking.GetById<Data.Model.Booking>(_id);
 
                 txtReservationID.Text = booking.BookingId.ToString();
-                dtStart.Value = booking.StartDate;
-                dtEndDate.Value = booking.EndDate;
+                dtStart.Value = booking.StartDate.AddHours(8).Date;
+                dtEndDate.Value = booking.EndDate.Date;
                 txtFirstName.Text = booking.Customer.FirstName;
                 txtLastName.Text = booking.Customer.LastName;
                 txtManufacturer.Text = booking.Vehicle.VehicleModel.Manufacturer.ManufacturerName;
                 txtModel.Text = booking.Vehicle.VehicleModel.ModelName;
                 txtDailyPrice.Text = booking.Vehicle.DailyPrice.ToString();
 
-                var total = (booking.EndDate.Date - booking.StartDate.Date).TotalDays;
+                var total = (booking.EndDate.Date - booking.StartDate.AddHours(8).Date).TotalDays;
                 txtTotalDays.Text = total.ToString();
 
                 total =total*booking.Vehicle.DailyPrice;

@@ -54,7 +54,9 @@ namespace RentACar.WinUI.Forms
             var search = new CommentSearchRequest()
             {
                 ManufacturerName = txtManufacturerName.Text,
+                ModelName=txtModelName.Text,
                 FirstName = txtFirstName.Text,
+                LastName=txtLastName.Text
             };
 
             if(chkDisable.Checked){
@@ -84,6 +86,10 @@ namespace RentACar.WinUI.Forms
             }
             dgvComments.AutoGenerateColumns = false;
             dgvComments.DataSource = finalList;
+            if (finalList.Count == 0)
+            {
+                MessageBox.Show("There are no results for this search", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void dgvComments_MouseDoubleClick(object sender, MouseEventArgs e)

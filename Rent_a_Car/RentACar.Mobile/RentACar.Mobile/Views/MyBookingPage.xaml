@@ -14,10 +14,14 @@
 	</ContentPage.BindingContext>
 
 	<ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="20">
 
 			<Label FontSize="Large" HorizontalOptions="Center" Text="All your bookings"></Label>
 
+			<Label FontSize="Medium">Filter by manufacturer name</Label>
+			<Entry Placeholder="Audi, BMW or etc." Text="{Binding ManufacturerName}"></Entry>
+			<Button Text="Search" HorizontalOptions="Center" Command="{Binding SearchVehicles}"  Font="Bold,17"></Button>
+			
 			<ListView ItemsSource="{Binding BookingList}">
 				<ListView.ItemTemplate>
 					<DataTemplate>
@@ -25,7 +29,7 @@
 							<StackLayout Padding="20" Orientation="Horizontal">
 								<StackLayout Orientation="Vertical">
 									<StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="6">
-										<Label Text="Start date : "
+										<Label Text="Manufacturer name : "
 										Style="{DynamicResource LargeLabel}" />
 
 										<Label Text="{Binding Vehicle.VehicleModel.Manufacturer.ManufacturerName}" 
@@ -36,7 +40,7 @@
 									</StackLayout>
 
 									<StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="6">
-										<Label Text="Start date : "
+										<Label Text="Model name : "
 										Style="{DynamicResource LargeLabel}" />
 
 										<Label Text="{Binding Vehicle.VehicleModel.ModelName}" 

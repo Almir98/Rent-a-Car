@@ -159,7 +159,7 @@ namespace RentACar.WinUI.Forms
                 if (list.Count >= 1)
                 {
                     MessageBox.Show("A car with this registration number already exists, please try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.Close();
+                    return;
                 }
                 else
                 {

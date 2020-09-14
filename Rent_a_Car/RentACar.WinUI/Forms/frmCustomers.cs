@@ -19,12 +19,20 @@ namespace RentACar.WinUI
         {
             var search = new CustomerSearchRequest()
             {
-                FirstName = txtCustomer.Text
+                FirstName = txtCustomer.Text,
+                LastName=txtLastName.Text,
+                Phone=txtPhoneNumber.Text,
+                Email=txtEmail.Text
             };
 
             var result = await _apiService.Get<List<Data.Model.Customer>>(search);
             dgvAllCustomers.AutoGenerateColumns = false;
             dgvAllCustomers.DataSource = result;
+
+            if(result.Count==0)
+            {
+                MessageBox.Show("There are no results for this search", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void dgvAllCustomers_MouseDoubleClick(object sender, MouseEventArgs e)

@@ -497,8 +497,8 @@ namespace RentACar.WebAPI.Database
                 EndDate = new DateTime(2020, 08, 07),
                 CustomerId = 2,
                 VehicleId = 5,
-                RatingStatus = true,
-                CommentStatus = true
+                RatingStatus = false,
+                CommentStatus = false
             });
 
             modelBuilder.Entity<Booking>().HasData(new Booking()
@@ -508,8 +508,8 @@ namespace RentACar.WebAPI.Database
                 EndDate = new DateTime(2020, 08, 10),
                 CustomerId = 2,
                 VehicleId = 6,
-                RatingStatus = true,
-                CommentStatus = true
+                RatingStatus = false,
+                CommentStatus = false
             });
 
             modelBuilder.Entity<Booking>().HasData(new Booking()
@@ -588,7 +588,6 @@ namespace RentACar.WebAPI.Database
                 VehicleId = 7
             });
 
-
             // RATING                                                  
 
             modelBuilder.Entity<Rating>().HasData(new Rating()
@@ -627,23 +626,23 @@ namespace RentACar.WebAPI.Database
                 RatingDate = new DateTime(2020, 08, 13)
             });
 
-            modelBuilder.Entity<Rating>().HasData(new Rating()
-            {
-                RatingId = 5,
-                RatingValue = 6,
-                CustomerId = 2,
-                VehicleId = 5,
-                RatingDate = new DateTime(2020, 08, 14)
-            });
+            //modelBuilder.Entity<Rating>().HasData(new Rating()
+            //{
+            //    RatingId = 5,
+            //    RatingValue = 6,
+            //    CustomerId = 2,
+            //    VehicleId = 5,
+            //    RatingDate = new DateTime(2020, 08, 14)
+            //});
 
-            modelBuilder.Entity<Rating>().HasData(new Rating()
-            {
-                RatingId = 6,
-                RatingValue = 7,
-                CustomerId = 2,
-                VehicleId = 6,
-                RatingDate = new DateTime(2020, 08, 15)
-            });
+            //modelBuilder.Entity<Rating>().HasData(new Rating()
+            //{
+            //    RatingId = 6,
+            //    RatingValue = 7,
+            //    CustomerId = 2,
+            //    VehicleId = 6,
+            //    RatingDate = new DateTime(2020, 08, 15)
+            //});
 
             modelBuilder.Entity<Rating>().HasData(new Rating()
             {

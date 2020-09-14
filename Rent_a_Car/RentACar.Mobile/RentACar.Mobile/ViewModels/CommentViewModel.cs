@@ -119,13 +119,14 @@ namespace RentACar.Mobile.ViewModels
 
                     foreach (var com in listComment)
                     {
+                        com.DateOfComment = com.DateOfComment.AddHours(8);
                         if (CommentDate.Date == com.DateOfComment.Date)
                         {
                             await Application.Current.MainPage.DisplayAlert("Message", "Comment for this reservation already exist! You can add just 1 comment for reservation", "Try again");
                             return;
                         }
                     }
-
+                    request.DateOfComment = DateTime.Now.Date;
                     await _serviceComment.Insert<Data.Model.Comment>(request);
                     await Application.Current.MainPage.DisplayAlert("Message", "Successfully! You added your comment for rented car!", "OK");
 

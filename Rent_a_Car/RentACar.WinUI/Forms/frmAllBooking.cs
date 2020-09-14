@@ -22,7 +22,10 @@ namespace RentACar.WinUI.Forms
             var search = new BookingSearchRequest(){
                 FirstName = txtBookingSearch.Text,
                 StartDate=dtStartDate.Value.Date,
-                EndDate = dtEndDate.Value.Date
+                EndDate = dtEndDate.Value.Date,
+                LastName=txtLastName.Text,
+                ManufacturerName=txtManufacturerName.Text,
+                ModelName=txtModelName.Text
             };
 
             if (chkDate.Checked){
@@ -34,7 +37,7 @@ namespace RentACar.WinUI.Forms
                 if(search.EndDate.Value.Date <= search.StartDate.Value.Date)
                 {
                     MessageBox.Show("The scope of period days must be at least 1 day and the end date must be greater than the start date.", "Try again", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    this.Close();
+                    return;
                 }
             }
 
@@ -57,6 +60,11 @@ namespace RentACar.WinUI.Forms
             }
             dgvBooking.AutoGenerateColumns = false;
             dgvBooking.DataSource = finalList;
+
+            if (finalList.Count == 0)
+            {
+                MessageBox.Show("There are no results for this search", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private async void frmAllBooking_Load(object sender, EventArgs e)
@@ -70,7 +78,7 @@ namespace RentACar.WinUI.Forms
                 frmAllBookingVM form = new frmAllBookingVM
                 {
                     BookingId = item.BookingId,
-                    StartDate = item.StartDate,
+                    StartDate = item.StartDate.AddHours(8).Date,
                     EndDate = item.EndDate,
                     FirstName = item.Customer.FirstName,
                     LastName = item.Customer.LastName,

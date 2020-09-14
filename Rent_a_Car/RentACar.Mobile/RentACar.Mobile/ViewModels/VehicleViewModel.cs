@@ -34,6 +34,13 @@ namespace RentACar.Mobile.ViewModels
             set { SetProperty(ref _manufacturerName, value); }
         }
 
+        string _branchName = string.Empty;
+        public string BranchName
+        {
+            get { return _branchName; }
+            set { SetProperty(ref _branchName, value); }
+        }
+
         DateTime _startDate = DateTime.Now;
         public DateTime DateNow
         {
@@ -54,7 +61,7 @@ namespace RentACar.Mobile.ViewModels
                 {
                     if(vehicle.VehicleId == item.VehicleId)
                     {
-                        if(item.EndDate.Date >= DateNow.Date)
+                        if(item.EndDate.Date > DateNow.Date)
                         {
                             key = false;
                         }
@@ -78,7 +85,8 @@ namespace RentACar.Mobile.ViewModels
         {
             var request = new VehicleSearchRequest
             {
-                ManufacturerName = ManufacturerName
+                ManufacturerName = ManufacturerName,
+                BranchName=BranchName
             };
 
             var list = await _vehicleService.Get<IEnumerable<Data.Model.Vehicle>>(request);

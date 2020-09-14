@@ -128,13 +128,14 @@ namespace RentACar.Mobile.ViewModels
 
                     foreach (var rat in listRatings)
                     {
+                        rat.RatingDate = rat.RatingDate.AddHours(8);
                         if (RatingDate.Date==rat.RatingDate.Date)
                         {
                             await Application.Current.MainPage.DisplayAlert("Message", "Rating for this reservation already exist! You can add just 1 rating for reservation", "Try again");
                             return;
                         }
                     }
-
+                    request.RatingDate = DateTime.Now.Date;
                     await _serviceRating.Insert<Data.Model.Rating>(request);
                     await Application.Current.MainPage.DisplayAlert("Message", "Successfully! You added your mark for rented car!", "OK");
 

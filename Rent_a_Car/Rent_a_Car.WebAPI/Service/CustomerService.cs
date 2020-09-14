@@ -27,14 +27,24 @@ namespace RentACar.WebAPI.Service
         {
             var query = _context.Customer.AsQueryable();
 
-            if (!string.IsNullOrWhiteSpace(request.FirstName) || !string.IsNullOrWhiteSpace(request.LastName))
+            if (!string.IsNullOrWhiteSpace(request.FirstName))
             {
                 query = query.Where(x => x.FirstName.StartsWith(request.FirstName));
             }
 
             if (!string.IsNullOrWhiteSpace(request.LastName))
             {
-                query = query.Where(x => x.LastName == request.LastName);
+                query = query.Where(x => x.LastName.StartsWith(request.LastName));
+            }
+          
+            if (!string.IsNullOrWhiteSpace(request.Phone))
+            {
+                query = query.Where(x => x.Phone.StartsWith(request.Phone));
+            }
+
+            if (!string.IsNullOrWhiteSpace(request.Email))
+            {
+                query = query.Where(x => x.Email.StartsWith(request.Email));
             }
 
             if (!string.IsNullOrWhiteSpace(request.Username))

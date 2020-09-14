@@ -32,6 +32,21 @@ namespace RentACar.WebAPI.Service
                 query = query.Where(x => x.Vehicle.VehicleModel.Manufacturer.ManufacturerName.StartsWith(search.ManufacturerName));
             }
 
+            if (!string.IsNullOrWhiteSpace(search.ModelName))
+            {
+                query = query.Where(x => x.Vehicle.VehicleModel.ModelName.StartsWith(search.ModelName));
+            }
+
+            if (!string.IsNullOrWhiteSpace(search.FirstName))
+            {
+                query = query.Where(x => x.Customer.FirstName.StartsWith(search.FirstName));
+            }
+
+            if (!string.IsNullOrWhiteSpace(search.LastName))
+            {
+                query = query.Where(x => x.Customer.LastName.StartsWith(search.LastName));
+            }
+
             if (search?.CustomerID.HasValue == true)
             {
                 query = query.Where(x => x.Customer.CustomerId == search.CustomerID);

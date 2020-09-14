@@ -23,8 +23,9 @@
 	<ContentPage.Content>
         <StackLayout Padding="20">
 
-			<Label FontSize="Medium">Filter by manufacturer name</Label>
+			<Label FontSize="Medium">Filter by manufacturer name or Branch name</Label>
 			<Entry Placeholder="Audi, BMW or etc." Text="{Binding ManufacturerName}"></Entry>
+			<Entry Placeholder="Kramar,Zoom or etc." Text="{Binding BranchName}"></Entry>
 			<Button Text="Search" HorizontalOptions="Center" Command="{Binding SearchVehicles}"  Font="Bold,17"></Button>
 
 			<ListView ItemsSource="{Binding VehicleList}" ItemTapped="ListView_ItemTapped" BackgroundColor="LightBlue">

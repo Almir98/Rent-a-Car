@@ -59,8 +59,8 @@ namespace RentACar.WinUI.Forms
 
                 if(list.Count>=1)
                 {
-                    MessageBox.Show("This vehicle model has already been entered", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.Close();
+                    MessageBox.Show("This vehicle model has already been entered.Try again!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
                 else
                 {

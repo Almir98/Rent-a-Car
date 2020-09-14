@@ -19,7 +19,12 @@ namespace RentACar.WinUI.Forms
         {
             var search = new VehicleSearchRequest()
             {
-                ManufacturerName=txtSearchVehicle.Text
+                ManufacturerName=txtSearchVehicle.Text,
+                ModelName=txtModelName.Text,
+                Transmission=txtTransmission.Text,
+                RegistrationNumber=txtRegistrationNumber.Text,
+                FuelName=txtFuelName.Text,
+                BranchName=txtBranchName.Text
             };
             var result = await _service.Get<List<Data.Model.Vehicle>>(search);
 
@@ -37,12 +42,18 @@ namespace RentACar.WinUI.Forms
                     Mileage = item.Mileage,
                     Transmission=item.Transmission,
                     NumberOfSeats=item.NumberOfSeats,
-                    FuelName=item.FuelType.FuelName
+                    FuelName=item.FuelType.FuelName,
+                    BranchName=item.Branch.BranchName
                 };
                 finalList.Add(form);
             }
             dgvVehicles.AutoGenerateColumns = false;
             dgvVehicles.DataSource = finalList;
+
+            if (finalList.Count == 0)
+            {
+                MessageBox.Show("There are no results for this search", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void dgvVehicles_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -70,12 +81,15 @@ namespace RentACar.WinUI.Forms
                     Mileage=item.Mileage,
                     Transmission=item.Transmission,
                     NumberOfSeats=item.NumberOfSeats,
-                    FuelName=item.FuelType.FuelName
+                    FuelName=item.FuelType.FuelName,
+                    BranchName = item.Branch.BranchName
                 };
                 newList.Add(form);
             }
             dgvVehicles.AutoGenerateColumns = false;
             dgvVehicles.DataSource = newList;
         }
+
+        
     }
 }

@@ -57,9 +57,12 @@ namespace RentACar.WinUI.Forms
 
         private async void btnSearch_Click(object sender, EventArgs e)
         {
-            var search = new RatingSearchRequest()
+                var search = new RatingSearchRequest()
             {
-                ManufacturerName=txtVehicle.Text
+                ManufacturerName=txtVehicle.Text,
+                ModelName=txtModelName.Text,
+                FirstName=txtFirstName.Text,
+                LastName=txtLastName.Text
             };
 
             if(txtRatingValue.Text!=""){
@@ -86,6 +89,10 @@ namespace RentACar.WinUI.Forms
             }
             dgvRating.AutoGenerateColumns = false;
             dgvRating.DataSource = finalList;
+            if (finalList.Count == 0)
+            {
+                MessageBox.Show("There are no results for this search", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void dgvRating_MouseDoubleClick(object sender, MouseEventArgs e)

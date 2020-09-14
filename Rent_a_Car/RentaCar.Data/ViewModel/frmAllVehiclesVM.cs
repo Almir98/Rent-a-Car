@@ -15,5 +15,6 @@ namespace RentaCar.Data.ViewModel
         public string Transmission { get; set; }
         public int NumberOfSeats { get; set; }
         public string FuelName { get; set; }
+        public string BranchName { get; set; }
     }
 }

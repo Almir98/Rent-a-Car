@@ -21,14 +21,34 @@ namespace RentACar.WebAPI.Service
                 .Include(e => e.Branch)
                 .AsQueryable();
 
-            if (!string.IsNullOrEmpty(search.RegistrationNumber))
-            {
-                query = query.Where(x => x.RegistrationNumber == search.RegistrationNumber);
-            }
-
             if (!string.IsNullOrEmpty(search.ManufacturerName))
             {
                 query = query.Where(x => x.VehicleModel.Manufacturer.ManufacturerName.StartsWith(search.ManufacturerName));
+            }
+            
+            if (!string.IsNullOrEmpty(search.RegistrationNumber))
+            {
+                query = query.Where(x => x.RegistrationNumber.StartsWith(search.RegistrationNumber));
+            }
+
+            if (!string.IsNullOrEmpty(search.Transmission))
+            {
+                query = query.Where(x => x.Transmission.StartsWith(search.Transmission));
+            }
+
+            if (!string.IsNullOrEmpty(search.BranchName))     // for xamarin and desktop
+            {
+                query = query.Where(x => x.Branch.BranchName.StartsWith(search.BranchName));
+            }
+
+            if (!string.IsNullOrEmpty(search.ModelName))
+            {
+                query = query.Where(x => x.VehicleModel.ModelName.StartsWith(search.ModelName));
+            }
+
+            if (!string.IsNullOrEmpty(search.FuelName))
+            {
+                query = query.Where(x => x.FuelType.FuelName.StartsWith(search.FuelName));
             }
 
             query = query.OrderBy(x => x.VehicleModel.Manufacturer.ManufacturerName);
