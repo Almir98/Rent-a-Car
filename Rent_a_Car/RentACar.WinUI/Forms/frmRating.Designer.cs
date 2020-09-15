@@ -36,6 +36,12 @@
             this.ManufacturerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ModelName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtModelName = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtRatingValue = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,12 +52,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtSelected = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtLastName = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtModelName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRating)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panelPrinting1.SuspendLayout();
@@ -149,6 +149,60 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filter options";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(347, 37);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(125, 20);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "By model name";
+            // 
+            // txtModelName
+            // 
+            this.txtModelName.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtModelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtModelName.Location = new System.Drawing.Point(351, 60);
+            this.txtModelName.Name = "txtModelName";
+            this.txtModelName.Size = new System.Drawing.Size(190, 26);
+            this.txtModelName.TabIndex = 11;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(41, 172);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(107, 20);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "By last name";
+            // 
+            // txtLastName
+            // 
+            this.txtLastName.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtLastName.Location = new System.Drawing.Point(45, 195);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(189, 26);
+            this.txtLastName.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(41, 104);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(109, 20);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "By first name";
+            // 
+            // txtFirstName
+            // 
+            this.txtFirstName.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtFirstName.Location = new System.Drawing.Point(45, 127);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(189, 26);
+            this.txtFirstName.TabIndex = 5;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -201,7 +255,7 @@
             // 
             this.btnPrintRating.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnPrintRating.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnPrintRating.Location = new System.Drawing.Point(868, 667);
+            this.btnPrintRating.Location = new System.Drawing.Point(844, 667);
             this.btnPrintRating.Name = "btnPrintRating";
             this.btnPrintRating.Size = new System.Drawing.Size(165, 49);
             this.btnPrintRating.TabIndex = 2;
@@ -252,60 +306,6 @@
             this.label6.Size = new System.Drawing.Size(297, 25);
             this.label6.TabIndex = 19;
             this.label6.Text = "Average value of all vehicles : ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(41, 104);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 20);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "By first name";
-            // 
-            // txtFirstName
-            // 
-            this.txtFirstName.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtFirstName.Location = new System.Drawing.Point(45, 127);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(189, 26);
-            this.txtFirstName.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(41, 172);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 20);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "By last name";
-            // 
-            // txtLastName
-            // 
-            this.txtLastName.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtLastName.Location = new System.Drawing.Point(45, 195);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(189, 26);
-            this.txtLastName.TabIndex = 7;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(347, 37);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(125, 20);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "By model name";
-            // 
-            // txtModelName
-            // 
-            this.txtModelName.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.txtModelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtModelName.Location = new System.Drawing.Point(351, 60);
-            this.txtModelName.Name = "txtModelName";
-            this.txtModelName.Size = new System.Drawing.Size(190, 26);
-            this.txtModelName.TabIndex = 11;
             // 
             // frmRating
             // 

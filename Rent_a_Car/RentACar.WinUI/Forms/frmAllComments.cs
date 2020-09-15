@@ -76,7 +76,7 @@ namespace RentACar.WinUI.Forms
                 {
                     CommentId=item.CommentId,
                     Description=item.Description,
-                    DateOfComment=item.DateOfComment,
+                    DateOfComment=item.DateOfComment.Date,
                     FirstName=item.Customer.FirstName,
                     LastName=item.Customer.LastName,
                     ManufacturerName=item.Vehicle.VehicleModel.Manufacturer.ManufacturerName,

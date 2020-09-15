@@ -38,6 +38,10 @@
             this.txtManufacturerName = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtModelName = new System.Windows.Forms.TextBox();
             this.chkDisable = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dtOfComment = new System.Windows.Forms.DateTimePicker();
@@ -47,10 +51,6 @@
             this.btnPrintRating = new System.Windows.Forms.Button();
             this.panelPrinting2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtModelName = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtLastName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComments)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panelPrinting2.SuspendLayout();
@@ -171,6 +171,38 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filters options";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(391, 94);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(107, 20);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "By last name";
+            // 
+            // txtLastName
+            // 
+            this.txtLastName.Location = new System.Drawing.Point(391, 117);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(203, 26);
+            this.txtLastName.TabIndex = 11;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(60, 94);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(125, 20);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "By model name";
+            // 
+            // txtModelName
+            // 
+            this.txtModelName.Location = new System.Drawing.Point(60, 117);
+            this.txtModelName.Name = "txtModelName";
+            this.txtModelName.Size = new System.Drawing.Size(203, 26);
+            this.txtModelName.TabIndex = 9;
+            // 
             // chkDisable
             // 
             this.chkDisable.AutoSize = true;
@@ -226,7 +258,7 @@
             // 
             this.btnPrintRating.BackColor = System.Drawing.SystemColors.ControlDark;
             this.btnPrintRating.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnPrintRating.Location = new System.Drawing.Point(1026, 675);
+            this.btnPrintRating.Location = new System.Drawing.Point(973, 675);
             this.btnPrintRating.Name = "btnPrintRating";
             this.btnPrintRating.Size = new System.Drawing.Size(165, 49);
             this.btnPrintRating.TabIndex = 4;
@@ -256,38 +288,6 @@
             this.label8.Size = new System.Drawing.Size(250, 17);
             this.label8.TabIndex = 18;
             this.label8.Text = "* double click on record to read details";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(60, 94);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 20);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "By model name";
-            // 
-            // txtModelName
-            // 
-            this.txtModelName.Location = new System.Drawing.Point(60, 117);
-            this.txtModelName.Name = "txtModelName";
-            this.txtModelName.Size = new System.Drawing.Size(203, 26);
-            this.txtModelName.TabIndex = 9;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(391, 94);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(107, 20);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "By last name";
-            // 
-            // txtLastName
-            // 
-            this.txtLastName.Location = new System.Drawing.Point(391, 117);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(203, 26);
-            this.txtLastName.TabIndex = 11;
             // 
             // frmAllComments
             // 

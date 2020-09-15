@@ -24,7 +24,7 @@ namespace RentACar.WebAPI.Service
             if (search.DateOfComment != null)
             {
                 var dateComment = search.DateOfComment.Value.Date;
-                query = query.Where(e => e.DateOfComment.Date == dateComment);
+                query = query.Where(e => e.DateOfComment.AddHours(8).Date == dateComment);
             }
 
             if (!string.IsNullOrEmpty(search.ManufacturerName))
