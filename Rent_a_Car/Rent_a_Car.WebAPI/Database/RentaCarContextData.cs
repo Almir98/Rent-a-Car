@@ -561,23 +561,23 @@ namespace RentACar.WebAPI.Database
                 VehicleId = 4
             });
 
-            modelBuilder.Entity<Comment>().HasData(new Comment()
-            {
-                CommentId = 5,
-                Description = "Volkswagen Passat 8 je vrhunski auto. Preporučujem ga, sve pohvale.",
-                DateOfComment = new DateTime(2020, 08, 13),
-                CustomerId = 2,
-                VehicleId = 5
-            });
+            //modelBuilder.Entity<Comment>().HasData(new Comment()
+            //{
+            //    CommentId = 5,
+            //    Description = "Volkswagen Passat 8 je vrhunski auto. Preporučujem ga, sve pohvale.",
+            //    DateOfComment = new DateTime(2020, 08, 13),
+            //    CustomerId = 2,
+            //    VehicleId = 5
+            //});
 
-            modelBuilder.Entity<Comment>().HasData(new Comment()
-            {
-                CommentId = 6,
-                Description = "Porsche Carrera 4S je vrhunski auto. Preporučujem ga, sve pohvale.",
-                DateOfComment = new DateTime(2020, 08, 14),
-                CustomerId = 2,
-                VehicleId = 6
-            });
+            //modelBuilder.Entity<Comment>().HasData(new Comment()
+            //{
+            //    CommentId = 6,
+            //    Description = "Porsche Carrera 4S je vrhunski auto. Preporučujem ga, sve pohvale.",
+            //    DateOfComment = new DateTime(2020, 08, 14),
+            //    CustomerId = 2,
+            //    VehicleId = 6
+            //});
 
             modelBuilder.Entity<Comment>().HasData(new Comment()
             {
