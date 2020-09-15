@@ -20,6 +20,12 @@
 
 			<Label FontSize="Medium">Filter by manufacturer name</Label>
 			<Entry Placeholder="Audi, BMW or etc." Text="{Binding ManufacturerName}"></Entry>
+
+			<Label FontSize="Medium" HorizontalOptions="Center" Text="Reservation from"></Label>
+			<DatePicker Date="{Binding StartDate}"></DatePicker>
+			<Label FontSize="Medium" HorizontalOptions="CenterAndExpand" Text="Reservation to"></Label>
+			<DatePicker Date="{Binding EndDate}"></DatePicker>
+			
 			<Button Text="Search" HorizontalOptions="Center" Command="{Binding SearchVehicles}"  Font="Bold,17"></Button>
 			
 			<ListView ItemsSource="{Binding BookingList}">

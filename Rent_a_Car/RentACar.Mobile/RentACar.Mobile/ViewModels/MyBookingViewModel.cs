@@ -34,6 +34,20 @@ namespace RentACar.Mobile.ViewModels
             set { SetProperty(ref _manufacturerName, value); }
         }
 
+        DateTime _startDate = DateTime.Now.Date;
+        public DateTime StartDate
+        {
+            get { return _startDate; }
+            set { SetProperty(ref _startDate, value); }
+        }
+
+        DateTime _endDate = DateTime.Now.Date;
+        public DateTime EndDate
+        {
+            get { return _endDate; }
+            set { SetProperty(ref _endDate, value); }
+        }
+
         public async Task AllBookings() 
         {
                 var customerID = await _serviceCustomer.GetById<Data.Model.Customer>(APIService.CustomerId);
@@ -49,6 +63,7 @@ namespace RentACar.Mobile.ViewModels
 
                 foreach (var item in list)
                 {
+                    item.EndDate= item.EndDate.AddHours(8).Date;
                     BookingList.Add(item);
                 }
 
@@ -60,9 +75,20 @@ namespace RentACar.Mobile.ViewModels
 
         public async Task SearchBookingCar()
         {
+            if (EndDate == StartDate){
+                await Application.Current.MainPage.DisplayAlert("Warning", "The search interval should be at least 1 day", "Try again");
+                return;
+            }
+            if (EndDate <= StartDate){
+                await Application.Current.MainPage.DisplayAlert("Warning", "End date must be greater than start date", "Try again");
+                return;
+            }
+
             var request = new BookingSearchRequest
             {
-                ManufacturerName = ManufacturerName
+                ManufacturerName = ManufacturerName,
+                StartDate=StartDate,
+                EndDate=EndDate
             };
 
             var list = await _serviceBooking.Get<IEnumerable<Data.Model.Booking>>(request);
@@ -70,6 +96,7 @@ namespace RentACar.Mobile.ViewModels
 
             foreach (var item in list)
             {
+                item.EndDate = item.EndDate.AddHours(8).Date;
                 BookingList.Add(item);
             }
             if (BookingList.Count == 0)
