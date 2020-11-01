@@ -9,7 +9,9 @@
         Rating,
         Comment,
         Contact,
-        Logout
+        Logout,
+        CustomerTest,
+
 
     }
     public class HomeMenuItem

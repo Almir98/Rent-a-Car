@@ -26,6 +26,8 @@ namespace RentACar.Mobile.Views
                 new HomeMenuItem {Id = MenuItemType.Comment, Title="Leave a comment" },
                 new HomeMenuItem {Id = MenuItemType.Contact, Title="Contact us" },
                 new HomeMenuItem {Id = MenuItemType.Logout, Title="Logout" },
+                new HomeMenuItem {Id = MenuItemType.CustomerTest, Title="Customer Test 1" },
+
 
             };
 

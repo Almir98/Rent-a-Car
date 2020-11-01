@@ -52,6 +52,13 @@ namespace RentACar.WebAPI.Service
                 query = query.Where(x => x.Username == request.Username);
             }
 
+
+            // DODANO FILTIRANJE NA APIJU
+            if (request.CustomerTypeId.HasValue == true)
+            {
+                query = query.Where(x => x.CustomerTypeId == request.CustomerTypeId);
+            }
+
             return _mapper.Map<List<Data.Model.Customer>>(query.ToList());
         }
 

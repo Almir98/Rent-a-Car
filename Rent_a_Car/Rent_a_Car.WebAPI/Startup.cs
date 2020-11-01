@@ -89,6 +89,7 @@ namespace Rent_a_Car.WebAPI
             services.AddScoped<IService<Data.Model.FuelType, object>, BaseService<Data.Model.FuelType, object, RentACar.WebAPI.Database.FuelType>>();
             services.AddScoped<IService<VehicleTypeRequest, object>, BaseService<VehicleTypeRequest, object, RentACar.WebAPI.Database.VehicleType>>();
             services.AddScoped<IService<Data.Model.City, CitySearchRequest>, CityService>();
+            services.AddScoped<IService<Data.Model.CustomerType, object>, BaseService<Data.Model.CustomerType,object,CustomerType>>();
 
             services.AddScoped<ICRUDService<Data.Model.VehicleModel, VehicleModelSearch, VehicleModelUpsert, VehicleModelUpsert>, VehicleModelService>();
             

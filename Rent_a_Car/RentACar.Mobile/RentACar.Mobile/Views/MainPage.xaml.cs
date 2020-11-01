@@ -52,6 +52,9 @@ namespace RentACar.Mobile.Views
                     case (int)MenuItemType.Logout:
                         MenuPages.Add(id, new NavigationPage(new LoginPage()));
                         break;
+                    case (int)MenuItemType.CustomerTest:
+                        MenuPages.Add(id, new NavigationPage(new CustomerTest()));
+                        break;
                 }
             }
 
