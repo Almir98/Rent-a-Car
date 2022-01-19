@@ -309,7 +309,7 @@ namespace RentACar.WebAPI.Database
             {
                 VehicleId = 1,
                 RegistrationNumber = "A11-A-111",
-                Image = File.ReadAllBytes("img/audia6.jpg"),
+                //Image = File.ReadAllBytes("img/audia6.jpg"),
                 VehicleNumber = 1,
                 DailyPrice = 100,
                 Description = "Audi A6 3.0 TDI Quattro. Vrhunski auto, super ocuvan. Spreman da odgovori na sve vase potrebe.",
@@ -329,7 +329,7 @@ namespace RentACar.WebAPI.Database
             {
                 VehicleId = 2,
                 RegistrationNumber = "B22-B-222",
-                Image = File.ReadAllBytes("img/audia7.jpg"),
+                //Image = File.ReadAllBytes("img/audia7.jpg"),
                 VehicleNumber = 2,
                 DailyPrice = 120,
                 Description = "Audi A7 3.0 TFSI Quattro. Vrhunski auto, 300 KS, super ocuvan. Spreman da odgovori na sve vase potrebe.",
@@ -349,7 +349,7 @@ namespace RentACar.WebAPI.Database
             {
                 VehicleId = 3,
                 RegistrationNumber = "C33-C-333",
-                Image = File.ReadAllBytes("img/bmw.jpg"),
+                //Image = File.ReadAllBytes("img/bmw.jpg"),
                 VehicleNumber = 3,
                 DailyPrice = 90,
                 Description = "BMW 530d 258 KS. Vrhunski auto, super ocuvan. Spreman da odgovori na sve vase potrebe.",
@@ -369,7 +369,7 @@ namespace RentACar.WebAPI.Database
             {
                 VehicleId = 4,
                 RegistrationNumber = "D44-D-444",
-                Image = File.ReadAllBytes("img/mercedes.jpg"),
+                //Image = File.ReadAllBytes("img/mercedes.jpg"),
                 VehicleNumber = 4,
                 DailyPrice = 100,
                 Description = "Mercedes-Benz C220 CDI 170 KS. Vrhunski auto, super ocuvan. Spreman da odgovori na sve vase potrebe.",
@@ -389,7 +389,7 @@ namespace RentACar.WebAPI.Database
             {
                 VehicleId = 5,
                 RegistrationNumber = "E55-E-555",
-                Image = File.ReadAllBytes("img/passat.jfif"),
+                //Image = File.ReadAllBytes("img/passat.jfif"),
                 VehicleNumber = 5,
                 DailyPrice = 100,
                 Description = "Volkswagen Passat 8 170 KS. Vrhunski auto, super ocuvan. Spreman da odgovori na sve vase potrebe.",
@@ -409,7 +409,7 @@ namespace RentACar.WebAPI.Database
             {
                 VehicleId = 6,
                 RegistrationNumber = "F66-F-666",
-                Image = File.ReadAllBytes("img/porsche.jpg"),
+                //Image = File.ReadAllBytes("img/porsche.jpg"),
                 VehicleNumber = 6,
                 DailyPrice = 150,
                 Description = "Porsche Carrera 4S 350 KS. Vrhunski auto, super ocuvan. Spreman da odgovori na sve vase potrebe.",
@@ -429,7 +429,7 @@ namespace RentACar.WebAPI.Database
             {
                 VehicleId = 7,
                 RegistrationNumber = "G77-G-777",
-                Image = File.ReadAllBytes("img/citroen.jpg"),
+                //Image = File.ReadAllBytes("img/citroen.jpg"),
                 VehicleNumber = 7,
                 DailyPrice = 90,
                 Description = "Citroen C5 150 KS. Vrhunski auto, super ocuvan. Spreman da odgovori na sve vase potrebe.",

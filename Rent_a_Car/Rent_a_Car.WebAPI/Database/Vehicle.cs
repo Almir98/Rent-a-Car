@@ -14,7 +14,7 @@ namespace RentACar.WebAPI.Database
 
         public int VehicleId { get; set; }
         public string RegistrationNumber { get; set; }
-        public byte[] Image { get; set; }
+        //public byte[] Image { get; set; }
         public int VehicleNumber { get; set; }
         public double? DailyPrice { get; set; }
         public string Description { get; set; }

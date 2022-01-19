@@ -15,7 +15,8 @@ namespace RentACar.WebAPI.Service
 
         public override List<Data.Model.Vehicle> Get(VehicleSearchRequest search)
         {
-            var query = _context.Vehicle.Include(x => x.VehicleModel)
+            var query = _context.Set<Vehicle>()
+                .Include(x => x.VehicleModel)
                 .Include(e=>e.VehicleModel.Manufacturer)
                 .Include(e=>e.FuelType)
                 .Include(e => e.Branch)
