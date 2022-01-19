@@ -254,10 +254,8 @@ namespace RentCar.Tests
 
             //Act
             var item = _vehicleService.GetByID(8);
-
             //Assert
             Assert.IsType<Data.Model.Vehicle>(item);
         }
-
     }
 }
